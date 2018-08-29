@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E3D98EE1213638C300887FAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D98EE0213638C300887FAF /* AppDelegate.swift */; };
-		E3D98EE3213638C300887FAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D98EE2213638C300887FAF /* ViewController.swift */; };
-		E3D98EE6213638C300887FAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D98EE4213638C300887FAF /* Main.storyboard */; };
-		E3D98EE8213638C400887FAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D98EE7213638C400887FAF /* Assets.xcassets */; };
-		E3D98EEB213638C400887FAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D98EE9213638C400887FAF /* LaunchScreen.storyboard */; };
 		E3D98EF6213638C400887FAF /* PaySimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D98EF5213638C400887FAF /* PaySimulatorTests.swift */; };
 		E3D98F01213638C400887FAF /* PaySimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D98F00213638C400887FAF /* PaySimulatorUITests.swift */; };
+		E3D98F4121363F6100887FAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D98F3821363F6100887FAF /* ViewController.swift */; };
+		E3D98F4421363F6100887FAF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3D98F3E21363F6100887FAF /* Info.plist */; };
+		E3D98F4521363F6100887FAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D98F3F21363F6100887FAF /* AppDelegate.swift */; };
+		E3D98F4621363F6100887FAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D98F4021363F6100887FAF /* Assets.xcassets */; };
+		E3D98F4921363FE900887FAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D98F4721363FE900887FAF /* LaunchScreen.storyboard */; };
+		E3D98F4A21363FE900887FAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D98F4821363FE900887FAF /* Main.storyboard */; };
+		E3D98F4E2136414A00887FAF /* XZMainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D98F4D2136414A00887FAF /* XZMainButton.swift */; };
+		E3D98F512136426200887FAF /* UIView+KRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D98F4F2136426200887FAF /* UIView+KRExtension.m */; };
+		E3D98F53213669E100887FAF /* XZCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D98F52213669E100887FAF /* XZCommon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,18 +39,23 @@
 
 /* Begin PBXFileReference section */
 		E3D98EDD213638C300887FAF /* PaySimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaySimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3D98EE0213638C300887FAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E3D98EE2213638C300887FAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E3D98EE5213638C300887FAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E3D98EE7213638C400887FAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E3D98EEA213638C400887FAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E3D98EEC213638C400887FAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D98EF1213638C400887FAF /* PaySimulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaySimulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D98EF5213638C400887FAF /* PaySimulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaySimulatorTests.swift; sourceTree = "<group>"; };
 		E3D98EF7213638C400887FAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D98EFC213638C400887FAF /* PaySimulatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaySimulatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D98F00213638C400887FAF /* PaySimulatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaySimulatorUITests.swift; sourceTree = "<group>"; };
 		E3D98F02213638C400887FAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3D98F3721363F6000887FAF /* PaySimulator-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PaySimulator-Bridging-Header.h"; sourceTree = "<group>"; };
+		E3D98F3821363F6100887FAF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E3D98F3E21363F6100887FAF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3D98F3F21363F6100887FAF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E3D98F4021363F6100887FAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3D98F4721363FE900887FAF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E3D98F4821363FE900887FAF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E3D98F4D2136414A00887FAF /* XZMainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMainButton.swift; sourceTree = "<group>"; };
+		E3D98F4F2136426200887FAF /* UIView+KRExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KRExtension.m"; sourceTree = "<group>"; };
+		E3D98F502136426200887FAF /* UIView+KRExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KRExtension.h"; sourceTree = "<group>"; };
+		E3D98F52213669E100887FAF /* XZCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZCommon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +106,7 @@
 		E3D98EDF213638C300887FAF /* PaySimulator */ = {
 			isa = PBXGroup;
 			children = (
-				E3D98EE0213638C300887FAF /* AppDelegate.swift */,
-				E3D98EE2213638C300887FAF /* ViewController.swift */,
-				E3D98EE4213638C300887FAF /* Main.storyboard */,
-				E3D98EE7213638C400887FAF /* Assets.xcassets */,
-				E3D98EE9213638C400887FAF /* LaunchScreen.storyboard */,
-				E3D98EEC213638C400887FAF /* Info.plist */,
+				E3D98F0E21363A3900887FAF /* Classes */,
 			);
 			path = PaySimulator;
 			sourceTree = "<group>";
@@ -123,6 +127,344 @@
 				E3D98F02213638C400887FAF /* Info.plist */,
 			);
 			path = PaySimulatorUITests;
+			sourceTree = "<group>";
+		};
+		E3D98F0E21363A3900887FAF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E3D98F1621363A3900887FAF /* Pay */,
+				E3D98F1021363A3900887FAF /* Main */,
+				E3D98F0F21363A3900887FAF /* Category */,
+				E3D98F1521363A3900887FAF /* Other */,
+				E3D98F3121363A3900887FAF /* Tools */,
+				E3D98F3221363A3900887FAF /* Utilities */,
+				E3D98F3021363A3900887FAF /* Resource */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E3D98F0F21363A3900887FAF /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				E3D98F502136426200887FAF /* UIView+KRExtension.h */,
+				E3D98F4F2136426200887FAF /* UIView+KRExtension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		E3D98F1021363A3900887FAF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E3D98F1121363A3900887FAF /* Controller */,
+				E3D98F1221363A3900887FAF /* Model */,
+				E3D98F1321363A3900887FAF /* View */,
+				E3D98F1421363A3900887FAF /* ViewModel */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E3D98F1121363A3900887FAF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E3D98F1221363A3900887FAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E3D98F1321363A3900887FAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E3D98F1421363A3900887FAF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E3D98F1521363A3900887FAF /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		E3D98F1621363A3900887FAF /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				E3D98F1721363A3900887FAF /* Friend */,
+				E3D98F1C21363A3900887FAF /* Home */,
+				E3D98F2121363A3900887FAF /* Me */,
+				E3D98F2621363A3900887FAF /* Money */,
+				E3D98F2B21363A3900887FAF /* Praise  */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		E3D98F1721363A3900887FAF /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				E3D98F1821363A3900887FAF /* Controller */,
+				E3D98F1921363A3900887FAF /* Model */,
+				E3D98F1A21363A3900887FAF /* View */,
+				E3D98F1B21363A3900887FAF /* ViewModel */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
+		E3D98F1821363A3900887FAF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E3D98F1921363A3900887FAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E3D98F1A21363A3900887FAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E3D98F1B21363A3900887FAF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E3D98F1C21363A3900887FAF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E3D98F1D21363A3900887FAF /* Controller */,
+				E3D98F1E21363A3900887FAF /* Model */,
+				E3D98F1F21363A3900887FAF /* View */,
+				E3D98F2021363A3900887FAF /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E3D98F1D21363A3900887FAF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E3D98F1E21363A3900887FAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E3D98F1F21363A3900887FAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E3D98F2021363A3900887FAF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E3D98F2121363A3900887FAF /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				E3D98F2221363A3900887FAF /* Controller */,
+				E3D98F2321363A3900887FAF /* Model */,
+				E3D98F2421363A3900887FAF /* View */,
+				E3D98F2521363A3900887FAF /* ViewModel */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		E3D98F2221363A3900887FAF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E3D98F2321363A3900887FAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E3D98F2421363A3900887FAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E3D98F2521363A3900887FAF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E3D98F2621363A3900887FAF /* Money */ = {
+			isa = PBXGroup;
+			children = (
+				E3D98F2721363A3900887FAF /* Controller */,
+				E3D98F2821363A3900887FAF /* Model */,
+				E3D98F2921363A3900887FAF /* View */,
+				E3D98F2A21363A3900887FAF /* ViewModel */,
+			);
+			path = Money;
+			sourceTree = "<group>";
+		};
+		E3D98F2721363A3900887FAF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E3D98F2821363A3900887FAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E3D98F2921363A3900887FAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E3D98F2A21363A3900887FAF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E3D98F2B21363A3900887FAF /* Praise  */ = {
+			isa = PBXGroup;
+			children = (
+				E3D98F2C21363A3900887FAF /* Controller */,
+				E3D98F2D21363A3900887FAF /* Model */,
+				E3D98F2E21363A3900887FAF /* View */,
+				E3D98F2F21363A3900887FAF /* ViewModel */,
+			);
+			path = "Praise ";
+			sourceTree = "<group>";
+		};
+		E3D98F2C21363A3900887FAF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E3D98F2D21363A3900887FAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E3D98F2E21363A3900887FAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E3D98F2F21363A3900887FAF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E3D98F3021363A3900887FAF /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E3D98F3F21363F6100887FAF /* AppDelegate.swift */,
+				E3D98F52213669E100887FAF /* XZCommon.swift */,
+				E3D98F4021363F6100887FAF /* Assets.xcassets */,
+				E3D98F4721363FE900887FAF /* LaunchScreen.storyboard */,
+				E3D98F4821363FE900887FAF /* Main.storyboard */,
+				E3D98F3E21363F6100887FAF /* Info.plist */,
+				E3D98F3821363F6100887FAF /* ViewController.swift */,
+				E3D98F3721363F6000887FAF /* PaySimulator-Bridging-Header.h */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E3D98F3121363A3900887FAF /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		E3D98F3221363A3900887FAF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E3D98F3321363A3900887FAF /* Controller */,
+				E3D98F3421363A3900887FAF /* Model */,
+				E3D98F3521363A3900887FAF /* View */,
+				E3D98F3621363A3900887FAF /* ViewModel */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E3D98F3321363A3900887FAF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E3D98F3421363A3900887FAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E3D98F3521363A3900887FAF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E3D98F4D2136414A00887FAF /* XZMainButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E3D98F3621363A3900887FAF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,12 +529,14 @@
 		E3D98ED5213638C300887FAF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = XZ;
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "再出发";
 				TargetAttributes = {
 					E3D98EDC213638C300887FAF = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					E3D98EF0213638C400887FAF = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -229,9 +573,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3D98EEB213638C400887FAF /* LaunchScreen.storyboard in Resources */,
-				E3D98EE8213638C400887FAF /* Assets.xcassets in Resources */,
-				E3D98EE6213638C300887FAF /* Main.storyboard in Resources */,
+				E3D98F4921363FE900887FAF /* LaunchScreen.storyboard in Resources */,
+				E3D98F4621363F6100887FAF /* Assets.xcassets in Resources */,
+				E3D98F4421363F6100887FAF /* Info.plist in Resources */,
+				E3D98F4A21363FE900887FAF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +601,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3D98EE3213638C300887FAF /* ViewController.swift in Sources */,
-				E3D98EE1213638C300887FAF /* AppDelegate.swift in Sources */,
+				E3D98F4521363F6100887FAF /* AppDelegate.swift in Sources */,
+				E3D98F512136426200887FAF /* UIView+KRExtension.m in Sources */,
+				E3D98F4121363F6100887FAF /* ViewController.swift in Sources */,
+				E3D98F4E2136414A00887FAF /* XZMainButton.swift in Sources */,
+				E3D98F53213669E100887FAF /* XZCommon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,25 +639,6 @@
 			targetProxy = E3D98EFD213638C400887FAF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		E3D98EE4213638C300887FAF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E3D98EE5213638C300887FAF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E3D98EE9213638C400887FAF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E3D98EEA213638C400887FAF /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E3D98F03213638C400887FAF /* Debug */ = {
@@ -430,15 +759,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
-				INFOPLIST_FILE = PaySimulator/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PaySimulator/Classes/Resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PaySimulator/Classes/Resource/PaySimulator-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -448,15 +781,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
-				INFOPLIST_FILE = PaySimulator/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PaySimulator/Classes/Resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PaySimulator/Classes/Resource/PaySimulator-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
