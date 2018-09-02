@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BDCB71468CB2417485916285 /* Pods_PaySimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146A184C35B4502F43F0D60E /* Pods_PaySimulator.framework */; };
+		E34617F5213B873B007C2AA6 /* XZPayMeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34617F4213B873B007C2AA6 /* XZPayMeTableViewController.swift */; };
+		E34617F7213B89F2007C2AA6 /* XZPayMeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34617F6213B89F2007C2AA6 /* XZPayMeHeaderView.swift */; };
+		E34617F9213B89FE007C2AA6 /* XZPayMeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E34617F8213B89FE007C2AA6 /* XZPayMeHeaderView.xib */; };
+		E3461801213BC041007C2AA6 /* XZUserInfoTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34617FF213BC041007C2AA6 /* XZUserInfoTabVC.swift */; };
+		E3461805213BC655007C2AA6 /* XZPayUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3461803213BC655007C2AA6 /* XZPayUserInfoCell.swift */; };
+		E3461806213BC655007C2AA6 /* XZPayUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3461804213BC655007C2AA6 /* XZPayUserInfoCell.xib */; };
+		E36048412137986700ECF65F /* XZBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36048402137986700ECF65F /* XZBaseVC.swift */; };
+		E36048432137988600ECF65F /* XZMainHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36048422137988600ECF65F /* XZMainHomeVC.swift */; };
+		E360484A2137A0C700ECF65F /* XZPayMainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36048492137A0C700ECF65F /* XZPayMainTabBarVC.swift */; };
+		E360484C2137A10A00ECF65F /* PayHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E360484B2137A10A00ECF65F /* PayHome.storyboard */; };
+		E360484E2137A11B00ECF65F /* PayMoney.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E360484D2137A11B00ECF65F /* PayMoney.storyboard */; };
+		E36048522137A16700ECF65F /* PayFriend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36048512137A16700ECF65F /* PayFriend.storyboard */; };
+		E36048542137A19100ECF65F /* PayMe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E36048532137A19100ECF65F /* PayMe.storyboard */; };
+		E36048562137A1DB00ECF65F /* XZPayHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36048552137A1DB00ECF65F /* XZPayHomeVC.swift */; };
+		E36048582137A1F000ECF65F /* XZPayMoneyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36048572137A1F000ECF65F /* XZPayMoneyVC.swift */; };
+		E360485C2137A23400ECF65F /* XZPayFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360485B2137A23400ECF65F /* XZPayFriendVC.swift */; };
+		E360485E2137A27800ECF65F /* XZPayPraiseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360485D2137A27800ECF65F /* XZPayPraiseVC.swift */; };
+		E36048602137A29200ECF65F /* PayPraise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E360485F2137A29200ECF65F /* PayPraise.storyboard */; };
+		E36048622137A2B100ECF65F /* XZPayMeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36048612137A2B100ECF65F /* XZPayMeVC.swift */; };
+		E36048642137A32E00ECF65F /* XZBaseNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36048632137A32E00ECF65F /* XZBaseNavigationVC.swift */; };
 		E3D98EF6213638C400887FAF /* PaySimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D98EF5213638C400887FAF /* PaySimulatorTests.swift */; };
 		E3D98F01213638C400887FAF /* PaySimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D98F00213638C400887FAF /* PaySimulatorUITests.swift */; };
 		E3D98F4121363F6100887FAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D98F3821363F6100887FAF /* ViewController.swift */; };
@@ -38,6 +59,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1148BAE4CDE60ADD2009EBA1 /* Pods-PaySimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaySimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaySimulator/Pods-PaySimulator.release.xcconfig"; sourceTree = "<group>"; };
+		146A184C35B4502F43F0D60E /* Pods_PaySimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaySimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3B52F6AFEBEE68D5BA4672D /* Pods-PaySimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaySimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaySimulator/Pods-PaySimulator.debug.xcconfig"; sourceTree = "<group>"; };
+		E34617F4213B873B007C2AA6 /* XZPayMeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayMeTableViewController.swift; sourceTree = "<group>"; };
+		E34617F6213B89F2007C2AA6 /* XZPayMeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayMeHeaderView.swift; sourceTree = "<group>"; };
+		E34617F8213B89FE007C2AA6 /* XZPayMeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XZPayMeHeaderView.xib; sourceTree = "<group>"; };
+		E34617FF213BC041007C2AA6 /* XZUserInfoTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZUserInfoTabVC.swift; sourceTree = "<group>"; };
+		E3461803213BC655007C2AA6 /* XZPayUserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayUserInfoCell.swift; sourceTree = "<group>"; };
+		E3461804213BC655007C2AA6 /* XZPayUserInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XZPayUserInfoCell.xib; sourceTree = "<group>"; };
+		E36048402137986700ECF65F /* XZBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseVC.swift; sourceTree = "<group>"; };
+		E36048422137988600ECF65F /* XZMainHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMainHomeVC.swift; sourceTree = "<group>"; };
+		E36048492137A0C700ECF65F /* XZPayMainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayMainTabBarVC.swift; sourceTree = "<group>"; };
+		E360484B2137A10A00ECF65F /* PayHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PayHome.storyboard; sourceTree = "<group>"; };
+		E360484D2137A11B00ECF65F /* PayMoney.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PayMoney.storyboard; sourceTree = "<group>"; };
+		E36048512137A16700ECF65F /* PayFriend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PayFriend.storyboard; sourceTree = "<group>"; };
+		E36048532137A19100ECF65F /* PayMe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PayMe.storyboard; sourceTree = "<group>"; };
+		E36048552137A1DB00ECF65F /* XZPayHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayHomeVC.swift; sourceTree = "<group>"; };
+		E36048572137A1F000ECF65F /* XZPayMoneyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayMoneyVC.swift; sourceTree = "<group>"; };
+		E360485B2137A23400ECF65F /* XZPayFriendVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZPayFriendVC.swift; sourceTree = "<group>"; };
+		E360485D2137A27800ECF65F /* XZPayPraiseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayPraiseVC.swift; sourceTree = "<group>"; };
+		E360485F2137A29200ECF65F /* PayPraise.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PayPraise.storyboard; sourceTree = "<group>"; };
+		E36048612137A2B100ECF65F /* XZPayMeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayMeVC.swift; sourceTree = "<group>"; };
+		E36048632137A32E00ECF65F /* XZBaseNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseNavigationVC.swift; sourceTree = "<group>"; };
 		E3D98EDD213638C300887FAF /* PaySimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaySimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D98EF1213638C400887FAF /* PaySimulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaySimulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D98EF5213638C400887FAF /* PaySimulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaySimulatorTests.swift; sourceTree = "<group>"; };
@@ -63,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDCB71468CB2417485916285 /* Pods_PaySimulator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +128,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A4522508B94BF6B57C227CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3B52F6AFEBEE68D5BA4672D /* Pods-PaySimulator.debug.xcconfig */,
+				1148BAE4CDE60ADD2009EBA1 /* Pods-PaySimulator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6B0552CAAD1764AB0A323297 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				146A184C35B4502F43F0D60E /* Pods_PaySimulator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E34617FA213BBFDC007C2AA6 /* 个人信息 */ = {
+			isa = PBXGroup;
+			children = (
+				E34617FB213BBFDC007C2AA6 /* Controller */,
+				E34617FC213BBFDC007C2AA6 /* Model */,
+				E34617FD213BBFDC007C2AA6 /* View */,
+				E34617FE213BBFDC007C2AA6 /* ViewModel */,
+			);
+			path = "个人信息";
+			sourceTree = "<group>";
+		};
+		E34617FB213BBFDC007C2AA6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E34617FF213BC041007C2AA6 /* XZUserInfoTabVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E34617FC213BBFDC007C2AA6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E34617FD213BBFDC007C2AA6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E3461803213BC655007C2AA6 /* XZPayUserInfoCell.swift */,
+				E3461804213BC655007C2AA6 /* XZPayUserInfoCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E34617FE213BBFDC007C2AA6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E3461807213BEBB3007C2AA6 /* 弹出系统相机相册 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "弹出系统相机相册";
+			sourceTree = "<group>";
+		};
+		E36048462137A07000ECF65F /* PayManTabbarVC */ = {
+			isa = PBXGroup;
+			children = (
+				E36048492137A0C700ECF65F /* XZPayMainTabBarVC.swift */,
+			);
+			path = PayManTabbarVC;
+			sourceTree = "<group>";
+		};
 		E3D98ED4213638C300887FAF = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +209,8 @@
 				E3D98EF4213638C400887FAF /* PaySimulatorTests */,
 				E3D98EFF213638C400887FAF /* PaySimulatorUITests */,
 				E3D98EDE213638C300887FAF /* Products */,
+				2A4522508B94BF6B57C227CE /* Pods */,
+				6B0552CAAD1764AB0A323297 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +287,7 @@
 		E3D98F1121363A3900887FAF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E36048422137988600ECF65F /* XZMainHomeVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -201,11 +323,12 @@
 		E3D98F1621363A3900887FAF /* Pay */ = {
 			isa = PBXGroup;
 			children = (
-				E3D98F1721363A3900887FAF /* Friend */,
 				E3D98F1C21363A3900887FAF /* Home */,
-				E3D98F2121363A3900887FAF /* Me */,
 				E3D98F2621363A3900887FAF /* Money */,
 				E3D98F2B21363A3900887FAF /* Praise  */,
+				E3D98F1721363A3900887FAF /* Friend */,
+				E3D98F2121363A3900887FAF /* Me */,
+				E36048462137A07000ECF65F /* PayManTabbarVC */,
 			);
 			path = Pay;
 			sourceTree = "<group>";
@@ -224,6 +347,8 @@
 		E3D98F1821363A3900887FAF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E36048512137A16700ECF65F /* PayFriend.storyboard */,
+				E360485B2137A23400ECF65F /* XZPayFriendVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -263,6 +388,8 @@
 		E3D98F1D21363A3900887FAF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E360484B2137A10A00ECF65F /* PayHome.storyboard */,
+				E36048552137A1DB00ECF65F /* XZPayHomeVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -295,6 +422,7 @@
 				E3D98F2321363A3900887FAF /* Model */,
 				E3D98F2421363A3900887FAF /* View */,
 				E3D98F2521363A3900887FAF /* ViewModel */,
+				E34617FA213BBFDC007C2AA6 /* 个人信息 */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -302,6 +430,9 @@
 		E3D98F2221363A3900887FAF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E36048532137A19100ECF65F /* PayMe.storyboard */,
+				E36048612137A2B100ECF65F /* XZPayMeVC.swift */,
+				E34617F4213B873B007C2AA6 /* XZPayMeTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -316,6 +447,8 @@
 		E3D98F2421363A3900887FAF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E34617F6213B89F2007C2AA6 /* XZPayMeHeaderView.swift */,
+				E34617F8213B89FE007C2AA6 /* XZPayMeHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -341,6 +474,8 @@
 		E3D98F2721363A3900887FAF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E360484D2137A11B00ECF65F /* PayMoney.storyboard */,
+				E36048572137A1F000ECF65F /* XZPayMoneyVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -380,6 +515,8 @@
 		E3D98F2C21363A3900887FAF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E360485F2137A29200ECF65F /* PayPraise.storyboard */,
+				E360485D2137A27800ECF65F /* XZPayPraiseVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -423,6 +560,7 @@
 		E3D98F3121363A3900887FAF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E3461807213BEBB3007C2AA6 /* 弹出系统相机相册 */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -441,6 +579,8 @@
 		E3D98F3321363A3900887FAF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E36048402137986700ECF65F /* XZBaseVC.swift */,
+				E36048632137A32E00ECF65F /* XZBaseNavigationVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -474,9 +614,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3D98F05213638C400887FAF /* Build configuration list for PBXNativeTarget "PaySimulator" */;
 			buildPhases = (
+				FAC3064C6E35A13FF1E97A21 /* [CP] Check Pods Manifest.lock */,
 				E3D98ED9213638C300887FAF /* Sources */,
 				E3D98EDA213638C300887FAF /* Frameworks */,
 				E3D98EDB213638C300887FAF /* Resources */,
+				62D9AF544165EDB4CB7A568F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -574,7 +716,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D98F4921363FE900887FAF /* LaunchScreen.storyboard in Resources */,
+				E3461806213BC655007C2AA6 /* XZPayUserInfoCell.xib in Resources */,
+				E36048602137A29200ECF65F /* PayPraise.storyboard in Resources */,
 				E3D98F4621363F6100887FAF /* Assets.xcassets in Resources */,
+				E360484E2137A11B00ECF65F /* PayMoney.storyboard in Resources */,
+				E34617F9213B89FE007C2AA6 /* XZPayMeHeaderView.xib in Resources */,
+				E36048542137A19100ECF65F /* PayMe.storyboard in Resources */,
+				E360484C2137A10A00ECF65F /* PayHome.storyboard in Resources */,
+				E36048522137A16700ECF65F /* PayFriend.storyboard in Resources */,
 				E3D98F4421363F6100887FAF /* Info.plist in Resources */,
 				E3D98F4A21363FE900887FAF /* Main.storyboard in Resources */,
 			);
@@ -596,16 +745,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		62D9AF544165EDB4CB7A568F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PaySimulator/Pods-PaySimulator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PaySimulator/Pods-PaySimulator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAC3064C6E35A13FF1E97A21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PaySimulator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E3D98ED9213638C300887FAF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E36048562137A1DB00ECF65F /* XZPayHomeVC.swift in Sources */,
+				E36048642137A32E00ECF65F /* XZBaseNavigationVC.swift in Sources */,
+				E34617F5213B873B007C2AA6 /* XZPayMeTableViewController.swift in Sources */,
+				E360484A2137A0C700ECF65F /* XZPayMainTabBarVC.swift in Sources */,
+				E34617F7213B89F2007C2AA6 /* XZPayMeHeaderView.swift in Sources */,
 				E3D98F4521363F6100887FAF /* AppDelegate.swift in Sources */,
+				E3461801213BC041007C2AA6 /* XZUserInfoTabVC.swift in Sources */,
+				E360485E2137A27800ECF65F /* XZPayPraiseVC.swift in Sources */,
 				E3D98F512136426200887FAF /* UIView+KRExtension.m in Sources */,
+				E3461805213BC655007C2AA6 /* XZPayUserInfoCell.swift in Sources */,
+				E36048432137988600ECF65F /* XZMainHomeVC.swift in Sources */,
 				E3D98F4121363F6100887FAF /* ViewController.swift in Sources */,
+				E360485C2137A23400ECF65F /* XZPayFriendVC.swift in Sources */,
+				E36048582137A1F000ECF65F /* XZPayMoneyVC.swift in Sources */,
+				E36048412137986700ECF65F /* XZBaseVC.swift in Sources */,
 				E3D98F4E2136414A00887FAF /* XZMainButton.swift in Sources */,
 				E3D98F53213669E100887FAF /* XZCommon.swift in Sources */,
+				E36048622137A2B100ECF65F /* XZPayMeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,6 +962,7 @@
 		};
 		E3D98F06213638C400887FAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3B52F6AFEBEE68D5BA4672D /* Pods-PaySimulator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -773,12 +979,13 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "PaySimulator/Classes/Resource/PaySimulator-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		E3D98F07213638C400887FAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1148BAE4CDE60ADD2009EBA1 /* Pods-PaySimulator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -794,7 +1001,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PaySimulator/Classes/Resource/PaySimulator-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="XZPayMeHeaderView" customModule="PaySimulator" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baidu" translatesAutoresizingMaskIntoConstraints="NO" id="dCq-P9-6Hl">
+                    <rect key="frame" x="13" y="5" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="dCq-P9-6Hl" secondAttribute="height" multiplier="1:1" id="5HB-6m-ily"/>
+                        <constraint firstAttribute="width" constant="50" id="u7P-rt-xsd"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinweia" translatesAutoresizingMaskIntoConstraints="NO" id="8Qi-Nc-m1x">
+                    <rect key="frame" x="53" y="45" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="HnG-wx-XSO"/>
+                        <constraint firstAttribute="height" constant="20" id="hoX-tR-kyr"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="杨大力 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIR-o9-Hzz">
+                    <rect key="frame" x="83" y="10" width="53.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="136****419@qq.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVR-6X-bHD">
+                    <rect key="frame" x="83" y="34.5" width="125" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="右" translatesAutoresizingMaskIntoConstraints="NO" id="h4K-sW-ji5">
+                    <rect key="frame" x="285" y="27.5" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="O8u-vC-oO8"/>
+                        <constraint firstAttribute="width" constant="20" id="S2g-CW-Hrl"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1K-Sg-evW">
+                    <rect key="frame" x="190" y="12" width="120" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="YKa-uS-ZdQ"/>
+                        <constraint firstAttribute="height" constant="50" id="pcO-f1-7nf"/>
+                    </constraints>
+                    <connections>
+                        <action selector="clickRightButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="8VG-WU-hWz"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.10980392156862745" green="0.50980392156862742" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="F1K-Sg-evW" secondAttribute="trailing" constant="10" id="8xs-VX-5NC"/>
+                <constraint firstItem="dCq-P9-6Hl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="13" id="Dxa-NC-mtq"/>
+                <constraint firstItem="kIR-o9-Hzz" firstAttribute="top" secondItem="dCq-P9-6Hl" secondAttribute="top" constant="5" id="JHR-Q3-0Ko"/>
+                <constraint firstItem="F1K-Sg-evW" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="LRC-FC-fVA"/>
+                <constraint firstItem="dCq-P9-6Hl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="XBk-Wf-drO"/>
+                <constraint firstItem="kIR-o9-Hzz" firstAttribute="leading" secondItem="dCq-P9-6Hl" secondAttribute="trailing" constant="20" id="cMO-rU-zrt"/>
+                <constraint firstItem="aVR-6X-bHD" firstAttribute="top" secondItem="kIR-o9-Hzz" secondAttribute="bottom" constant="5" id="crT-Xr-bWD"/>
+                <constraint firstItem="h4K-sW-ji5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dU5-HV-URG"/>
+                <constraint firstItem="aVR-6X-bHD" firstAttribute="leading" secondItem="kIR-o9-Hzz" secondAttribute="leading" id="eWh-7k-dyl"/>
+                <constraint firstItem="8Qi-Nc-m1x" firstAttribute="bottom" secondItem="dCq-P9-6Hl" secondAttribute="bottom" constant="10" id="o6l-Oh-10z"/>
+                <constraint firstAttribute="trailing" secondItem="h4K-sW-ji5" secondAttribute="trailing" constant="15" id="q87-BI-N6b"/>
+                <constraint firstItem="8Qi-Nc-m1x" firstAttribute="leading" secondItem="dCq-P9-6Hl" secondAttribute="trailing" constant="-10" id="qG3-rq-Z14"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="accountLabel" destination="aVR-6X-bHD" id="340-tI-lax"/>
+                <outlet property="iocnImage" destination="dCq-P9-6Hl" id="b9d-38-zcr"/>
+                <outlet property="nameLabel" destination="kIR-o9-Hzz" id="J5U-er-Ne0"/>
+                <outlet property="starsImage" destination="8Qi-Nc-m1x" id="Dqs-nj-B42"/>
+            </connections>
+            <point key="canvasLocation" x="-515" y="-155"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="baidu" width="38" height="38"/>
+        <image name="pinweia" width="25" height="25"/>
+        <image name="右" width="20" height="20"/>
+    </resources>
+</document>

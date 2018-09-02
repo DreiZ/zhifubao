@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HDJ-DZ-UlU">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pay FriendVC-->
+        <scene sceneID="Zfq-oa-JM8">
+            <objects>
+                <viewController id="pcK-7l-EFz" customClass="XZPayFriendVC" customModule="PaySimulator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d4c-MK-NHI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Opg-Lk-mry"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AlE-Zi-KLu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4MI-eV-q0w"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NFe-Yo-QJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="956" y="-166.8665667166417"/>
+        </scene>
+        <!--Base NavigationVC-->
+        <scene sceneID="xBR-AV-GWB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HDJ-DZ-UlU" customClass="XZBaseNavigationVC" customModule="PaySimulator" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hhn-S2-7J6">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pcK-7l-EFz" kind="relationship" relationship="rootViewController" id="oT9-Kd-qOl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fa6-jb-mpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="16.800000000000001" y="-166.8665667166417"/>
+        </scene>
+    </scenes>
+</document>

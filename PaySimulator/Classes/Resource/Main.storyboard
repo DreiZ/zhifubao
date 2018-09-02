@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,7 +33,7 @@
         <!--首页 -->
         <scene sceneID="IdW-EH-7dH">
             <objects>
-                <viewController id="o6K-1x-FXJ" sceneMemberID="viewController">
+                <viewController id="o6K-1x-FXJ" customClass="XZMainHomeVC" customModule="PaySimulator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0FK-zU-Lcq"/>
                         <viewControllerLayoutGuide type="bottom" id="YWM-Ht-5Nm"/>
@@ -43,18 +45,96 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmx-Pj-Wh5">
                                 <rect key="frame" x="0.0" y="64" width="375" height="260"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd0-vo-9Mh">
-                                        <rect key="frame" x="24" y="51" width="71" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd0-vo-9Mh" userLabel="支付宝模拟器" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="94"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="xd0-vo-9Mh" secondAttribute="height" multiplier="1:1" id="dv1-kD-If0"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <state key="normal" title="支付模拟器" image="pinweia">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="clickMainButton:" destination="o6K-1x-FXJ" eventType="touchUpInside" id="bHO-Vo-qoT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGo-yR-r9y" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
+                                        <rect key="frame" x="94" y="0.0" width="94" height="94"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <state key="normal" title="转账" image="pinweia">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickMainButton:" destination="o6K-1x-FXJ" eventType="touchUpInside" id="IJr-S6-1CB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAL-mX-ufX" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
+                                        <rect key="frame" x="188" y="0.0" width="94" height="94"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <state key="normal" title="余额" image="pinweia">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickMainButton:" destination="o6K-1x-FXJ" eventType="touchUpInside" id="qbf-ZT-W4O"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33h-rO-A42" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
+                                        <rect key="frame" x="282" y="0.0" width="94" height="94"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <state key="normal" title="收款账单" image="pinweia">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickMainButton:" destination="o6K-1x-FXJ" eventType="touchUpInside" id="wA8-fn-2z4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oo-KO-nzi" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="94" width="94" height="94"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <state key="normal" title="红包" image="pinweia">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickMainButton:" destination="o6K-1x-FXJ" eventType="touchUpInside" id="iEo-0A-KOK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ny9-Pl-zCW" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
+                                        <rect key="frame" x="94" y="94" width="94" height="94"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <state key="normal" title="提现账单" image="pinweia">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickMainButton:" destination="o6K-1x-FXJ" eventType="touchUpInside" id="gka-Z7-eC8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.30843225790000001" blue="0.1934669" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="HGo-yR-r9y" firstAttribute="height" secondItem="xd0-vo-9Mh" secondAttribute="height" id="0Tm-fw-6Tp"/>
+                                    <constraint firstItem="xd0-vo-9Mh" firstAttribute="width" secondItem="pmx-Pj-Wh5" secondAttribute="width" multiplier="1/4" id="0jg-0d-dXm"/>
+                                    <constraint firstItem="Ny9-Pl-zCW" firstAttribute="width" secondItem="xd0-vo-9Mh" secondAttribute="width" id="1YH-q9-1sl"/>
+                                    <constraint firstItem="cAL-mX-ufX" firstAttribute="top" secondItem="xd0-vo-9Mh" secondAttribute="top" id="2Eq-TZ-fgl"/>
+                                    <constraint firstItem="9oo-KO-nzi" firstAttribute="width" secondItem="xd0-vo-9Mh" secondAttribute="width" id="5d9-Cs-Q1f"/>
+                                    <constraint firstItem="cAL-mX-ufX" firstAttribute="height" secondItem="xd0-vo-9Mh" secondAttribute="height" id="67o-LO-uzE"/>
+                                    <constraint firstItem="9oo-KO-nzi" firstAttribute="leading" secondItem="pmx-Pj-Wh5" secondAttribute="leading" id="6Hw-4f-TFA"/>
+                                    <constraint firstItem="cAL-mX-ufX" firstAttribute="width" secondItem="xd0-vo-9Mh" secondAttribute="width" id="7dr-JT-0Mb"/>
+                                    <constraint firstItem="33h-rO-A42" firstAttribute="height" secondItem="xd0-vo-9Mh" secondAttribute="height" id="K0j-uM-7iV"/>
+                                    <constraint firstItem="9oo-KO-nzi" firstAttribute="height" secondItem="xd0-vo-9Mh" secondAttribute="height" id="MNf-iv-bSg"/>
+                                    <constraint firstItem="Ny9-Pl-zCW" firstAttribute="height" secondItem="xd0-vo-9Mh" secondAttribute="height" id="TyP-0Z-4iV"/>
+                                    <constraint firstItem="Ny9-Pl-zCW" firstAttribute="leading" secondItem="9oo-KO-nzi" secondAttribute="trailing" id="VOC-qo-b0M"/>
+                                    <constraint firstItem="HGo-yR-r9y" firstAttribute="leading" secondItem="xd0-vo-9Mh" secondAttribute="trailing" id="Xky-qh-enY"/>
+                                    <constraint firstItem="9oo-KO-nzi" firstAttribute="top" secondItem="xd0-vo-9Mh" secondAttribute="bottom" id="YaU-0c-BDu"/>
+                                    <constraint firstItem="33h-rO-A42" firstAttribute="leading" secondItem="cAL-mX-ufX" secondAttribute="trailing" id="aeU-Ft-6zg"/>
+                                    <constraint firstItem="Ny9-Pl-zCW" firstAttribute="top" secondItem="HGo-yR-r9y" secondAttribute="bottom" id="e9N-It-uaL"/>
+                                    <constraint firstItem="xd0-vo-9Mh" firstAttribute="top" secondItem="pmx-Pj-Wh5" secondAttribute="top" id="eSJ-AM-Rxq"/>
+                                    <constraint firstItem="33h-rO-A42" firstAttribute="width" secondItem="xd0-vo-9Mh" secondAttribute="width" id="g6v-bO-Y8r"/>
+                                    <constraint firstItem="HGo-yR-r9y" firstAttribute="top" secondItem="xd0-vo-9Mh" secondAttribute="top" id="gLb-Cv-nKG"/>
                                     <constraint firstAttribute="height" constant="260" id="gcm-M2-LFj"/>
+                                    <constraint firstItem="33h-rO-A42" firstAttribute="top" secondItem="xd0-vo-9Mh" secondAttribute="top" id="iVL-EE-v4s"/>
+                                    <constraint firstItem="HGo-yR-r9y" firstAttribute="width" secondItem="xd0-vo-9Mh" secondAttribute="width" id="mzp-WK-esn"/>
+                                    <constraint firstItem="cAL-mX-ufX" firstAttribute="leading" secondItem="HGo-yR-r9y" secondAttribute="trailing" id="oQk-qQ-bDQ"/>
+                                    <constraint firstItem="xd0-vo-9Mh" firstAttribute="leading" secondItem="pmx-Pj-Wh5" secondAttribute="leading" id="vlm-qk-yEF"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -69,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWG-Tn-WBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1231.2" y="-287.40629685157421"/>
+            <point key="canvasLocation" x="1830" y="-538"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lkR-Cm-Lqf">

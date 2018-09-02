@@ -42,6 +42,12 @@ func DDFRAME(x:CGFloat,y:CGFloat,w:CGFloat,h:CGFloat) -> CGRect{
 func ddRandomColor() -> UIColor {
     return UIColor(red:CGFloat(arc4random_uniform(255))/255.0, green: CGFloat(arc4random_uniform(255))/255.0, blue: CGFloat(arc4random_uniform(255))/255.0, alpha: 1)
 }
+/**支付宝蓝色主题*/
+func ddBlueColor () -> UIColor{
+    
+    return ddColor(28, 130, 210);
+}
+
 /**颜色*/
 func ddColor(_ R:CGFloat ,_ G:CGFloat ,_ B:CGFloat) -> UIColor {
     return UIColor(red: R/255.0, green: G/255.0, blue: B/255.0, alpha: 1)

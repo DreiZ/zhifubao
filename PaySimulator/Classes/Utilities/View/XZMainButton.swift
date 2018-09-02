@@ -19,14 +19,27 @@ class XZMainButton: UIButton {
         // Drawing code
     }
     */
-    override init(frame: CGRect) {
-        super.init(frame: frame);
-        titleLabel?.font = UIFont.systemFont(ofSize: ddSpacing(26))
-        
-    }
+//    override init(frame: CGRect) {
+//        super.init(frame: frame);
+//
+//        configTitleLabel()
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+ 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+         configTitleLabel()
+    }
+
+    
+    func configTitleLabel(){
+        titleLabel?.font = UIFont.systemFont(ofSize: ddSpacing(26))
+        setTitleColor(UIColor.darkGray, for: .normal);
+        titleLabel?.textAlignment = .center
     }
     
     override func layoutSubviews() {
@@ -36,7 +49,6 @@ class XZMainButton: UIButton {
         imageView?.dd_width = imageView?.dd_height ?? dd_height * 0.4;
         imageView?.dd_centerX = dd_width/2;
         
-
         titleLabel?.dd_x = 0;
         titleLabel?.dd_y = (imageView?.dd_bottom)! + 3;
         titleLabel?.dd_width = dd_width;
