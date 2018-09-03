@@ -45,5 +45,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>NSLocalizedDescription</key>
+	<string>用户访问权限</string>
 </dict>
 </plist>

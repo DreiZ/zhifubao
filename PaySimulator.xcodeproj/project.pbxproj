@@ -15,6 +15,7 @@
 		E3461805213BC655007C2AA6 /* XZPayUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3461803213BC655007C2AA6 /* XZPayUserInfoCell.swift */; };
 		E3461806213BC655007C2AA6 /* XZPayUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3461804213BC655007C2AA6 /* XZPayUserInfoCell.xib */; };
 		E35B5D78213CC01300E59A88 /* XZMyPhotoManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35B5D77213CC01300E59A88 /* XZMyPhotoManage.swift */; };
+		E35B5D7B213D2C5300E59A88 /* XZUserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35B5D7A213D2C5300E59A88 /* XZUserHelper.swift */; };
 		E36048412137986700ECF65F /* XZBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36048402137986700ECF65F /* XZBaseVC.swift */; };
 		E36048432137988600ECF65F /* XZMainHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36048422137988600ECF65F /* XZMainHomeVC.swift */; };
 		E360484A2137A0C700ECF65F /* XZPayMainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36048492137A0C700ECF65F /* XZPayMainTabBarVC.swift */; };
@@ -70,6 +71,7 @@
 		E3461803213BC655007C2AA6 /* XZPayUserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayUserInfoCell.swift; sourceTree = "<group>"; };
 		E3461804213BC655007C2AA6 /* XZPayUserInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XZPayUserInfoCell.xib; sourceTree = "<group>"; };
 		E35B5D77213CC01300E59A88 /* XZMyPhotoManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMyPhotoManage.swift; sourceTree = "<group>"; };
+		E35B5D7A213D2C5300E59A88 /* XZUserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZUserHelper.swift; sourceTree = "<group>"; };
 		E36048402137986700ECF65F /* XZBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseVC.swift; sourceTree = "<group>"; };
 		E36048422137988600ECF65F /* XZMainHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMainHomeVC.swift; sourceTree = "<group>"; };
 		E36048492137A0C700ECF65F /* XZPayMainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayMainTabBarVC.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		E34617FA213BBFDC007C2AA6 /* 个人信息 */ = {
 			isa = PBXGroup;
 			children = (
+				E35B5D79213D2C3100E59A88 /* UserManage */,
 				E34617FB213BBFDC007C2AA6 /* Controller */,
 				E34617FC213BBFDC007C2AA6 /* Model */,
 				E34617FD213BBFDC007C2AA6 /* View */,
@@ -195,6 +198,14 @@
 				E35B5D77213CC01300E59A88 /* XZMyPhotoManage.swift */,
 			);
 			path = "弹出系统相机相册";
+			sourceTree = "<group>";
+		};
+		E35B5D79213D2C3100E59A88 /* UserManage */ = {
+			isa = PBXGroup;
+			children = (
+				E35B5D7A213D2C5300E59A88 /* XZUserHelper.swift */,
+			);
+			path = UserManage;
 			sourceTree = "<group>";
 		};
 		E36048462137A07000ECF65F /* PayManTabbarVC */ = {
@@ -814,6 +825,7 @@
 				E36048412137986700ECF65F /* XZBaseVC.swift in Sources */,
 				E3D98F4E2136414A00887FAF /* XZMainButton.swift in Sources */,
 				E3D98F53213669E100887FAF /* XZCommon.swift in Sources */,
+				E35B5D7B213D2C5300E59A88 /* XZUserHelper.swift in Sources */,
 				E36048622137A2B100ECF65F /* XZPayMeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

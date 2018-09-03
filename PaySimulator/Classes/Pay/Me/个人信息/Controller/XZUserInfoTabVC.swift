@@ -70,7 +70,18 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
         if indexPath.row == 0 {//显示 头像
             cell.detailLabel.isHidden = true;
             cell.iconImage.isHidden = false;
-            iconImage = cell.iconImage
+             iconImage = cell.iconImage
+            let userInfo = XZUserHelper.sharedUserHelper.getUserInfo();
+            
+            guard let userImg = userInfo.iconImage else {
+                cell.iconImage.image = UIImage(named: "baidu")
+                return cell
+            }
+            let imgData = Data(base64Encoded: userImg)
+            
+            cell.iconImage.image = UIImage(data: imgData!)
+            
+           
         }else{
             cell.detailLabel.isHidden = false;
             cell.iconImage.isHidden = true;
@@ -120,6 +131,14 @@ extension XZUserInfoTabVC : XZMyPhotoManageDelegate {
     
     func uploadImage(myImage: UIImage) {
         iconImage?.image = myImage
+        //取到数据存储
+        let userInfo = XZUserHelper.sharedUserHelper;
+        let imgData = UIImagePNGRepresentation(myImage)
+        let imgStr = imgData?.base64EncodedString()
+        userInfo.iconImage = imgStr!;
+        userInfo.savrUserInfo()
+        
+        
     }
     
     
