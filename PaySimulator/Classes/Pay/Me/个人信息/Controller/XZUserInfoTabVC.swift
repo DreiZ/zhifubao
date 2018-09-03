@@ -13,11 +13,12 @@ private let XZPayUserInfoCellID = "XZPayUserInfoCellID";
 
 class XZUserInfoTabVC: XZBaseVC {
 
-    //MARK:--数据Array
+    //MARK:--数据源Array
     private lazy var dataList : [String] = {
        return ["头像","昵称","支付宝账号","会员等级"]
     }()
     
+    private var iconImage : UIImageView?
     
     private lazy var myTableView : UITableView = {[weak self] in
         let myTableView = UITableView(frame: CGRect.zero, style: .grouped);
@@ -69,6 +70,7 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
         if indexPath.row == 0 {//显示 头像
             cell.detailLabel.isHidden = true;
             cell.iconImage.isHidden = false;
+            iconImage = cell.iconImage
         }else{
             cell.detailLabel.isHidden = false;
             cell.iconImage.isHidden = true;
@@ -92,8 +94,34 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true);
         
+        if indexPath.row == 0 {//修改头像
+            
+            let myPhotoManage  = XZMyPhotoManage.sharedPhotoManage
+            
+            myPhotoManage.showActionSheetInVC(factherVC: self, aDelegate: self as XZMyPhotoManageDelegate)
+            
+            
+        }else if indexPath.row == 1{//修改昵称
+            
+        }else if indexPath.row == 2{//修改账号
+            
+        }else if indexPath.row == 3{//修改会员等级
+            
+        }
+        
+        
     }
    
+    
+}
+
+//MARK:--相机相册代理方法
+extension XZUserInfoTabVC : XZMyPhotoManageDelegate {
+    
+    func uploadImage(myImage: UIImage) {
+        iconImage?.image = myImage
+    }
+    
     
 }
 

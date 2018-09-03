@@ -17,11 +17,12 @@ class XZBaseNavigationVC: UINavigationController , UIGestureRecognizerDelegate{
         
         interactivePopGestureRecognizer?.delegate = self;
  
-        navigationBar.setBackgroundImage(UIImage(named: "navBlue.jpg"), for: .top, barMetrics: .default);
+//        navigationBar.setBackgroundImage(UIImage(named: "navBlue.jpg"), for: .top, barMetrics: .default);
+        navigationBar.setBackgroundImage(UIImage(named: "navBlue.jpg"), for: .default)
 //        navigationBar.barTintColor = ddBlueColor()
         
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white,NSAttributedStringKey.font:UIFont.systemFont(ofSize: ddSpacing(34))];
- 
+        navigationBar.isTranslucent = false;//不透明
          
     }
  
