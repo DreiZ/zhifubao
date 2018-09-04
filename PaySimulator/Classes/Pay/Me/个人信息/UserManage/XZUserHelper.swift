@@ -29,22 +29,23 @@ class XZUserHelper: NSObject {
 //MARK:--归档解档
 extension XZUserHelper {
     
-     func getUserInfo() -> XZUserHelper {
+        class func getUserInfo() -> XZUserHelper {
         let userDefaut = UserDefaults.standard
-        XZUserHelper.sharedUserHelper.iconImage = userDefaut.object(forKey: "iconImage") as? String
-        XZUserHelper.sharedUserHelper.userName = userDefaut.object(forKey: "userName") as? String
-        XZUserHelper.sharedUserHelper.payAccount = userDefaut.object(forKey: "payAccount") as? String
-        XZUserHelper.sharedUserHelper.VIPLevel = userDefaut.object(forKey: "VIPLevel") as? String
-        return XZUserHelper.sharedUserHelper
+        let user =  XZUserHelper.sharedUserHelper
+        user.iconImage = userDefaut.object(forKey: "iconImage") as? String
+        user.userName = userDefaut.object(forKey: "userName") as? String
+        user.payAccount = userDefaut.object(forKey: "payAccount") as? String
+        user.VIPLevel = userDefaut.object(forKey: "VIPLevel") as? String
+        return user
     }
     
-    func savrUserInfo() {
+        func savrUserInfo() {
         let userDefaut = UserDefaults.standard
-       
-        userDefaut.set(self.iconImage, forKey: "iconImage")
-        userDefaut.set(self.userName, forKey: "userName")
-        userDefaut.set(self.payAccount, forKey: "payAccount")
-        userDefaut.set(self.VIPLevel, forKey: "VIPLevel")
+        let user =  XZUserHelper.sharedUserHelper
+        userDefaut.set(user.iconImage, forKey: "iconImage")
+        userDefaut.set(user.userName, forKey: "userName")
+        userDefaut.set(user.payAccount, forKey: "payAccount")
+        userDefaut.set(user.VIPLevel, forKey: "VIPLevel")
         userDefaut.synchronize()
     }
     

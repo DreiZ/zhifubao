@@ -14,6 +14,8 @@
 		E3461801213BC041007C2AA6 /* XZUserInfoTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34617FF213BC041007C2AA6 /* XZUserInfoTabVC.swift */; };
 		E3461805213BC655007C2AA6 /* XZPayUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3461803213BC655007C2AA6 /* XZPayUserInfoCell.swift */; };
 		E3461806213BC655007C2AA6 /* XZPayUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3461804213BC655007C2AA6 /* XZPayUserInfoCell.xib */; };
+		E34E1526213E5E0A00D23547 /* XZEditUserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E1525213E5E0A00D23547 /* XZEditUserInfoVC.swift */; };
+		E34E152E213E784700D23547 /* XZBaseNavItemBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E152D213E784700D23547 /* XZBaseNavItemBtn.swift */; };
 		E35B5D78213CC01300E59A88 /* XZMyPhotoManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35B5D77213CC01300E59A88 /* XZMyPhotoManage.swift */; };
 		E35B5D7B213D2C5300E59A88 /* XZUserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35B5D7A213D2C5300E59A88 /* XZUserHelper.swift */; };
 		E36048412137986700ECF65F /* XZBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36048402137986700ECF65F /* XZBaseVC.swift */; };
@@ -70,6 +72,8 @@
 		E34617FF213BC041007C2AA6 /* XZUserInfoTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZUserInfoTabVC.swift; sourceTree = "<group>"; };
 		E3461803213BC655007C2AA6 /* XZPayUserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayUserInfoCell.swift; sourceTree = "<group>"; };
 		E3461804213BC655007C2AA6 /* XZPayUserInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XZPayUserInfoCell.xib; sourceTree = "<group>"; };
+		E34E1525213E5E0A00D23547 /* XZEditUserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZEditUserInfoVC.swift; sourceTree = "<group>"; };
+		E34E152D213E784700D23547 /* XZBaseNavItemBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseNavItemBtn.swift; sourceTree = "<group>"; };
 		E35B5D77213CC01300E59A88 /* XZMyPhotoManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMyPhotoManage.swift; sourceTree = "<group>"; };
 		E35B5D7A213D2C5300E59A88 /* XZUserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZUserHelper.swift; sourceTree = "<group>"; };
 		E36048402137986700ECF65F /* XZBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseVC.swift; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				E34617FF213BC041007C2AA6 /* XZUserInfoTabVC.swift */,
+				E34E1525213E5E0A00D23547 /* XZEditUserInfoVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -610,6 +615,7 @@
 			isa = PBXGroup;
 			children = (
 				E3D98F4D2136414A00887FAF /* XZMainButton.swift */,
+				E34E152D213E784700D23547 /* XZBaseNavItemBtn.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -768,12 +774,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PaySimulator/Pods-PaySimulator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
@@ -812,8 +822,10 @@
 				E34617F5213B873B007C2AA6 /* XZPayMeTableViewController.swift in Sources */,
 				E360484A2137A0C700ECF65F /* XZPayMainTabBarVC.swift in Sources */,
 				E34617F7213B89F2007C2AA6 /* XZPayMeHeaderView.swift in Sources */,
+				E34E1526213E5E0A00D23547 /* XZEditUserInfoVC.swift in Sources */,
 				E3D98F4521363F6100887FAF /* AppDelegate.swift in Sources */,
 				E3461801213BC041007C2AA6 /* XZUserInfoTabVC.swift in Sources */,
+				E34E152E213E784700D23547 /* XZBaseNavItemBtn.swift in Sources */,
 				E360485E2137A27800ECF65F /* XZPayPraiseVC.swift in Sources */,
 				E3D98F512136426200887FAF /* UIView+KRExtension.m in Sources */,
 				E3461805213BC655007C2AA6 /* XZPayUserInfoCell.swift in Sources */,

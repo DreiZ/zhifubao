@@ -37,9 +37,21 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uv7-G4-AAx">
+                        <rect key="frame" x="111" y="7.5" width="160" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="160" id="dRW-fU-fIF"/>
+                            <constraint firstAttribute="height" constant="40" id="hzq-2X-mDJ"/>
+                        </constraints>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                 </subviews>
                 <constraints>
                     <constraint firstItem="2DC-HN-Sie" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Du2-N0-Fwv"/>
+                    <constraint firstAttribute="trailing" secondItem="uv7-G4-AAx" secondAttribute="trailing" constant="15" id="Efs-l2-Ru9"/>
+                    <constraint firstItem="uv7-G4-AAx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ex0-m0-OR1"/>
                     <constraint firstAttribute="trailing" secondItem="2DC-HN-Sie" secondAttribute="trailing" constant="15" id="IN6-DY-2cz"/>
                     <constraint firstItem="xo5-xj-Gi9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eb4-vs-I9J"/>
                     <constraint firstItem="Rgh-j3-qs0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fRq-lL-wIo"/>
@@ -50,6 +62,7 @@
             <connections>
                 <outlet property="detailLabel" destination="Rgh-j3-qs0" id="mif-MO-MRR"/>
                 <outlet property="iconImage" destination="2DC-HN-Sie" id="fde-Bg-gns"/>
+                <outlet property="inputTF" destination="uv7-G4-AAx" id="ZBz-bU-WJR"/>
                 <outlet property="titleLabel" destination="xo5-xj-Gi9" id="DTg-Ig-2AA"/>
             </connections>
             <point key="canvasLocation" x="-25" y="57.5"/>

@@ -17,7 +17,23 @@ class XZUserInfoTabVC: XZBaseVC {
     private lazy var dataList : [String] = {
        return ["头像","昵称","支付宝账号","会员等级"]
     }()
+    private var rightBtn : UIButton?
+    private var isEditingUserinfo: Bool = false{
+        didSet{
+            rightBtn?.isHidden = !isEditingUserinfo
+            self.myTableView.reloadData()
+        }
+    }
+    //用户名
+    private var  userNameLB : UILabel?
+    //支付宝账号
+    private var  payAccountLB : UILabel?
     
+    private var currentIndexPathArray : [IndexPath] = {
+        let firstIndex = IndexPath(row: 1, section: 0);
+        let secondIndex = IndexPath(row: 2, section: 0)
+        return  [firstIndex,secondIndex]
+    }()
     private var iconImage : UIImageView?
     
     private lazy var myTableView : UITableView = {[weak self] in
@@ -34,6 +50,8 @@ class XZUserInfoTabVC: XZBaseVC {
 
         //设置UI
         setupUI()
+        //设置nav右侧按钮
+        setupNavBtn()
         
     }
 
@@ -55,6 +73,28 @@ extension XZUserInfoTabVC{
         }
     }
     
+    
+    //导航栏右侧按钮
+    private func setupNavBtn(){
+        
+        rightBtn = UIButton()
+        rightBtn?.setTitleColor(UIColor.white, for: .normal);
+        rightBtn?.setTitle("确定", for: .normal);
+        rightBtn?.addTarget(self, action: #selector(rightBtnClick(sender:)), for: .touchUpInside)
+        rightBtn?.titleLabel?.font = UIFont.systemFont(ofSize: 15);
+        rightBtn?.frame = CGRect(x: 0, y: 0, width: 50, height: 30)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn!)
+        rightBtn?.isHidden = !isEditingUserinfo
+        
+    }
+    
+    @objc private func rightBtnClick(sender:UIButton){
+        
+        isEditingUserinfo  = false
+        myTableView.reloadData()
+    }
+    
+    
 }
     // MARK: - Table view data source
 extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
@@ -67,11 +107,12 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: XZPayUserInfoCellID)  as! XZPayUserInfoCell;
-        if indexPath.row == 0 {//显示 头像
+        if indexPath.row == 0 {//显示头像
             cell.detailLabel.isHidden = true;
+            
             cell.iconImage.isHidden = false;
              iconImage = cell.iconImage
-            let userInfo = XZUserHelper.sharedUserHelper.getUserInfo();
+            let userInfo = XZUserHelper.getUserInfo();
             
             guard let userImg = userInfo.iconImage else {
                 cell.iconImage.image = UIImage(named: "baidu")
@@ -82,12 +123,19 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
             cell.iconImage.image = UIImage(data: imgData!)
             
            
-        }else{
+        }else {
             cell.detailLabel.isHidden = false;
             cell.iconImage.isHidden = true;
         }
+  
+        if indexPath.row == 1 {//用户名
+            self.userNameLB = cell.detailLabel
+        }else if indexPath.row == 2{
+            self.payAccountLB = cell.detailLabel
+        }
+       
         cell.titleLabel.text = dataList[indexPath.row];
-        
+       
         return cell
         
     }
@@ -113,10 +161,26 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
             
             
         }else if indexPath.row == 1{//修改昵称
+ 
+            let editVC = XZEditUserInfoVC()
+            editVC.textField.text = self.userNameLB?.text
+            editVC.navigationItem.title = "修改姓名"
+            editVC.postValueBlock = {  [weak  self] (value : String) in
+                
+                self?.userNameLB?.text = value
+            }
+            self.navigationController?.pushViewController(editVC, animated: true)
             
+         
         }else if indexPath.row == 2{//修改账号
             
-        }else if indexPath.row == 3{//修改会员等级
+            let editVC = XZEditUserInfoVC()
+            editVC.textField.text = self.userNameLB?.text
+            editVC.navigationItem.title = "修改账号"
+            self.navigationController?.pushViewController(editVC, animated: true)
+            
+        }else{//除了 头像 的cell
+            
             
         }
         

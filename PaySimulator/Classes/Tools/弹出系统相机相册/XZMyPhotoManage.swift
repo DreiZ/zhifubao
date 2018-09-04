@@ -37,6 +37,7 @@ class XZMyPhotoManage : NSObject{
         let altVC = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet);
         let albumAction = UIAlertAction(title: "相册中选择", style: .`default`, handler: { (action : UIAlertAction) in
             weakSelf?.initPhotoPicker()
+             
         })
             
         let cameraAction = UIAlertAction(title: "拍照", style: .default) { (action : UIAlertAction) in

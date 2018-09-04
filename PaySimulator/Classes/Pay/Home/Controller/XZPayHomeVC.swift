@@ -15,6 +15,7 @@ class XZPayHomeVC: XZBaseVC {
 
         // Do any additional setup after loading the view.
         self.view.backgroundColor = ddRandomColor()
+        
     }
 
     override func didReceiveMemoryWarning() {

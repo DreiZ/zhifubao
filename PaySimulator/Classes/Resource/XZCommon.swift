@@ -9,16 +9,16 @@
 import Foundation
 import UIKit
 
-let kStatusBarH : CGFloat = 20;
-let kNavigationBarH : CGFloat = 44;
+let kStatusBarH : CGFloat = 20
+let kNavigationBarH : CGFloat = 44
 
 /**以5s为标准*/
-let currentPX : CGFloat = 640;
+let currentPX : CGFloat = 640
 
 //屏幕宽度
-let kWindowW :  CGFloat  = UIScreen.main.bounds.size.width;
+let kWindowW :  CGFloat  = UIScreen.main.bounds.size.width
 //屏幕高度
-let kWindowH :  CGFloat  = UIScreen.main.bounds.size.height;
+let kWindowH :  CGFloat  = UIScreen.main.bounds.size.height
 /**顶部位置*/
 let DDSafeAreaTopHeight : CGFloat = (kWindowH == 812.0 ? 88 :64 )
 
@@ -29,6 +29,48 @@ let DDTabBarHeight : CGFloat = (kWindowH == 812.0 ? (34 + 44) : 44)
 
 /**app版本号*/
 let kAPPVersion = (Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String)
+
+/**默认一般文字大小*/
+let kLabelFont : CGFloat = 14
+/**tableView背景颜色*/
+let ddTableColor = UIColor.groupTableViewBackground
+/**16进制颜色转换*/
+
+func ddColorFromHex(_ colorStr:String) -> UIColor {
+    
+    var color = UIColor.red
+    var cStr : String = colorStr.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
+    
+    if cStr.hasPrefix("#") {
+        let index = cStr.index(after: cStr.startIndex)
+        cStr = cStr.substring(from: index)
+ 
+//        'substring(from:)' is deprecated: Please use String slicing subscript with a 'partial range from' operator.
+    }
+    if cStr.characters.count != 6 {
+        return UIColor.black
+    }
+    
+    let rRange = cStr.startIndex ..< cStr.index(cStr.startIndex, offsetBy: 2)
+    let rStr = cStr.substring(with: rRange)
+    
+    let gRange = cStr.index(cStr.startIndex, offsetBy: 2) ..< cStr.index(cStr.startIndex, offsetBy: 4)
+    let gStr = cStr.substring(with: gRange)
+    
+    let bIndex = cStr.index(cStr.endIndex, offsetBy: -2)
+    let bStr = cStr.substring(from: bIndex)
+    
+    var r:CUnsignedInt = 0, g:CUnsignedInt = 0, b:CUnsignedInt = 0;
+    Scanner(string: rStr).scanHexInt32(&r)
+    Scanner(string: gStr).scanHexInt32(&g)
+    Scanner(string: bStr).scanHexInt32(&b)
+    
+    color = UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1))
+    
+    return color
+}
+
+
 
 
 
@@ -71,14 +113,15 @@ func DDLog  (_ Log: Any...,file : String = #file, lineNumber : Int = #line ){
     #if DEBUG
     
     let fileName = (file as NSString).lastPathComponent
-//    let method : String = #function
+    //    let method : String = #function
     
     print("[\(Date()) \(fileName):- line:\(lineNumber)] - \(Log)" )
     
     #endif
     
-   
+    
     
 }
+
 
 
