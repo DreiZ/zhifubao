@@ -13,19 +13,12 @@ class XZMainHomeVC: XZBaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor.init(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+   
     
     //MARK:--storyboard按钮点击事件，按钮tag值已经在xib中添加 顺序 0～5
-    
-    
-    
     @IBAction func clickMainButton(_ sender: XZMainButton) {
         
         switch sender.tag {
@@ -55,18 +48,6 @@ class XZMainHomeVC: XZBaseVC {
         default:
             break
         }
-        
            DDLog(sender.tag)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -51,7 +51,7 @@
                                             <constraint firstAttribute="width" secondItem="xd0-vo-9Mh" secondAttribute="height" multiplier="1:1" id="dv1-kD-If0"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                        <state key="normal" title="支付模拟器" image="pinweia">
+                                        <state key="normal" title="支付模拟器" image="icon_alipay">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -61,7 +61,7 @@
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGo-yR-r9y" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
                                         <rect key="frame" x="94" y="0.0" width="94" height="94"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                        <state key="normal" title="转账" image="pinweia">
+                                        <state key="normal" title="转账" image="icon_zhuanzhang">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -71,7 +71,7 @@
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAL-mX-ufX" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
                                         <rect key="frame" x="188" y="0.0" width="94" height="94"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                        <state key="normal" title="余额" image="pinweia">
+                                        <state key="normal" title="余额" image="icon_yue">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -81,7 +81,7 @@
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33h-rO-A42" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
                                         <rect key="frame" x="282" y="0.0" width="94" height="94"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                        <state key="normal" title="收款账单" image="pinweia">
+                                        <state key="normal" title="收款账单" image="icon_shoukuanzhangdan">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -91,7 +91,7 @@
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oo-KO-nzi" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="94" width="94" height="94"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                        <state key="normal" title="红包" image="pinweia">
+                                        <state key="normal" title="红包" image="icon_hongbao">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -101,7 +101,7 @@
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ny9-Pl-zCW" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
                                         <rect key="frame" x="94" y="94" width="94" height="94"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                        <state key="normal" title="提现账单" image="pinweia">
+                                        <state key="normal" title="提现账单" image="icon_tixianzhangdan">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -109,7 +109,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="HGo-yR-r9y" firstAttribute="height" secondItem="xd0-vo-9Mh" secondAttribute="height" id="0Tm-fw-6Tp"/>
                                     <constraint firstItem="xd0-vo-9Mh" firstAttribute="width" secondItem="pmx-Pj-Wh5" secondAttribute="width" multiplier="1/4" id="0jg-0d-dXm"/>
@@ -138,7 +138,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="pmx-Pj-Wh5" secondAttribute="trailing" id="sh9-KI-ll0"/>
                             <constraint firstItem="pmx-Pj-Wh5" firstAttribute="leading" secondItem="ntU-80-WrF" secondAttribute="leading" id="xuw-m6-bHN"/>
@@ -193,7 +193,7 @@
         <scene sceneID="J7E-mB-awH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WM1-8g-fjg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="更多" id="Fo1-2c-Zks"/>
+                    <tabBarItem key="tabBarItem" title="更多" image="icon_gengduo" selectedImage="icon_gengduo" id="Fo1-2c-Zks"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OAd-aD-sjS">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -212,7 +212,7 @@
         <scene sceneID="9J4-JT-jvU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vax-kH-gIF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" id="89W-bF-2HW"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="icon_shouye" selectedImage="icon_shouye" id="89W-bF-2HW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cGZ-zv-6FP">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -231,7 +231,7 @@
         <scene sceneID="z2g-ya-ssq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="um6-cw-g0H" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" id="8s6-GC-HFf"/>
+                    <tabBarItem key="tabBarItem" title="我" image="icon_wode" selectedImage="icon_wode" id="8s6-GC-HFf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x9d-uo-Mwf">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -248,6 +248,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pinweia" width="25" height="25"/>
+        <image name="icon_alipay" width="50" height="50"/>
+        <image name="icon_gengduo" width="16" height="16"/>
+        <image name="icon_hongbao" width="50" height="50"/>
+        <image name="icon_shoukuanzhangdan" width="50" height="50"/>
+        <image name="icon_shouye" width="25" height="25"/>
+        <image name="icon_tixianzhangdan" width="50" height="50"/>
+        <image name="icon_wode" width="25" height="25"/>
+        <image name="icon_yue" width="50" height="50"/>
+        <image name="icon_zhuanzhang" width="50" height="50"/>
     </resources>
 </document>
