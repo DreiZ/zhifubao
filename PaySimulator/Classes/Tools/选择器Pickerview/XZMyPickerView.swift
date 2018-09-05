@@ -1,0 +1,192 @@
+//
+//  XZMyPickerView.swift
+//  PaySimulator
+//
+//  Created by 再出发 on 2018/9/5.
+//  Copyright © 2018年 再出发. All rights reserved.
+//
+
+import UIKit
+
+//contentView区域的高度
+let kContentViewH : CGFloat = 300
+
+
+class XZMyPickerView: UIView {
+
+    //公开数据源属性，外界传入
+    var componentsArray : [[String]]?//多少列
+    var rowArray : [String]? = ["123","1   ","0","5",]//多少行
+    
+    
+    
+    
+    //白色contentView
+    lazy var myContentView : UIView = {
+        let myContentView = UIView(frame: CGRect(x: 0, y: kWindowH, width: kWindowW, height: kContentViewH))
+//        myContentView.backgroundColor = ddRandomColor()//随机颜色
+        myContentView.backgroundColor = ddColor(255, 255, 255)//随机颜色
+        myPickerView.isUserInteractionEnabled = false;
+        myContentView.addSubview(myPickerView)
+        myPickerView.snp.makeConstraints({ (make) in
+            make.top.left.equalTo(40)
+            make.bottom.right.equalTo(-40)
+        })
+        //确认取消按钮
+        let canlecBtn = UIButton()
+        canlecBtn.setTitle("取消", for: .normal)
+        canlecBtn.setTitleColor(UIColor.darkGray, for: .normal)
+        canlecBtn.titleLabel?.font = UIFont.systemFont(ofSize: 16);
+        canlecBtn.addTarget(self, action: #selector(<#T##@objc method#>), for: <#T##UIControlEvents#>)
+        
+        return myContentView
+    }()
+    
+    //懒加载pickkerView
+    private lazy var  myPickerView : UIPickerView = {[weak self] in
+        let myPickerView = UIPickerView()
+        myPickerView.delegate = self
+        myPickerView.dataSource = self
+//        myPickerView.showsSelectionIndicator = true//选择指示
+        myPickerView.backgroundColor = UIColor.white
+        myPickerView.selectedRow(inComponent: 0)
+        return myPickerView
+    }()
+    
+    //初始化
+    override init(frame: CGRect) {
+       super.init(frame: frame)
+       backgroundColor = ddColorA(4, 4, 4, 100)//黑色遮罩
+       self.isUserInteractionEnabled = true
+       //添加遮罩点击事件
+        let tap = UITapGestureRecognizer(target: self, action: #selector(clickBJView))
+        self.addGestureRecognizer(tap)
+ 
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+//MARK:--UI相关
+extension XZMyPickerView {
+    
+    private func setupUI(){
+        addSubview(myContentView)
+        
+    }
+    
+    //外部调用show方法
+    func pickerShow(superView : UIView?){
+        if superView == nil {
+            return
+        }
+        
+        superView?.addSubview(self)
+        self.addSubview(myContentView)
+        
+ 
+        UIView.animate(withDuration: 0.2, animations: {
+            
+            self.alpha = 1.0
+            self.myContentView.frame = CGRect(x: 0, y: kWindowH-kContentViewH, width: kWindowW, height: kContentViewH)
+            
+        }) { (finish) in
+            
+//            self.myPickerView.reloadAllComponents()
+        }
+    }
+    
+    //外部dismiss方法
+    func pickerDismiss(){
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.myContentView.frame = CGRect(x: 0, y: kWindowH, width: kWindowW, height: kContentViewH)
+            self.alpha = 0;
+        }) { (finish) in
+            
+            if finish {
+                self.removeFromSuperview()
+                self.myContentView.removeFromSuperview()
+            }
+            
+        }
+    }
+    
+    //黑色背景点击事件
+    @objc private func clickBJView(){
+        pickerDismiss()
+    }
+    
+    
+}
+
+//MARK:--pickerViewDataSource
+extension  XZMyPickerView : UIPickerViewDelegate,UIPickerViewDataSource{
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+ 
+        return componentsArray?.count ?? 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+       
+ 
+        let rowArray = componentsArray![component]
+ 
+        return rowArray.count
+        
+    }
+    //返回内容
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let rowArray = componentsArray![component]
+        let str = rowArray[row]
+        DDLog(str)
+        return str
+    }
+    //当前选择下标
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        DDLog(row)
+    }
+    //设置 每组宽度
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        return 300
+    }
+    //行高
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 40.0
+    }
+    //自定义每一行视图
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
+        let myView = UIView()
+        let lable = UILabel()
+        lable.textAlignment = .center
+        lable.font = UIFont.systemFont(ofSize: 16)
+        let rowArray = componentsArray![component]
+        lable.text = rowArray[row]
+        DDLog(rowArray[row])
+        myView.addSubview(lable)
+        lable.snp.makeConstraints { (make) in
+            make.edges.equalTo(myView)
+        }
+        //隐藏上下竖线
+        let line1 = pickerView.subviews[1]
+        line1.backgroundColor = UIColor.darkGray
+        
+        let line2 = pickerView.subviews[2]
+        line2.backgroundColor = UIColor.darkGray
+ 
+        return myView
+        
+    }
+    
+    
+    
+}
+
+
+
+

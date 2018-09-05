@@ -87,6 +87,9 @@ extension XZEditUserInfoVC{
             return
         }
         
+       
+        
+        
         postValueBlock(textField.text ?? "")
         self.navigationController?.popViewController(animated: true)
         

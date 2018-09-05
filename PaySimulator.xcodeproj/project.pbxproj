@@ -32,6 +32,7 @@
 		E36048602137A29200ECF65F /* PayPraise.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E360485F2137A29200ECF65F /* PayPraise.storyboard */; };
 		E36048622137A2B100ECF65F /* XZPayMeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36048612137A2B100ECF65F /* XZPayMeVC.swift */; };
 		E36048642137A32E00ECF65F /* XZBaseNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36048632137A32E00ECF65F /* XZBaseNavigationVC.swift */; };
+		E3A9AADF213F663A00FAEEAF /* XZMyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9AADE213F663A00FAEEAF /* XZMyPickerView.swift */; };
 		E3D98EF6213638C400887FAF /* PaySimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D98EF5213638C400887FAF /* PaySimulatorTests.swift */; };
 		E3D98F01213638C400887FAF /* PaySimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D98F00213638C400887FAF /* PaySimulatorUITests.swift */; };
 		E3D98F4121363F6100887FAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D98F3821363F6100887FAF /* ViewController.swift */; };
@@ -90,6 +91,7 @@
 		E360485F2137A29200ECF65F /* PayPraise.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PayPraise.storyboard; sourceTree = "<group>"; };
 		E36048612137A2B100ECF65F /* XZPayMeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayMeVC.swift; sourceTree = "<group>"; };
 		E36048632137A32E00ECF65F /* XZBaseNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseNavigationVC.swift; sourceTree = "<group>"; };
+		E3A9AADE213F663A00FAEEAF /* XZMyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMyPickerView.swift; sourceTree = "<group>"; };
 		E3D98EDD213638C300887FAF /* PaySimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaySimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D98EF1213638C400887FAF /* PaySimulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaySimulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D98EF5213638C400887FAF /* PaySimulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaySimulatorTests.swift; sourceTree = "<group>"; };
@@ -219,6 +221,14 @@
 				E36048492137A0C700ECF65F /* XZPayMainTabBarVC.swift */,
 			);
 			path = PayManTabbarVC;
+			sourceTree = "<group>";
+		};
+		E3A9AADD213F64D100FAEEAF /* 选择器Pickerview */ = {
+			isa = PBXGroup;
+			children = (
+				E3A9AADE213F663A00FAEEAF /* XZMyPickerView.swift */,
+			);
+			path = "选择器Pickerview";
 			sourceTree = "<group>";
 		};
 		E3D98ED4213638C300887FAF = {
@@ -580,6 +590,7 @@
 			isa = PBXGroup;
 			children = (
 				E3461807213BEBB3007C2AA6 /* 弹出系统相机相册 */,
+				E3A9AADD213F64D100FAEEAF /* 选择器Pickerview */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -823,6 +834,7 @@
 				E360484A2137A0C700ECF65F /* XZPayMainTabBarVC.swift in Sources */,
 				E34617F7213B89F2007C2AA6 /* XZPayMeHeaderView.swift in Sources */,
 				E34E1526213E5E0A00D23547 /* XZEditUserInfoVC.swift in Sources */,
+				E3A9AADF213F663A00FAEEAF /* XZMyPickerView.swift in Sources */,
 				E3D98F4521363F6100887FAF /* AppDelegate.swift in Sources */,
 				E3461801213BC041007C2AA6 /* XZUserInfoTabVC.swift in Sources */,
 				E34E152E213E784700D23547 /* XZBaseNavItemBtn.swift in Sources */,

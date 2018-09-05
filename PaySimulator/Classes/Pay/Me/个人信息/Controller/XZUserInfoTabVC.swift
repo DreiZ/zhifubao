@@ -29,13 +29,16 @@ class XZUserInfoTabVC: XZBaseVC {
     //支付宝账号
     private var  payAccountLB : UILabel?
     
-    private var currentIndexPathArray : [IndexPath] = {
-        let firstIndex = IndexPath(row: 1, section: 0);
-        let secondIndex = IndexPath(row: 2, section: 0)
-        return  [firstIndex,secondIndex]
-    }()
+   
     private var iconImage : UIImageView?
-    
+    //懒加载pickerView
+    private lazy var myPickerView : XZMyPickerView = {[weak self] in
+        
+        let  myPickerView = XZMyPickerView(frame:CGRect(x: 0, y: 0, width: kWindowW, height: kWindowH))
+        myPickerView.componentsArray = [["123","22","741","963"]]
+        return myPickerView
+    }()
+    //懒加载tableView
     private lazy var myTableView : UITableView = {[weak self] in
         let myTableView = UITableView(frame: CGRect.zero, style: .grouped);
         myTableView.delegate = self;
@@ -47,7 +50,7 @@ class XZUserInfoTabVC: XZBaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+ 
         //设置UI
         setupUI()
         //设置nav右侧按钮
@@ -168,6 +171,7 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
             editVC.postValueBlock = {  [weak  self] (value : String) in
                 
                 self?.userNameLB?.text = value
+                 XZUserHelper.getUserInfo().userName = value
             }
             self.navigationController?.pushViewController(editVC, animated: true)
             
@@ -175,12 +179,19 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
         }else if indexPath.row == 2{//修改账号
             
             let editVC = XZEditUserInfoVC()
-            editVC.textField.text = self.userNameLB?.text
+            editVC.textField.text = self.payAccountLB?.text
+            editVC.postValueBlock = {  [weak  self] (value : String) in
+                
+                self?.payAccountLB?.text = value
+                XZUserHelper.getUserInfo().payAccount = value
+            }
             editVC.navigationItem.title = "修改账号"
             self.navigationController?.pushViewController(editVC, animated: true)
             
-        }else{//除了 头像 的cell
+        }else  if indexPath.row == 3{//修改会员等级
+            let widonw = UIApplication.shared.keyWindow
             
+            myPickerView.pickerShow(superView: widonw)
             
         }
         
