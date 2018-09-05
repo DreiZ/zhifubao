@@ -87,10 +87,9 @@ extension XZEditUserInfoVC{
             return
         }
         
+        postValueBlock(textField.text ?? "")
        
         
-        
-        postValueBlock(textField.text ?? "")
         self.navigationController?.popViewController(animated: true)
         
     }
@@ -98,7 +97,7 @@ extension XZEditUserInfoVC{
     //textField监听
     @objc private func textEditChange(textField:UITextField){
         
-        print(textField.text ?? "163")
+        print(textField.text ?? "")
         
         if textStr ==  textField.text {
             rightBtn?.isEnabled = false

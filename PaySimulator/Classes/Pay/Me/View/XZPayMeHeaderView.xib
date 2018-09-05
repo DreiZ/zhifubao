@@ -22,7 +22,7 @@
                         <constraint firstAttribute="width" secondItem="dCq-P9-6Hl" secondAttribute="height" multiplier="1:1" id="Bks-Ao-cnz"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pinweia" translatesAutoresizingMaskIntoConstraints="NO" id="8Qi-Nc-m1x">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_xinhao" translatesAutoresizingMaskIntoConstraints="NO" id="8Qi-Nc-m1x">
                     <rect key="frame" x="63" y="43" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="20" id="8I0-CQ-HqJ"/>
@@ -35,8 +35,8 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="136****419@qq.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVR-6X-bHD">
-                    <rect key="frame" x="89" y="35.5" width="125" height="16"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="             " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVR-6X-bHD">
+                    <rect key="frame" x="89" y="35.5" width="47" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -72,7 +72,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="accountLabel" destination="aVR-6X-bHD" id="340-tI-lax"/>
-                <outlet property="iocnImage" destination="dCq-P9-6Hl" id="b9d-38-zcr"/>
+                <outlet property="iconImage" destination="dCq-P9-6Hl" id="OXh-De-2Oe"/>
                 <outlet property="nameLabel" destination="kIR-o9-Hzz" id="J5U-er-Ne0"/>
                 <outlet property="starsImage" destination="8Qi-Nc-m1x" id="Dqs-nj-B42"/>
             </connections>
@@ -81,7 +81,7 @@
     </objects>
     <resources>
         <image name="baidu" width="38" height="38"/>
-        <image name="pinweia" width="25" height="25"/>
+        <image name="icon_xinhao" width="19" height="19"/>
         <image name="右" width="20" height="20"/>
     </resources>
 </document>
