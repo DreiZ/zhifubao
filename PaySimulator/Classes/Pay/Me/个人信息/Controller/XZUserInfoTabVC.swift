@@ -58,12 +58,12 @@ class XZUserInfoTabVC: XZBaseViewController {
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+       super.viewDidLoad()
  
         //设置UI
         setupUI()
         //设置nav右侧按钮
-        setupNavBtn()
+       setupNavBtn()
         
     }
 
@@ -85,22 +85,34 @@ extension XZUserInfoTabVC{
     private func setupUI() ->(){
         view.addSubview(myTableView);
         myTableView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.view);
+            make.right.left.bottom.equalTo(view)
+            make.top.equalTo(DDSafeAreaTopHeight);
         }
     }
     
     
     //导航栏右侧按钮
+    
+    
+    
     private func setupNavBtn(){
         
-        rightBtn = UIButton()
-        rightBtn?.setTitleColor(UIColor.white, for: .normal);
-        rightBtn?.setTitle("确定", for: .normal);
-        rightBtn?.addTarget(self, action: #selector(rightBtnClick(sender:)), for: .touchUpInside)
-        rightBtn?.titleLabel?.font = UIFont.systemFont(ofSize: 15);
-        rightBtn?.frame = CGRect(x: 0, y: 0, width: 50, height: 30)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn!)
-        rightBtn?.isHidden = !isEditingUserinfo
+        self.navBar.title = "个人信息"
+        self.navBar.wr_setRightButton(title: "确定", titleColor: ddBlueColor())
+        self.navBar.onClickRightButton = {[weak self] in 
+            
+            DDLog("navBar")
+            self?.isEditingUserinfo  = false
+            self?.myTableView.reloadData()
+        }
+//        rightBtn = UIButton()
+//        rightBtn?.setTitleColor(UIColor.white, for: .normal);
+//        rightBtn?.setTitle("确定", for: .normal);
+//        rightBtn?.addTarget(self, action: #selector(rightBtnClick(sender:)), for: .touchUpInside)
+//        rightBtn?.titleLabel?.font = UIFont.systemFont(ofSize: 15);
+//        rightBtn?.frame = CGRect(x: 0, y: 0, width: 50, height: 30)
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn!)
+//        rightBtn?.isHidden = !isEditingUserinfo
         
     }
     
