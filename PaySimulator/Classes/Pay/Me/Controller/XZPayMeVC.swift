@@ -21,12 +21,23 @@ class XZPayMeVC: XZBaseVC {
         //导航栏
         setupNavigationUI()
         
-        
+        let navView = XZPayMeNavView.loadNavView()
+        navView.frame = CGRect(x: 0, y: 0, width: kWindowW, height: 64)
+        self.view.addSubview(navView)
     }
 
    
- 
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // 下面两种方法其实有点区别的，有空可以琢磨一下
+        if animated {
+            // 隐藏导航栏有动画
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+        } else {
+            // 隐藏导航栏没有动画
+            self.navigationController?.isNavigationBarHidden = true
+        }
+    }
 }
 
 //MARK:--UI相关方法
