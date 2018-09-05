@@ -40,16 +40,19 @@ class XZPayMainTabBarVC: UITabBarController,UITabBarControllerDelegate {
     
     //tabbar点击事件 代理方法，仅仅朋友和我的 控制器可以点击显示，不是就直接反会false
     public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool{
-        
-    
-        if viewController .isEqual (viewControllers?[0])  || viewController .isEqual (viewControllers?[1]) || viewController .isEqual (viewControllers?[2]){
+        if viewController .isEqual (viewControllers?[1]) || viewController .isEqual (viewControllers?[2]){
             return false
         }
-        
-        
+
         return true
-        
-        
     }
 
+    public func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if viewController .isEqual (viewControllers?[0])  {
+            let  keyWindow = UIApplication.shared.keyWindow;
+            let tabBarVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+            
+            keyWindow?.rootViewController = tabBarVC;
+        }
+    }
 }
