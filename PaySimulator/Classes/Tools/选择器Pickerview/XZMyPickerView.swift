@@ -37,7 +37,7 @@ class XZMyPickerView: UIView {
         canlecBtn.setTitle("取消", for: .normal)
         canlecBtn.setTitleColor(UIColor.darkGray, for: .normal)
         canlecBtn.titleLabel?.font = UIFont.systemFont(ofSize: 16);
-        canlecBtn.addTarget(self, action: #selector(<#T##@objc method#>), for: <#T##UIControlEvents#>)
+//        canlecBtn.addTarget(self, action: #selector(<#T##@objc method#>), for: <#T##UIControlEvents#>)
         
         return myContentView
     }()

@@ -22,7 +22,7 @@ class XZPayMeVC: XZBaseVC {
         setupNavigationUI()
         
         let navView = XZPayMeNavView.loadNavView()
-        navView.frame = CGRect(x: 0, y: 0, width: kWindowW, height: 64)
+        navView.frame = CGRect(x: 0, y: 0, width: kWindowW, height: DDSafeAreaTopHeight)
         self.view.addSubview(navView)
     }
 
@@ -36,6 +36,16 @@ class XZPayMeVC: XZBaseVC {
         } else {
             // 隐藏导航栏没有动画
             self.navigationController?.isNavigationBarHidden = true
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if animated {
+            // 隐藏导航栏有动画
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+        } else {
+            // 隐藏导航栏没有动画
+            self.navigationController?.isNavigationBarHidden = false
         }
     }
 }

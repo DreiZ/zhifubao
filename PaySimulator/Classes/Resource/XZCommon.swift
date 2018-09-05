@@ -44,6 +44,7 @@ func ddColorFromHex(_ colorStr:String) -> UIColor {
     if cStr.hasPrefix("#") {
         let index = cStr.index(after: cStr.startIndex)
         cStr = cStr.substring(from: index)
+        
  
 //        'substring(from:)' is deprecated: Please use String slicing subscript with a 'partial range from' operator.
     }
