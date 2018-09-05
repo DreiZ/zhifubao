@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E085D67213FD41E003B0918 /* WRCustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D65213FD41E003B0918 /* WRCustomNavigationBar.swift */; };
+		5E085D68213FD41E003B0918 /* WRNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D66213FD41E003B0918 /* WRNavigationBar.swift */; };
+		5E085D6A213FD444003B0918 /* XZBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D69213FD444003B0918 /* XZBaseViewController.swift */; };
+		5E085D6C213FD462003B0918 /* XZReceivablesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D6B213FD462003B0918 /* XZReceivablesViewController.swift */; };
 		BDCB71468CB2417485916285 /* Pods_PaySimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146A184C35B4502F43F0D60E /* Pods_PaySimulator.framework */; };
 		E34617F5213B873B007C2AA6 /* XZPayMeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34617F4213B873B007C2AA6 /* XZPayMeTableViewController.swift */; };
 		E34617F7213B89F2007C2AA6 /* XZPayMeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34617F6213B89F2007C2AA6 /* XZPayMeHeaderView.swift */; };
@@ -68,6 +72,10 @@
 /* Begin PBXFileReference section */
 		1148BAE4CDE60ADD2009EBA1 /* Pods-PaySimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaySimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaySimulator/Pods-PaySimulator.release.xcconfig"; sourceTree = "<group>"; };
 		146A184C35B4502F43F0D60E /* Pods_PaySimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaySimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E085D65213FD41E003B0918 /* WRCustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRCustomNavigationBar.swift; sourceTree = "<group>"; };
+		5E085D66213FD41E003B0918 /* WRNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRNavigationBar.swift; sourceTree = "<group>"; };
+		5E085D69213FD444003B0918 /* XZBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZBaseViewController.swift; sourceTree = "<group>"; };
+		5E085D6B213FD462003B0918 /* XZReceivablesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZReceivablesViewController.swift; sourceTree = "<group>"; };
 		D3B52F6AFEBEE68D5BA4672D /* Pods-PaySimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaySimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaySimulator/Pods-PaySimulator.debug.xcconfig"; sourceTree = "<group>"; };
 		E34617F4213B873B007C2AA6 /* XZPayMeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayMeTableViewController.swift; sourceTree = "<group>"; };
 		E34617F6213B89F2007C2AA6 /* XZPayMeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayMeHeaderView.swift; sourceTree = "<group>"; };
@@ -149,6 +157,23 @@
 				1148BAE4CDE60ADD2009EBA1 /* Pods-PaySimulator.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		5E085D63213FD41E003B0918 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				5E085D64213FD41E003B0918 /* WRNavigationBar */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		5E085D64213FD41E003B0918 /* WRNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				5E085D65213FD41E003B0918 /* WRCustomNavigationBar.swift */,
+				5E085D66213FD41E003B0918 /* WRNavigationBar.swift */,
+			);
+			path = WRNavigationBar;
 			sourceTree = "<group>";
 		};
 		6B0552CAAD1764AB0A323297 /* Frameworks */ = {
@@ -349,6 +374,7 @@
 		E3D98F1521363A3900887FAF /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				5E085D63213FD41E003B0918 /* lib */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -463,6 +489,7 @@
 		E3D98F2221363A3900887FAF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5E085D6B213FD462003B0918 /* XZReceivablesViewController.swift */,
 				E36048532137A19100ECF65F /* PayMe.storyboard */,
 				E36048612137A2B100ECF65F /* XZPayMeVC.swift */,
 				E34617F4213B873B007C2AA6 /* XZPayMeTableViewController.swift */,
@@ -615,6 +642,7 @@
 		E3D98F3321363A3900887FAF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5E085D69213FD444003B0918 /* XZBaseViewController.swift */,
 				E36048402137986700ECF65F /* XZBaseVC.swift */,
 				E36048632137A32E00ECF65F /* XZBaseNavigationVC.swift */,
 			);
@@ -835,7 +863,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E085D68213FD41E003B0918 /* WRNavigationBar.swift in Sources */,
 				E36048562137A1DB00ECF65F /* XZPayHomeVC.swift in Sources */,
+				5E085D6C213FD462003B0918 /* XZReceivablesViewController.swift in Sources */,
 				E36048642137A32E00ECF65F /* XZBaseNavigationVC.swift in Sources */,
 				E34617F5213B873B007C2AA6 /* XZPayMeTableViewController.swift in Sources */,
 				E360484A2137A0C700ECF65F /* XZPayMainTabBarVC.swift in Sources */,
@@ -843,6 +873,7 @@
 				E34E1526213E5E0A00D23547 /* XZEditUserInfoVC.swift in Sources */,
 				E3A9AADF213F663A00FAEEAF /* XZMyPickerView.swift in Sources */,
 				E3D98F4521363F6100887FAF /* AppDelegate.swift in Sources */,
+				5E085D67213FD41E003B0918 /* WRCustomNavigationBar.swift in Sources */,
 				E3461801213BC041007C2AA6 /* XZUserInfoTabVC.swift in Sources */,
 				E34E152E213E784700D23547 /* XZBaseNavItemBtn.swift in Sources */,
 				E360485E2137A27800ECF65F /* XZPayPraiseVC.swift in Sources */,
@@ -858,6 +889,7 @@
 				E3D98F4E2136414A00887FAF /* XZMainButton.swift in Sources */,
 				E3D98F53213669E100887FAF /* XZCommon.swift in Sources */,
 				E35B5D7B213D2C5300E59A88 /* XZUserHelper.swift in Sources */,
+				5E085D6A213FD444003B0918 /* XZBaseViewController.swift in Sources */,
 				E36048622137A2B100ECF65F /* XZPayMeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
