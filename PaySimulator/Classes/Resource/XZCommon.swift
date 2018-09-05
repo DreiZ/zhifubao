@@ -125,4 +125,46 @@ func DDLog  (_ Log: Any...,file : String = #file, lineNumber : Int = #line ){
 }
 
 
+/**判断手机号*/
+func isPhoneNumber(phoneNumber:String) -> Bool {
+    if phoneNumber.count == 0 {
+        return false
+    }
+    let mobile = "^(13[0-9]|15[0-9]|18[0-9]|17[0-9]|147)\\d{8}$"
+    let regexMobile = NSPredicate(format: "SELF MATCHES %@",mobile)
+    if regexMobile.evaluate(with: phoneNumber) == true {
+        return true
+    }else
+    {
+        return false
+    }
+}
+/**判断邮编*/
+func isZipCodeNumber(zipCodeNumber:String) -> Bool {
+    if zipCodeNumber.count == 0 {
+        return false
+    }
+    let zipCodeNumber = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+    let regexCodeNumber = NSPredicate(format: "SELF MATCHES %@",zipCodeNumber)
+    if regexCodeNumber.evaluate(with: zipCodeNumber) == true {
+        return true
+    }else
+    {
+        return false
+    }
+}
+
+/**邮箱验证*/
+func isValidateEmail(emal:String) -> Bool {
+    
+    let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+    
+    let emailTest = NSPredicate.init(format: "SELF MATCHES %@", emailRegex)
+    
+    return emailTest.evaluate(with: emal)
+    
+}
+
+
+
 

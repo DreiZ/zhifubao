@@ -28,14 +28,22 @@ class XZUserInfoTabVC: XZBaseVC {
     private var  userNameLB : UILabel?
     //支付宝账号
     private var  payAccountLB : UILabel?
-    
+    //会员等级
+    private var  starsLevel : UILabel?
    
     private var iconImage : UIImageView?
     //懒加载pickerView
     private lazy var myPickerView : XZMyPickerView = {[weak self] in
         
         let  myPickerView = XZMyPickerView(frame:CGRect(x: 0, y: 0, width: kWindowW, height: kWindowH))
-        myPickerView.componentsArray = [["123","22","741","963"]]
+        myPickerView.componentsArray = [["大众会员","白金","黄金","铂金","钻石","💎💎"]]
+        myPickerView.clickFinishBlock = {[weak self] (selectorStr : String) in
+            let userInfo = XZUserHelper.getUserInfo()
+            userInfo.VIPLevel = selectorStr
+            userInfo.saveUserInfo()
+            self?.starsLevel?.text = selectorStr
+            
+        }
         return myPickerView
     }()
     //懒加载tableView
@@ -44,6 +52,7 @@ class XZUserInfoTabVC: XZBaseVC {
         myTableView.delegate = self;
         myTableView.dataSource = self;
         myTableView.register(UINib.init(nibName: "XZPayUserInfoCell", bundle: nil), forCellReuseIdentifier: XZPayUserInfoCellID)
+        
         return myTableView;
     }()
     
@@ -58,6 +67,10 @@ class XZUserInfoTabVC: XZBaseVC {
         
     }
 
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.myTableView.reloadData()
+//    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -110,12 +123,16 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: XZPayUserInfoCellID)  as! XZPayUserInfoCell;
+        
+        //用户信息
+          let userInfo = XZUserHelper.getUserInfo();
+        
         if indexPath.row == 0 {//显示头像
             cell.detailLabel.isHidden = true;
             
             cell.iconImage.isHidden = false;
              iconImage = cell.iconImage
-            let userInfo = XZUserHelper.getUserInfo();
+          
             
             guard let userImg = userInfo.iconImage else {
                 cell.iconImage.image = UIImage(named: "baidu")
@@ -133,8 +150,14 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
   
         if indexPath.row == 1 {//用户名
             self.userNameLB = cell.detailLabel
-        }else if indexPath.row == 2{
+            self.userNameLB?.text = userInfo.userName ?? ""
+            
+        }else if indexPath.row == 2{//账号
             self.payAccountLB = cell.detailLabel
+            self.payAccountLB?.text = userInfo.payAccount ?? ""
+        }else if indexPath.row == 3{//会员等级
+            self.starsLevel = cell.detailLabel
+            self.starsLevel?.text = userInfo.VIPLevel  ?? ""
         }
        
         cell.titleLabel.text = dataList[indexPath.row];
@@ -171,7 +194,11 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
             editVC.postValueBlock = {  [weak  self] (value : String) in
                 
                 self?.userNameLB?.text = value
-                 XZUserHelper.getUserInfo().userName = value
+                let userInfo = XZUserHelper.getUserInfo()
+                
+                 userInfo.userName = value
+                 userInfo.saveUserInfo()
+                 tableView.reloadData()
             }
             self.navigationController?.pushViewController(editVC, animated: true)
             
@@ -183,7 +210,10 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
             editVC.postValueBlock = {  [weak  self] (value : String) in
                 
                 self?.payAccountLB?.text = value
-                XZUserHelper.getUserInfo().payAccount = value
+                let userInfo = XZUserHelper.getUserInfo()
+                userInfo.payAccount = value
+                userInfo.saveUserInfo()
+                tableView.reloadData()
             }
             editVC.navigationItem.title = "修改账号"
             self.navigationController?.pushViewController(editVC, animated: true)
@@ -211,7 +241,7 @@ extension XZUserInfoTabVC : XZMyPhotoManageDelegate {
         let imgData = UIImagePNGRepresentation(myImage)
         let imgStr = imgData?.base64EncodedString()
         userInfo.iconImage = imgStr!;
-        userInfo.savrUserInfo()
+        userInfo.saveUserInfo()
         
         
     }

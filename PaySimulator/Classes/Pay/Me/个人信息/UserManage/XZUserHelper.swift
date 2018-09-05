@@ -26,7 +26,7 @@ class XZUserHelper: NSObject {
     
    
 }
-//MARK:--归档解档
+//MARK:--取值存值
 extension XZUserHelper {
     
         class func getUserInfo() -> XZUserHelper {
@@ -39,11 +39,14 @@ extension XZUserHelper {
         return user
     }
     
-        func savrUserInfo() {
+        func saveUserInfo() {
         let userDefaut = UserDefaults.standard
         let user =  XZUserHelper.sharedUserHelper
         userDefaut.set(user.iconImage, forKey: "iconImage")
         userDefaut.set(user.userName, forKey: "userName")
+            
+          
+            
         userDefaut.set(user.payAccount, forKey: "payAccount")
         userDefaut.set(user.VIPLevel, forKey: "VIPLevel")
         userDefaut.synchronize()

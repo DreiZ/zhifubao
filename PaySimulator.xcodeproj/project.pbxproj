@@ -33,6 +33,8 @@
 		E36048622137A2B100ECF65F /* XZPayMeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36048612137A2B100ECF65F /* XZPayMeVC.swift */; };
 		E36048642137A32E00ECF65F /* XZBaseNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36048632137A32E00ECF65F /* XZBaseNavigationVC.swift */; };
 		E3A9AADF213F663A00FAEEAF /* XZMyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9AADE213F663A00FAEEAF /* XZMyPickerView.swift */; };
+		E3A9AAE2213FA7F700FAEEAF /* XZPayMeNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9AAE0213FA7F700FAEEAF /* XZPayMeNavView.swift */; };
+		E3A9AAE3213FA7F700FAEEAF /* XZPayMeNavView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3A9AAE1213FA7F700FAEEAF /* XZPayMeNavView.xib */; };
 		E3D98EF6213638C400887FAF /* PaySimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D98EF5213638C400887FAF /* PaySimulatorTests.swift */; };
 		E3D98F01213638C400887FAF /* PaySimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D98F00213638C400887FAF /* PaySimulatorUITests.swift */; };
 		E3D98F4121363F6100887FAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D98F3821363F6100887FAF /* ViewController.swift */; };
@@ -92,6 +94,8 @@
 		E36048612137A2B100ECF65F /* XZPayMeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayMeVC.swift; sourceTree = "<group>"; };
 		E36048632137A32E00ECF65F /* XZBaseNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseNavigationVC.swift; sourceTree = "<group>"; };
 		E3A9AADE213F663A00FAEEAF /* XZMyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMyPickerView.swift; sourceTree = "<group>"; };
+		E3A9AAE0213FA7F700FAEEAF /* XZPayMeNavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZPayMeNavView.swift; sourceTree = "<group>"; };
+		E3A9AAE1213FA7F700FAEEAF /* XZPayMeNavView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZPayMeNavView.xib; sourceTree = "<group>"; };
 		E3D98EDD213638C300887FAF /* PaySimulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaySimulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D98EF1213638C400887FAF /* PaySimulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaySimulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D98EF5213638C400887FAF /* PaySimulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaySimulatorTests.swift; sourceTree = "<group>"; };
@@ -476,6 +480,8 @@
 		E3D98F2421363A3900887FAF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E3A9AAE0213FA7F700FAEEAF /* XZPayMeNavView.swift */,
+				E3A9AAE1213FA7F700FAEEAF /* XZPayMeNavView.xib */,
 				E34617F6213B89F2007C2AA6 /* XZPayMeHeaderView.swift */,
 				E34617F8213B89FE007C2AA6 /* XZPayMeHeaderView.xib */,
 			);
@@ -747,6 +753,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D98F4921363FE900887FAF /* LaunchScreen.storyboard in Resources */,
+				E3A9AAE3213FA7F700FAEEAF /* XZPayMeNavView.xib in Resources */,
 				E3461806213BC655007C2AA6 /* XZPayUserInfoCell.xib in Resources */,
 				E36048602137A29200ECF65F /* PayPraise.storyboard in Resources */,
 				E3D98F4621363F6100887FAF /* Assets.xcassets in Resources */,
@@ -841,6 +848,7 @@
 				E360485E2137A27800ECF65F /* XZPayPraiseVC.swift in Sources */,
 				E3D98F512136426200887FAF /* UIView+KRExtension.m in Sources */,
 				E3461805213BC655007C2AA6 /* XZPayUserInfoCell.swift in Sources */,
+				E3A9AAE2213FA7F700FAEEAF /* XZPayMeNavView.swift in Sources */,
 				E36048432137988600ECF65F /* XZMainHomeVC.swift in Sources */,
 				E3D98F4121363F6100887FAF /* ViewController.swift in Sources */,
 				E360485C2137A23400ECF65F /* XZPayFriendVC.swift in Sources */,

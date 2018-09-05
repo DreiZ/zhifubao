@@ -11,12 +11,27 @@ import UIKit
 //contentView区域的高度
 let kContentViewH : CGFloat = 300
 
-
+//定义选择结果block
+typealias finishBlock = ((_ selectorStr : String)->())
 class XZMyPickerView: UIView {
 
     //公开数据源属性，外界传入
     var componentsArray : [[String]]?//多少列
-    var rowArray : [String]? = ["123","1   ","0","5",]//多少行
+//    var rowArray : [String]? = ["123","1   ","0","5",]//多少行
+    var currentStr = ""
+    //block属性
+    var clickFinishBlock : finishBlock?
+    
+    
+    //懒加载titleLabel
+    var titleLabe :  UILabel = {
+       let labe = UILabel()
+        labe.textColor = UIColor.darkGray
+        labe.font = UIFont.systemFont(ofSize: 15)
+        labe.textAlignment = .center
+        return  labe
+        
+    }()
     
     
     
@@ -26,20 +41,38 @@ class XZMyPickerView: UIView {
         let myContentView = UIView(frame: CGRect(x: 0, y: kWindowH, width: kWindowW, height: kContentViewH))
 //        myContentView.backgroundColor = ddRandomColor()//随机颜色
         myContentView.backgroundColor = ddColor(255, 255, 255)//随机颜色
-        myPickerView.isUserInteractionEnabled = false;
         myContentView.addSubview(myPickerView)
         myPickerView.snp.makeConstraints({ (make) in
-            make.top.left.equalTo(40)
-            make.bottom.right.equalTo(-40)
+            make.top.equalTo(40)
+            make.bottom.equalTo(-40)
+            make.left.right.equalTo(myContentView)
         })
-        //确认取消按钮
+        //取消按钮
         let canlecBtn = UIButton()
         canlecBtn.setTitle("取消", for: .normal)
         canlecBtn.setTitleColor(UIColor.darkGray, for: .normal)
         canlecBtn.titleLabel?.font = UIFont.systemFont(ofSize: 16);
-//        canlecBtn.addTarget(self, action: #selector(<#T##@objc method#>), for: <#T##UIControlEvents#>)
+        canlecBtn.addTarget(self, action: #selector(clickCancleBtn), for: .touchUpInside)
+        canlecBtn.frame = CGRect(x: 0, y: 0, width: 60, height: 40)
+        myContentView.addSubview(canlecBtn)
+        //确认按钮
+        let finishBtn = UIButton()
+        finishBtn.setTitle("确定", for: .normal)
+        finishBtn.setTitleColor(UIColor.darkGray, for: .normal)
+        finishBtn.titleLabel?.font = UIFont.systemFont(ofSize: 16);
+        finishBtn.addTarget(self, action: #selector(clickFinishBtn), for: .touchUpInside)
+        finishBtn.frame = CGRect(x: kWindowW-60, y: 0, width: 60, height: 40)
+        myContentView.addSubview(finishBtn)
+     
+        //titleLabel
+        myContentView.addSubview(titleLabe)
+        titleLabe.snp.makeConstraints({ (make) in
+            make.left.equalTo(canlecBtn.snp.right)
+            make.right.equalTo(finishBtn.snp.left)
+            make.top.bottom.equalTo(canlecBtn)
+        })
         
-        return myContentView
+           return myContentView
     }()
     
     //懒加载pickkerView
@@ -60,6 +93,7 @@ class XZMyPickerView: UIView {
        self.isUserInteractionEnabled = true
        //添加遮罩点击事件
         let tap = UITapGestureRecognizer(target: self, action: #selector(clickBJView))
+        tap.delegate = self
         self.addGestureRecognizer(tap)
  
     }
@@ -70,7 +104,7 @@ class XZMyPickerView: UIView {
     
 }
 //MARK:--UI相关
-extension XZMyPickerView {
+extension XZMyPickerView : UIGestureRecognizerDelegate{
     
     private func setupUI(){
         addSubview(myContentView)
@@ -114,11 +148,47 @@ extension XZMyPickerView {
         }
     }
     
+    
+    
+    
+    
+    
     //黑色背景点击事件
     @objc private func clickBJView(){
         pickerDismiss()
     }
     
+    //点击取消按钮
+    @objc private func clickCancleBtn(){
+        
+        pickerDismiss()
+    }
+    
+    //点击确定按钮
+    @objc private func clickFinishBtn(){
+        DDLog("当前选择的是 \(currentStr)")
+        guard let clickFinishBlock = clickFinishBlock else {
+            return
+        }
+        clickFinishBlock(currentStr)
+          pickerDismiss()
+    }
+    
+    
+    
+    //MARK:--手势代理，子视图不响应父视图点击
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        
+        guard let touchView = touch.view else {
+            return false
+        }
+        
+        if touchView.isDescendant(of: myContentView) {
+            return false
+        }
+ 
+        return true
+    }
     
 }
 
@@ -148,7 +218,11 @@ extension  XZMyPickerView : UIPickerViewDelegate,UIPickerViewDataSource{
     }
     //当前选择下标
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        DDLog(row)
+        let rowArray = componentsArray![component]
+        currentStr = rowArray[row]
+        
+        
+        DDLog(currentStr)
     }
     //设置 每组宽度
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
@@ -174,10 +248,10 @@ extension  XZMyPickerView : UIPickerViewDelegate,UIPickerViewDataSource{
         }
         //隐藏上下竖线
         let line1 = pickerView.subviews[1]
-        line1.backgroundColor = UIColor.darkGray
+        line1.backgroundColor = UIColor.groupTableViewBackground
         
         let line2 = pickerView.subviews[2]
-        line2.backgroundColor = UIColor.darkGray
+        line2.backgroundColor = UIColor.groupTableViewBackground
  
         return myView
         
