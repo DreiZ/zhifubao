@@ -10,6 +10,24 @@ import UIKit
 
 class XZPayMeTableViewController: UITableViewController {
 
+    //MARK:--headerView属性
+    //MARK:--定义闭包（按钮点击事件，传到控制器中）
+    //声明
+    var clickHeaderRightBlock : ((_ sender:UIButton) ->())?
+    //Xib属性
+    @IBOutlet weak var iconImage: UIImageView!//头像
+    @IBOutlet weak var starsImage: UIImageView!//会员等级
+    @IBOutlet weak var nameLabel: UILabel!//用户名
+    @IBOutlet weak var accountLabel: UILabel!//账号
+    @IBAction func clickRightButton(_ sender: UIButton) {//点击个人信息查看详情
+        
+        let  meUserInfoVC = XZUserInfoTabVC()
+        self.navigationController?.pushViewController(meUserInfoVC, animated: true)
+        
+    }
+    
+ 
+    
     //MARK:--  //设置table下拉蓝色背景
     var bjBlueImgView : UIImageView?
     
@@ -17,22 +35,75 @@ class XZPayMeTableViewController: UITableViewController {
         super.viewDidLoad()
         //设置table下拉蓝色背景
         addBluebackGroundView()
-     
+ 
     }
  
     override func viewWillAppear(_ animated: Bool) {
+        
         tableView.reloadData()
+        
+        //更新headerView信息
+        uploadHeaderViewData()
+        
     }
 }
 //MARK:--setupUI
 extension XZPayMeTableViewController{
-    func addBluebackGroundView(){
+    private func addBluebackGroundView(){
         bjBlueImgView = UIImageView()
         bjBlueImgView?.backgroundColor = UIColor(red: 16.0/255.0, green: 142.0/255.0, blue: 233.0/255.0, alpha: 1)
         bjBlueImgView?.frame = CGRect(x: 0, y: 0, width: kWindowW, height: 0);
         bjBlueImgView?.contentMode = .scaleAspectFill
         tableView.addSubview(bjBlueImgView!)
     }
+    
+    //headerViewx数据更新
+    private func uploadHeaderViewData(){
+        let userInfo = XZUserHelper.getUserInfo()
+ 
+        //姓名
+        if let userName = userInfo.userName  {
+            
+            self.nameLabel.text = userName
+            
+        }else{
+            self.nameLabel.text = "杨大力";
+        }
+        
+        //账号
+        if let payAccount = userInfo.payAccount {
+            if isPhoneNumber(phoneNumber: payAccount){//手机号
+                let phoneStr = payAccount as NSString
+                let range = NSMakeRange(3, 5);
+                let resultStr = phoneStr.replacingCharacters(in: range, with: "*****")
+                self.accountLabel.text = resultStr
+                
+            }else if isValidateEmail(emal: payAccount){//邮箱
+                
+                let phoneStr = payAccount as NSString
+                let range = NSMakeRange(3, 3);
+                let resultStr = phoneStr.replacingCharacters(in: range, with: "***")
+                self.accountLabel.text = resultStr
+                
+            }
+        }else{
+            self.accountLabel.text = "123456789"
+        }
+        
+        //会员等级
+        self.starsImage.image = UIImage(named: "icon_xinhao")
+        
+        //头像
+        guard let userImg = userInfo.iconImage else {
+            iconImage.image = UIImage(named: "baidu")
+            return;
+        }
+        let imgData = Data(base64Encoded: userImg)
+        iconImage.image = UIImage(data: imgData!)
+        
+        
+     }
+    
 }
 
 
@@ -41,10 +112,7 @@ extension XZPayMeTableViewController{
     
     //分区高度
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return  75
-        }
-        
+ 
         return 10
     }
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -52,6 +120,7 @@ extension XZPayMeTableViewController{
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        /*
         if section == 0 {
             let headerView = XZPayMeHeaderView.loadMyView()
             headerView.iconImage.layer.masksToBounds = true
@@ -69,6 +138,7 @@ extension XZPayMeTableViewController{
             
             return headerView
         }
+ */
         return nil
  
     }

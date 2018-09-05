@@ -11,7 +11,7 @@ import SnapKit
 
 private let XZPayUserInfoCellID = "XZPayUserInfoCellID";
 
-class XZUserInfoTabVC: XZBaseVC {
+class XZUserInfoTabVC: XZBaseViewController {
 
     //MARK:--数据源Array
     private lazy var dataList : [String] = {

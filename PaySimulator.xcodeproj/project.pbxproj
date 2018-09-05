@@ -489,10 +489,10 @@
 		E3D98F2221363A3900887FAF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5E085D6B213FD462003B0918 /* XZReceivablesViewController.swift */,
 				E36048532137A19100ECF65F /* PayMe.storyboard */,
 				E36048612137A2B100ECF65F /* XZPayMeVC.swift */,
 				E34617F4213B873B007C2AA6 /* XZPayMeTableViewController.swift */,
+				5E085D6B213FD462003B0918 /* XZReceivablesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

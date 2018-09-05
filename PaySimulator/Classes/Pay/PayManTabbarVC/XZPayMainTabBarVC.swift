@@ -30,7 +30,7 @@ class XZPayMainTabBarVC: UITabBarController,UITabBarControllerDelegate {
         //1.通过storyboard获取控制器
         let childVC = UIStoryboard(name:storyName, bundle: nil).instantiateInitialViewController()!
 //        let nav = XZBaseNavigationVC(rootViewController: childVC)
-        childVC.tabBarItem.title = storyName
+        childVC.tabBarItem.title = title
         childVC.tabBarItem.image = UIImage(named: imgName)
         childVC.tabBarItem.selectedImage = UIImage(named: selectImgName)
         //将VC添加进来
