@@ -24,7 +24,8 @@ class XZPayMeTableViewController: UITableViewController {
 //MARK:--setupUI
 extension XZPayMeTableViewController{
     func addBluebackGroundView(){
-        bjBlueImgView = UIImageView(image: UIImage(named: "navBlue"))
+        bjBlueImgView = UIImageView()
+        bjBlueImgView?.backgroundColor = UIColor(red: 16.0/255.0, green: 142.0/255.0, blue: 233.0/255.0, alpha: 1)
         bjBlueImgView?.frame = CGRect(x: 0, y: 0, width: kWindowW, height: 0);
         bjBlueImgView?.contentMode = .scaleAspectFill
         tableView.addSubview(bjBlueImgView!)
@@ -50,6 +51,9 @@ extension XZPayMeTableViewController{
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             let headerView = XZPayMeHeaderView.loadMyView()
+            headerView.iocnImage.layer.masksToBounds = true
+            headerView.iocnImage.layer.cornerRadius = 4
+            headerView.iocnImage.layer.borderColor = UIColor.init(red: 102.0/255.0, green: 167.0/255.0, blue: 223.0/255.0, alpha: 1).cgColor
             
             headerView.clickHeaderRightBlock = {[weak self] (sender : UIButton) in//推出用户详情控制器
                 let  meUserInfoVC = XZUserInfoTabVC()
