@@ -5,6 +5,7 @@ PODS:
   - FMDB/standard (2.7.2)
   - IQKeyboardManagerSwift (5.0.0)
   - Kingfisher (4.8.1)
+  - MBProgressHUD (1.1.0)
   - SnapKit (4.0.0)
 
 DEPENDENCIES:
@@ -12,14 +13,16 @@ DEPENDENCIES:
   - FMDB
   - IQKeyboardManagerSwift (= 5.0.0)
   - Kingfisher (~> 4.0)
+  - MBProgressHUD (~> 1.1.0)
   - SnapKit (~> 4.0.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - FMDB
     - IQKeyboardManagerSwift
     - Kingfisher
+    - MBProgressHUD
     - SnapKit
 
 SPEC CHECKSUMS:
@@ -27,8 +30,9 @@ SPEC CHECKSUMS:
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
   Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 6d1d74a2be667bdfe1f53a7f51d8e2d1be44bb8b
+PODFILE CHECKSUM: ebd5512bf9b3bf18439c9a863ab452b65a37fe88
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
