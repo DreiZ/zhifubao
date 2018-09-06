@@ -63,7 +63,7 @@ class XZBaseViewController: UIViewController {
         
         
         if self.navigationController?.childViewControllers.count != 1 {
-            navBar.wr_setLeftButton(image: UIImage(named: "icon_fanhui")!, title: "返回", titleColor: ddBlueColor())
+            navBar.wr_setLeftButton(normalImage: UIImage(named: "icon_fanhuiblue")!, highlightedImage: UIImage(named: "icon_fanhuiblue")!, title:"返回" , titleColor: ddBlueColor())
         }
     }
     

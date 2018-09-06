@@ -230,8 +230,8 @@ extension WRCustomNavigationBar
     func wr_setLeftButton(title:String, titleColor:UIColor) {
         wr_setLeftButton(normal: nil, highlighted: nil, title: title, titleColor: titleColor)
     }
-    func wr_setLeftButton(image:UIImage, title:String, titleColor:UIColor) {
-        wr_setLeftButton(normal: image, highlighted: nil, title: title, titleColor: titleColor)
+    func wr_setLeftButton(normalImage:UIImage, highlightedImage:UIImage, title:String, titleColor:UIColor) {
+        wr_setLeftButton(normal: normalImage, highlighted: highlightedImage, title: title, titleColor: titleColor)
     }
     
     func wr_setRightButton(normal:UIImage, highlighted:UIImage) {
@@ -289,27 +289,3 @@ extension WRCustomNavigationBar
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
