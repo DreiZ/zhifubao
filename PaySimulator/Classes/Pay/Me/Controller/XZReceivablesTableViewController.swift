@@ -67,6 +67,11 @@ class XZReceivablesTableViewController: UITableViewController {
 extension XZReceivablesTableViewController {
     func setupFooterView() {
         let footer = XZReceivablesFooterView.loadMyView()
+        footer.selectBlock = { () in
+            if let show = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "XZBillShowViewController") as? XZBillShowViewController{
+                self.navigationController?.pushViewController(show, animated: true)
+            }
+        }
         self.tableView.tableFooterView = footer
     }
 }

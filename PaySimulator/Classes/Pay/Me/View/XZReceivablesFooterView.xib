@@ -21,6 +21,9 @@
                     <state key="normal" title="预览效果" backgroundImage="btn_queren">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="showBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="EIo-88-bMa"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

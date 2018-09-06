@@ -10,14 +10,14 @@ import UIKit
 
 class XZReceivablesFooterView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    var selectBlock : (() -> ())?
+    
+    @IBAction func showBtnClick(_ sender: Any) {
+        if let select = self.selectBlock {
+            select()
+        }
     }
-    */
-
+    
 }
 
 //MARK:--xib快速构建类方法

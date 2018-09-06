@@ -10,6 +10,7 @@ import UIKit
 
 class XZReceivablesViewController: XZBaseViewController {
 
+    @IBOutlet weak var contView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,5 +23,10 @@ class XZReceivablesViewController: XZBaseViewController {
 extension XZReceivablesViewController {
     func setupUI(){
         self.navBar.title = "收款账单"
+        
+        self.contView.snp.makeConstraints { (make) in
+            make.left.bottom.right.equalTo(self.view)
+            make.top.equalTo(self.view.snp.top).offset(DDSafeAreaTopHeight)
+        }
     }
 }
