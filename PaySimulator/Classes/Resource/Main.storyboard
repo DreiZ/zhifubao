@@ -167,6 +167,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vPM-Jl-qEo">
                                 <rect key="frame" x="0.0" y="152" width="375" height="626"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="FQY-xw-evQ" kind="embed" id="8Ln-xq-kI4"/>
                                 </connections>
