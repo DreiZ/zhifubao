@@ -19,6 +19,8 @@ class XZPayMeTableViewController: UITableViewController {
     @IBOutlet weak var starsImage: UIImageView!//会员等级
     @IBOutlet weak var nameLabel: UILabel!//用户名
     @IBOutlet weak var accountLabel: UILabel!//账号
+    
+    @IBOutlet weak var headerView: UIView!
     @IBAction func clickRightButton(_ sender: UIButton) {//点击个人信息查看详情
         
         let  meUserInfoVC = XZUserInfoTabVC()
@@ -26,7 +28,6 @@ class XZPayMeTableViewController: UITableViewController {
         
     }
     
- 
     
     //MARK:--  //设置table下拉蓝色背景
     var bjBlueImgView : UIImageView?
@@ -35,6 +36,7 @@ class XZPayMeTableViewController: UITableViewController {
         super.viewDidLoad()
         //设置table下拉蓝色背景
         addBluebackGroundView()
+        self.headerView.backgroundColor = ddBlueColor()
  
     }
  
@@ -51,7 +53,7 @@ class XZPayMeTableViewController: UITableViewController {
 extension XZPayMeTableViewController{
     private func addBluebackGroundView(){
         bjBlueImgView = UIImageView()
-        bjBlueImgView?.backgroundColor = UIColor(red: 16.0/255.0, green: 142.0/255.0, blue: 233.0/255.0, alpha: 1)
+        bjBlueImgView?.backgroundColor = ddBlueColor()
         bjBlueImgView?.frame = CGRect(x: 0, y: 0, width: kWindowW, height: 0);
         bjBlueImgView?.contentMode = .scaleAspectFill
         tableView.addSubview(bjBlueImgView!)

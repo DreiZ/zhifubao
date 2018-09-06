@@ -17,20 +17,16 @@ class XZUserInfoTabVC: XZBaseViewController {
     private lazy var dataList : [String] = {
        return ["头像","昵称","支付宝账号","会员等级"]
     }()
-    private var rightBtn : UIButton?
-    private var isEditingUserinfo: Bool = false{
-        didSet{
-            rightBtn?.isHidden = !isEditingUserinfo
-            self.myTableView.reloadData()
-        }
-    }
+ 
     //用户名
     private var  userNameLB : UILabel?
     //支付宝账号
     private var  payAccountLB : UILabel?
     //会员等级
     private var  starsLevel : UILabel?
-   
+    //头像base64Str
+    private var iconImageStr : String?
+   //头像
     private var iconImage : UIImageView?
     //懒加载pickerView
     private lazy var myPickerView : XZMyPickerView = {[weak self] in
@@ -66,11 +62,7 @@ class XZUserInfoTabVC: XZBaseViewController {
        setupNavBtn()
         
     }
-
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.myTableView.reloadData()
-//    }
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -100,28 +92,24 @@ extension XZUserInfoTabVC{
         self.navBar.title = "个人信息"
         self.navBar.wr_setRightButton(title: "确定", titleColor: ddBlueColor())
         self.navBar.onClickRightButton = {[weak self] in 
+ 
+            //储存用户信息
+            let userInfo = XZUserHelper.getUserInfo()
+            if (self?.iconImageStr) != nil{
+                userInfo.iconImage = self?.iconImageStr//储存头像
+            }
+          
+            userInfo.userName = self?.userNameLB?.text//姓名
+            userInfo.payAccount = self?.payAccountLB?.text//账号
+            userInfo.VIPLevel = self?.starsLevel?.text//等级
+            userInfo.saveUserInfo()//保存
+            self?.navigationController?.popViewController(animated: true)
             
-            DDLog("navBar")
-            self?.isEditingUserinfo  = false
-            self?.myTableView.reloadData()
         }
-//        rightBtn = UIButton()
-//        rightBtn?.setTitleColor(UIColor.white, for: .normal);
-//        rightBtn?.setTitle("确定", for: .normal);
-//        rightBtn?.addTarget(self, action: #selector(rightBtnClick(sender:)), for: .touchUpInside)
-//        rightBtn?.titleLabel?.font = UIFont.systemFont(ofSize: 15);
-//        rightBtn?.frame = CGRect(x: 0, y: 0, width: 50, height: 30)
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn!)
-//        rightBtn?.isHidden = !isEditingUserinfo
-        
+ 
     }
     
-    @objc private func rightBtnClick(sender:UIButton){
-        
-        isEditingUserinfo  = false
-        myTableView.reloadData()
-    }
-    
+ 
     
 }
     // MARK: - Table view data source
@@ -207,7 +195,6 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
                 
                 self?.userNameLB?.text = value
                 let userInfo = XZUserHelper.getUserInfo()
-                
                  userInfo.userName = value
                  userInfo.saveUserInfo()
                  tableView.reloadData()
@@ -228,6 +215,7 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
                 tableView.reloadData()
             }
             editVC.navigationItem.title = "修改账号"
+            
             self.navigationController?.pushViewController(editVC, animated: true)
             
         }else  if indexPath.row == 3{//修改会员等级
@@ -249,11 +237,14 @@ extension XZUserInfoTabVC : XZMyPhotoManageDelegate {
     func uploadImage(myImage: UIImage) {
         iconImage?.image = myImage
         //取到数据存储
-        let userInfo = XZUserHelper.sharedUserHelper;
+//        let userInfo = XZUserHelper.sharedUserHelper;
         let imgData = UIImagePNGRepresentation(myImage)
         let imgStr = imgData?.base64EncodedString()
-        userInfo.iconImage = imgStr!;
-        userInfo.saveUserInfo()
+        
+        self.iconImageStr = imgStr;
+        
+//        userInfo.iconImage = imgStr!;
+//        userInfo.saveUserInfo()
         
         
     }

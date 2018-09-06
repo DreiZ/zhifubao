@@ -9,7 +9,10 @@
 import UIKit
 
 class XZPayMeNavView: UIView {
-
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.backgroundColor  = ddBlueColor()
+    }
 
 }
 

@@ -125,6 +125,7 @@ class WRCustomNavigationBar: UIView
         let button = UIButton()
         button.imageView?.contentMode = .center
         button.isHidden = true
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         button.addTarget(self, action: #selector(clickRight), for: .touchUpInside)
         return button
     }()
