@@ -24,7 +24,9 @@ class XZBaseVC: UIViewController {
     
 
     override var preferredStatusBarStyle: UIStatusBarStyle{
-        
+        if (self.navigationController?.childViewControllers.count)!>1 {
+            return .default
+        }
         return .lightContent
     }
     

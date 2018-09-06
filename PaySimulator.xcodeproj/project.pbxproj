@@ -44,6 +44,8 @@
 		E36048642137A32E00ECF65F /* XZBaseNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36048632137A32E00ECF65F /* XZBaseNavigationVC.swift */; };
 		E36490882140D2F8005F234B /* XZBalanceTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36490872140D2F8005F234B /* XZBalanceTabVC.swift */; };
 		E364908A2140D8D3005F234B /* XZBalanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36490892140D8D3005F234B /* XZBalanceVC.swift */; };
+		E364909A21413200005F234B /* XZTopUpFinishVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3649098214131FF005F234B /* XZTopUpFinishVC.swift */; };
+		E364909B21413200005F234B /* XZTopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3649099214131FF005F234B /* XZTopUpVC.swift */; };
 		E3A9AADF213F663A00FAEEAF /* XZMyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9AADE213F663A00FAEEAF /* XZMyPickerView.swift */; };
 		E3A9AAE2213FA7F700FAEEAF /* XZPayMeNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9AAE0213FA7F700FAEEAF /* XZPayMeNavView.swift */; };
 		E3A9AAE3213FA7F700FAEEAF /* XZPayMeNavView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3A9AAE1213FA7F700FAEEAF /* XZPayMeNavView.xib */; };
@@ -117,6 +119,8 @@
 		E36048632137A32E00ECF65F /* XZBaseNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseNavigationVC.swift; sourceTree = "<group>"; };
 		E36490872140D2F8005F234B /* XZBalanceTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBalanceTabVC.swift; sourceTree = "<group>"; };
 		E36490892140D8D3005F234B /* XZBalanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBalanceVC.swift; sourceTree = "<group>"; };
+		E3649098214131FF005F234B /* XZTopUpFinishVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZTopUpFinishVC.swift; sourceTree = "<group>"; };
+		E3649099214131FF005F234B /* XZTopUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZTopUpVC.swift; sourceTree = "<group>"; };
 		E3A9AADE213F663A00FAEEAF /* XZMyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMyPickerView.swift; sourceTree = "<group>"; };
 		E3A9AAE0213FA7F700FAEEAF /* XZPayMeNavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZPayMeNavView.swift; sourceTree = "<group>"; };
 		E3A9AAE1213FA7F700FAEEAF /* XZPayMeNavView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZPayMeNavView.xib; sourceTree = "<group>"; };
@@ -281,6 +285,8 @@
 		E36490842140D2C9005F234B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E3649098214131FF005F234B /* XZTopUpFinishVC.swift */,
+				E3649099214131FF005F234B /* XZTopUpVC.swift */,
 				E36490892140D8D3005F234B /* XZBalanceVC.swift */,
 				E36490872140D2F8005F234B /* XZBalanceTabVC.swift */,
 			);
@@ -940,6 +946,7 @@
 				E3D98F4121363F6100887FAF /* ViewController.swift in Sources */,
 				5ECE67D3214115F500C8C5A9 /* XZBillTableViewController.swift in Sources */,
 				E360485C2137A23400ECF65F /* XZPayFriendVC.swift in Sources */,
+				E364909B21413200005F234B /* XZTopUpVC.swift in Sources */,
 				5ECE67CF2140FC7500C8C5A9 /* XZMyAlertSheetTableViewCell.swift in Sources */,
 				E35B5D78213CC01300E59A88 /* XZMyPhotoManage.swift in Sources */,
 				5ECE67D1214115A500C8C5A9 /* XZBillShowViewController.swift in Sources */,
@@ -955,6 +962,7 @@
 				E36048622137A2B100ECF65F /* XZPayMeVC.swift in Sources */,
 				5ECE67D721411B6B00C8C5A9 /* XZBillModel.swift in Sources */,
 				5ECE67C92140FB7600C8C5A9 /* XZReceivablesFooterView.swift in Sources */,
+				E364909A21413200005F234B /* XZTopUpFinishVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

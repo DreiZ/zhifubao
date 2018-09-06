@@ -22,21 +22,36 @@ class XZTopUpVC: XZBaseVC {
         let payMeStoryBoard = UIStoryboard(name: "PayMe", bundle: nil)
         //identifier获取指定的界面（VC）
         let topUpFinishVC = payMeStoryBoard.instantiateViewController(withIdentifier: "XZTopUpFinishVC") as! XZTopUpFinishVC
-       
-        DDLog("推出")
-//        topUpFinishVC.moneyLabel.text = self.moneyTextField.text
+        topUpFinishVC.moneyStr = self.moneyTextField.text ?? ""
+ 
         self.navigationController?.pushViewController(topUpFinishVC, animated: true)
-//        topUpFinishVC.moneyLabel.text = "测试测试";
+       
         
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavBar()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+//        setupNavBar()
+        
     }
 
+    func setupNavBar() {
+        
+        navigationItem.title = "充值"
+     
+         
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        
+        return .default
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

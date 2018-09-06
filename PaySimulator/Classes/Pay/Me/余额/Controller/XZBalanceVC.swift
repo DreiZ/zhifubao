@@ -16,11 +16,7 @@ class XZBalanceVC: XZBaseVC {
         // Do any additional setup after loading the view.
         setupNavBar()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        
-        super.viewWillAppear(animated)
-//        setupNavBar()
-    }
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -47,7 +43,7 @@ extension XZBalanceVC{
             navBarTintColor = .white
             navBarTitleColor = .white
             navBarShadowImageHidden = true;
-            statusBarStyle = .lightContent
+ 
             navigationItem.title = "余额"
             
             //右侧按钮
@@ -56,8 +52,17 @@ extension XZBalanceVC{
             rightBtn.addTarget(self, action: #selector(clickRightItem), for: .touchUpInside)
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
             
- 
+            let backIetm = UIBarButtonItem()
+            
+            backIetm.title = "返回";
+            self.navigationItem.backBarButtonItem = backIetm;
         }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        
+        return .lightContent
+    }
+    
     
      @objc private  func clickRightItem(){
         DDLog(clickRightItem)
