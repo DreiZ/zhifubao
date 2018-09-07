@@ -24,6 +24,7 @@
 		E3461801213BC041007C2AA6 /* XZUserInfoTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34617FF213BC041007C2AA6 /* XZUserInfoTabVC.swift */; };
 		E3461805213BC655007C2AA6 /* XZPayUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3461803213BC655007C2AA6 /* XZPayUserInfoCell.swift */; };
 		E3461806213BC655007C2AA6 /* XZPayUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3461804213BC655007C2AA6 /* XZPayUserInfoCell.xib */; };
+		E348973A214212550062410B /* withDraw.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3489739214212550062410B /* withDraw.storyboard */; };
 		E34E1526213E5E0A00D23547 /* XZEditUserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E1525213E5E0A00D23547 /* XZEditUserInfoVC.swift */; };
 		E34E152E213E784700D23547 /* XZBaseNavItemBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E152D213E784700D23547 /* XZBaseNavItemBtn.swift */; };
 		E35B5D78213CC01300E59A88 /* XZMyPhotoManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35B5D77213CC01300E59A88 /* XZMyPhotoManage.swift */; };
@@ -99,6 +100,7 @@
 		E34617FF213BC041007C2AA6 /* XZUserInfoTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZUserInfoTabVC.swift; sourceTree = "<group>"; };
 		E3461803213BC655007C2AA6 /* XZPayUserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayUserInfoCell.swift; sourceTree = "<group>"; };
 		E3461804213BC655007C2AA6 /* XZPayUserInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XZPayUserInfoCell.xib; sourceTree = "<group>"; };
+		E3489739214212550062410B /* withDraw.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = withDraw.storyboard; sourceTree = "<group>"; };
 		E34E1525213E5E0A00D23547 /* XZEditUserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZEditUserInfoVC.swift; sourceTree = "<group>"; };
 		E34E152D213E784700D23547 /* XZBaseNavItemBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseNavItemBtn.swift; sourceTree = "<group>"; };
 		E35B5D77213CC01300E59A88 /* XZMyPhotoManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMyPhotoManage.swift; sourceTree = "<group>"; };
@@ -285,10 +287,10 @@
 		E36490842140D2C9005F234B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E3649098214131FF005F234B /* XZTopUpFinishVC.swift */,
-				E3649099214131FF005F234B /* XZTopUpVC.swift */,
 				E36490892140D8D3005F234B /* XZBalanceVC.swift */,
 				E36490872140D2F8005F234B /* XZBalanceTabVC.swift */,
+				E3649098214131FF005F234B /* XZTopUpFinishVC.swift */,
+				E3649099214131FF005F234B /* XZTopUpVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -674,6 +676,7 @@
 				E3D98F4021363F6100887FAF /* Assets.xcassets */,
 				E3D98F4721363FE900887FAF /* LaunchScreen.storyboard */,
 				E3D98F4821363FE900887FAF /* Main.storyboard */,
+				E3489739214212550062410B /* withDraw.storyboard */,
 				E3D98F3E21363F6100887FAF /* Info.plist */,
 				E3D98F3821363F6100887FAF /* ViewController.swift */,
 				E3D98F3721363F6000887FAF /* PaySimulator-Bridging-Header.h */,
@@ -845,6 +848,7 @@
 				E3D98F4921363FE900887FAF /* LaunchScreen.storyboard in Resources */,
 				E3A9AAE3213FA7F700FAEEAF /* XZPayMeNavView.xib in Resources */,
 				E3461806213BC655007C2AA6 /* XZPayUserInfoCell.xib in Resources */,
+				E348973A214212550062410B /* withDraw.storyboard in Resources */,
 				E36048602137A29200ECF65F /* PayPraise.storyboard in Resources */,
 				E3D98F4621363F6100887FAF /* Assets.xcassets in Resources */,
 				5ECE67C82140FB7600C8C5A9 /* XZReceivablesFooterView.xib in Resources */,
@@ -1121,7 +1125,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = "$(SRCROOT)/PaySimulator/Classes/Resource/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1144,7 +1148,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = "$(SRCROOT)/PaySimulator/Classes/Resource/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

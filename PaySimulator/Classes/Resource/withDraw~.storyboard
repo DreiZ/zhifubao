@@ -107,7 +107,7 @@
                                         </state>
                                         <connections>
                                             <action selector="clickMainButton:" destination="o6K-1x-FXJ" eventType="touchUpInside" id="gka-Z7-eC8"/>
-                                            <segue destination="feV-BD-CfI" kind="push" id="JUm-8h-PZ2"/>
+                                            <segue destination="UJd-mN-KPg" kind="push" id="JUm-8h-PZ2"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1189,6 +1189,25 @@
             </objects>
             <point key="canvasLocation" x="5093.6000000000004" y="-558.62068965517244"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="uNY-mw-I8B">
+            <objects>
+                <viewController id="UJd-mN-KPg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bdi-16-Uq5"/>
+                        <viewControllerLayoutGuide type="bottom" id="1A9-Oe-610"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="obt-ZD-OnI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ijc-3d-vTz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yMF-Ah-ZOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1830" y="157"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lkR-Cm-Lqf">
             <objects>
@@ -1284,16 +1303,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YR3-Fd-Y4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="598" y="736"/>
-        </scene>
-        <!--withDraw-->
-        <scene sceneID="KDA-BL-KQA">
-            <objects>
-                <viewControllerPlaceholder storyboardName="withDraw" id="feV-BD-CfI" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="gDi-UE-SUN"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ge-Nj-ypS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1830" y="157"/>
         </scene>
     </scenes>
     <resources>

@@ -117,8 +117,8 @@
                             <constraints>
                                 <constraint firstItem="u7C-d2-bQN" firstAttribute="leading" secondItem="l4u-qU-Mxn" secondAttribute="leading" id="AKR-rD-mHK"/>
                                 <constraint firstItem="u7C-d2-bQN" firstAttribute="top" secondItem="l4u-qU-Mxn" secondAttribute="top" id="EW9-0l-Rna"/>
-                                <constraint firstAttribute="bottom" secondItem="u7C-d2-bQN" secondAttribute="bottom" id="cQ3-Bn-e00"/>
                                 <constraint firstAttribute="trailing" secondItem="u7C-d2-bQN" secondAttribute="trailing" id="gtG-hm-O5a"/>
+                                <constraint firstAttribute="bottom" secondItem="u7C-d2-bQN" secondAttribute="bottom" id="ko6-GX-LfR"/>
                             </constraints>
                         </view>
                         <sections>

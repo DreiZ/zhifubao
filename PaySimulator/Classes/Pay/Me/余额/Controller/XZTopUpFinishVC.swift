@@ -14,7 +14,7 @@ class XZTopUpFinishVC: XZBaseVC {
     
     @IBOutlet weak var moneyLabel: UILabel!
     
-    @IBAction func finishBtn(_ sender: UIButton) {//完成按钮
+    @IBAction func finishBtn(_ sender: UIButton) {//完成按钮
         
         self.navigationController?.popViewController(animated: false)
         
