@@ -11,4 +11,6 @@ pod 'Kingfisher'   , '~>4.0'    # SDWebImage
 pod 'FMDB'
 pod 'IQKeyboardManagerSwift', '5.0.0'
 pod 'MBProgressHUD', '~> 1.1.0'
+
+pod 'NVActivityIndicatorView' #progress loading
 end

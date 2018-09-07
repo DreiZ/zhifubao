@@ -10,6 +10,15 @@ import UIKit
 
 class XZReceivablesTableViewController: UITableViewController {
 
+    var editType : BillType = .Receivables
+    //转入 转出按钮
+    @IBOutlet weak var transferTypeLeftBtn: UIButton!
+    @IBOutlet weak var transferTypeRightBtn: UIButton!
+    
+    //交易对象
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    
     let receiveTypeArr : [String] = ["余额", "余额宝", "银行卡"]
     let transactionStateArr : [String] = ["交易成功", "待付款"]
     let gradeArr : [String] = ["无", "钻石会员", "铂金会员", "黄金会员", "大众会员"]
@@ -25,15 +34,8 @@ class XZReceivablesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupFooterView()
+        self.setupUI()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("index \(indexPath.row)")
@@ -60,12 +62,23 @@ class XZReceivablesTableViewController: UITableViewController {
         
         
     }
-
-
 }
 
 extension XZReceivablesTableViewController {
-    func setupFooterView() {
+    func setupUI () {
+        
+        self.transferTypeLeftBtn.layer.masksToBounds = true
+        self.transferTypeLeftBtn.layer.cornerRadius = 4
+        
+        self.transferTypeRightBtn.layer.masksToBounds = true
+        self.transferTypeRightBtn.layer.cornerRadius = 4
+        self.transferTypeRightBtn.layer.borderColor = ddColorFromHex("e8e8e8").cgColor
+        self.transferTypeRightBtn.layer.borderWidth = 1
+        
+        self.setupFooterView()
+    }
+    
+    private func setupFooterView() {
         let footer = XZReceivablesFooterView.loadMyView()
         footer.selectBlock = { () in
             if let show = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "XZBillShowViewController") as? XZBillShowViewController{

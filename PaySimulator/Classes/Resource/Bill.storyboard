@@ -13,7 +13,7 @@
         <!--Receivables View Controller-->
         <scene sceneID="UWZ-FK-gTC">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="Uo4-0W-WcZ" customClass="XZReceivablesViewController" customModule="PaySimulator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="XZReceivablesViewController" hidesBottomBarWhenPushed="YES" id="Uo4-0W-WcZ" customClass="XZReceivablesViewController" customModule="PaySimulator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lNG-Dh-rQL"/>
                         <viewControllerLayoutGuide type="bottom" id="nn7-6Y-pAB"/>
@@ -573,6 +573,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="4iD-UU-quu"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="jzB-9V-GBy" id="3RX-IC-7qA"/>
+                        <outlet property="transferTypeLeftBtn" destination="tAz-4F-AfQ" id="TJl-1M-F8J"/>
+                        <outlet property="transferTypeRightBtn" destination="doe-te-jRu" id="y57-pN-yGy"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKg-Sn-CFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

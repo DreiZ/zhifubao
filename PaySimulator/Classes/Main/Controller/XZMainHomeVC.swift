@@ -13,6 +13,7 @@ class XZMainHomeVC: XZBaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         self.view.backgroundColor = UIColor.init(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1)
     }
 
@@ -31,10 +32,15 @@ class XZMainHomeVC: XZBaseVC {
 //            self.navigationController?.pushViewController(tabBarVC, animated: false);
             break
         case 1://转账
-            
+            let transfervc = UIStoryboard(name: "Bill", bundle: nil).instantiateViewController(withIdentifier: "XZReceivablesViewController") as? XZReceivablesViewController
+            guard let transfer = transfervc else {
+                return
+            }
+            transfer.editType = .Transfer
+            self.navigationController?.pushViewController(transfer, animated: true)
             break
         case 2://余额
-            
+           
             break
         case 3://收款账单
             

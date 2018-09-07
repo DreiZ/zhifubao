@@ -39,7 +39,7 @@ extension XZBillShowViewController {
         if segue.identifier == "XZBillShowSegueTableView" {
             let iTabelViewController : XZBillTableViewController = segue.destination as! XZBillTableViewController
             
-            iTabelViewController.billType = BillType.Payment
+            iTabelViewController.billType = BillType.Receivables
             
         }
     }

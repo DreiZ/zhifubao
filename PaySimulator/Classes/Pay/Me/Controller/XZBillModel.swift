@@ -9,6 +9,6 @@
 import Foundation
 
 enum BillType : String {
-    case Receivables
-    case Payment
+    case Receivables = "收款账单"
+    case Transfer = "转账"
 }
