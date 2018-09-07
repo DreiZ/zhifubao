@@ -13,6 +13,7 @@ class XZMainHomeVC: XZBaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         self.view.backgroundColor = UIColor.init(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1)
     }
 
@@ -39,7 +40,7 @@ class XZMainHomeVC: XZBaseVC {
             self.navigationController?.pushViewController(transfer, animated: true)
             break
         case 2://余额
-            
+           
             break
         case 3://收款账单
             
