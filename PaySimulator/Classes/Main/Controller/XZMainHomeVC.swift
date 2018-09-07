@@ -61,10 +61,28 @@ class XZMainHomeVC: XZBaseVC {
             break
         case 5://提现账单
             
+            
+            
+            
             break
         default:
             break
         }
            DDLog(sender.tag)
     }
+    
+    
+    //MARK:--拦截提现跳转
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showWithDrawalVC" {
+            let tabVC = segue.destination as! XZWithdrawalVC
+            tabVC.hidesBottomBarWhenPushed = true
+            let backIetm = UIBarButtonItem()
+            backIetm.title = "返回";
+            navigationItem.backBarButtonItem = backIetm
+//            navigationController?.pushViewController(tabVC, animated: true)
+            
+        }
+    }
+    
 }
