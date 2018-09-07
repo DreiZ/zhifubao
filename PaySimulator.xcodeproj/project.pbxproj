@@ -13,6 +13,15 @@
 		5E085D6C213FD462003B0918 /* XZReceivablesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D6B213FD462003B0918 /* XZReceivablesViewController.swift */; };
 		5E4B4E5A214213AA003D3D23 /* Bill.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B4E59214213AA003D3D23 /* Bill.storyboard */; };
 		5E4B4E5C21421447003D3D23 /* BillShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B4E5B21421447003D3D23 /* BillShow.storyboard */; };
+		5E4B4E5E2142216D003D3D23 /* XZPublicTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B4E5D2142216D003D3D23 /* XZPublicTools.swift */; };
+		5E4B4E6721424DF8003D3D23 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B4E6421424DF8003D3D23 /* SCLAlertView.swift */; };
+		5E4B4E6821424DF8003D3D23 /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B4E6521424DF8003D3D23 /* SCLExtensions.swift */; };
+		5E4B4E7521425F69003D3D23 /* XZPublicDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B4E7421425F69003D3D23 /* XZPublicDataManager.swift */; };
+		5EAF7331214272440027812A /* ZPublicDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF732F214272440027812A /* ZPublicDataManager.m */; };
+		5EAF73332142726F0027812A /* XZBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF73322142726E0027812A /* XZBaseModel.swift */; };
+		5EAF7336214272A50027812A /* ZBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF7335214272A50027812A /* ZBaseModel.m */; };
+		5EAF7338214277AD0027812A /* XZFModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF7337214277AD0027812A /* XZFModel.swift */; };
+		5EAF733A214277BC0027812A /* XZSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF7339214277BC0027812A /* XZSModel.swift */; };
 		5ECE67C82140FB7600C8C5A9 /* XZReceivablesFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECE67C62140FB7600C8C5A9 /* XZReceivablesFooterView.xib */; };
 		5ECE67C92140FB7600C8C5A9 /* XZReceivablesFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE67C72140FB7600C8C5A9 /* XZReceivablesFooterView.swift */; };
 		5ECE67CB2140FBBA00C8C5A9 /* XZReceivablesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE67CA2140FBBA00C8C5A9 /* XZReceivablesTableViewController.swift */; };
@@ -82,6 +91,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5E4B4E8021426C64003D3D23 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1148BAE4CDE60ADD2009EBA1 /* Pods-PaySimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaySimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaySimulator/Pods-PaySimulator.release.xcconfig"; sourceTree = "<group>"; };
 		146A184C35B4502F43F0D60E /* Pods_PaySimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaySimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +113,19 @@
 		5E085D6B213FD462003B0918 /* XZReceivablesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZReceivablesViewController.swift; sourceTree = "<group>"; };
 		5E4B4E59214213AA003D3D23 /* Bill.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Bill.storyboard; sourceTree = "<group>"; };
 		5E4B4E5B21421447003D3D23 /* BillShow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BillShow.storyboard; sourceTree = "<group>"; };
+		5E4B4E5D2142216D003D3D23 /* XZPublicTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPublicTools.swift; sourceTree = "<group>"; };
+		5E4B4E6421424DF8003D3D23 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		5E4B4E6521424DF8003D3D23 /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
+		5E4B4E7421425F69003D3D23 /* XZPublicDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPublicDataManager.swift; sourceTree = "<group>"; };
+		5E4B4E762142675E003D3D23 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		5E4B4E782142676C003D3D23 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		5EAF732F214272440027812A /* ZPublicDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZPublicDataManager.m; sourceTree = "<group>"; };
+		5EAF7330214272440027812A /* ZPublicDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZPublicDataManager.h; sourceTree = "<group>"; };
+		5EAF73322142726E0027812A /* XZBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = XZBaseModel.swift; path = PaySimulator/Classes/Tools/XZBaseModel.swift; sourceTree = SOURCE_ROOT; };
+		5EAF7334214272A50027812A /* ZBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZBaseModel.h; path = PaySimulator/Classes/Tools/ZBaseModel.h; sourceTree = SOURCE_ROOT; };
+		5EAF7335214272A50027812A /* ZBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZBaseModel.m; path = PaySimulator/Classes/Tools/ZBaseModel.m; sourceTree = SOURCE_ROOT; };
+		5EAF7337214277AD0027812A /* XZFModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = XZFModel.swift; path = PaySimulator/Classes/Tools/XZFModel.swift; sourceTree = SOURCE_ROOT; };
+		5EAF7339214277BC0027812A /* XZSModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = XZSModel.swift; path = PaySimulator/Classes/Tools/XZSModel.swift; sourceTree = SOURCE_ROOT; };
 		5ECE67C62140FB7600C8C5A9 /* XZReceivablesFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZReceivablesFooterView.xib; sourceTree = "<group>"; };
 		5ECE67C72140FB7600C8C5A9 /* XZReceivablesFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZReceivablesFooterView.swift; sourceTree = "<group>"; };
 		5ECE67CA2140FBBA00C8C5A9 /* XZReceivablesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZReceivablesTableViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +223,7 @@
 		5E085D63213FD41E003B0918 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				5E4B4E6221424DF8003D3D23 /* SCLAlertView */,
 				5E085D64213FD41E003B0918 /* WRNavigationBar */,
 			);
 			path = lib;
@@ -202,9 +238,20 @@
 			path = WRNavigationBar;
 			sourceTree = "<group>";
 		};
+		5E4B4E6221424DF8003D3D23 /* SCLAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				5E4B4E6421424DF8003D3D23 /* SCLAlertView.swift */,
+				5E4B4E6521424DF8003D3D23 /* SCLExtensions.swift */,
+			);
+			path = SCLAlertView;
+			sourceTree = "<group>";
+		};
 		6B0552CAAD1764AB0A323297 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E4B4E782142676C003D3D23 /* libsqlite3.tbd */,
+				5E4B4E762142675E003D3D23 /* libsqlite3.0.tbd */,
 				146A184C35B4502F43F0D60E /* Pods_PaySimulator.framework */,
 			);
 			name = Frameworks;
@@ -416,6 +463,8 @@
 		E3D98F1221363A3900887FAF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5EAF7337214277AD0027812A /* XZFModel.swift */,
+				5EAF7339214277BC0027812A /* XZSModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -695,6 +744,10 @@
 			children = (
 				E3461807213BEBB3007C2AA6 /* 弹出系统相机相册 */,
 				E3A9AADD213F64D100FAEEAF /* 选择器Pickerview */,
+				5E4B4E5D2142216D003D3D23 /* XZPublicTools.swift */,
+				5E4B4E7421425F69003D3D23 /* XZPublicDataManager.swift */,
+				5EAF7330214272440027812A /* ZPublicDataManager.h */,
+				5EAF732F214272440027812A /* ZPublicDataManager.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -723,6 +776,9 @@
 		E3D98F3421363A3900887FAF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5EAF73322142726E0027812A /* XZBaseModel.swift */,
+				5EAF7334214272A50027812A /* ZBaseModel.h */,
+				5EAF7335214272A50027812A /* ZBaseModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -755,6 +811,7 @@
 				E3D98EDA213638C300887FAF /* Frameworks */,
 				E3D98EDB213638C300887FAF /* Resources */,
 				62D9AF544165EDB4CB7A568F /* [CP] Embed Pods Frameworks */,
+				5E4B4E8021426C64003D3D23 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -897,7 +954,9 @@
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/LKDBHelper/LKDBHelper.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -906,7 +965,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LKDBHelper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -939,8 +1000,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EAF7336214272A50027812A /* ZBaseModel.m in Sources */,
 				5E085D68213FD41E003B0918 /* WRNavigationBar.swift in Sources */,
 				E36048562137A1DB00ECF65F /* XZPayHomeVC.swift in Sources */,
+				5E4B4E6721424DF8003D3D23 /* SCLAlertView.swift in Sources */,
 				5E085D6C213FD462003B0918 /* XZReceivablesViewController.swift in Sources */,
 				E36490882140D2F8005F234B /* XZBalanceTabVC.swift in Sources */,
 				E36048642137A32E00ECF65F /* XZBaseNavigationVC.swift in Sources */,
@@ -956,9 +1019,12 @@
 				E3D98F512136426200887FAF /* UIView+KRExtension.m in Sources */,
 				E3461805213BC655007C2AA6 /* XZPayUserInfoCell.swift in Sources */,
 				E3A9AAE2213FA7F700FAEEAF /* XZPayMeNavView.swift in Sources */,
+				5E4B4E7521425F69003D3D23 /* XZPublicDataManager.swift in Sources */,
 				E36048432137988600ECF65F /* XZMainHomeVC.swift in Sources */,
 				E3D98F4121363F6100887FAF /* ViewController.swift in Sources */,
 				5ECE67D3214115F500C8C5A9 /* XZBillTableViewController.swift in Sources */,
+				5EAF733A214277BC0027812A /* XZSModel.swift in Sources */,
+				5E4B4E5E2142216D003D3D23 /* XZPublicTools.swift in Sources */,
 				E360485C2137A23400ECF65F /* XZPayFriendVC.swift in Sources */,
 				E364909B21413200005F234B /* XZTopUpVC.swift in Sources */,
 				5ECE67CF2140FC7500C8C5A9 /* XZMyAlertSheetTableViewCell.swift in Sources */,
@@ -970,12 +1036,16 @@
 				E36048412137986700ECF65F /* XZBaseVC.swift in Sources */,
 				E3D98F4E2136414A00887FAF /* XZMainButton.swift in Sources */,
 				E3D98F53213669E100887FAF /* XZCommon.swift in Sources */,
+				5EAF7331214272440027812A /* ZPublicDataManager.m in Sources */,
 				E35B5D7B213D2C5300E59A88 /* XZUserHelper.swift in Sources */,
 				5E085D6A213FD444003B0918 /* XZBaseViewController.swift in Sources */,
 				E364908A2140D8D3005F234B /* XZBalanceVC.swift in Sources */,
 				E36048622137A2B100ECF65F /* XZPayMeVC.swift in Sources */,
+				5E4B4E6821424DF8003D3D23 /* SCLExtensions.swift in Sources */,
 				5ECE67D721411B6B00C8C5A9 /* XZBillModel.swift in Sources */,
+				5EAF7338214277AD0027812A /* XZFModel.swift in Sources */,
 				5ECE67C92140FB7600C8C5A9 /* XZReceivablesFooterView.swift in Sources */,
+				5EAF73332142726F0027812A /* XZBaseModel.swift in Sources */,
 				E364909A21413200005F234B /* XZTopUpFinishVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1134,6 +1204,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PaySimulator",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/PaySimulator/Classes/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1157,6 +1231,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PaySimulator",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/PaySimulator/Classes/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
