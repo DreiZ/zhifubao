@@ -10,10 +10,11 @@ import UIKit
 
 class XZReceivablesViewController: XZBaseViewController {
 
+    var editType : BillType = .Receivables
+    
     @IBOutlet weak var contView: UIView!
     
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

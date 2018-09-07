@@ -15,7 +15,7 @@ class XZBillTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if billType == .Payment {
+        if billType == .Receivables {
             print("zzz 传值成功")
         }
     }

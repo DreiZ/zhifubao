@@ -257,7 +257,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ge-Nj-ypS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902" y="-304"/>
+            <point key="canvasLocation" x="1792" y="-378"/>
         </scene>
         <!--Bill-->
         <scene sceneID="EH7-iW-3CP">
@@ -267,7 +267,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QcK-A7-VEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1871" y="-270"/>
+            <point key="canvasLocation" x="1761" y="-193"/>
         </scene>
         <!--XZBillShowViewController-->
         <scene sceneID="mhN-9i-IZN">
@@ -275,7 +275,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="XZBillShowViewController" storyboardName="BillShow" referencedIdentifier="XZBillShowViewController" id="B8P-fe-bVp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNe-xb-lWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4262" y="-538"/>
+            <point key="canvasLocation" x="1873" y="-500"/>
         </scene>
         <!--XZBillTableViewController-->
         <scene sceneID="xF7-bR-wu4">
@@ -283,7 +283,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="XZBillTableViewController" storyboardName="BillShow" referencedIdentifier="XZBillTableViewController" id="1we-6c-DlU" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8LO-Iq-LVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5093.6000000000004" y="-558.62068965517244"/>
+            <point key="canvasLocation" x="2202" y="-500"/>
         </scene>
     </scenes>
     <resources>
