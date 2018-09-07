@@ -31,7 +31,8 @@ class XZWithdrawalTabVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        previewBtn.layer.cornerRadius = 2;
+        previewBtn.layer.masksToBounds = true
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -50,6 +51,7 @@ class XZWithdrawalTabVC: UITableViewController {
             backBarItem.title = "返回"
             vc.navigationItem.backBarButtonItem = backBarItem
             vc.title = "账单详情"
+           
             //传值
  
             let dic = ["bankName":chooseBankBtn.titleLabel?.text,

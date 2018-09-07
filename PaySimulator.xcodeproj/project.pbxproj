@@ -36,6 +36,10 @@
 		E3461805213BC655007C2AA6 /* XZPayUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3461803213BC655007C2AA6 /* XZPayUserInfoCell.swift */; };
 		E3461806213BC655007C2AA6 /* XZPayUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3461804213BC655007C2AA6 /* XZPayUserInfoCell.xib */; };
 		E348973A214212550062410B /* withDraw.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3489739214212550062410B /* withDraw.storyboard */; };
+		E348975121428EF70062410B /* XZWithdrawalBillTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E348974A21428EF60062410B /* XZWithdrawalBillTabVC.swift */; };
+		E348975221428EF70062410B /* XZWithdrawalTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E348974B21428EF60062410B /* XZWithdrawalTabVC.swift */; };
+		E348975321428EF70062410B /* XZWithdrawalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E348974C21428EF60062410B /* XZWithdrawalVC.swift */; };
+		E348975421428EF70062410B /* XZWithdrawalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E348974E21428EF60062410B /* XZWithdrawalModel.swift */; };
 		E34E1526213E5E0A00D23547 /* XZEditUserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E1525213E5E0A00D23547 /* XZEditUserInfoVC.swift */; };
 		E34E152E213E784700D23547 /* XZBaseNavItemBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E152D213E784700D23547 /* XZBaseNavItemBtn.swift */; };
 		E35B5D78213CC01300E59A88 /* XZMyPhotoManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35B5D77213CC01300E59A88 /* XZMyPhotoManage.swift */; };
@@ -140,6 +144,10 @@
 		E3461803213BC655007C2AA6 /* XZPayUserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayUserInfoCell.swift; sourceTree = "<group>"; };
 		E3461804213BC655007C2AA6 /* XZPayUserInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XZPayUserInfoCell.xib; sourceTree = "<group>"; };
 		E3489739214212550062410B /* withDraw.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = withDraw.storyboard; sourceTree = "<group>"; };
+		E348974A21428EF60062410B /* XZWithdrawalBillTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZWithdrawalBillTabVC.swift; sourceTree = "<group>"; };
+		E348974B21428EF60062410B /* XZWithdrawalTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZWithdrawalTabVC.swift; sourceTree = "<group>"; };
+		E348974C21428EF60062410B /* XZWithdrawalVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZWithdrawalVC.swift; sourceTree = "<group>"; };
+		E348974E21428EF60062410B /* XZWithdrawalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZWithdrawalModel.swift; sourceTree = "<group>"; };
 		E34E1525213E5E0A00D23547 /* XZEditUserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZEditUserInfoVC.swift; sourceTree = "<group>"; };
 		E34E152D213E784700D23547 /* XZBaseNavItemBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseNavItemBtn.swift; sourceTree = "<group>"; };
 		E35B5D77213CC01300E59A88 /* XZMyPhotoManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMyPhotoManage.swift; sourceTree = "<group>"; };
@@ -307,6 +315,50 @@
 				E35B5D77213CC01300E59A88 /* XZMyPhotoManage.swift */,
 			);
 			path = "弹出系统相机相册";
+			sourceTree = "<group>";
+		};
+		E348974821428EF60062410B /* 提现 */ = {
+			isa = PBXGroup;
+			children = (
+				E348974921428EF60062410B /* Controller */,
+				E348974D21428EF60062410B /* Model */,
+				E348974F21428EF60062410B /* View */,
+				E348975021428EF60062410B /* ViewModel */,
+			);
+			name = "提现";
+			path = "PaySimulator/Classes/Pay/Me/提现";
+			sourceTree = SOURCE_ROOT;
+		};
+		E348974921428EF60062410B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E348974A21428EF60062410B /* XZWithdrawalBillTabVC.swift */,
+				E348974B21428EF60062410B /* XZWithdrawalTabVC.swift */,
+				E348974C21428EF60062410B /* XZWithdrawalVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E348974D21428EF60062410B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E348974E21428EF60062410B /* XZWithdrawalModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E348974F21428EF60062410B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E348975021428EF60062410B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		E35B5D79213D2C3100E59A88 /* UserManage */ = {
@@ -594,6 +646,7 @@
 				E3D98F2421363A3900887FAF /* View */,
 				E3D98F2521363A3900887FAF /* ViewModel */,
 				E34617FA213BBFDC007C2AA6 /* 个人信息 */,
+				E348974821428EF60062410B /* 提现 */,
 				E36490832140D2C9005F234B /* 余额 */,
 			);
 			path = Me;
@@ -1011,6 +1064,7 @@
 				E360484A2137A0C700ECF65F /* XZPayMainTabBarVC.swift in Sources */,
 				E34E1526213E5E0A00D23547 /* XZEditUserInfoVC.swift in Sources */,
 				E3A9AADF213F663A00FAEEAF /* XZMyPickerView.swift in Sources */,
+				E348975321428EF70062410B /* XZWithdrawalVC.swift in Sources */,
 				E3D98F4521363F6100887FAF /* AppDelegate.swift in Sources */,
 				5E085D67213FD41E003B0918 /* WRCustomNavigationBar.swift in Sources */,
 				E3461801213BC041007C2AA6 /* XZUserInfoTabVC.swift in Sources */,
@@ -1018,12 +1072,15 @@
 				E360485E2137A27800ECF65F /* XZPayPraiseVC.swift in Sources */,
 				E3D98F512136426200887FAF /* UIView+KRExtension.m in Sources */,
 				E3461805213BC655007C2AA6 /* XZPayUserInfoCell.swift in Sources */,
+				E348975121428EF70062410B /* XZWithdrawalBillTabVC.swift in Sources */,
 				E3A9AAE2213FA7F700FAEEAF /* XZPayMeNavView.swift in Sources */,
 				5E4B4E7521425F69003D3D23 /* XZPublicDataManager.swift in Sources */,
 				E36048432137988600ECF65F /* XZMainHomeVC.swift in Sources */,
 				E3D98F4121363F6100887FAF /* ViewController.swift in Sources */,
 				5ECE67D3214115F500C8C5A9 /* XZBillTableViewController.swift in Sources */,
 				5EAF733A214277BC0027812A /* XZSModel.swift in Sources */,
+				E348975421428EF70062410B /* XZWithdrawalModel.swift in Sources */,
+				E348975221428EF70062410B /* XZWithdrawalTabVC.swift in Sources */,
 				5E4B4E5E2142216D003D3D23 /* XZPublicTools.swift in Sources */,
 				E360485C2137A23400ECF65F /* XZPayFriendVC.swift in Sources */,
 				E364909B21413200005F234B /* XZTopUpVC.swift in Sources */,
