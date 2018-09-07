@@ -75,3 +75,8 @@ extension XZReceivablesTableViewController {
         self.tableView.tableFooterView = footer
     }
 }
+
+//t
+extension XZReceivablesTableViewController {
+    
+}

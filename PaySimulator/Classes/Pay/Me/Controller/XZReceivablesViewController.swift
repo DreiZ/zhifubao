@@ -11,6 +11,9 @@ import UIKit
 class XZReceivablesViewController: XZBaseViewController {
 
     @IBOutlet weak var contView: UIView!
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,3 +33,4 @@ extension XZReceivablesViewController {
         }
     }
 }
+
