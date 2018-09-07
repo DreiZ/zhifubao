@@ -9,10 +9,21 @@
 import UIKit
 
 class XZMainHomeVC: XZBaseVC {
-
+    var mainModel = XZFModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("zzz - \(mainModel.name) , \(mainModel.smodel.warepon)")
+        if XZPublicDataManager.shareSingleton.addOrUpdateModel(data: mainModel){
+            print("存入成功")
+        } else {
+            print("存入失败")
+        }
+        
+        let tempModel = XZPublicDataManager.shareSingleton.getDBModelData(modleClass: XZFModel.classForCoder() as! ZBaseModel.Type)
+        if let sssm : XZFModel = tempModel as? XZFModel {
+            print("zzz - \(sssm.name) , \(sssm.smodel.warepon)")
+        }
         
         self.view.backgroundColor = UIColor.init(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1)
     }
@@ -21,7 +32,7 @@ class XZMainHomeVC: XZBaseVC {
     
     //MARK:--storyboard按钮点击事件，按钮tag值已经在xib中添加 顺序 0～5
     @IBAction func clickMainButton(_ sender: XZMainButton) {
-        
+       
         switch sender.tag {
         case 0://支付宝模拟器
             
