@@ -27,6 +27,10 @@
 		E3461805213BC655007C2AA6 /* XZPayUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3461803213BC655007C2AA6 /* XZPayUserInfoCell.swift */; };
 		E3461806213BC655007C2AA6 /* XZPayUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3461804213BC655007C2AA6 /* XZPayUserInfoCell.xib */; };
 		E348973A214212550062410B /* withDraw.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3489739214212550062410B /* withDraw.storyboard */; };
+		E34897402142534A0062410B /* XZWithdrawalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E348973F2142534A0062410B /* XZWithdrawalVC.swift */; };
+		E3489742214253BB0062410B /* XZWithdrawalTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3489741214253BB0062410B /* XZWithdrawalTabVC.swift */; };
+		E3489744214253EB0062410B /* XZWithdrawalBillTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3489743214253EB0062410B /* XZWithdrawalBillTabVC.swift */; };
+		E3489747214269A50062410B /* XZWithdrawalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3489746214269A50062410B /* XZWithdrawalModel.swift */; };
 		E34E1526213E5E0A00D23547 /* XZEditUserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E1525213E5E0A00D23547 /* XZEditUserInfoVC.swift */; };
 		E34E152E213E784700D23547 /* XZBaseNavItemBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34E152D213E784700D23547 /* XZBaseNavItemBtn.swift */; };
 		E35B5D78213CC01300E59A88 /* XZMyPhotoManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35B5D77213CC01300E59A88 /* XZMyPhotoManage.swift */; };
@@ -105,6 +109,10 @@
 		E3461803213BC655007C2AA6 /* XZPayUserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayUserInfoCell.swift; sourceTree = "<group>"; };
 		E3461804213BC655007C2AA6 /* XZPayUserInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XZPayUserInfoCell.xib; sourceTree = "<group>"; };
 		E3489739214212550062410B /* withDraw.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = withDraw.storyboard; sourceTree = "<group>"; };
+		E348973F2142534A0062410B /* XZWithdrawalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZWithdrawalVC.swift; sourceTree = "<group>"; };
+		E3489741214253BB0062410B /* XZWithdrawalTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZWithdrawalTabVC.swift; sourceTree = "<group>"; };
+		E3489743214253EB0062410B /* XZWithdrawalBillTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZWithdrawalBillTabVC.swift; sourceTree = "<group>"; };
+		E3489746214269A50062410B /* XZWithdrawalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZWithdrawalModel.swift; sourceTree = "<group>"; };
 		E34E1525213E5E0A00D23547 /* XZEditUserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZEditUserInfoVC.swift; sourceTree = "<group>"; };
 		E34E152D213E784700D23547 /* XZBaseNavItemBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseNavItemBtn.swift; sourceTree = "<group>"; };
 		E35B5D77213CC01300E59A88 /* XZMyPhotoManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMyPhotoManage.swift; sourceTree = "<group>"; };
@@ -260,6 +268,49 @@
 				E35B5D77213CC01300E59A88 /* XZMyPhotoManage.swift */,
 			);
 			path = "弹出系统相机相册";
+			sourceTree = "<group>";
+		};
+		E348973B2142530B0062410B /* 提现 */ = {
+			isa = PBXGroup;
+			children = (
+				E348973C2142530B0062410B /* Controller */,
+				E348973D2142530B0062410B /* View */,
+				E34897452142685C0062410B /* Model */,
+				E348973E2142530B0062410B /* ViewModel */,
+			);
+			path = "提现";
+			sourceTree = "<group>";
+		};
+		E348973C2142530B0062410B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E348973F2142534A0062410B /* XZWithdrawalVC.swift */,
+				E3489741214253BB0062410B /* XZWithdrawalTabVC.swift */,
+				E3489743214253EB0062410B /* XZWithdrawalBillTabVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E348973D2142530B0062410B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E348973E2142530B0062410B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E34897452142685C0062410B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E3489746214269A50062410B /* XZWithdrawalModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E35B5D79213D2C3100E59A88 /* UserManage */ = {
@@ -546,6 +597,7 @@
 				E3D98F2521363A3900887FAF /* ViewModel */,
 				E34617FA213BBFDC007C2AA6 /* 个人信息 */,
 				E36490832140D2C9005F234B /* 余额 */,
+				E348973B2142530B0062410B /* 提现 */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -941,6 +993,7 @@
 			files = (
 				5E085D68213FD41E003B0918 /* WRNavigationBar.swift in Sources */,
 				E36048562137A1DB00ECF65F /* XZPayHomeVC.swift in Sources */,
+				E3489747214269A50062410B /* XZWithdrawalModel.swift in Sources */,
 				5E085D6C213FD462003B0918 /* XZReceivablesViewController.swift in Sources */,
 				E36490882140D2F8005F234B /* XZBalanceTabVC.swift in Sources */,
 				E36048642137A32E00ECF65F /* XZBaseNavigationVC.swift in Sources */,
@@ -955,9 +1008,11 @@
 				E360485E2137A27800ECF65F /* XZPayPraiseVC.swift in Sources */,
 				E3D98F512136426200887FAF /* UIView+KRExtension.m in Sources */,
 				E3461805213BC655007C2AA6 /* XZPayUserInfoCell.swift in Sources */,
+				E3489744214253EB0062410B /* XZWithdrawalBillTabVC.swift in Sources */,
 				E3A9AAE2213FA7F700FAEEAF /* XZPayMeNavView.swift in Sources */,
 				E36048432137988600ECF65F /* XZMainHomeVC.swift in Sources */,
 				E3D98F4121363F6100887FAF /* ViewController.swift in Sources */,
+				E3489742214253BB0062410B /* XZWithdrawalTabVC.swift in Sources */,
 				5ECE67D3214115F500C8C5A9 /* XZBillTableViewController.swift in Sources */,
 				E360485C2137A23400ECF65F /* XZPayFriendVC.swift in Sources */,
 				E364909B21413200005F234B /* XZTopUpVC.swift in Sources */,
@@ -970,6 +1025,7 @@
 				E36048412137986700ECF65F /* XZBaseVC.swift in Sources */,
 				E3D98F4E2136414A00887FAF /* XZMainButton.swift in Sources */,
 				E3D98F53213669E100887FAF /* XZCommon.swift in Sources */,
+				E34897402142534A0062410B /* XZWithdrawalVC.swift in Sources */,
 				E35B5D7B213D2C5300E59A88 /* XZUserHelper.swift in Sources */,
 				5E085D6A213FD444003B0918 /* XZBaseViewController.swift in Sources */,
 				E364908A2140D8D3005F234B /* XZBalanceVC.swift in Sources */,
