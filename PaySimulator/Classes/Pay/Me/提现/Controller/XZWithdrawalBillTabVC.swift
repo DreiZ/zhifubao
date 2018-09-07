@@ -19,6 +19,7 @@ class XZWithdrawalBillTabVC: UITableViewController {
     
     @IBOutlet weak var statusLabel: UILabel!
     
+    var withDrawaleModel : XZWithdrawalModel?
     
     
     
@@ -30,6 +31,9 @@ class XZWithdrawalBillTabVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        DDLog("传值 = \(String(describing: withDrawaleModel))")
+        
+     
     }
 
     override func didReceiveMemoryWarning() {

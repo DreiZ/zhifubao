@@ -48,17 +48,22 @@ class XZWithdrawalTabVC: UITableViewController {
            
             let backBarItem = UIBarButtonItem()
             backBarItem.title = "返回"
-            navigationItem.backBarButtonItem = backBarItem
+            vc.navigationItem.backBarButtonItem = backBarItem
+            vc.title = "账单详情"
             //传值
-         
-            
-            if chooseBankBtn.titleLabel?.text != nil{
-                
-            }
-            
-            
-            
-            
+ 
+            let dic = ["bankName":chooseBankBtn.titleLabel?.text,
+                       "tailNum" :bankNumTF.text,
+                       "cardUserName":cardNameTF.text,
+                       "money":drawalMoneyTF.text,
+                       "creatTime":creatTimeBtn.titleLabel?.text,
+                       "endTime":endTimeBtn.titleLabel?.text,
+                       "orderNum":orderNumTF.text,
+                       ]
+            let model = XZWithdrawalModel(withDarwalDict: dic as! [String : String])
+            DDLog("dic = \(dic)")
+            vc.withDrawaleModel = model
+ 
             
         }
         

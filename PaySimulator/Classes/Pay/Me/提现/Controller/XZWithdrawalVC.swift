@@ -11,7 +11,7 @@ import UIKit
 class XZWithdrawalVC: XZBaseVC {
     override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
-        setupNavBar()
+//        setupNavBar()
     }
     
     override func viewDidLoad() {
