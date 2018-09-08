@@ -16,12 +16,8 @@
 		5E4B4E5E2142216D003D3D23 /* XZPublicTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B4E5D2142216D003D3D23 /* XZPublicTools.swift */; };
 		5E4B4E6721424DF8003D3D23 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B4E6421424DF8003D3D23 /* SCLAlertView.swift */; };
 		5E4B4E6821424DF8003D3D23 /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B4E6521424DF8003D3D23 /* SCLExtensions.swift */; };
-		5E4B4E7521425F69003D3D23 /* XZPublicDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B4E7421425F69003D3D23 /* XZPublicDataManager.swift */; };
-		5EAF7331214272440027812A /* ZPublicDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF732F214272440027812A /* ZPublicDataManager.m */; };
-		5EAF73332142726F0027812A /* XZBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF73322142726E0027812A /* XZBaseModel.swift */; };
+		5E58516A2143981F004A2C4B /* XZBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5851692143981F004A2C4B /* XZBaseModel.swift */; };
 		5EAF7336214272A50027812A /* ZBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF7335214272A50027812A /* ZBaseModel.m */; };
-		5EAF7338214277AD0027812A /* XZFModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF7337214277AD0027812A /* XZFModel.swift */; };
-		5EAF733A214277BC0027812A /* XZSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF7339214277BC0027812A /* XZSModel.swift */; };
 		5ECE67C82140FB7600C8C5A9 /* XZReceivablesFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECE67C62140FB7600C8C5A9 /* XZReceivablesFooterView.xib */; };
 		5ECE67C92140FB7600C8C5A9 /* XZReceivablesFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE67C72140FB7600C8C5A9 /* XZReceivablesFooterView.swift */; };
 		5ECE67CB2140FBBA00C8C5A9 /* XZReceivablesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE67CA2140FBBA00C8C5A9 /* XZReceivablesTableViewController.swift */; };
@@ -120,16 +116,11 @@
 		5E4B4E5D2142216D003D3D23 /* XZPublicTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPublicTools.swift; sourceTree = "<group>"; };
 		5E4B4E6421424DF8003D3D23 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
 		5E4B4E6521424DF8003D3D23 /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
-		5E4B4E7421425F69003D3D23 /* XZPublicDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPublicDataManager.swift; sourceTree = "<group>"; };
 		5E4B4E762142675E003D3D23 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		5E4B4E782142676C003D3D23 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		5EAF732F214272440027812A /* ZPublicDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZPublicDataManager.m; sourceTree = "<group>"; };
-		5EAF7330214272440027812A /* ZPublicDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZPublicDataManager.h; sourceTree = "<group>"; };
-		5EAF73322142726E0027812A /* XZBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = XZBaseModel.swift; path = PaySimulator/Classes/Tools/XZBaseModel.swift; sourceTree = SOURCE_ROOT; };
+		5E5851692143981F004A2C4B /* XZBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseModel.swift; sourceTree = "<group>"; };
 		5EAF7334214272A50027812A /* ZBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZBaseModel.h; path = PaySimulator/Classes/Tools/ZBaseModel.h; sourceTree = SOURCE_ROOT; };
 		5EAF7335214272A50027812A /* ZBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZBaseModel.m; path = PaySimulator/Classes/Tools/ZBaseModel.m; sourceTree = SOURCE_ROOT; };
-		5EAF7337214277AD0027812A /* XZFModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = XZFModel.swift; path = PaySimulator/Classes/Tools/XZFModel.swift; sourceTree = SOURCE_ROOT; };
-		5EAF7339214277BC0027812A /* XZSModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = XZSModel.swift; path = PaySimulator/Classes/Tools/XZSModel.swift; sourceTree = SOURCE_ROOT; };
 		5ECE67C62140FB7600C8C5A9 /* XZReceivablesFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZReceivablesFooterView.xib; sourceTree = "<group>"; };
 		5ECE67C72140FB7600C8C5A9 /* XZReceivablesFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZReceivablesFooterView.swift; sourceTree = "<group>"; };
 		5ECE67CA2140FBBA00C8C5A9 /* XZReceivablesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZReceivablesTableViewController.swift; sourceTree = "<group>"; };
@@ -253,6 +244,14 @@
 				5E4B4E6521424DF8003D3D23 /* SCLExtensions.swift */,
 			);
 			path = SCLAlertView;
+			sourceTree = "<group>";
+		};
+		5E585168214397B0004A2C4B /* XZBaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				5E5851692143981F004A2C4B /* XZBaseModel.swift */,
+			);
+			path = XZBaseModel;
 			sourceTree = "<group>";
 		};
 		6B0552CAAD1764AB0A323297 /* Frameworks */ = {
@@ -515,8 +514,6 @@
 		E3D98F1221363A3900887FAF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5EAF7337214277AD0027812A /* XZFModel.swift */,
-				5EAF7339214277BC0027812A /* XZSModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -798,9 +795,6 @@
 				E3461807213BEBB3007C2AA6 /* 弹出系统相机相册 */,
 				E3A9AADD213F64D100FAEEAF /* 选择器Pickerview */,
 				5E4B4E5D2142216D003D3D23 /* XZPublicTools.swift */,
-				5E4B4E7421425F69003D3D23 /* XZPublicDataManager.swift */,
-				5EAF7330214272440027812A /* ZPublicDataManager.h */,
-				5EAF732F214272440027812A /* ZPublicDataManager.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -808,6 +802,7 @@
 		E3D98F3221363A3900887FAF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				5E585168214397B0004A2C4B /* XZBaseModel */,
 				E3D98F3321363A3900887FAF /* Controller */,
 				E3D98F3421363A3900887FAF /* Model */,
 				E3D98F3521363A3900887FAF /* View */,
@@ -829,7 +824,6 @@
 		E3D98F3421363A3900887FAF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5EAF73322142726E0027812A /* XZBaseModel.swift */,
 				5EAF7334214272A50027812A /* ZBaseModel.h */,
 				5EAF7335214272A50027812A /* ZBaseModel.m */,
 			);
@@ -1074,11 +1068,9 @@
 				E3461805213BC655007C2AA6 /* XZPayUserInfoCell.swift in Sources */,
 				E348975121428EF70062410B /* XZWithdrawalBillTabVC.swift in Sources */,
 				E3A9AAE2213FA7F700FAEEAF /* XZPayMeNavView.swift in Sources */,
-				5E4B4E7521425F69003D3D23 /* XZPublicDataManager.swift in Sources */,
 				E36048432137988600ECF65F /* XZMainHomeVC.swift in Sources */,
 				E3D98F4121363F6100887FAF /* ViewController.swift in Sources */,
 				5ECE67D3214115F500C8C5A9 /* XZBillTableViewController.swift in Sources */,
-				5EAF733A214277BC0027812A /* XZSModel.swift in Sources */,
 				E348975421428EF70062410B /* XZWithdrawalModel.swift in Sources */,
 				E348975221428EF70062410B /* XZWithdrawalTabVC.swift in Sources */,
 				5E4B4E5E2142216D003D3D23 /* XZPublicTools.swift in Sources */,
@@ -1090,19 +1082,17 @@
 				E36048582137A1F000ECF65F /* XZPayMoneyVC.swift in Sources */,
 				5ECE67CB2140FBBA00C8C5A9 /* XZReceivablesTableViewController.swift in Sources */,
 				5ECE67CE2140FC7500C8C5A9 /* XZMyAlertSheetView.swift in Sources */,
+				5E58516A2143981F004A2C4B /* XZBaseModel.swift in Sources */,
 				E36048412137986700ECF65F /* XZBaseVC.swift in Sources */,
 				E3D98F4E2136414A00887FAF /* XZMainButton.swift in Sources */,
 				E3D98F53213669E100887FAF /* XZCommon.swift in Sources */,
-				5EAF7331214272440027812A /* ZPublicDataManager.m in Sources */,
 				E35B5D7B213D2C5300E59A88 /* XZUserHelper.swift in Sources */,
 				5E085D6A213FD444003B0918 /* XZBaseViewController.swift in Sources */,
 				E364908A2140D8D3005F234B /* XZBalanceVC.swift in Sources */,
 				E36048622137A2B100ECF65F /* XZPayMeVC.swift in Sources */,
 				5E4B4E6821424DF8003D3D23 /* SCLExtensions.swift in Sources */,
 				5ECE67D721411B6B00C8C5A9 /* XZBillModel.swift in Sources */,
-				5EAF7338214277AD0027812A /* XZFModel.swift in Sources */,
 				5ECE67C92140FB7600C8C5A9 /* XZReceivablesFooterView.swift in Sources */,
-				5EAF73332142726F0027812A /* XZBaseModel.swift in Sources */,
 				E364909A21413200005F234B /* XZTopUpFinishVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

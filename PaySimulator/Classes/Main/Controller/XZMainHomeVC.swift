@@ -9,10 +9,10 @@
 import UIKit
 
 class XZMainHomeVC: XZBaseVC {
-    var mainModel = XZFModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.view.backgroundColor = UIColor.init(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1)
     }
 
