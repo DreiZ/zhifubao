@@ -13,18 +13,6 @@ class XZMainHomeVC: XZBaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("zzz - \(mainModel.name) , \(mainModel.smodel.warepon)")
-        if XZPublicDataManager.shareSingleton.addOrUpdateModel(data: mainModel){
-            print("存入成功")
-        } else {
-            print("存入失败")
-        }
-        
-        let tempModel = XZPublicDataManager.shareSingleton.getDBModelData(modleClass: XZFModel.classForCoder() as! ZBaseModel.Type)
-        if let sssm : XZFModel = tempModel as? XZFModel {
-            print("zzz - \(sssm.name) , \(sssm.smodel.warepon)")
-        }
-        
         self.view.backgroundColor = UIColor.init(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1)
     }
 

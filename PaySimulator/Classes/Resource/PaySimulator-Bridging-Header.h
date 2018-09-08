@@ -6,4 +6,5 @@
 #import <FMDB/FMDB.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "ZPublicDataManager.h"
+#import "XZTestModel.h"
 

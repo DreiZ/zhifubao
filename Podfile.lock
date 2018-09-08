@@ -26,7 +26,7 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - FMDB
     - IQKeyboardManagerSwift
@@ -48,4 +48,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: ad3cbdd2a32be21e55172a2b26cf542988a5b51c
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.0
