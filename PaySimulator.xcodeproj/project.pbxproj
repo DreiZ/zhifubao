@@ -24,6 +24,9 @@
 		5E4FC21C2146182F00E0A5A9 /* XZChatConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC21B2146182F00E0A5A9 /* XZChatConfig.swift */; };
 		5E4FC21E21463CF200E0A5A9 /* XZChatBoxMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC21D21463CF200E0A5A9 /* XZChatBoxMoreView.swift */; };
 		5E4FC22021463D0800E0A5A9 /* XZChatBoxFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC21F21463D0800E0A5A9 /* XZChatBoxFaceView.swift */; };
+		5E4FC2222146636D00E0A5A9 /* XZEmotionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC2212146636D00E0A5A9 /* XZEmotionListView.swift */; };
+		5E4FC224214663F500E0A5A9 /* XZEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC223214663F500E0A5A9 /* XZEmotion.swift */; };
+		5E4FC226214664A900E0A5A9 /* XZEmotionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC225214664A900E0A5A9 /* XZEmotionPageView.swift */; };
 		5E58516A2143981F004A2C4B /* XZBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5851692143981F004A2C4B /* XZBaseModel.swift */; };
 		5EAF7336214272A50027812A /* ZBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF7335214272A50027812A /* ZBaseModel.m */; };
 		5ECE67C82140FB7600C8C5A9 /* XZReceivablesFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECE67C62140FB7600C8C5A9 /* XZReceivablesFooterView.xib */; };
@@ -138,6 +141,9 @@
 		5E4FC21B2146182F00E0A5A9 /* XZChatConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatConfig.swift; sourceTree = "<group>"; };
 		5E4FC21D21463CF200E0A5A9 /* XZChatBoxMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatBoxMoreView.swift; sourceTree = "<group>"; };
 		5E4FC21F21463D0800E0A5A9 /* XZChatBoxFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatBoxFaceView.swift; sourceTree = "<group>"; };
+		5E4FC2212146636D00E0A5A9 /* XZEmotionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZEmotionListView.swift; sourceTree = "<group>"; };
+		5E4FC223214663F500E0A5A9 /* XZEmotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZEmotion.swift; sourceTree = "<group>"; };
+		5E4FC225214664A900E0A5A9 /* XZEmotionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZEmotionPageView.swift; sourceTree = "<group>"; };
 		5E5851692143981F004A2C4B /* XZBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseModel.swift; sourceTree = "<group>"; };
 		5EAF7334214272A50027812A /* ZBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZBaseModel.h; path = PaySimulator/Classes/Tools/ZBaseModel.h; sourceTree = SOURCE_ROOT; };
 		5EAF7335214272A50027812A /* ZBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZBaseModel.m; path = PaySimulator/Classes/Tools/ZBaseModel.m; sourceTree = SOURCE_ROOT; };
@@ -294,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				5E4FC20F2146118600E0A5A9 /* XZUserModel.swift */,
+				5E4FC223214663F500E0A5A9 /* XZEmotion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,6 +328,8 @@
 				5E4FC212214611DB00E0A5A9 /* XZChatBoxView.swift */,
 				5E4FC21D21463CF200E0A5A9 /* XZChatBoxMoreView.swift */,
 				5E4FC21F21463D0800E0A5A9 /* XZChatBoxFaceView.swift */,
+				5E4FC2212146636D00E0A5A9 /* XZEmotionListView.swift */,
+				5E4FC225214664A900E0A5A9 /* XZEmotionPageView.swift */,
 			);
 			path = ChatBox;
 			sourceTree = "<group>";
@@ -1176,11 +1185,14 @@
 				E360485C2137A23400ECF65F /* XZPayFriendVC.swift in Sources */,
 				E364909B21413200005F234B /* XZTopUpVC.swift in Sources */,
 				5ECE67CF2140FC7500C8C5A9 /* XZMyAlertSheetTableViewCell.swift in Sources */,
+				5E4FC226214664A900E0A5A9 /* XZEmotionPageView.swift in Sources */,
 				E35B5D78213CC01300E59A88 /* XZMyPhotoManage.swift in Sources */,
+				5E4FC2222146636D00E0A5A9 /* XZEmotionListView.swift in Sources */,
 				5E4FC21C2146182F00E0A5A9 /* XZChatConfig.swift in Sources */,
 				5ECE67D1214115A500C8C5A9 /* XZBillShowViewController.swift in Sources */,
 				E36048582137A1F000ECF65F /* XZPayMoneyVC.swift in Sources */,
 				5ECE67CB2140FBBA00C8C5A9 /* XZReceivablesTableViewController.swift in Sources */,
+				5E4FC224214663F500E0A5A9 /* XZEmotion.swift in Sources */,
 				5ECE67CE2140FC7500C8C5A9 /* XZMyAlertSheetView.swift in Sources */,
 				5E58516A2143981F004A2C4B /* XZBaseModel.swift in Sources */,
 				E3BC6D0F2144EE4D000FDB12 /* XZPayFriendCellTableViewCell.swift in Sources */,

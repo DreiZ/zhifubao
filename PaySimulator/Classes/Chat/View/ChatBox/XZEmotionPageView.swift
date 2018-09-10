@@ -1,5 +1,5 @@
 //
-//  XZChatBoxFaceView.swift
+//  XZEmotionPageView.swift
 //  PaySimulator
 //
 //  Created by zzz on 2018/9/10.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class XZChatBoxFaceView: UIView {
+class XZEmotionPageView: UIView {
 
-//    kChatBackColor
+    var emotions : Array<XZEmotion>?
 
 }

@@ -76,7 +76,7 @@ class XZChatBoxView: UIView {
 
 extension XZChatBoxView {
     func setupUI ()  {
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = kChatBoxBackColor
         
         let contView = UIView()
         self.addSubview(contView)

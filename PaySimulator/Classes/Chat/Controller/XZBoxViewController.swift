@@ -22,6 +22,12 @@ class XZBoxViewController: UIViewController {
         return moreView
     }()
     
+    lazy var faceViwe : XZChatBoxFaceView = {
+        let faceView = XZChatBoxFaceView()
+        
+        return faceView
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +40,7 @@ class XZBoxViewController: UIViewController {
 
 extension XZBoxViewController {
     private func setupUI () {
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = kChatBackColor
         
         self.view.addSubview(self.chatBox)
         self.chatBox.snp.makeConstraints { (make) in

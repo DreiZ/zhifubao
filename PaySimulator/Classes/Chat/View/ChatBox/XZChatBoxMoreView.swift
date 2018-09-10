@@ -49,6 +49,7 @@ class XZChatBoxMoreView: UIView {
 
 extension XZChatBoxMoreView {
     func setupUI () {
+        self.backgroundColor = kChatBackColor
         
         self.addSubview(self.picBtn)
         self.addSubview(self.zhuanBtn)

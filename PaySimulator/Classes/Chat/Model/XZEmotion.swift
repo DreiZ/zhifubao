@@ -1,5 +1,5 @@
 //
-//  XZChatBoxFaceView.swift
+//  XZEmotion.swift
 //  PaySimulator
 //
 //  Created by zzz on 2018/9/10.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class XZChatBoxFaceView: UIView {
-
-//    kChatBackColor
-
+class XZEmotion: NSObject {
+    let face_name : String? 
+    let face_id : String?
+    let code : String?
 }
