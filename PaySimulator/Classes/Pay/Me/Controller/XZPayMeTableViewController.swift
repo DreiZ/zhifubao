@@ -122,25 +122,7 @@ extension XZPayMeTableViewController{
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        /*
-        if section == 0 {
-            let headerView = XZPayMeHeaderView.loadMyView()
-            headerView.iconImage.layer.masksToBounds = true
-            headerView.iconImage.layer.cornerRadius = 4
-            headerView.iconImage.layer.borderColor = UIColor.init(red: 102.0/255.0, green: 167.0/255.0, blue: 223.0/255.0, alpha: 1).cgColor
-            
-            headerView.clickHeaderRightBlock = {[weak self] (sender : UIButton) in//推出用户详情控制器
-                let  meUserInfoVC = XZUserInfoTabVC()
-                self!.navigationController?.pushViewController(meUserInfoVC, animated: true)
-                
-            }
-            
-            headerView.userInfo = XZUserHelper.getUserInfo()
-            
-            
-            return headerView
-        }
- */
+        
         return nil
  
     }
@@ -156,6 +138,12 @@ extension XZPayMeTableViewController{
             self.bjBlueImgView?.frame = bjFrame!
         }
         
+    }
+    
+    
+    //MARK:--tableView点击方法
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }

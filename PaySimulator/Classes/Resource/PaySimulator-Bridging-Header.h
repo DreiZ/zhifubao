@@ -7,4 +7,4 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <LKDBHelper/LKDBHelper.h>
 #import <LKDBHelper/NSObject+LKDBHelper.h>
-
+#import "XZAddressBookManager.h"
