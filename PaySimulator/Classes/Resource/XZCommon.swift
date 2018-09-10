@@ -13,7 +13,7 @@ let kStatusBarH : CGFloat = 20
 let kNavigationBarH : CGFloat = 44
 
 /**以5s为标准*/
-let currentPX : CGFloat = 640
+let currentPX : CGFloat = 750
 
 //屏幕宽度
 let kWindowW :  CGFloat  = UIScreen.main.bounds.size.width

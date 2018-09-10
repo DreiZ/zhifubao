@@ -10,6 +10,19 @@ import UIKit
 
 class XZBoxViewController: UIViewController {
 
+    lazy var chatBox : XZChatBoxView = {
+        let chatBox = XZChatBoxView()
+    
+        return chatBox
+    }()
+    
+    lazy var moreView : XZChatBoxMoreView = {
+       let moreView = XZChatBoxMoreView()
+        
+        return moreView
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,5 +35,18 @@ class XZBoxViewController: UIViewController {
 extension XZBoxViewController {
     private func setupUI () {
         self.view.backgroundColor = UIColor.white
+        
+        self.view.addSubview(self.chatBox)
+        self.chatBox.snp.makeConstraints { (make) in
+            make.left.top.right.equalToSuperview()
+            make.height.equalTo(kTabBarHeight)
+        }
+        
+        self.view.addSubview(self.moreView)
+        self.moreView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.height.equalTo(kChatMoreViewHeight)
+            make.top.equalTo(self.view.snp.top).offset(50)
+        }
     }
 }

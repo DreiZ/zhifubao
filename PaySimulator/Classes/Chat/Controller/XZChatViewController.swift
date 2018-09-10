@@ -56,7 +56,7 @@ extension XZChatViewController {
         
         self.chatBoxViewController.view.snp.makeConstraints { (make) in
             make.left.bottom.right.equalToSuperview()
-            make.height.equalTo(DDTabBarHeight)
+            make.height.equalTo(kTabBarHeight + kChatMoreViewHeight)
         }
         
         self.iTableView.snp.makeConstraints { (make) in
@@ -81,13 +81,18 @@ extension XZChatViewController {
 //MARK : tableview 数据源 & 协议代理
 extension XZChatViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        cell.textLabel?.text = "123"
         return cell
     }
     
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
     
 }
