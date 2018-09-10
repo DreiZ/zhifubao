@@ -9,6 +9,7 @@ PODS:
     - LKDBHelper/standard (= 2.5.1)
   - LKDBHelper/standard (2.5.1):
     - FMDB
+  - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
   - NVActivityIndicatorView (4.3.0):
     - NVActivityIndicatorView/Presenter (= 4.3.0)
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift (= 5.0.0)
   - Kingfisher (~> 4.0)
   - LKDBHelper
+  - Masonry
   - MBProgressHUD (~> 1.1.0)
   - NVActivityIndicatorView
   - SnapKit (~> 4.0.0)
@@ -32,6 +34,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - Kingfisher
     - LKDBHelper
+    - Masonry
     - MBProgressHUD
     - NVActivityIndicatorView
     - SnapKit
@@ -42,10 +45,11 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
   Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
   LKDBHelper: 9a276ba51f2e16263d46a9517e16cc9b03472664
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   NVActivityIndicatorView: 963f62bf9f993fcf23218e55958e5b1761b9504c
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: ad3cbdd2a32be21e55172a2b26cf542988a5b51c
+PODFILE CHECKSUM: 8202f4c5d0f8d50e8a23d5d761e36d50f72051db
 
 COCOAPODS: 1.5.0

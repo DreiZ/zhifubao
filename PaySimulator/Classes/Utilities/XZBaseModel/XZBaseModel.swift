@@ -21,6 +21,7 @@ import UIKit
         return "tableName"
     }
     
+    
 //    override var description: String {
 //        return "属性1:\(属性1) 属性2:\(属性2)";
 //    }
@@ -28,7 +29,9 @@ import UIKit
 
 extension XZBaseModel {
     func test () {
-        //let globalHelper = XZBaseModel.getUsingLKDBHelper()
+        let globalHelper = XZBaseModel.getUsingLKDBHelper()
+        var tesxt = XZBaseModel()
+        tesxt.updateToDB()
         /////删除所有表   delete all table
         //globalHelper.dropAllTable()
         //

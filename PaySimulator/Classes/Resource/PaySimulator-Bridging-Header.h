@@ -8,3 +8,8 @@
 #import <LKDBHelper/LKDBHelper.h>
 #import <LKDBHelper/NSObject+LKDBHelper.h>
 
+
+#import "XZGroup.h"
+#import "XZChatViewController.h"
+
+

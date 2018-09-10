@@ -12,6 +12,8 @@ pod 'FMDB'
 pod 'IQKeyboardManagerSwift', '5.0.0'
 pod 'MBProgressHUD', '~> 1.1.0'
 
+pod 'Masonry'
+
 #数据库封装
 pod 'LKDBHelper'
 pod 'NVActivityIndicatorView' #progress loading
