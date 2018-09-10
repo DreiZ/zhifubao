@@ -39,7 +39,9 @@ class XZMainHomeVC: XZBaseVC {
             self.navigationController?.pushViewController(transfer, animated: true)
             break
         case 2://余额
-           
+           let chatvc = XZChatViewController()
+           chatvc.hidesBottomBarWhenPushed = true
+           self.navigationController?.pushViewController(chatvc, animated: true)
             break
         case 3://收款账单
             
