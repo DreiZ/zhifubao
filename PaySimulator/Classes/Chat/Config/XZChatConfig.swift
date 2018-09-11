@@ -31,3 +31,19 @@ enum XZChatBoxStatus : String {
     case showKeyboard = "正常键盘"
     case showVideo = "录制视频"
 }
+
+// 消息发送状态
+enum MessageDeliveryState : Int {
+    case pending = 0  // 待发送
+    case delivering = 1   // 正在发送
+    case delivered = 2    // 已发送，成功
+    case failure = 3      // 发送失败
+    case serviceFaid = 4   // 发送服务器失败(可能其它错,待扩展)
+}
+
+// 消息状态
+enum XZMessageStatus : Int {
+    case unRead = 0          // 消息未读
+    case read = 1                 // 消息已读
+    case back = 2                 // 消息撤回
+}

@@ -146,6 +146,14 @@
 		5E42F41D21475E490034B691 /* ICFaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E42F41C21475E490034B691 /* ICFaceManager.m */; };
 		5E42F421214760E40034B691 /* BaseEmotion.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E42F420214760E40034B691 /* BaseEmotion.plist */; };
 		5E42F425214762BE0034B691 /* info.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E42F424214762BE0034B691 /* info.json */; };
+		5E42F42B2147A8DB0034B691 /* XZChatMessageTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E42F42A2147A8DB0034B691 /* XZChatMessageTextCell.swift */; };
+		5E42F42D2147A8F00034B691 /* XZChatMessageImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E42F42C2147A8F00034B691 /* XZChatMessageImageCell.swift */; };
+		5E42F42F2147A90E0034B691 /* XZChatMessageVoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E42F42E2147A90E0034B691 /* XZChatMessageVoiceCell.swift */; };
+		5E42F4312147A9310034B691 /* XZChatMessageRedPacketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E42F4302147A9310034B691 /* XZChatMessageRedPacketCell.swift */; };
+		5E42F4332147A9480034B691 /* XZChatMessageSystemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E42F4322147A9480034B691 /* XZChatMessageSystemCell.swift */; };
+		5E42F4352147ACBD0034B691 /* XZMessageFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E42F4342147ACBD0034B691 /* XZMessageFrame.swift */; };
+		5E42F4372147AD460034B691 /* XZMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E42F4362147AD460034B691 /* XZMessageModel.swift */; };
+		5E42F4392147AD6C0034B691 /* XZMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E42F4382147AD6C0034B691 /* XZMessage.swift */; };
 		5E4B4E5A214213AA003D3D23 /* Bill.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B4E59214213AA003D3D23 /* Bill.storyboard */; };
 		5E4B4E5C21421447003D3D23 /* BillShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B4E5B21421447003D3D23 /* BillShow.storyboard */; };
 		5E4B4E5E2142216D003D3D23 /* XZPublicTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B4E5D2142216D003D3D23 /* XZPublicTools.swift */; };
@@ -398,6 +406,14 @@
 		5E42F41C21475E490034B691 /* ICFaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICFaceManager.m; sourceTree = "<group>"; };
 		5E42F420214760E40034B691 /* BaseEmotion.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BaseEmotion.plist; sourceTree = "<group>"; };
 		5E42F424214762BE0034B691 /* info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = info.json; sourceTree = "<group>"; };
+		5E42F42A2147A8DB0034B691 /* XZChatMessageTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatMessageTextCell.swift; sourceTree = "<group>"; };
+		5E42F42C2147A8F00034B691 /* XZChatMessageImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatMessageImageCell.swift; sourceTree = "<group>"; };
+		5E42F42E2147A90E0034B691 /* XZChatMessageVoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatMessageVoiceCell.swift; sourceTree = "<group>"; };
+		5E42F4302147A9310034B691 /* XZChatMessageRedPacketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatMessageRedPacketCell.swift; sourceTree = "<group>"; };
+		5E42F4322147A9480034B691 /* XZChatMessageSystemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatMessageSystemCell.swift; sourceTree = "<group>"; };
+		5E42F4342147ACBD0034B691 /* XZMessageFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMessageFrame.swift; sourceTree = "<group>"; };
+		5E42F4362147AD460034B691 /* XZMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMessageModel.swift; sourceTree = "<group>"; };
+		5E42F4382147AD6C0034B691 /* XZMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMessage.swift; sourceTree = "<group>"; };
 		5E4B4E59214213AA003D3D23 /* Bill.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Bill.storyboard; sourceTree = "<group>"; };
 		5E4B4E5B21421447003D3D23 /* BillShow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BillShow.storyboard; sourceTree = "<group>"; };
 		5E4B4E5D2142216D003D3D23 /* XZPublicTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPublicTools.swift; sourceTree = "<group>"; };
@@ -553,6 +569,7 @@
 		5E42F31721475B810034B691 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5E42F43A2147C1CD0034B691 /* ChatImage */,
 				5E42F31821475B9F0034B691 /* BaseEmotion */,
 			);
 			path = Source;
@@ -692,6 +709,13 @@
 			path = BaseEmotion;
 			sourceTree = "<group>";
 		};
+		5E42F43A2147C1CD0034B691 /* ChatImage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChatImage;
+			sourceTree = "<group>";
+		};
 		5E4B4E6221424DF8003D3D23 /* SCLAlertView */ = {
 			isa = PBXGroup;
 			children = (
@@ -728,6 +752,9 @@
 			children = (
 				5E4FC20F2146118600E0A5A9 /* XZUserModel.swift */,
 				5E4FC223214663F500E0A5A9 /* XZEmotion.swift */,
+				5E42F4342147ACBD0034B691 /* XZMessageFrame.swift */,
+				5E42F4362147AD460034B691 /* XZMessageModel.swift */,
+				5E42F4382147AD6C0034B691 /* XZMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -745,6 +772,11 @@
 			isa = PBXGroup;
 			children = (
 				5E4FC2162146122C00E0A5A9 /* XZBaseMessageCell.swift */,
+				5E42F42A2147A8DB0034B691 /* XZChatMessageTextCell.swift */,
+				5E42F42C2147A8F00034B691 /* XZChatMessageImageCell.swift */,
+				5E42F42E2147A90E0034B691 /* XZChatMessageVoiceCell.swift */,
+				5E42F4302147A9310034B691 /* XZChatMessageRedPacketCell.swift */,
+				5E42F4322147A9480034B691 /* XZChatMessageSystemCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1720,11 +1752,13 @@
 				5E4B4E6721424DF8003D3D23 /* SCLAlertView.swift in Sources */,
 				5E085D6C213FD462003B0918 /* XZReceivablesViewController.swift in Sources */,
 				E36490882140D2F8005F234B /* XZBalanceTabVC.swift in Sources */,
+				5E42F4332147A9480034B691 /* XZChatMessageSystemCell.swift in Sources */,
 				E36048642137A32E00ECF65F /* XZBaseNavigationVC.swift in Sources */,
 				E34617F5213B873B007C2AA6 /* XZPayMeTableViewController.swift in Sources */,
 				E360484A2137A0C700ECF65F /* XZPayMainTabBarVC.swift in Sources */,
 				E34E1526213E5E0A00D23547 /* XZEditUserInfoVC.swift in Sources */,
 				E3A9AADF213F663A00FAEEAF /* XZMyPickerView.swift in Sources */,
+				5E42F42B2147A8DB0034B691 /* XZChatMessageTextCell.swift in Sources */,
 				5E42F3162147596F0034B691 /* TinyModel.swift in Sources */,
 				5E4FC2172146122C00E0A5A9 /* XZBaseMessageCell.swift in Sources */,
 				E348975321428EF70062410B /* XZWithdrawalVC.swift in Sources */,
@@ -1738,10 +1772,13 @@
 				E3461805213BC655007C2AA6 /* XZPayUserInfoCell.swift in Sources */,
 				E348975121428EF70062410B /* XZWithdrawalBillTabVC.swift in Sources */,
 				5E4FC21E21463CF200E0A5A9 /* XZChatBoxMoreView.swift in Sources */,
+				5E42F42F2147A90E0034B691 /* XZChatMessageVoiceCell.swift in Sources */,
 				E3A9AAE2213FA7F700FAEEAF /* XZPayMeNavView.swift in Sources */,
 				E36048432137988600ECF65F /* XZMainHomeVC.swift in Sources */,
 				E3D98F4121363F6100887FAF /* ViewController.swift in Sources */,
 				5E42F30E21474E2F0034B691 /* XZExtension.swift in Sources */,
+				5E42F4392147AD6C0034B691 /* XZMessage.swift in Sources */,
+				5E42F42D2147A8F00034B691 /* XZChatMessageImageCell.swift in Sources */,
 				5ECE67D3214115F500C8C5A9 /* XZBillTableViewController.swift in Sources */,
 				E3BC6D1721450830000FDB12 /* XZAddressSecondCell.swift in Sources */,
 				E348975421428EF70062410B /* XZWithdrawalModel.swift in Sources */,
@@ -1752,6 +1789,7 @@
 				E360485C2137A23400ECF65F /* XZPayFriendVC.swift in Sources */,
 				E364909B21413200005F234B /* XZTopUpVC.swift in Sources */,
 				5ECE67CF2140FC7500C8C5A9 /* XZMyAlertSheetTableViewCell.swift in Sources */,
+				5E42F4372147AD460034B691 /* XZMessageModel.swift in Sources */,
 				5E4FC226214664A900E0A5A9 /* XZEmotionPageView.swift in Sources */,
 				E35B5D78213CC01300E59A88 /* XZMyPhotoManage.swift in Sources */,
 				5E4FC2222146636D00E0A5A9 /* XZEmotionListView.swift in Sources */,
@@ -1759,11 +1797,13 @@
 				5ECE67D1214115A500C8C5A9 /* XZBillShowViewController.swift in Sources */,
 				E36048582137A1F000ECF65F /* XZPayMoneyVC.swift in Sources */,
 				5ECE67CB2140FBBA00C8C5A9 /* XZReceivablesTableViewController.swift in Sources */,
+				5E42F4312147A9310034B691 /* XZChatMessageRedPacketCell.swift in Sources */,
 				5E42F311214750030034B691 /* NSString+Extension.m in Sources */,
 				5E4FC224214663F500E0A5A9 /* XZEmotion.swift in Sources */,
 				5ECE67CE2140FC7500C8C5A9 /* XZMyAlertSheetView.swift in Sources */,
 				5E58516A2143981F004A2C4B /* XZBaseModel.swift in Sources */,
 				E3BC6D0F2144EE4D000FDB12 /* XZPayFriendCellTableViewCell.swift in Sources */,
+				5E42F4352147ACBD0034B691 /* XZMessageFrame.swift in Sources */,
 				E36048412137986700ECF65F /* XZBaseVC.swift in Sources */,
 				E3D98F4E2136414A00887FAF /* XZMainButton.swift in Sources */,
 				E3D98F53213669E100887FAF /* XZCommon.swift in Sources */,
@@ -1943,7 +1983,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/PaySimulator/Classes/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PaySimulator/Classes/Resource/PaySimulator-Bridging-Header.h";
@@ -1967,7 +2010,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/PaySimulator/Classes/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PaySimulator/Classes/Resource/PaySimulator-Bridging-Header.h";
@@ -1984,7 +2030,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = PaySimulatorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2001,7 +2051,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = PaySimulatorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2017,7 +2071,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = PaySimulatorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2033,7 +2091,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = PaySimulatorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
