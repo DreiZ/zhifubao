@@ -10,16 +10,7 @@ import UIKit
 
 class XZEmotionButton: UIButton {
 
-    var emotion : XZEmotion {
-        set {
-            self.emotion = newValue
-            self.setImage(UIImage(named: self.emotion.emotionId ?? ""), for:.normal)
-        }
-        
-        get {
-            return self.emotion
-        }
-    }
+    var emotion : XZEmotion?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,6 +20,11 @@ class XZEmotionButton: UIButton {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setEmotion(_ emotion : XZEmotion) {
+        self.emotion = emotion
+        self.setImage(UIImage(named: self.emotion?.emotionId ?? ""), for:.normal)
     }
     
 }

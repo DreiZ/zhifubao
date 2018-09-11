@@ -34,20 +34,34 @@ class XZEmotionListView: UIView {
         pageControl.isUserInteractionEnabled = false
         return pageControl
     }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.setupUI()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
 }
 
 extension XZEmotionListView {
     func setupUI () {
+        self.iScrollView.clipsToBounds = true
+        self.clipsToBounds = true
+
         self.addSubview(self.topLineView)
         self.topLineView.snp.makeConstraints { (make) in
             make.left.top.right.equalTo(self)
             make.height.equalTo(0.5)
         }
-        
+     
         self.addSubview(self.iScrollView)
         self.iScrollView.snp.makeConstraints { (make) in
             make.top.equalTo(self.topLineView.snp.bottom)
-            make.left.bottom.right.equalTo(self.iScrollView)
+            make.left.bottom.right.equalTo(self)
         }
         
         self.addSubview(self.pageControl)
@@ -55,6 +69,7 @@ extension XZEmotionListView {
             make.height.equalTo(10)
             make.left.right.bottom.equalToSuperview()
         }
+
     }
 }
 
@@ -69,8 +84,9 @@ extension XZEmotionListView : UIScrollViewDelegate {
 
 
 extension XZEmotionListView {
-    func setEmotions (emotionArr : Array<XZEmotion>)  {
+    func setEmotions (_ emotionArr : Array<XZEmotion>)  {
         self.emotions = emotionArr
+
         self.pageControl.numberOfPages = emotionArr.count
         
         let count = (emotionArr.count + ICEmotionPageSize - 1) / ICEmotionPageSize
@@ -90,8 +106,16 @@ extension XZEmotionListView {
                 length = left;
             }
             
-            pageView.emotions = self.getArr(emotions: emotionArr, index: index, length: length)
+            pageView.setEmotions(self.getArr(emotions: emotionArr, index: index, length: length))
             self.iScrollView.addSubview(pageView)
+            pageView.frame = CGRect(x: CGFloat(i) * kWindowW, y: 0, width: kWindowW, height: kChatMoreViewHeight)
+            pageView.snp.makeConstraints { (make) in
+                make.left.equalTo(self.iScrollView.snp.left).offset(CGFloat(i) * kWindowW)
+                make.width.equalTo(kWindowW)
+                make.top.equalTo(self.snp.top)
+                make.bottom.equalTo(self.snp.bottom)
+            }
+            
             i += 1
         }
     }

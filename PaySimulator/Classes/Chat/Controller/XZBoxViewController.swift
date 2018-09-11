@@ -22,7 +22,7 @@ class XZBoxViewController: UIViewController {
         return moreView
     }()
     
-    lazy var faceViwe : XZChatBoxFaceView = {
+    lazy var faceView : XZChatBoxFaceView = {
         let faceView = XZChatBoxFaceView()
         
         return faceView
@@ -50,6 +50,13 @@ extension XZBoxViewController {
         
         self.view.addSubview(self.moreView)
         self.moreView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.height.equalTo(kChatMoreViewHeight)
+            make.top.equalTo(self.view.snp.top).offset(50)
+        }
+        
+        self.view.addSubview(self.faceView)
+        self.faceView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
             make.height.equalTo(kChatMoreViewHeight)
             make.top.equalTo(self.view.snp.top).offset(50)

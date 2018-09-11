@@ -10,24 +10,7 @@ import UIKit
 
 class XZEmotionPageView: UIView {
 
-    var emotions : Array<XZEmotion> {
-        set {
-            self.emotions = newValue
-            
-
-            for item in emotions {
-                let button = XZEmotionButton()
-                self.addSubview(button)
-                button.emotion = item
-                button.addTarget(self, action: #selector(emotionBtnClicked), for: .touchUpOutside)
-            }
-        }
-        
-        
-        get {
-            return self.emotions
-        }
-    }
+    var emotions : Array<XZEmotion> = []
     
     @objc func emotionBtnClicked()  {
         
@@ -42,10 +25,23 @@ class XZEmotionPageView: UIView {
         var i = 0
         for _ in emotions {
             let btn : XZEmotionButton = self.subviews[i] as! XZEmotionButton;
+            btn.imageView?.contentMode = UIViewContentMode.scaleAspectFit
+            btn.imageEdgeInsets = UIEdgeInsetsMake(6, 6, 6, 6)
             let rect : CGRect = CGRect(x: inset + CGFloat(i % ICEmotionMaxCols) * btnW, y: inset + CGFloat(i / ICEmotionMaxCols)*btnH, width: btnW, height: btnH)
             btn.frame = rect
             
             i += 1
+        }
+    }
+    
+    
+    func setEmotions ( _ emotions : Array<XZEmotion>) {
+        self.emotions = emotions
+        for item in emotions {
+            let button = XZEmotionButton()
+            self.addSubview(button)
+            button.setEmotion(item) 
+            button.addTarget(self, action: #selector(emotionBtnClicked), for: .touchUpOutside)
         }
     }
       
