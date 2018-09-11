@@ -44,7 +44,8 @@ class XZMainHomeVC: XZBaseVC {
            self.navigationController?.pushViewController(chatvc, animated: true)
             break
         case 3://收款账单
-            
+            let arr =  XZFaceManager.sgetEmojiEmotion()
+            print(arr ?? "zzz")
             break
         case 4://红包
             

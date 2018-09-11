@@ -71,7 +71,6 @@ extension XZEmotionListView : UIScrollViewDelegate {
 extension XZEmotionListView {
     func setEmotions (emotionArr : Array<XZEmotion>)  {
         self.emotions = emotionArr
-        
         self.pageControl.numberOfPages = emotionArr.count
         
         let count = (emotionArr.count + ICEmotionPageSize - 1) / ICEmotionPageSize
@@ -81,11 +80,10 @@ extension XZEmotionListView {
         
         while i < count {
             let pageView : XZEmotionPageView = XZEmotionPageView()
-            
             let index = i * ICEmotionPageSize
-            
             let left : Int = emotionArr.count - i * ICEmotionPageSize;//剩余
             let length : Int
+            
             if (left >= ICEmotionPageSize) {
                 length = ICEmotionPageSize;
             } else {

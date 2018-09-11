@@ -9,7 +9,6 @@
 import UIKit
 
 class XZEmotion: NSObject {
-    let face_name : String? 
-    let face_id : String?
-    let code : String?
+    var shortCut : String? = nil
+    var emotionId : String? = nil
 }
