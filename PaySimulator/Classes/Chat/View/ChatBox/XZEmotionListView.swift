@@ -86,11 +86,11 @@ extension XZEmotionListView : UIScrollViewDelegate {
 extension XZEmotionListView {
     func setEmotions (_ emotionArr : Array<XZEmotion>)  {
         self.emotions = emotionArr
-
-        self.pageControl.numberOfPages = emotionArr.count
         
         let count = (emotionArr.count + ICEmotionPageSize - 1) / ICEmotionPageSize
         
+        self.pageControl.numberOfPages = count
+        self.iScrollView.contentSize = CGSize(width: CGFloat(count) * kWindowW, height: kChatMoreViewHeight)
         
         var i : Int = 0
         
@@ -108,7 +108,8 @@ extension XZEmotionListView {
             
             pageView.setEmotions(self.getArr(emotions: emotionArr, index: index, length: length))
             self.iScrollView.addSubview(pageView)
-            pageView.frame = CGRect(x: CGFloat(i) * kWindowW, y: 0, width: kWindowW, height: kChatMoreViewHeight)
+            
+//            pageView.frame = CGRect(x: CGFloat(i) * kWindowW, y: 0, width: kWindowW, height: kChatMoreViewHeight)
             pageView.snp.makeConstraints { (make) in
                 make.left.equalTo(self.iScrollView.snp.left).offset(CGFloat(i) * kWindowW)
                 make.width.equalTo(kWindowW)
@@ -118,21 +119,23 @@ extension XZEmotionListView {
             
             i += 1
         }
+        
+        self.iScrollView.bringSubview(toFront: self.pageControl)
     }
     
     func getArr (emotions : Array<XZEmotion> , index : Int , length : Int) -> Array<XZEmotion> {
         var arr : Array<XZEmotion> = []
-        
         var i : Int = index
-        for item in emotions {
+
+        while i < emotions.count {
             if i == index + length {
                 break
             }
-            arr.append(item)
             
+            arr.append(emotions[i])
             i += 1
         }
-        
+
         return arr
     }
 }
