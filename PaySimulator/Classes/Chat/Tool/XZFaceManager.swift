@@ -117,27 +117,8 @@ class XZFaceManager: NSObject {
             attributeStr.replaceCharacters(in: range as! NSRange, with:
             image as! NSAttributedString)
         }
+        
+        return attributeStr
     }
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

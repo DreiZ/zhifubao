@@ -43,9 +43,9 @@ var MessageTopSpace : CGFloat {
     if kWindowW == 320 {
         height = 10
     }else if kWindowH == 812 {
-        height = 12
+        height = 8
     }else if kWindowW == 414 {
-        height = 12
+        height = 7
     }else if kWindowW == 375 {
         height = 10
     }
@@ -58,9 +58,9 @@ var MessageBottomSpace : CGFloat {
     if kWindowW == 320 {
         height = 12
     }else if kWindowH == 812 {
-        height = 21
+        height = 14
     }else if kWindowW == 414 {
-        height = 21
+        height = 12
     }else if kWindowW == 375 {
         height = 12
     }
@@ -75,7 +75,7 @@ var MessageSystemTimeHeight : CGFloat {
     }else if kWindowH == 812 {
         height = 30
     }else if kWindowW == 414 {
-        height = 40
+        height = 27
     }else if kWindowW == 375 {
         height = 26
     }
@@ -88,13 +88,58 @@ var MessageSystemHeight : CGFloat {
     if kWindowW == 320 {
         height = 45
     }else if kWindowH == 812 {
-        height = 75
+        height = 150.0 / 1125.0 * kWindowW
     }else if kWindowW == 414 {
-        height = 66
+        height = 132.0 / 1242.0 * kWindowW
     }else if kWindowW == 375 {
         height = 45
     }
     return height
+}
+
+//信息max width
+var MessageSystemWidth : CGFloat {
+    var height : CGFloat = 214
+    if kWindowW == 320 {
+        height = 214
+    }else if kWindowH == 812 {
+        height = 261
+    }else if kWindowW == 414 {
+        height = 261
+    }else if kWindowW == 375 {
+        height = 245
+    }
+    return height
+}
+
+//信息margin
+var MessageSystemMargin : CGFloat {
+    var width : CGFloat = 11
+    if kWindowW == 320 {
+        width = 11
+    }else if kWindowH == 812 {
+        width = 12
+    }else if kWindowW == 414 {
+        width = 11
+    }else if kWindowW == 375 {
+        width = 12
+    }
+    return width
+}
+
+//信息margin
+var MessageSystemArrowWidth : CGFloat {
+    var width : CGFloat = 6
+    if kWindowW == 320 {
+        width = 6
+    }else if kWindowH == 812 {
+        width = 7
+    }else if kWindowW == 414 {
+        width = 6
+    }else if kWindowW == 375 {
+        width = 8
+    }
+    return width
 }
 
 
