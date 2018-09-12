@@ -24,18 +24,80 @@ let ICEmotionMaxCols : Int = 7
 let ICEmotionPageSize = ((ICEmotionMaxRows * ICEmotionMaxCols) - 1)
 
 var MessageFont : UIFont {
-    var size : CGFloat = 16
+    var size : CGFloat = 15
     if kWindowW == 320 {
-        size = 16
+        size = 15
     }else if kWindowH == 812 {
-        size = 16
+        size = 22.5
     }else if kWindowW == 414 {
-        size = 16
+        size = 23
     }else if kWindowW == 375 {
         size = 16
     }
     return UIFont.systemFont(ofSize: size)
 }
+
+//消息 上 space
+var MessageTopSpace : CGFloat {
+    var height : CGFloat = 10
+    if kWindowW == 320 {
+        height = 10
+    }else if kWindowH == 812 {
+        height = 12
+    }else if kWindowW == 414 {
+        height = 12
+    }else if kWindowW == 375 {
+        height = 10
+    }
+    return height
+}
+
+//消息下 space
+var MessageBottomSpace : CGFloat {
+    var height : CGFloat = 12
+    if kWindowW == 320 {
+        height = 12
+    }else if kWindowH == 812 {
+        height = 21
+    }else if kWindowW == 414 {
+        height = 21
+    }else if kWindowW == 375 {
+        height = 12
+    }
+    return height
+}
+
+//系统时间
+var MessageSystemTimeHeight : CGFloat {
+    var height : CGFloat = 26
+    if kWindowW == 320 {
+        height = 26
+    }else if kWindowH == 812 {
+        height = 30
+    }else if kWindowW == 414 {
+        height = 40
+    }else if kWindowW == 375 {
+        height = 26
+    }
+    return height
+}
+
+//系统消息
+var MessageSystemHeight : CGFloat {
+    var height : CGFloat = 45
+    if kWindowW == 320 {
+        height = 45
+    }else if kWindowH == 812 {
+        height = 75
+    }else if kWindowW == 414 {
+        height = 66
+    }else if kWindowW == 375 {
+        height = 45
+    }
+    return height
+}
+
+
 //let MessageFont : UIFont =  UIFont.systemFont(ofSize: 16)
 
 
