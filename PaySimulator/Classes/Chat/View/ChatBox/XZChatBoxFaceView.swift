@@ -28,7 +28,7 @@ extension XZChatBoxFaceView {
     func setupUI () {
         self.backgroundColor = kChatBackColor
         
-        XZFaceManager.sgetEmojiEmotion()
+        _ = XZFaceManager.sgetEmojiEmotion()
         
         self.addSubview(self.listView)
         self.listView.snp.makeConstraints { (make) in

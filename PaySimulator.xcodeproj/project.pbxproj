@@ -170,6 +170,7 @@
 		5E4FC2222146636D00E0A5A9 /* XZEmotionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC2212146636D00E0A5A9 /* XZEmotionListView.swift */; };
 		5E4FC224214663F500E0A5A9 /* XZEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC223214663F500E0A5A9 /* XZEmotion.swift */; };
 		5E4FC226214664A900E0A5A9 /* XZEmotionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC225214664A900E0A5A9 /* XZEmotionPageView.swift */; };
+		5E5526162148AF16004204AF /* KILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5526152148AF15004204AF /* KILabel.m */; };
 		5E58516A2143981F004A2C4B /* XZBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5851692143981F004A2C4B /* XZBaseModel.swift */; };
 		5EAF7336214272A50027812A /* ZBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF7335214272A50027812A /* ZBaseModel.m */; };
 		5ECE67C82140FB7600C8C5A9 /* XZReceivablesFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECE67C62140FB7600C8C5A9 /* XZReceivablesFooterView.xib */; };
@@ -432,6 +433,8 @@
 		5E4FC2212146636D00E0A5A9 /* XZEmotionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZEmotionListView.swift; sourceTree = "<group>"; };
 		5E4FC223214663F500E0A5A9 /* XZEmotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZEmotion.swift; sourceTree = "<group>"; };
 		5E4FC225214664A900E0A5A9 /* XZEmotionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZEmotionPageView.swift; sourceTree = "<group>"; };
+		5E5526142148AF15004204AF /* KILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KILabel.h; sourceTree = "<group>"; };
+		5E5526152148AF15004204AF /* KILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KILabel.m; sourceTree = "<group>"; };
 		5E5851692143981F004A2C4B /* XZBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseModel.swift; sourceTree = "<group>"; };
 		5EAF7334214272A50027812A /* ZBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZBaseModel.h; path = PaySimulator/Classes/Tools/ZBaseModel.h; sourceTree = SOURCE_ROOT; };
 		5EAF7335214272A50027812A /* ZBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZBaseModel.m; path = PaySimulator/Classes/Tools/ZBaseModel.m; sourceTree = SOURCE_ROOT; };
@@ -569,6 +572,7 @@
 		5E42F31721475B810034B691 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5E5526132148AF15004204AF /* KILabel */,
 				5E42F43A2147C1CD0034B691 /* ChatImage */,
 				5E42F31821475B9F0034B691 /* BaseEmotion */,
 			);
@@ -803,6 +807,15 @@
 				5E42F30D21474E2F0034B691 /* XZExtension.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		5E5526132148AF15004204AF /* KILabel */ = {
+			isa = PBXGroup;
+			children = (
+				5E5526142148AF15004204AF /* KILabel.h */,
+				5E5526152148AF15004204AF /* KILabel.m */,
+			);
+			path = KILabel;
 			sourceTree = "<group>";
 		};
 		5E585168214397B0004A2C4B /* XZBaseModel */ = {
@@ -1781,6 +1794,7 @@
 				5E42F42D2147A8F00034B691 /* XZChatMessageImageCell.swift in Sources */,
 				5ECE67D3214115F500C8C5A9 /* XZBillTableViewController.swift in Sources */,
 				E3BC6D1721450830000FDB12 /* XZAddressSecondCell.swift in Sources */,
+				5E5526162148AF16004204AF /* KILabel.m in Sources */,
 				E348975421428EF70062410B /* XZWithdrawalModel.swift in Sources */,
 				5E4FC20B214610D000E0A5A9 /* XZChatViewController.swift in Sources */,
 				E348975221428EF70062410B /* XZWithdrawalTabVC.swift in Sources */,

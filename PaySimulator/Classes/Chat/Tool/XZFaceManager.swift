@@ -71,7 +71,73 @@ class XZFaceManager: NSObject {
                 }
             }
         }
-        print(XZFaceManager.emojiMEmotions)
+    }
+    
+    
+    class func transferMessageString(message : String, font : UIFont, lineHeight : CGFloat) -> NSMutableAttributedString {
+        let attributeStr : NSMutableAttributedString = NSMutableAttributedString(string: message)
+        let regRmj = "\\[[a-zA-Z0-9\\/\\u4e00-\\u9fa5]+\\]"
+
+        
+        guard let expression =  try? NSRegularExpression(pattern: regRmj, options: .caseInsensitive) else {
+            return attributeStr
+        }
+        
+        attributeStr.addAttribute(NSAttributedStringKey.font, value: font, range: NSRange(location: 0, length: attributeStr.length))
+        
+        let resultArray = expression.matches(in: message, options: NSRegularExpression.MatchingOptions.anchored, range: NSRange(location: 0, length: message.lengthOfBytes(using: String.Encoding.utf8)))
+        
+        var mutableArray : Array<[String:Any]> = []
+        
+        for match in resultArray {
+            let range = match.range
+            let subStr = (message as NSString).substring(with: range)
+            let faceArr = XZFaceManager.emojiMEmotions
+            
+            for face in faceArr {
+                if face.emotionId == subStr {
+                    let attach = NSTextAttachment()
+                    attach.image = UIImage(named: face.emotionId!)
+                    attach.bounds = CGRect(x: 0, y: -4, width: lineHeight, height: lineHeight)
+                    
+                    let imgStr = NSAttributedString(attachment: attach)
+                    var imgDic : [String : Any] = [:]
+                    imgDic["image"] = imgStr
+                    imgDic["range"] = range
+                    mutableArray.append(imgDic)
+                }
+            }
+        }
+        
+        
+        for item in mutableArray {
+            let range = item["range"]
+            let image = item["image"]
+            
+            attributeStr.replaceCharacters(in: range as! NSRange, with:
+            image as! NSAttributedString)
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

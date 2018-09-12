@@ -10,3 +10,4 @@
 
 #import "NSString+Extension.h"
 #import "ICFaceManager.h"
+#import "KILabel.h"

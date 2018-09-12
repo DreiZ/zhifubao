@@ -23,6 +23,45 @@ let ICEmotionMaxRows : Int = 3
 let ICEmotionMaxCols : Int = 7
 let ICEmotionPageSize = ((ICEmotionMaxRows * ICEmotionMaxCols) - 1)
 
+var MessageFont : UIFont {
+    var size : CGFloat = 16
+    if kWindowW == 320 {
+        size = 16
+    }else if kWindowH == 812 {
+        size = 16
+    }else if kWindowW == 414 {
+        size = 16
+    }else if kWindowW == 375 {
+        size = 16
+    }
+    return UIFont.systemFont(ofSize: size)
+}
+//let MessageFont : UIFont =  UIFont.systemFont(ofSize: 16)
+
+
+let MessageKey      = "GXMessageKey";
+let VoiceIcon       = "GXVoiceIcon";
+let RedView         = "GXRedView";
+let TypeSystem      = "GXSystem";
+let TypeText        = "GXText";
+let TypeVoice       = "GXVoice";
+let TypePic         = "GXPic";
+let TypeVideo       = "GXVideo";
+let TypeFile        = "GXFile";
+let TypePicText     = "GXPicText";
+let MessageTypeKey  = "GXMessageTypeKey";
+
+//红包
+let TypeRedPacket            = "TypeRedPacket";
+let TypeRedPacketOpen        = "TypeRedPacketOpen";
+//转账
+let TypeTransfer            = "TypeTransfer";
+
+
+let VideoPathKey    = "VideoPathKey";
+
+let GXSelectEmotionKey = "GXSelectEmotionKey";
+
 enum XZChatBoxStatus : String {
     case nothing = "默认状态"
     case showVoXZe = "录音状态"

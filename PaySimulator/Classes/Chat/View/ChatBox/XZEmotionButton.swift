@@ -24,7 +24,7 @@ class XZEmotionButton: UIButton {
     
     func setEmotion(_ emotion : XZEmotion) {
         self.emotion = emotion
-        self.setImage(UIImage(named: self.emotion?.emotionId ?? ""), for:.normal)
+        self.setImage(UIImage(named: (self.emotion?.emotionId)!), for:.normal)
     }
     
 }
