@@ -23,16 +23,34 @@ let ICEmotionMaxRows : Int = 3
 let ICEmotionMaxCols : Int = 7
 let ICEmotionPageSize = ((ICEmotionMaxRows * ICEmotionMaxCols) - 1)
 
+let MessageHeadWidth : CGFloat = 40
+let MessageHeadToView : CGFloat = 10
+
+//信息主要文字大小
 var MessageFont : UIFont {
     var size : CGFloat = 15
     if kWindowW == 320 {
         size = 15
     }else if kWindowH == 812 {
-        size = 22.5
+        size = 15
     }else if kWindowW == 414 {
-        size = 23
+        size = 15
     }else if kWindowW == 375 {
-        size = 16
+        size = 15
+    }
+    return UIFont.systemFont(ofSize: size)
+}
+
+var MessageSubFont : UIFont {
+    var size : CGFloat = 12
+    if kWindowW == 320 {
+        size = 12
+    }else if kWindowH == 812 {
+        size = 12
+    }else if kWindowW == 414 {
+        size = 12
+    }else if kWindowW == 375 {
+        size = 12
     }
     return UIFont.systemFont(ofSize: size)
 }
@@ -98,7 +116,7 @@ var MessageSystemHeight : CGFloat {
 }
 
 //信息max width
-var MessageSystemWidth : CGFloat {
+var MessageMaxWidth : CGFloat {
     var height : CGFloat = 214
     if kWindowW == 320 {
         height = 214

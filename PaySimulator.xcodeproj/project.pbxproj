@@ -171,6 +171,8 @@
 		5E4FC224214663F500E0A5A9 /* XZEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC223214663F500E0A5A9 /* XZEmotion.swift */; };
 		5E4FC226214664A900E0A5A9 /* XZEmotionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC225214664A900E0A5A9 /* XZEmotionPageView.swift */; };
 		5E5526162148AF16004204AF /* KILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5526152148AF15004204AF /* KILabel.m */; };
+		5E552618214906B4004204AF /* XZChatMessageTransferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E552617214906B4004204AF /* XZChatMessageTransferCell.swift */; };
+		5E55261A21490EB1004204AF /* XZMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55261921490EB1004204AF /* XZMessageHelper.swift */; };
 		5E58516A2143981F004A2C4B /* XZBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5851692143981F004A2C4B /* XZBaseModel.swift */; };
 		5EAF7336214272A50027812A /* ZBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF7335214272A50027812A /* ZBaseModel.m */; };
 		5ECE67C82140FB7600C8C5A9 /* XZReceivablesFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECE67C62140FB7600C8C5A9 /* XZReceivablesFooterView.xib */; };
@@ -435,6 +437,8 @@
 		5E4FC225214664A900E0A5A9 /* XZEmotionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZEmotionPageView.swift; sourceTree = "<group>"; };
 		5E5526142148AF15004204AF /* KILabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KILabel.h; sourceTree = "<group>"; };
 		5E5526152148AF15004204AF /* KILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KILabel.m; sourceTree = "<group>"; };
+		5E552617214906B4004204AF /* XZChatMessageTransferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatMessageTransferCell.swift; sourceTree = "<group>"; };
+		5E55261921490EB1004204AF /* XZMessageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMessageHelper.swift; sourceTree = "<group>"; };
 		5E5851692143981F004A2C4B /* XZBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseModel.swift; sourceTree = "<group>"; };
 		5EAF7334214272A50027812A /* ZBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZBaseModel.h; path = PaySimulator/Classes/Tools/ZBaseModel.h; sourceTree = SOURCE_ROOT; };
 		5EAF7335214272A50027812A /* ZBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZBaseModel.m; path = PaySimulator/Classes/Tools/ZBaseModel.m; sourceTree = SOURCE_ROOT; };
@@ -565,6 +569,7 @@
 				5E42F313214756A80034B691 /* XZFaceManager.swift */,
 				5E42F41B21475E490034B691 /* ICFaceManager.h */,
 				5E42F41C21475E490034B691 /* ICFaceManager.m */,
+				5E55261921490EB1004204AF /* XZMessageHelper.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -779,6 +784,7 @@
 				5E42F42A2147A8DB0034B691 /* XZChatMessageTextCell.swift */,
 				5E42F42C2147A8F00034B691 /* XZChatMessageImageCell.swift */,
 				5E42F42E2147A90E0034B691 /* XZChatMessageVoiceCell.swift */,
+				5E552617214906B4004204AF /* XZChatMessageTransferCell.swift */,
 				5E42F4302147A9310034B691 /* XZChatMessageRedPacketCell.swift */,
 				5E42F4322147A9480034B691 /* XZChatMessageSystemCell.swift */,
 			);
@@ -1785,6 +1791,7 @@
 				E3461805213BC655007C2AA6 /* XZPayUserInfoCell.swift in Sources */,
 				E348975121428EF70062410B /* XZWithdrawalBillTabVC.swift in Sources */,
 				5E4FC21E21463CF200E0A5A9 /* XZChatBoxMoreView.swift in Sources */,
+				5E552618214906B4004204AF /* XZChatMessageTransferCell.swift in Sources */,
 				5E42F42F2147A90E0034B691 /* XZChatMessageVoiceCell.swift in Sources */,
 				E3A9AAE2213FA7F700FAEEAF /* XZPayMeNavView.swift in Sources */,
 				E36048432137988600ECF65F /* XZMainHomeVC.swift in Sources */,
@@ -1822,6 +1829,7 @@
 				E3D98F4E2136414A00887FAF /* XZMainButton.swift in Sources */,
 				E3D98F53213669E100887FAF /* XZCommon.swift in Sources */,
 				E35B5D7B213D2C5300E59A88 /* XZUserHelper.swift in Sources */,
+				5E55261A21490EB1004204AF /* XZMessageHelper.swift in Sources */,
 				5E42F41D21475E490034B691 /* ICFaceManager.m in Sources */,
 				5E4FC20D214610FA00E0A5A9 /* XZBoxViewController.swift in Sources */,
 				5E085D6A213FD444003B0918 /* XZBaseViewController.swift in Sources */,

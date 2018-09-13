@@ -1,19 +1,19 @@
 //
-//  XZChatMessageRedPacketCell.swift
+//  XZChatMessageTransferCell.swift
 //  PaySimulator
 //
-//  Created by zzz on 2018/9/11.
+//  Created by zzz on 2018/9/12.
 //  Copyright © 2018年 再出发. All rights reserved.
 //
 
 import UIKit
 
-class XZChatMessageRedPacketCell: XZBaseMessageCell {
+class XZChatMessageTransferCell: XZBaseMessageCell {
     
-    lazy var redPacketImage : UIImageView = {
-        let redPacketImage = UIImageView()
-        redPacketImage.image = UIImage(named: "GIFTSHARE")
-        return redPacketImage
+    lazy var transImage : UIImageView = {
+        let transImage = UIImageView()
+        transImage.image = UIImage(named: "TRANSFER")
+        return transImage
     }()
     
     lazy var moneyLabel : UILabel = {
@@ -56,26 +56,25 @@ class XZChatMessageRedPacketCell: XZBaseMessageCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override class func cellWithTableView(_ tableView : UITableView) -> XZChatMessageRedPacketCell {
-        let identifier = "XZChatMessageRedPacketCell"
-        var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? XZChatMessageRedPacketCell
+    override class func cellWithTableView(_ tableView : UITableView) -> XZChatMessageTransferCell {
+        let identifier = "XZChatMessageTransferCell"
+        var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? XZChatMessageTransferCell
         if cell == nil {
-            cell = XZChatMessageRedPacketCell.init(style: UITableViewCellStyle.default, reuseIdentifier: identifier)
+            cell = XZChatMessageTransferCell.init(style: UITableViewCellStyle.default, reuseIdentifier: identifier)
         }
         
         return cell!
     }
+    
 }
 
 
-extension XZChatMessageRedPacketCell {
-    
+extension XZChatMessageTransferCell {
     func setupMyUI() {
-        self.addSubview(self.redPacketImage)
+        self.addSubview(self.transImage)
         self.addSubview(self.moneyLabel)
         self.addSubview(self.desLabel)
         self.addSubview(self.typeLabel)
         self.addSubview(self.iconImageView)
     }
 }
-

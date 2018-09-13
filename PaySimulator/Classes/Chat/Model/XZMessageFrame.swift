@@ -45,3 +45,53 @@ class XZMessageFrame: NSObject {
     /// 语音未读红点
     var redViewF : CGRect?
 }
+
+extension XZMessageFrame {
+    func setModel (model : XZMessageModel) {
+        self.model = model
+        
+        let chatLabelMax = MessageMaxWidth - MessageSystemMargin * 2 - MessageSystemArrowWidth
+        
+        if model.isSender {
+            let headX : CGFloat = kWindowW - MessageHeadWidth - MessageHeadToView
+//            let cellMinW : CGFloat = MessageSystemArrowWidth + MessageSystemMargin * 2.0 + 20.0
+            headImageViewF = CGRect(x: headX, y: MessageTopSpace, width: MessageHeadWidth, height: MessageHeadWidth)
+            
+            if model.message?.type == TypeText {
+                let chatLabelSize : CGSize = self.size(message: (model.message?.content) ?? "", maxWidth: chatLabelMax, font: MessageFont)
+                let bubbleSize : CGSize = CGSize(width: chatLabelSize.width + MessageSystemMargin * 2 + MessageSystemArrowWidth, height: chatLabelSize.height + MessageSystemMargin * 2.0)
+//                let topViewSize : CGSize = CGSize(width: cellMinW + MessageSystemMargin * 2, height: MessageTopSpace)
+                
+                bubbleViewF = CGRect(x: kWindowW - bubbleSize.width, y: MessageTopSpace, width: bubbleSize.width, height: bubbleSize.height)
+                chatLabelF = CGRect(x: (bubbleViewF?.origin.x)! + MessageSystemMargin, y: (bubbleViewF?.origin.y)! + MessageSystemMargin, width: chatLabelSize.width, height: chatLabelSize.height)
+            }
+            
+            let activityX : CGFloat = bubbleViewF!.origin.x - 40
+            let activityY : CGFloat = (bubbleViewF!.origin.y + bubbleViewF!.size.height)/2.0 - 5.0
+            let activityW : CGFloat = 40.0;
+            let activityH : CGFloat = 40.0;
+            
+            activityF = CGRect(x : activityX, y : activityY, width : activityW, height : activityH)
+            
+            cellHight = (bubbleViewF?.size.height)! + MessageBottomSpace
+        }
+    }
+}
+
+extension XZMessageFrame {
+    func size(message : String,  maxWidth : CGFloat, font : UIFont) -> CGSize {
+        let maxSize : CGSize = CGSize(width: maxWidth, height: CGFloat(MAXFLOAT))
+        
+        let dict : Dictionary = [NSAttributedStringKey.font : font]
+        let option = NSStringDrawingOptions.usesLineFragmentOrigin
+        let rect = message.boundingRect(with: maxSize, options: option, attributes: dict, context: nil)
+        
+        return rect.size
+    }
+}
+
+
+
+
+
+

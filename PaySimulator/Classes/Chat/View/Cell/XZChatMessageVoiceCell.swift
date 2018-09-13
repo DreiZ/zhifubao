@@ -8,17 +8,38 @@
 
 import UIKit
 
-class XZChatMessageVoiceCell: UITableViewCell {
+class XZChatMessageVoiceCell: XZBaseMessageCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    lazy var voiceImage : UIImageView = {
+        let vImage = UIImageView()
+        
+        return vImage
+    }()
+
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        self.setupMyUI()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
+    
+    override class func cellWithTableView(_ tableView : UITableView) -> XZChatMessageVoiceCell {
+        let identifier = "XZChatMessageVoiceCell"
+        var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? XZChatMessageVoiceCell
+        if cell == nil {
+            cell = XZChatMessageVoiceCell.init(style: UITableViewCellStyle.default, reuseIdentifier: identifier)
+        }
+        
+        return cell!
+    }
+}
 
+
+extension XZChatMessageVoiceCell {
+    func setupMyUI() {
+        self.addSubview(self.voiceImage)
+    }
 }

@@ -48,6 +48,15 @@ class XZBaseMessageCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    class func cellWithTableView(_ tableView : UITableView) -> XZBaseMessageCell {
+        let identifier = "XZBaseMessageCell"
+        var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? XZBaseMessageCell
+        if cell == nil {
+            cell = XZBaseMessageCell.init(style: UITableViewCellStyle.default, reuseIdentifier: identifier)
+        }
+        
+        return cell!
+    }
 }
 
 extension XZBaseMessageCell {

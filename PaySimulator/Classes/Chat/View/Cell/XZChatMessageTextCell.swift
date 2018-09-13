@@ -27,6 +27,16 @@ class XZChatMessageTextCell: XZBaseMessageCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override class func cellWithTableView(_ tableView : UITableView) -> XZChatMessageTextCell {
+        let identifier = "XZChatMessageTextCell"
+        var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? XZChatMessageTextCell
+        if cell == nil {
+            cell = XZChatMessageTextCell.init(style: UITableViewCellStyle.default, reuseIdentifier: identifier)
+        }
+        
+        return cell!
+    }
 
 }
 
