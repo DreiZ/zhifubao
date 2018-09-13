@@ -74,7 +74,7 @@ class XZFaceManager: NSObject {
     }
     
     
-    class func transferMessageString(message : String, font : UIFont, lineHeight : CGFloat) -> NSMutableAttributedString {
+    class func transferMessageString(message : String, font : UIFont, lineHeight : CGFloat , isSender : Bool) -> NSMutableAttributedString {
         let attributeStr : NSMutableAttributedString = NSMutableAttributedString(string: message)
         let regRmj = "\\[[a-zA-Z0-9\\/\\u4e00-\\u9fa5]+\\]"
 
@@ -84,8 +84,15 @@ class XZFaceManager: NSObject {
         }
         
         attributeStr.addAttribute(NSAttributedStringKey.font, value: font, range: NSRange(location: 0, length: attributeStr.length))
+        if isSender {
+            attributeStr.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: attributeStr.length))
+        }else {
+            attributeStr.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor(red: 8.0/255.0, green: 4.0/255.0, blue: 4.0/255.0, alpha: 1), range: NSRange(location: 0, length: attributeStr.length))
+        }
         
-        let resultArray = expression.matches(in: message, options: NSRegularExpression.MatchingOptions.anchored, range: NSRange(location: 0, length: message.lengthOfBytes(using: String.Encoding.utf8)))
+
+        
+        let resultArray = expression.matches(in: message, options: NSRegularExpression.MatchingOptions.reportProgress, range: NSRange(message.startIndex..., in:message))
         
         var mutableArray : Array<[String:Any]> = []
         
@@ -95,7 +102,7 @@ class XZFaceManager: NSObject {
             let faceArr = XZFaceManager.emojiMEmotions
             
             for face in faceArr {
-                if face.emotionId == subStr {
+                if face.shortCut == subStr {
                     let attach = NSTextAttachment()
                     attach.image = UIImage(named: face.emotionId!)
                     attach.bounds = CGRect(x: 0, y: -4, width: lineHeight, height: lineHeight)
@@ -109,15 +116,15 @@ class XZFaceManager: NSObject {
             }
         }
         
-        
-        for item in mutableArray {
+
+        for item in mutableArray.reversed() {
             let range = item["range"]
             let image = item["image"]
             
             attributeStr.replaceCharacters(in: range as! NSRange, with:
             image as! NSAttributedString)
         }
-        
+
         return attributeStr
     }
     

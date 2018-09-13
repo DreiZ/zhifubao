@@ -62,7 +62,7 @@ extension XZMessageFrame {
                 let bubbleSize : CGSize = CGSize(width: chatLabelSize.width + MessageSystemMargin * 2 + MessageSystemArrowWidth, height: chatLabelSize.height + MessageSystemMargin * 2.0)
 //                let topViewSize : CGSize = CGSize(width: cellMinW + MessageSystemMargin * 2, height: MessageTopSpace)
                 
-                bubbleViewF = CGRect(x: kWindowW - bubbleSize.width, y: MessageTopSpace, width: bubbleSize.width, height: bubbleSize.height)
+                bubbleViewF = CGRect(x: headX - bubbleSize.width - headToBubble, y: MessageTopSpace, width: bubbleSize.width, height: bubbleSize.height)
                 chatLabelF = CGRect(x: (bubbleViewF?.origin.x)! + MessageSystemMargin, y: (bubbleViewF?.origin.y)! + MessageSystemMargin, width: chatLabelSize.width, height: chatLabelSize.height)
             }
             
@@ -84,11 +84,60 @@ extension XZMessageFrame {
         
         let dict : Dictionary = [NSAttributedStringKey.font : font]
         let option = NSStringDrawingOptions.usesLineFragmentOrigin
-        let rect = message.boundingRect(with: maxSize, options: option, attributes: dict, context: nil)
+        let rect = self.replaceEmoji(message: message).boundingRect(with: maxSize, options: option, attributes: dict, context: nil)
         
         return rect.size
     }
+    
+    func replaceEmoji(message : String) -> String {
+            let attributeStr : NSMutableAttributedString = NSMutableAttributedString(string: message)
+            let regRmj = "\\[[a-zA-Z0-9\\/\\u4e00-\\u9fa5]+\\]"
+            
+            
+            guard let expression =  try? NSRegularExpression(pattern: regRmj, options: .caseInsensitive) else {
+                return message
+            }
+            
+
+            
+            let resultArray = expression.matches(in: message, options: NSRegularExpression.MatchingOptions.reportProgress, range: NSRange(message.startIndex..., in:message))
+            
+            var mutableArray : Array<[String:Any]> = []
+            
+            for match in resultArray {
+                let range = match.range
+                let subStr = (message as NSString).substring(with: range)
+                let faceArr = XZFaceManager.emojiMEmotions
+                
+                for face in faceArr {
+                    if face.shortCut == subStr {
+                        let attach = NSTextAttachment()
+                        attach.image = UIImage(named: face.emotionId!)
+
+                        let imgStr = NSAttributedString(string: "替 ")
+                        var imgDic : [String : Any] = [:]
+                        imgDic["image"] = imgStr
+                        imgDic["range"] = range
+                        mutableArray.append(imgDic)
+                    }
+                }
+            }
+            
+            
+            for item in mutableArray.reversed() {
+                let range = item["range"]
+                let image = item["image"]
+                
+                attributeStr.replaceCharacters(in: range as! NSRange, with:
+                    image as! NSAttributedString)
+            }
+            
+            return attributeStr.string
+        }
 }
+
+
+
 
 
 

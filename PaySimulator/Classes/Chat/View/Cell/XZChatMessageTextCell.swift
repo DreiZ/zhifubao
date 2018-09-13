@@ -49,6 +49,7 @@ extension XZChatMessageTextCell {
         super.setModelFrame(modelFrame: modelFrame)
         
         self.chatLabel.frame = modelFrame.chatLabelF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
-        self.chatLabel.attributedText = XZFaceManager.transferMessageString(message: (modelFrame.model?.message?.content) ?? "", font: self.chatLabel.font, lineHeight: self.chatLabel.font.lineHeight)
+        self.chatLabel.attributedText = XZFaceManager.transferMessageString(message: (modelFrame.model?.message?.content) ?? "", font: self.chatLabel.font, lineHeight: self.chatLabel.font.lineHeight, isSender: (modelFrame.model?.isSender)!)
+        
     }
 }

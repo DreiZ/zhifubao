@@ -96,6 +96,8 @@ extension XZBaseMessageCell {
         self.headImageView.frame = modelFrame.headImageViewF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
         self.bubbleView.frame = modelFrame.bubbleViewF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
         
+        self.headImageView.image = UIImage(named: "Dialog_Live")
+        
         if messageModel?.isSender == true {
             self.activityView.frame = modelFrame.activityF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
             
@@ -124,35 +126,35 @@ extension XZBaseMessageCell {
             }
             
             if modelFrame.model?.message?.type == TypeFile || modelFrame.model?.message?.type == TypePicText {
-                self.bubbleView.image = UIImage(named: "Dialog_pt.right")
+                self.bubbleView.image = UIImage(named: "Dialog_pt.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 0, 10, 0), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypeText {
-                self.bubbleView.image = UIImage(named: "Dialog_green.right")
+                self.bubbleView.image = UIImage(named: "Dialog_green.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypeRedPacket {
-                self.bubbleView.image = UIImage(named: "Dialog_orange.right")
+                self.bubbleView.image = UIImage(named: "Dialog_orange.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypeRedPacketOpen {
-                self.bubbleView.image = UIImage(named: "Dialog_orange.right")
+                self.bubbleView.image = UIImage(named: "Dialog_orange.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypeTransfer {
-                self.bubbleView.image = UIImage(named: "Dialog_blue.right")
+                self.bubbleView.image = UIImage(named: "Dialog_blue.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
         }else {
             if modelFrame.model?.message?.type == TypeFile || modelFrame.model?.message?.type == TypePicText {
-                self.bubbleView.image = UIImage(named: "Dialog_pt.left")
+                self.bubbleView.image = UIImage(named: "Dialog_pt.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypeText {
-                self.bubbleView.image = UIImage(named: "Dialog_pt.left")
+                self.bubbleView.image = UIImage(named: "Dialog_pt.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypeRedPacket {
-                self.bubbleView.image = UIImage(named: "Dialog_orange.left")
+                self.bubbleView.image = UIImage(named: "Dialog_orange.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypeRedPacketOpen {
-                self.bubbleView.image = UIImage(named: "Dialog_orange.left")
+                self.bubbleView.image = UIImage(named: "Dialog_orange.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypeTransfer {
-                self.bubbleView.image = UIImage(named: "Dialog_blue.left")
+                self.bubbleView.image = UIImage(named: "Dialog_blue.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
         }
     }

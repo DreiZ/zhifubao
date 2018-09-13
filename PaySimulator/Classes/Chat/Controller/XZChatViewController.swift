@@ -10,6 +10,9 @@ import UIKit
 
 class XZChatViewController: XZBaseViewController {
     
+    var dataSource : Array<XZMessageFrame> = []
+    var isKeyBoardAppear : Bool = false
+    
     lazy var iTableView : UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
@@ -29,6 +32,14 @@ class XZChatViewController: XZBaseViewController {
         super.viewDidLoad()
 
         self.setupUI()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+5, execute:
+            {
+                self.sendTextMessage(message: "束带结发[愉快][愉快][流汗]上岛咖啡士大夫")
+        })
+        
+
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,18 +92,54 @@ extension XZChatViewController {
 //MARK : tableview 数据源 & 协议代理
 extension XZChatViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "123"
+        let obj : XZMessageFrame = self.dataSource[indexPath.row]
+        
+        let cell = XZChatMessageTextCell.cellWithTableView(tableView)
+        cell.setModelFrame(modelFrame: obj)
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        let obj : XZMessageFrame = self.dataSource[indexPath.row]
+        return obj.cellHight ?? 44
+    }
+}
+
+
+extension XZChatViewController {
+    
+    func addObject (messageF : XZMessageFrame, isender : Bool) {
+        self.dataSource.append(messageF)
+        
+        self.iTableView.reloadData()
+        if isender || isKeyBoardAppear {
+            self.scrollToBottom()
+        }
     }
     
+    func scrollToBottom() {
+        if self.dataSource.count > 0 {
+            self.iTableView.scrollToRow(at: IndexPath.init(row: self.dataSource.count - 1, section: 0), at: .bottom, animated: false)
+        }
+    }
+    
+    func messageSendSucced(messageF : XZMessageFrame) {
+        DispatchQueue.main.async {
+            messageF.model?.message?.deliveryState = .delivered
+            self.iTableView.reloadData()
+        }
+    }
+    
+    //发送 text 数据
+    func sendTextMessage(message : String) {
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: true, receivedSenderByYourself: false)
+        
+        self.addObject(messageF: messageF, isender: true)
+        self.messageSendSucced(messageF: messageF)
+    }
 }

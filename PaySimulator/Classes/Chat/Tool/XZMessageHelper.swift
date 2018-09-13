@@ -11,9 +11,9 @@ import UIKit
 class XZMessageHelper: NSObject {
     
     //创建一条本地消息
-    func createMessageFrame(type : String, content : String,
-                            date : Date, path : String, from : String,
-                            to : String, fileKey : String,
+    class func createMessageFrame(type : String, content : String,
+                            date : Date, path : String?, from : String,
+                            to : String, fileKey : String?,
                             isSender : Bool, receivedSenderByYourself : Bool) -> XZMessageFrame {
         let message : XZMessage = XZMessage()
         message.to = to
@@ -51,12 +51,12 @@ class XZMessageHelper: NSObject {
         model.message = message
         
         let modleF = XZMessageFrame()
-        modleF.model = model
+        modleF.setModel(model: model)
         
         return modleF
     }
     
-    func createMessageMeReceiverFrame(type : String, content : String, path : String, from : String, fileKey : String) -> XZMessageFrame {
+    class func createMessageMeReceiverFrame(type : String, content : String, path : String, from : String, fileKey : String) -> XZMessageFrame {
         let message : XZMessage = XZMessage()
         message.type = type
         
@@ -75,7 +75,7 @@ class XZMessageHelper: NSObject {
     }
     
     
-    func createTimeMessageFrame(type : String, content : String,
+    class func createTimeMessageFrame(type : String, content : String,
                                 date : Date, path : String, from : String,
                                 to : String, fileKey : String,
                                 isSender : Bool, receivedSenderByYourself : Bool) -> XZMessageFrame {
@@ -120,7 +120,7 @@ class XZMessageHelper: NSObject {
         return modleF
     }
     
-    func createSendMessage(type : String, content : String, fileKey : String, date : Date,
+    class func createSendMessage(type : String, content : String, fileKey : String, date : Date,
                            from : String, to : String, lnk : String, status : String) -> XZMessage {
         let message : XZMessage = XZMessage()
         message.from = from
@@ -152,7 +152,7 @@ class XZMessageHelper: NSObject {
         return message
     }
     
-    func cellType(messageType : String) -> String {
+    class func cellType(messageType : String) -> String {
         if (messageType == "1") {
             return TypeText;
         } else if (messageType == "2") {
