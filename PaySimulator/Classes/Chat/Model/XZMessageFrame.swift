@@ -62,6 +62,9 @@ extension XZMessageFrame {
 
                 bubbleViewF = CGRect(x: headX - bubbleSize.width - MessageHeadToBubble, y: MessageTopSpace, width: bubbleSize.width, height: bubbleSize.height - MessageLineSpacing)
                 chatLabelF = CGRect(x: (bubbleViewF?.origin.x)! + MessageSystemMargin, y: (bubbleViewF?.origin.y)! + MessageSystemMargin - MessageLineSpacing/2.0, width: chatLabelSize.width, height: chatLabelSize.height+2)
+            }else if model.message?.type == TypeVoice {
+                let bubbleViewW = 95
+                bubbleViewF = CGRect(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>)
             }
             
             let activityX : CGFloat = bubbleViewF!.origin.x - 40
@@ -82,6 +85,8 @@ extension XZMessageFrame {
                 
                 bubbleViewF = CGRect(x: headX + MessageHeadToBubble + MessageHeadWidth, y: MessageTopSpace, width: bubbleSize.width, height: bubbleSize.height - MessageLineSpacing)
                 chatLabelF = CGRect(x: (bubbleViewF?.origin.x)! + MessageSystemMargin + MessageSystemArrowWidth, y: (bubbleViewF?.origin.y)! + MessageSystemMargin - MessageLineSpacing/2.0, width: chatLabelSize.width, height: chatLabelSize.height+2)
+            }else if model.message?.type == TypeVoice {
+                
             }
             
             let activityX : CGFloat = bubbleViewF!.origin.x + (bubbleViewF?.width)! + 40

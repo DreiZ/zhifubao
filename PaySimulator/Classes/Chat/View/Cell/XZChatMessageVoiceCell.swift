@@ -42,4 +42,18 @@ extension XZChatMessageVoiceCell {
     func setupMyUI() {
         self.addSubview(self.voiceImage)
     }
+    
+    override func setModelFrame(modelFrame: XZMessageFrame) {
+        super.setModelFrame(modelFrame: modelFrame)
+        
+        if modelFrame.model?.isSender ?? true {
+            self.voiceImage.image = UIImage(named: "spk_i")?.withRenderingMode(.alwaysTemplate)
+            self.voiceImage.tintColor = UIColor.white
+            let transform : CGAffineTransform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/180.0));
+            self.voiceImage.transform = transform
+        }else {
+            self.voiceImage.image = UIImage(named: "spk_i")?.withRenderingMode(.alwaysOriginal)
+            self.voiceImage.transform = CGAffineTransform.identity
+        }
+    }
 }

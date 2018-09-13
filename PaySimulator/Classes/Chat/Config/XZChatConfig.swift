@@ -119,18 +119,50 @@ var MessageSystemHeight : CGFloat {
 
 //信息max width
 var MessageMaxWidth : CGFloat {
-    var height : CGFloat = 214
+    var width : CGFloat = 214
     if kWindowW == 320 {
-        height = 214
+        width = 214
     }else if kWindowH == 812 {
-        height = 261
+        width = 267
     }else if kWindowW == 414 {
-        height = 261
+        width = 267
     }else if kWindowW == 375 {
-        height = 245
+        width = 245
     }
-    return height
+    return width
 }
+
+//信息voice max width
+var MessageVoiceMaxWidth : CGFloat {
+    var width : CGFloat = 214
+    if kWindowW == 320 {
+        width = 206
+    }else if kWindowH == 812 {
+        width = 244
+    }else if kWindowW == 414 {
+        width = 244
+    }else if kWindowW == 375 {
+        width = 230
+    }
+    return width
+}
+
+
+//信息voice min width
+var MessageVoiceMinWidth : CGFloat {
+    var width : CGFloat = 76
+    if kWindowW == 320 {
+        width = 76
+    }else if kWindowH == 812 {
+        width = 95
+    }else if kWindowW == 414 {
+        width = 95
+    }else if kWindowW == 375 {
+        width = 88
+    }
+    return width
+}
+
 
 //信息margin
 var MessageSystemMargin : CGFloat {
