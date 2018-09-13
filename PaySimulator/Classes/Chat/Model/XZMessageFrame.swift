@@ -54,19 +54,37 @@ extension XZMessageFrame {
         
         if model.isSender {
             let headX : CGFloat = kWindowW - MessageHeadWidth - MessageHeadToView
-//            let cellMinW : CGFloat = MessageSystemArrowWidth + MessageSystemMargin * 2.0 + 20.0
             headImageViewF = CGRect(x: headX, y: MessageTopSpace, width: MessageHeadWidth, height: MessageHeadWidth)
             
             if model.message?.type == TypeText {
                 let chatLabelSize : CGSize = self.size(message: (model.message?.content) ?? "", maxWidth: chatLabelMax, font: MessageFont)
                 let bubbleSize : CGSize = CGSize(width: chatLabelSize.width + MessageSystemMargin * 2 + MessageSystemArrowWidth, height: chatLabelSize.height + MessageSystemMargin * 2.0)
-//                let topViewSize : CGSize = CGSize(width: cellMinW + MessageSystemMargin * 2, height: MessageTopSpace)
-                
-                bubbleViewF = CGRect(x: headX - bubbleSize.width - headToBubble, y: MessageTopSpace, width: bubbleSize.width, height: bubbleSize.height)
-                chatLabelF = CGRect(x: (bubbleViewF?.origin.x)! + MessageSystemMargin, y: (bubbleViewF?.origin.y)! + MessageSystemMargin, width: chatLabelSize.width, height: chatLabelSize.height)
+
+                bubbleViewF = CGRect(x: headX - bubbleSize.width - headToBubble, y: MessageTopSpace, width: bubbleSize.width, height: bubbleSize.height - 4)
+                chatLabelF = CGRect(x: (bubbleViewF?.origin.x)! + MessageSystemMargin, y: (bubbleViewF?.origin.y)! + MessageSystemMargin - 2, width: chatLabelSize.width, height: chatLabelSize.height+2)
             }
             
             let activityX : CGFloat = bubbleViewF!.origin.x - 40
+            let activityY : CGFloat = (bubbleViewF!.origin.y + bubbleViewF!.size.height)/2.0 - 5.0
+            let activityW : CGFloat = 40.0;
+            let activityH : CGFloat = 40.0;
+            
+            activityF = CGRect(x : activityX, y : activityY, width : activityW, height : activityH)
+            
+            cellHight = (bubbleViewF?.size.height)! + MessageBottomSpace
+        }else {
+            let headX : CGFloat = MessageHeadToView
+            headImageViewF = CGRect(x: headX, y: MessageTopSpace, width: MessageHeadWidth, height: MessageHeadWidth)
+            
+            if model.message?.type == TypeText {
+                let chatLabelSize : CGSize = self.size(message: (model.message?.content) ?? "", maxWidth: chatLabelMax, font: MessageFont)
+                let bubbleSize : CGSize = CGSize(width: chatLabelSize.width + MessageSystemMargin * 2 + MessageSystemArrowWidth, height: chatLabelSize.height + MessageSystemMargin * 2.0)
+                
+                bubbleViewF = CGRect(x: headX + headToBubble + MessageHeadWidth, y: MessageTopSpace, width: bubbleSize.width, height: bubbleSize.height - 4)
+                chatLabelF = CGRect(x: (bubbleViewF?.origin.x)! + MessageSystemMargin + MessageSystemArrowWidth, y: (bubbleViewF?.origin.y)! + MessageSystemMargin - 2, width: chatLabelSize.width, height: chatLabelSize.height+2)
+            }
+            
+            let activityX : CGFloat = bubbleViewF!.origin.x + (bubbleViewF?.width)! + 40
             let activityY : CGFloat = (bubbleViewF!.origin.y + bubbleViewF!.size.height)/2.0 - 5.0
             let activityW : CGFloat = 40.0;
             let activityH : CGFloat = 40.0;
@@ -82,11 +100,16 @@ extension XZMessageFrame {
     func size(message : String,  maxWidth : CGFloat, font : UIFont) -> CGSize {
         let maxSize : CGSize = CGSize(width: maxWidth, height: CGFloat(MAXFLOAT))
         
-        let dict : Dictionary = [NSAttributedStringKey.font : font]
+        let paragraphStyle : NSMutableParagraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 4
+        
+//        attributeStr.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributeStr.length))
+        
+        let dict : Dictionary = [NSAttributedStringKey.font : font, NSAttributedStringKey.paragraphStyle : paragraphStyle]
         let option = NSStringDrawingOptions.usesLineFragmentOrigin
         let rect = self.replaceEmoji(message: message).boundingRect(with: maxSize, options: option, attributes: dict, context: nil)
         
-        return rect.size
+        return CGSize(width: rect.size.width, height: rect.size.height)
     }
     
     func replaceEmoji(message : String) -> String {

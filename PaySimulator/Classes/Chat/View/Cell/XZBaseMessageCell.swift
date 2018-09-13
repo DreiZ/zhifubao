@@ -142,10 +142,10 @@ extension XZBaseMessageCell {
             }
         }else {
             if modelFrame.model?.message?.type == TypeFile || modelFrame.model?.message?.type == TypePicText {
-                self.bubbleView.image = UIImage(named: "Dialog_pt.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
+                self.bubbleView.image = UIImage(named: "Dialog_white.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypeText {
-                self.bubbleView.image = UIImage(named: "Dialog_pt.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
+                self.bubbleView.image = UIImage(named: "Dialog_white.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypeRedPacket {
                 self.bubbleView.image = UIImage(named: "Dialog_orange.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)

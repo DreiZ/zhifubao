@@ -18,7 +18,7 @@ class XZChatViewController: XZBaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        tableView.backgroundColor = UIColor.white
+        tableView.backgroundColor = UIColor.init(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1)
         return tableView
     }()
     
@@ -35,9 +35,20 @@ class XZChatViewController: XZBaseViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now()+5, execute:
             {
-                self.sendTextMessage(message: "束带结发[愉快][愉快][流汗]上岛咖啡士大夫")
+                self.sendTextMessage(message: "束带结发[愉快][愉快][流汗]上岛咖啡士大夫少的发哦发噶是的水电费水电费水电")
+                
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now()+7, execute:
+            {
+                self.sendTextMessage(message: "上看的发个[愉快][愉快][流汗]少的发个")
+                
         })
         
+        DispatchQueue.main.asyncAfter(deadline: .now()+8, execute:
+            {
+                self.sendOtherTextMessage(message: "阿松的更好[愉快][愉快][流汗]上少的发哦发噶是的水电费水电费水电")
+                
+        })
 
         
     }
@@ -138,6 +149,13 @@ extension XZChatViewController {
     //发送 text 数据
     func sendTextMessage(message : String) {
         let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: true, receivedSenderByYourself: false)
+        
+        self.addObject(messageF: messageF, isender: true)
+        self.messageSendSucced(messageF: messageF)
+    }
+    
+    func sendOtherTextMessage(message : String) {
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: false, receivedSenderByYourself: false)
         
         self.addObject(messageF: messageF, isender: true)
         self.messageSendSucced(messageF: messageF)
