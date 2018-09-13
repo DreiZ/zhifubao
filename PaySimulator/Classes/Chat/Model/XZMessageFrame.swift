@@ -60,8 +60,8 @@ extension XZMessageFrame {
                 let chatLabelSize : CGSize = self.size(message: (model.message?.content) ?? "", maxWidth: chatLabelMax, font: MessageFont)
                 let bubbleSize : CGSize = CGSize(width: chatLabelSize.width + MessageSystemMargin * 2 + MessageSystemArrowWidth, height: chatLabelSize.height + MessageSystemMargin * 2.0)
 
-                bubbleViewF = CGRect(x: headX - bubbleSize.width - headToBubble, y: MessageTopSpace, width: bubbleSize.width, height: bubbleSize.height - 4)
-                chatLabelF = CGRect(x: (bubbleViewF?.origin.x)! + MessageSystemMargin, y: (bubbleViewF?.origin.y)! + MessageSystemMargin - 2, width: chatLabelSize.width, height: chatLabelSize.height+2)
+                bubbleViewF = CGRect(x: headX - bubbleSize.width - MessageHeadToBubble, y: MessageTopSpace, width: bubbleSize.width, height: bubbleSize.height - MessageLineSpacing)
+                chatLabelF = CGRect(x: (bubbleViewF?.origin.x)! + MessageSystemMargin, y: (bubbleViewF?.origin.y)! + MessageSystemMargin - MessageLineSpacing/2.0, width: chatLabelSize.width, height: chatLabelSize.height+2)
             }
             
             let activityX : CGFloat = bubbleViewF!.origin.x - 40
@@ -80,8 +80,8 @@ extension XZMessageFrame {
                 let chatLabelSize : CGSize = self.size(message: (model.message?.content) ?? "", maxWidth: chatLabelMax, font: MessageFont)
                 let bubbleSize : CGSize = CGSize(width: chatLabelSize.width + MessageSystemMargin * 2 + MessageSystemArrowWidth, height: chatLabelSize.height + MessageSystemMargin * 2.0)
                 
-                bubbleViewF = CGRect(x: headX + headToBubble + MessageHeadWidth, y: MessageTopSpace, width: bubbleSize.width, height: bubbleSize.height - 4)
-                chatLabelF = CGRect(x: (bubbleViewF?.origin.x)! + MessageSystemMargin + MessageSystemArrowWidth, y: (bubbleViewF?.origin.y)! + MessageSystemMargin - 2, width: chatLabelSize.width, height: chatLabelSize.height+2)
+                bubbleViewF = CGRect(x: headX + MessageHeadToBubble + MessageHeadWidth, y: MessageTopSpace, width: bubbleSize.width, height: bubbleSize.height - MessageLineSpacing)
+                chatLabelF = CGRect(x: (bubbleViewF?.origin.x)! + MessageSystemMargin + MessageSystemArrowWidth, y: (bubbleViewF?.origin.y)! + MessageSystemMargin - MessageLineSpacing/2.0, width: chatLabelSize.width, height: chatLabelSize.height+2)
             }
             
             let activityX : CGFloat = bubbleViewF!.origin.x + (bubbleViewF?.width)! + 40
@@ -101,7 +101,7 @@ extension XZMessageFrame {
         let maxSize : CGSize = CGSize(width: maxWidth, height: CGFloat(MAXFLOAT))
         
         let paragraphStyle : NSMutableParagraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 4
+        paragraphStyle.lineSpacing = MessageLineSpacing
         
 //        attributeStr.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributeStr.length))
         

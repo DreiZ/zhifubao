@@ -86,7 +86,7 @@ class XZFaceManager: NSObject {
         attributeStr.addAttribute(NSAttributedStringKey.font, value: font, range: NSRange(location: 0, length: attributeStr.length))
         
         let paragraphStyle : NSMutableParagraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 4
+        paragraphStyle.lineSpacing = MessageLineSpacing
         
         attributeStr.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributeStr.length))
         

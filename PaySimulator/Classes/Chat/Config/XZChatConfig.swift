@@ -25,7 +25,8 @@ let ICEmotionPageSize = ((ICEmotionMaxRows * ICEmotionMaxCols) - 1)
 
 let MessageHeadWidth : CGFloat = 40
 let MessageHeadToView : CGFloat = 10
-let headToBubble : CGFloat = 6
+let MessageHeadToBubble : CGFloat = 6
+let MessageLineSpacing : CGFloat = 4
 
 //信息主要文字大小
 var MessageFont : UIFont {
