@@ -11,6 +11,7 @@
 		5E085D68213FD41E003B0918 /* WRNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D66213FD41E003B0918 /* WRNavigationBar.swift */; };
 		5E085D6A213FD444003B0918 /* XZBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D69213FD444003B0918 /* XZBaseViewController.swift */; };
 		5E085D6C213FD462003B0918 /* XZReceivablesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E085D6B213FD462003B0918 /* XZReceivablesViewController.swift */; };
+		5E4157C8214B8D5E00AD8E39 /* XZChatMessageTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4157C7214B8D5E00AD8E39 /* XZChatMessageTimeCell.swift */; };
 		5E42F30C21474B1F0034B691 /* XZEmotionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E42F30B21474B1F0034B691 /* XZEmotionButton.swift */; };
 		5E42F30E21474E2F0034B691 /* XZExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E42F30D21474E2F0034B691 /* XZExtension.swift */; };
 		5E42F311214750030034B691 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E42F30F214750020034B691 /* NSString+Extension.m */; };
@@ -272,6 +273,7 @@
 		5E085D66213FD41E003B0918 /* WRNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WRNavigationBar.swift; sourceTree = "<group>"; };
 		5E085D69213FD444003B0918 /* XZBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZBaseViewController.swift; sourceTree = "<group>"; };
 		5E085D6B213FD462003B0918 /* XZReceivablesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZReceivablesViewController.swift; sourceTree = "<group>"; };
+		5E4157C7214B8D5E00AD8E39 /* XZChatMessageTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatMessageTimeCell.swift; sourceTree = "<group>"; };
 		5E42F30B21474B1F0034B691 /* XZEmotionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZEmotionButton.swift; sourceTree = "<group>"; };
 		5E42F30D21474E2F0034B691 /* XZExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZExtension.swift; sourceTree = "<group>"; };
 		5E42F30F214750020034B691 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
@@ -784,6 +786,7 @@
 				5E42F42A2147A8DB0034B691 /* XZChatMessageTextCell.swift */,
 				5E42F42C2147A8F00034B691 /* XZChatMessageImageCell.swift */,
 				5E42F42E2147A90E0034B691 /* XZChatMessageVoiceCell.swift */,
+				5E4157C7214B8D5E00AD8E39 /* XZChatMessageTimeCell.swift */,
 				5E552617214906B4004204AF /* XZChatMessageTransferCell.swift */,
 				5E42F4302147A9310034B691 /* XZChatMessageRedPacketCell.swift */,
 				5E42F4322147A9480034B691 /* XZChatMessageSystemCell.swift */,
@@ -1775,6 +1778,7 @@
 				E36048642137A32E00ECF65F /* XZBaseNavigationVC.swift in Sources */,
 				E34617F5213B873B007C2AA6 /* XZPayMeTableViewController.swift in Sources */,
 				E360484A2137A0C700ECF65F /* XZPayMainTabBarVC.swift in Sources */,
+				5E4157C8214B8D5E00AD8E39 /* XZChatMessageTimeCell.swift in Sources */,
 				E34E1526213E5E0A00D23547 /* XZEditUserInfoVC.swift in Sources */,
 				E3A9AADF213F663A00FAEEAF /* XZMyPickerView.swift in Sources */,
 				5E42F42B2147A8DB0034B691 /* XZChatMessageTextCell.swift in Sources */,

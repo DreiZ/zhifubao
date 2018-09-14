@@ -75,6 +75,20 @@ var MessageVoiceFont : UIFont {
     return UIFont.systemFont(ofSize: size)
 }
 
+var MessageTimeFont : UIFont {
+    var size : CGFloat = 11
+    if kWindowW == 320 {
+        size = 11
+    }else if kWindowH == 812 {
+        size = 11
+    }else if kWindowW == 414 {
+        size = 11
+    }else if kWindowW == 375 {
+        size = 11
+    }
+    return UIFont.systemFont(ofSize: size)
+}
+
 //消息 上 space
 var MessageTopSpace : CGFloat {
     var height : CGFloat = 10
@@ -137,15 +151,43 @@ var MessageRedBottomSpace : CGFloat {
 
 //系统时间 18-8 -37（414，812）   19-6-37（320，375）
 var MessageSystemTimeHeight : CGFloat {
-    var height : CGFloat = 26
+    var height : CGFloat = 18
     if kWindowW == 320 {
-        height = 26
+        height = 37
     }else if kWindowH == 812 {
-        height = 30
+        height = 37
     }else if kWindowW == 414 {
-        height = 27
+        height = 37
     }else if kWindowW == 375 {
-        height = 26
+        height = 37
+    }
+    return height
+}
+
+var MessageSystemTimeTopSpace : CGFloat {
+    var height : CGFloat = 18
+    if kWindowW == 320 {
+        height = 18
+    }else if kWindowH == 812 {
+        height = 18
+    }else if kWindowW == 414 {
+        height = 18
+    }else if kWindowW == 375 {
+        height = 18
+    }
+    return height
+}
+
+var MessageSystemTimeTopBottom : CGFloat {
+    var height : CGFloat = 8
+    if kWindowW == 320 {
+        height = 8
+    }else if kWindowH == 812 {
+        height = 8
+    }else if kWindowW == 414 {
+        height = 8
+    }else if kWindowW == 375 {
+        height = 8
     }
     return height
 }
@@ -245,29 +287,29 @@ var MessageSystemArrowWidth : CGFloat {
 
 //let MessageFont : UIFont =  UIFont.systemFont(ofSize: 16)
 
+let RedView         = "GXRedView"
+let TypeSystem      = "GXSystem"
+let TypeText        = "GXText"
+let TypeVoice       = "GXVoice"
+let TypePic         = "GXPic"
+let TypeTime        = "GXTime"
 
-let MessageKey      = "GXMessageKey";
-let VoiceIcon       = "GXVoiceIcon";
-let RedView         = "GXRedView";
-let TypeSystem      = "GXSystem";
-let TypeText        = "GXText";
-let TypeVoice       = "GXVoice";
-let TypePic         = "GXPic";
-let TypeVideo       = "GXVideo";
-let TypeFile        = "GXFile";
-let TypePicText     = "GXPicText";
-let MessageTypeKey  = "GXMessageTypeKey";
+let MessageKey      = "GXMessageKey"
+let VoiceIcon       = "GXVoiceIcon"
+let TypeFile        = "GXFile"
+let TypePicText     = "GXPicText"
+let MessageTypeKey  = "GXMessageTypeKey"
 
 //红包
-let TypeRedPacket            = "TypeRedPacket";
-let TypeRedPacketOpen        = "TypeRedPacketOpen";
+let TypeRedPacket            = "TypeRedPacket"
+let TypeRedPacketOpen        = "TypeRedPacketOpen"
 //转账
-let TypeTransfer            = "TypeTransfer";
+let TypeTransfer            = "TypeTransfer"
 
 
-let VideoPathKey    = "VideoPathKey";
+let VideoPathKey    = "VideoPathKey"
 
-let GXSelectEmotionKey = "GXSelectEmotionKey";
+let GXSelectEmotionKey = "GXSelectEmotionKey"
 
 enum XZChatBoxStatus : String {
     case nothing = "默认状态"

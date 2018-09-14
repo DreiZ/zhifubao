@@ -15,16 +15,17 @@ class XZMessageHelper: NSObject {
                             date : Date, path : String?, from : String,
                             to : String, fileKey : String?,
                             isSender : Bool, receivedSenderByYourself : Bool, voiceTime : Int?) -> XZMessageFrame {
+        
         let message : XZMessage = XZMessage()
         message.to = to
         message.from = from
+        message.type = type
         message.fileKey = fileKey
         message.date = Int(date.timeIntervalSinceReferenceDate)
         message.voiceTime = voiceTime ?? 1
         
         let model : XZMessageModel = XZMessageModel()
-        let mtype = self.cellType(messageType: type)
-        message.type = mtype
+
         
         if type == TypeText {
             message.content = content
@@ -36,6 +37,8 @@ class XZMessageHelper: NSObject {
             message.content = "[红包]"
         }else if type == TypeTransfer {
             message.content = "[转账]"
+        }else if type == TypeTime {
+            message.content = "[时间]"
         }else {
             message.content = content
         }
@@ -57,55 +60,24 @@ class XZMessageHelper: NSObject {
         return modleF
     }
     
-    class func createMessageMeReceiverFrame(type : String, content : String, path : String, from : String, fileKey : String) -> XZMessageFrame {
-        let message : XZMessage = XZMessage()
-        message.type = type
-        
-        let model : XZMessageModel = XZMessageModel()
-        message.fileKey = fileKey
-        model.isSender = false
-        message.content = content
-        model.mediaPath = path
-        message.deliveryState = .delivered
-        model.message = message
-        
-        let modelF : XZMessageFrame = XZMessageFrame()
-        modelF.model = model
-        
-        return modelF
-    }
     
-    
-    class func createTimeMessageFrame(type : String, content : String,
-                                date : Date, path : String, from : String,
-                                to : String, fileKey : String,
-                                isSender : Bool, receivedSenderByYourself : Bool) -> XZMessageFrame {
+    //创建一条本地消息
+    class func createSystemTimeMessageFrame(content : String = "[时间]",
+                                  date : Date, from : String,
+                                  to : String, isSender : Bool, receivedSenderByYourself : Bool, systemTime : Int?) -> XZMessageFrame {
+        
         let message : XZMessage = XZMessage()
         message.to = to
         message.from = from
-        message.fileKey = fileKey
+        message.type = TypeTime
+        message.systemTime = systemTime ?? 1
         message.date = Int(date.timeIntervalSinceReferenceDate)
         
         let model : XZMessageModel = XZMessageModel()
-        let mtype = self.cellType(messageType: type)
-        message.type = mtype
         
-        if type == TypeText {
-            message.content = content
-        }else if type == TypePic {
-            message.content = "[图片]"
-        }else if type == TypeVoice {
-            message.content = "[语音]"
-        }else if type == TypeRedPacket {
-            message.content = "[红包]"
-        }else if type == TypeTransfer {
-            message.content = "[转账]"
-        }else {
-            message.content = content
-        }
-        
+        message.content = "[时间]"
         model.isSender = isSender
-        model.mediaPath = path
+
         
         if isSender {
             message.deliveryState = .delivering
@@ -116,58 +88,11 @@ class XZMessageHelper: NSObject {
         model.message = message
         
         let modleF = XZMessageFrame()
-        modleF.model = model
+        modleF.setModel(model: model)
         
         return modleF
     }
     
-    class func createSendMessage(type : String, content : String, fileKey : String, date : Date,
-                           from : String, to : String, lnk : String, status : String) -> XZMessage {
-        let message : XZMessage = XZMessage()
-        message.from = from
-        message.to = to
-        message.content = content
-        message.fileKey = fileKey
-        message.lnk = lnk
-        message.date = Int(date.timeIntervalSinceReferenceDate)
-        
-        if type == TypeText {
-            message.type = "1"
-        }
-        else if type == TypePic {
-            message.type = "3"
-        }
-        else if type == TypeVoice {
-            message.type = "2"
-        }
-        else if type == TypeRedPacket {
-            message.type = "4"
-        }
-        else if type == TypeTransfer {
-            message.type = "5"
-        }
-        else  {
-            message.type = "6"
-        }
-        
-        return message
-    }
-    
-    class func cellType(messageType : String) -> String {
-        if (messageType == "1") {
-            return TypeText;
-        } else if (messageType == "2") {
-            return TypeVoice;
-        } else if (messageType == "3") {
-            return TypePic;
-        } else if (messageType == "4") {
-            return TypeVideo;
-        } else if (messageType == "5") {
-            return TypeFile;
-        } else {
-            return messageType;
-        }
-    }
     
     class func timeFormatWithDate(time : Int) -> String {
         let formatter = DateFormatter()

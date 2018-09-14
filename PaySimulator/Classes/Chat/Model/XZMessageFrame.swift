@@ -72,7 +72,11 @@ extension XZMessageFrame {
                 bubbleViewF = CGRect(x: headX - voiceLength - MessageHeadToBubble, y: MessageTopSpace, width: voiceLength, height: MessageHeadWidth)
                 durationLabelF = CGRect(x: (bubbleViewF?.origin.x)! - 10 - chatVoiceLabelSize.width, y: (bubbleViewF?.origin.y)! + (bubbleViewF?.size.height)!/2.0, width: chatVoiceLabelSize.width, height: 12)
                 voiceIconF = CGRect(x:  headX - MessageHeadToBubble - MessageVoiceSpacing - MessageVoiceWidth, y: (bubbleViewF?.origin.y)! + (MessageHeadWidth - MessageVoiceHeight)/2.0, width: MessageVoiceWidth, height: MessageVoiceHeight)
+                
                 cellHight = (bubbleViewF?.size.height)! + MessageBottomSpace + MessageTopSpace
+            }else if model.message?.type == TypeTime {
+                
+                cellHight = MessageSystemTimeHeight
             }
             
             let activityX : CGFloat = bubbleViewF!.origin.x - 40
@@ -106,6 +110,9 @@ extension XZMessageFrame {
                 voiceIconF = CGRect(x: (bubbleViewF?.origin.x)! + MessageVoiceSpacing, y: (bubbleViewF?.origin.y)! +  (MessageHeadWidth - MessageVoiceHeight)/2.0, width: MessageVoiceWidth, height: MessageVoiceHeight)
                 
                 cellHight = (bubbleViewF?.size.height)! + MessageBottomSpace + MessageTopSpace
+            }else if model.message?.type == TypeTime {
+                
+                cellHight = MessageSystemTimeHeight
             }
             
             let activityX : CGFloat = bubbleViewF!.origin.x + (bubbleViewF?.width)! + 40

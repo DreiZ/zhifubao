@@ -33,6 +33,12 @@ class XZChatMessageVoiceCell: XZBaseMessageCell {
         return redView
     }()
 
+    lazy var voiceBtn : UIButton = {
+        let voiceBtn = UIButton()
+        voiceBtn.addTarget(self, action: #selector(voiceBtnOnClick), for: .touchUpInside)
+        return voiceBtn
+    }()
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -65,10 +71,17 @@ class XZChatMessageVoiceCell: XZBaseMessageCell {
 
 
 extension XZChatMessageVoiceCell {
+    
     func setupMyUI() {
         self.addSubview(self.voiceImage)
         self.addSubview(self.durationLabel)
         self.addSubview(self.redView)
+        self.addSubview(self.voiceBtn)
+        
+        self.voiceBtn.snp.makeConstraints { (make) in
+            make.left.top.bottom.equalTo(self.bubbleView)
+            make.right.equalTo(self.bubbleView.snp.right).offset(-MessageSystemArrowWidth)
+        }
     }
     
     override func setModelFrame(modelFrame: XZMessageFrame) {
@@ -100,5 +113,10 @@ extension XZChatMessageVoiceCell {
         self.durationLabel.frame = modelFrame.durationLabelF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
         self.bubbleView.frame = modelFrame.bubbleViewF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
         self.redView.frame = modelFrame.redViewF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
+    }
+    
+    
+    @objc func voiceBtnOnClick() {
+        
     }
 }

@@ -36,6 +36,8 @@ class XZChatViewController: XZBaseViewController {
         
         self.iTableView.register(XZChatMessageTextCell.self, forCellReuseIdentifier: TypeText)
         self.iTableView.register(XZChatMessageVoiceCell.self, forCellReuseIdentifier: TypeVoice)
+        self.iTableView.register(XZChatMessageTimeCell.self, forCellReuseIdentifier: TypeTime)
+
 
         DispatchQueue.main.asyncAfter(deadline: .now()+5, execute:
             {
@@ -172,6 +174,7 @@ extension XZChatViewController {
         self.messageSendSucced(messageF: messageF)
     }
     
+    //语音
     func sendVoiceMessage(voiceTime : Int) {
         let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeVoice, content: "[语音]", date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: voiceTime)
         
@@ -181,6 +184,14 @@ extension XZChatViewController {
     
     func sendOtherVoiceMessage(voiceTime : Int) {
         let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeVoice, content: "[语音]", date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: voiceTime)
+        
+        self.addObject(messageF: messageF, isender: false)
+        self.messageSendSucced(messageF: messageF)
+    }
+    
+    //时间
+    func sendTimeMessage(systemTime : Int) {
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeTime, content: "[时间]", date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: systemTime)
         
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)

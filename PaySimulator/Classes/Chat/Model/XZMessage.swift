@@ -30,6 +30,8 @@ class XZMessage: NSObject {
     var fileKey : String?
     // 音频文件的秒数
     var voiceTime : Int = 1
+    // 显示系统时间
+    var systemTime : Int = 1
     // 发送消息对应的type类型:1,2,3
     var type : String?
     // 时长，宽高，首帧id
