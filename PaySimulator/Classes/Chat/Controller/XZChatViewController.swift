@@ -37,6 +37,7 @@ class XZChatViewController: XZBaseViewController {
         self.iTableView.register(XZChatMessageTextCell.self, forCellReuseIdentifier: TypeText)
         self.iTableView.register(XZChatMessageVoiceCell.self, forCellReuseIdentifier: TypeVoice)
         self.iTableView.register(XZChatMessageTimeCell.self, forCellReuseIdentifier: TypeTime)
+        self.iTableView.register(XZChatMessageSystemCell.self, forCellReuseIdentifier: TypeSystem)
 
 
         
@@ -70,6 +71,11 @@ class XZChatViewController: XZBaseViewController {
         DispatchQueue.main.asyncAfter(deadline: .now()+10, execute:
             {
                 self.sendOtherVoiceMessage(voiceTime: 1)
+        })
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+10, execute:
+            {
+                self.sendSystemMessage(systemLeft: "您领取了徐脂虎的 ", messageRight: "红包", systemImage: UIImage(named: "redEnvelop-icon")!)
         })
 
         
@@ -205,4 +211,14 @@ extension XZChatViewController {
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
     }
+    
+    //时间
+    func sendSystemMessage(systemLeft: String, messageRight: String, systemImage: UIImage) {
+        let messageF : XZMessageFrame = XZMessageHelper.createSystemMessageFrame(systemLeft: systemLeft, messageRight: messageRight, systemImage: systemImage, date: Date(), from: "gxz", to: "idz", isSender: true, receivedSenderByYourself: false)
+        
+        self.addObject(messageF: messageF, isender: false)
+        self.messageSendSucced(messageF: messageF)
+    }
+    
+    
 }

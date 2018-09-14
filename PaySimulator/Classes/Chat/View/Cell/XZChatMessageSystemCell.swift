@@ -52,22 +52,22 @@ class XZChatMessageSystemCell: XZBaseMessageCell {
 extension XZChatMessageSystemCell {
     
     func setupMyUI () {
-        self.addSubview(self.contentView)
+        self.addSubview(self.backView)
         self.addSubview(self.contentLabel)
-        
-        self.contentLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(self.contentLabel.snp.left).offset(-9)
-            make.right.equalTo(self.contentLabel.snp.left).offset(11)
-            make.top.equalTo(self.contentLabel.snp.left).offset(-6)
-            make.bottom.equalTo(self.contentLabel.snp.left).offset(6)
-        }
+
+//        self.backView.snp.makeConstraints { (make) in
+//            make.left.equalTo(self.contentLabel.snp.left).offset(-9)
+//            make.right.equalTo(self.contentLabel.snp.left).offset(11)
+//            make.top.equalTo(self.contentLabel.snp.left).offset(-6)
+//            make.bottom.equalTo(self.contentLabel.snp.left).offset(6)
+//        }
     }
     
     
     override func setModelFrame(modelFrame: XZMessageFrame) {
         super.setModelFrame(modelFrame: modelFrame)
         
-        self.contentLabel.text = XZMessageHelper.timeFormatWithDate(time: (modelFrame.model?.message?.voiceTime) ?? 1530000000)
-        
+        self.contentLabel.attributedText = XZFaceManager.transferSystemMessageString(image: modelFrame.model?.message?.systemImage, leftMessage: (modelFrame.model?.message?.systemLeft)!, rightMessage: (modelFrame.model?.message?.systemRight)!)
+        self.contentLabel.frame = modelFrame.systemViewF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
     }
 }

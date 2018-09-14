@@ -142,10 +142,9 @@ class XZFaceManager: NSObject {
     
     class func transferSystemMessageString(image : UIImage? , leftMessage : String, rightMessage : String) -> NSMutableAttributedString {
         let attributeStr : NSMutableAttributedString = NSMutableAttributedString(string: leftMessage + rightMessage)
-        let paragraphStyle : NSMutableParagraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = MessageLineSpacing
         
-        attributeStr.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributeStr.length))
+        attributeStr.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: leftMessage.lengthOfBytes(using: String.Encoding.utf8)))
+        attributeStr.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.init(red: 66.0/255.0, green: 132.0/255.0, blue: 197.0/255.0, alpha: 1), range: NSRange(location: rightMessage.lengthOfBytes(using: String.Encoding.utf8), length: rightMessage.lengthOfBytes(using: String.Encoding.utf8)))
         
         
         if image != nil {

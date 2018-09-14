@@ -244,7 +244,7 @@ var MessageSystemHeight : CGFloat {
     }else if kWindowH == 812 {
         height = 26
     }else if kWindowW == 414 {
-        height = 44
+        height = 26
     }else if kWindowW == 375 {
         height = 26
     }

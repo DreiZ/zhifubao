@@ -44,6 +44,9 @@ class XZMessageFrame: NSObject {
     
     /// 语音未读红点
     var redViewF : CGRect?
+    
+    /// 系统 frame
+    var systemViewF : CGRect?
 }
 
 extension XZMessageFrame {
@@ -78,6 +81,17 @@ extension XZMessageFrame {
                 bubbleViewF = CGRect(x: 0, y: 0, width: 0, height: 0)
                 headImageViewF = CGRect(x: 0, y: 0, width: 0, height: 0)
                 cellHight = MessageSystemTimeHeight
+            }else if model.message?.type == TypeSystem {
+                var message = ((model.message?.systemLeft) ?? "") + ((model.message?.systemRight) ?? "")
+                if model.message?.systemImage != nil {
+                    message = "图 " + message
+                }
+                let systemLabelSize : CGSize = self.size(message: message, maxWidth: chatLabelMax, font: MessageSystemFont)
+                
+                bubbleViewF = CGRect(x: 0, y: 0, width: 0, height: 0)
+                headImageViewF = CGRect(x: 0, y: 0, width: 0, height: 0)
+                systemViewF = CGRect(x: (kWindowW - systemLabelSize.width)/2.0, y: MessageSystemTopSpace, width: systemLabelSize.width, height: systemLabelSize.height)
+                cellHight = MessageSystemHeight + MessageSystemTopSpace + MessageSystemBottomSpace
             }
             
             let activityX : CGFloat = bubbleViewF!.origin.x - 40

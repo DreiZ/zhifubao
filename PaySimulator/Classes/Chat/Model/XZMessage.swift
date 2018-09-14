@@ -32,6 +32,14 @@ class XZMessage: NSObject {
     var voiceTime : Int = 1
     // 显示系统时间
     var systemTime : Int = 1
+    
+    // 显示消息左侧提示
+    var systemLeft : String?
+    // 显示消息右侧提示
+    var systemRight : String?
+    // 显示系统消息 image
+    var systemImage : UIImage?
+    
     // 发送消息对应的type类型:1,2,3
     var type : String?
     // 时长，宽高，首帧id
