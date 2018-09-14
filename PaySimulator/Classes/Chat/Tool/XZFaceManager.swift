@@ -127,11 +127,13 @@ class XZFaceManager: NSObject {
         
 
         for item in mutableArray.reversed() {
-            let range = item["range"]
+            let range : NSRange = item["range"] as! NSRange
             let image = item["image"]
             
-            attributeStr.replaceCharacters(in: range as! NSRange, with:
-            image as! NSAttributedString)
+            if range.length + range.location <= attributeStr.length{
+                attributeStr.replaceCharacters(in: range, with:
+                    image as! NSAttributedString)
+            } 
         }
 
         return attributeStr

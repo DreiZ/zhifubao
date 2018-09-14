@@ -14,12 +14,13 @@ class XZMessageHelper: NSObject {
     class func createMessageFrame(type : String, content : String,
                             date : Date, path : String?, from : String,
                             to : String, fileKey : String?,
-                            isSender : Bool, receivedSenderByYourself : Bool) -> XZMessageFrame {
+                            isSender : Bool, receivedSenderByYourself : Bool, voiceTime : Int?) -> XZMessageFrame {
         let message : XZMessage = XZMessage()
         message.to = to
         message.from = from
         message.fileKey = fileKey
         message.date = Int(date.timeIntervalSinceReferenceDate)
+        message.voiceTime = voiceTime ?? 1
         
         let model : XZMessageModel = XZMessageModel()
         let mtype = self.cellType(messageType: type)

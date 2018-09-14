@@ -33,21 +33,32 @@ class XZChatViewController: XZBaseViewController {
 
         self.setupUI()
         
+        
+        self.iTableView.register(XZChatMessageTextCell.self, forCellReuseIdentifier: TypeText)
+        self.iTableView.register(XZChatMessageVoiceCell.self, forCellReuseIdentifier: TypeVoice)
+
         DispatchQueue.main.asyncAfter(deadline: .now()+5, execute:
             {
                 self.sendTextMessage(message: "束带结发[愉快][愉快][流汗]上岛咖啡士大夫少的发哦发噶是的水电费水电费水电")
-                
         })
         DispatchQueue.main.asyncAfter(deadline: .now()+7, execute:
             {
                 self.sendTextMessage(message: "上看的发个[愉快][愉快][流汗]少的发个")
-                
         })
         
         DispatchQueue.main.asyncAfter(deadline: .now()+8, execute:
             {
                 self.sendOtherTextMessage(message: "阿松的更好[愉快][愉快][流汗]上少的发哦发噶是的水电费水电费水电")
-                
+        })
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+10, execute:
+            {
+                self.sendVoiceMessage(voiceTime: 10)
+        })
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+10, execute:
+            {
+                self.sendOtherVoiceMessage(voiceTime: 1)
         })
 
         
@@ -109,7 +120,7 @@ extension XZChatViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let obj : XZMessageFrame = self.dataSource[indexPath.row]
         
-        let cell = XZChatMessageTextCell.cellWithTableView(tableView)
+        let cell = XZBaseMessageCell.cellWithTableView(tableView, identifier: (obj.model?.message?.type) ?? "XZBaseMessageCell")
         cell.setModelFrame(modelFrame: obj)
         return cell
     }
@@ -148,16 +159,30 @@ extension XZChatViewController {
     
     //发送 text 数据
     func sendTextMessage(message : String) {
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: true, receivedSenderByYourself: false)
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
         
         self.addObject(messageF: messageF, isender: true)
         self.messageSendSucced(messageF: messageF)
     }
     
     func sendOtherTextMessage(message : String) {
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: false, receivedSenderByYourself: false)
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
         
         self.addObject(messageF: messageF, isender: true)
+        self.messageSendSucced(messageF: messageF)
+    }
+    
+    func sendVoiceMessage(voiceTime : Int) {
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeVoice, content: "[语音]", date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: voiceTime)
+        
+        self.addObject(messageF: messageF, isender: true)
+        self.messageSendSucced(messageF: messageF)
+    }
+    
+    func sendOtherVoiceMessage(voiceTime : Int) {
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeVoice, content: "[语音]", date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: voiceTime)
+        
+        self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
     }
 }

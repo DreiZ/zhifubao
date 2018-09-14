@@ -29,7 +29,16 @@ class XZChatMessageTextCell: XZBaseMessageCell {
     }
     
     override class func cellWithTableView(_ tableView : UITableView) -> XZChatMessageTextCell {
-        let identifier = "XZChatMessageTextCell"
+        let identifier = TypeText
+        var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? XZChatMessageTextCell
+        if cell == nil {
+            cell = XZChatMessageTextCell.init(style: UITableViewCellStyle.default, reuseIdentifier: identifier)
+        }
+        
+        return cell!
+    }
+    
+    override class func cellWithTableView(_ tableView : UITableView, identifier : String) -> XZChatMessageTextCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? XZChatMessageTextCell
         if cell == nil {
             cell = XZChatMessageTextCell.init(style: UITableViewCellStyle.default, reuseIdentifier: identifier)

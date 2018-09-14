@@ -57,6 +57,15 @@ class XZBaseMessageCell: UITableViewCell {
         
         return cell!
     }
+    
+    class func cellWithTableView(_ tableView : UITableView, identifier : String) -> XZBaseMessageCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? XZBaseMessageCell
+        if cell == nil {
+            cell = XZBaseMessageCell.init(style: UITableViewCellStyle.default, reuseIdentifier: identifier)
+        }
+        
+        return cell!
+    }
 }
 
 extension XZBaseMessageCell {
@@ -128,7 +137,7 @@ extension XZBaseMessageCell {
             if modelFrame.model?.message?.type == TypeFile || modelFrame.model?.message?.type == TypePicText {
                 self.bubbleView.image = UIImage(named: "Dialog_pt.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 0, 10, 0), resizingMode: UIImageResizingMode.stretch)
             }
-            else if modelFrame.model?.message?.type == TypeText {
+            else if modelFrame.model?.message?.type == TypeText || modelFrame.model?.message?.type == TypeVoice {
                 self.bubbleView.image = UIImage(named: "Dialog_green.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypeRedPacket {
@@ -144,7 +153,7 @@ extension XZBaseMessageCell {
             if modelFrame.model?.message?.type == TypeFile || modelFrame.model?.message?.type == TypePicText {
                 self.bubbleView.image = UIImage(named: "Dialog_white.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
-            else if modelFrame.model?.message?.type == TypeText {
+            else if modelFrame.model?.message?.type == TypeText || modelFrame.model?.message?.type == TypeVoice {
                 self.bubbleView.image = UIImage(named: "Dialog_white.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypeRedPacket {

@@ -27,6 +27,10 @@ let MessageHeadWidth : CGFloat = 40
 let MessageHeadToView : CGFloat = 10
 let MessageHeadToBubble : CGFloat = 6
 let MessageLineSpacing : CGFloat = 4
+let MessageRedViewWidth : CGFloat = 8
+let MessageVoiceSpacing : CGFloat = 23
+let MessageVoiceWidth : CGFloat = 12.5
+let MessageVoiceHeight : CGFloat = 17
 
 //信息主要文字大小
 var MessageFont : UIFont {
@@ -57,6 +61,20 @@ var MessageSubFont : UIFont {
     return UIFont.systemFont(ofSize: size)
 }
 
+var MessageVoiceFont : UIFont {
+    var size : CGFloat = 10
+    if kWindowW == 320 {
+        size = 10
+    }else if kWindowH == 812 {
+        size = 10
+    }else if kWindowW == 414 {
+        size = 10
+    }else if kWindowW == 375 {
+        size = 10
+    }
+    return UIFont.systemFont(ofSize: size)
+}
+
 //消息 上 space
 var MessageTopSpace : CGFloat {
     var height : CGFloat = 10
@@ -65,7 +83,7 @@ var MessageTopSpace : CGFloat {
     }else if kWindowH == 812 {
         height = 8
     }else if kWindowW == 414 {
-        height = 7
+        height = 8
     }else if kWindowW == 375 {
         height = 10
     }
@@ -78,7 +96,37 @@ var MessageBottomSpace : CGFloat {
     if kWindowW == 320 {
         height = 12
     }else if kWindowH == 812 {
-        height = 14
+        height = 13
+    }else if kWindowW == 414 {
+        height = 13
+    }else if kWindowW == 375 {
+        height = 12
+    }
+    return height
+}
+
+//消息redpacket 上 space
+var MessageRedTopSpace : CGFloat {
+    var height : CGFloat = 10
+    if kWindowW == 320 {
+        height = 10
+    }else if kWindowH == 812 {
+        height = 9
+    }else if kWindowW == 414 {
+        height = 9
+    }else if kWindowW == 375 {
+        height = 10
+    }
+    return height
+}
+
+//消息下redpacket space
+var MessageRedBottomSpace : CGFloat {
+    var height : CGFloat = 12
+    if kWindowW == 320 {
+        height = 12
+    }else if kWindowH == 812 {
+        height = 12
     }else if kWindowW == 414 {
         height = 12
     }else if kWindowW == 375 {
@@ -87,7 +135,7 @@ var MessageBottomSpace : CGFloat {
     return height
 }
 
-//系统时间
+//系统时间 18-8 -37（414，812）   19-6-37（320，375）
 var MessageSystemTimeHeight : CGFloat {
     var height : CGFloat = 26
     if kWindowW == 320 {
@@ -242,6 +290,6 @@ enum MessageDeliveryState : Int {
 // 消息状态
 enum XZMessageStatus : Int {
     case unRead = 0          // 消息未读
-    case read = 1                 // 消息已读
-    case back = 2                 // 消息撤回
+    case read = 1            // 消息已读
+    case back = 2            // 消息撤回
 }
