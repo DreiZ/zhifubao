@@ -89,7 +89,22 @@ var MessageTimeFont : UIFont {
     return UIFont.systemFont(ofSize: size)
 }
 
-//消息 上 space
+var MessageSystemFont : UIFont {
+    var size : CGFloat = 14
+    if kWindowW == 320 {
+        size = 14
+    }else if kWindowH == 812 {
+        size = 14
+    }else if kWindowW == 414 {
+        size = 14
+    }else if kWindowW == 375 {
+        size = 14
+    }
+    return UIFont.systemFont(ofSize: size)
+}
+
+//MARK --------------------------------------
+// 消息 上 space
 var MessageTopSpace : CGFloat {
     var height : CGFloat = 10
     if kWindowW == 320 {
@@ -178,7 +193,7 @@ var MessageSystemTimeTopSpace : CGFloat {
     return height
 }
 
-var MessageSystemTimeTopBottom : CGFloat {
+var MessageSystemTimeBottom : CGFloat {
     var height : CGFloat = 8
     if kWindowW == 320 {
         height = 8
@@ -193,16 +208,45 @@ var MessageSystemTimeTopBottom : CGFloat {
 }
 
 //系统消息
+var MessageSystemTopSpace : CGFloat {
+    var height : CGFloat = 9
+    if kWindowW == 320 {
+        height = 9
+    }else if kWindowH == 812 {
+        height = 9
+    }else if kWindowW == 414 {
+        height = 9
+    }else if kWindowW == 375 {
+        height = 9
+    }
+    return height
+}
+
+var MessageSystemBottomSpace : CGFloat {
+    var height : CGFloat = 10
+    if kWindowW == 320 {
+        height = 10
+    }else if kWindowH == 812 {
+        height = 12
+    }else if kWindowW == 414 {
+        height = 12
+    }else if kWindowW == 375 {
+        height = 10
+    }
+    return height
+}
+
+//系统消息内容高
 var MessageSystemHeight : CGFloat {
     var height : CGFloat = 45
     if kWindowW == 320 {
-        height = 45
+        height = 26
     }else if kWindowH == 812 {
-        height = 150.0 / 1125.0 * kWindowW
+        height = 26
     }else if kWindowW == 414 {
-        height = 132.0 / 1242.0 * kWindowW
+        height = 44
     }else if kWindowW == 375 {
-        height = 45
+        height = 26
     }
     return height
 }

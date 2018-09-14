@@ -139,4 +139,29 @@ class XZFaceManager: NSObject {
         return attributeStr
     }
     
+    
+    class func transferSystemMessageString(image : UIImage? , leftMessage : String, rightMessage : String) -> NSMutableAttributedString {
+        let attributeStr : NSMutableAttributedString = NSMutableAttributedString(string: leftMessage + rightMessage)
+        let paragraphStyle : NSMutableParagraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = MessageLineSpacing
+        
+        attributeStr.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributeStr.length))
+        
+        
+        if image != nil {
+            let attach = NSTextAttachment()
+            attach.image = image
+            attach.bounds = CGRect(x: 0, y: 0, width: 17, height: 16)
+            
+            let imgStr = NSAttributedString(attachment: attach)
+            
+            let range : NSRange = NSRange(location: 0, length: 0)
+            attributeStr.replaceCharacters(in: range, with:
+                imgStr)
+        }
+
+        
+        return attributeStr
+    }
+    
 }

@@ -39,6 +39,12 @@ class XZChatViewController: XZBaseViewController {
         self.iTableView.register(XZChatMessageTimeCell.self, forCellReuseIdentifier: TypeTime)
 
 
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+5, execute:
+            {
+                self.sendTimeMessage(systemTime: Int(Date().timeIntervalSinceReferenceDate))
+        })
+        
         DispatchQueue.main.asyncAfter(deadline: .now()+5, execute:
             {
                 self.sendTextMessage(message: "束带结发[愉快][愉快][流汗]上岛咖啡士大夫少的发哦发噶是的水电费水电费水电")
@@ -47,7 +53,10 @@ class XZChatViewController: XZBaseViewController {
             {
                 self.sendTextMessage(message: "上看的发个[愉快][愉快][流汗]少的发个")
         })
-        
+        DispatchQueue.main.asyncAfter(deadline: .now()+5, execute:
+            {
+                self.sendTimeMessage(systemTime: Int(Date().timeIntervalSinceReferenceDate))
+        })
         DispatchQueue.main.asyncAfter(deadline: .now()+8, execute:
             {
                 self.sendOtherTextMessage(message: "阿松的更好[愉快][愉快][流汗]上少的发哦发噶是的水电费水电费水电")
@@ -191,7 +200,7 @@ extension XZChatViewController {
     
     //时间
     func sendTimeMessage(systemTime : Int) {
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeTime, content: "[时间]", date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: systemTime)
+        let messageF : XZMessageFrame = XZMessageHelper.createSystemTimeMessageFrame(content: "[时间]", date: Date(), from: "gxz", to: "idz", isSender: true, receivedSenderByYourself: false, systemTime: systemTime)
         
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)

@@ -13,6 +13,7 @@ class XZChatMessageTimeCell: XZBaseMessageCell {
     lazy var timeLabel : KILabel = {
         let timeLabel : KILabel = KILabel()
         timeLabel.numberOfLines = 1
+        timeLabel.textAlignment = .center
         timeLabel.font = MessageTimeFont
         timeLabel.textColor = UIColor(red: 130.0/255.0, green: 131.0/255.0, blue: 132.0/255.0, alpha: 1)
         
@@ -51,9 +52,10 @@ class XZChatMessageTimeCell: XZBaseMessageCell {
 
 extension XZChatMessageTimeCell {
     func setupMyUI() {
+        
         self.addSubview(self.timeLabel)
         self.timeLabel.snp.makeConstraints { (make) in
-            make.centerX.equalTo(self.contentView.snp.centerX)
+            make.centerX.equalTo(self.snp.centerX)
             make.top.equalTo(self.contentView.snp.top).offset(MessageSystemTimeTopSpace)
         }
     }

@@ -75,7 +75,8 @@ extension XZMessageFrame {
                 
                 cellHight = (bubbleViewF?.size.height)! + MessageBottomSpace + MessageTopSpace
             }else if model.message?.type == TypeTime {
-                
+                bubbleViewF = CGRect(x: 0, y: 0, width: 0, height: 0)
+                headImageViewF = CGRect(x: 0, y: 0, width: 0, height: 0)
                 cellHight = MessageSystemTimeHeight
             }
             
@@ -111,7 +112,7 @@ extension XZMessageFrame {
                 
                 cellHight = (bubbleViewF?.size.height)! + MessageBottomSpace + MessageTopSpace
             }else if model.message?.type == TypeTime {
-                
+                headImageViewF = CGRect(x: 0, y: 0, width: 0, height: 0)
                 cellHight = MessageSystemTimeHeight
             }
             
