@@ -400,3 +400,29 @@ enum XZMessageStatus : Int {
     case read = 1            // 消息已读
     case back = 2            // 消息撤回
 }
+
+
+
+/************Notification*************/
+
+let GXEmotionDidSelectNotification   = "GXEmotionDidSelectNotification"
+let GXEmotionDidDeleteNotification   = "GXEmotionDidDeleteNotification"
+let GXEmotionDidSendNotification     = "GXEmotionDidSendNotification"
+//let NotificationReceiveUnreadMessage =
+//    "NotificationReceiveUnreadMessage"
+let NotificationDidCreatedConversation = "NotificationDidCreatedConversation"
+let NotificationFirstMessage         = "NotificationFirstMessage"
+let NotificationDidUpdateDeliver     = "NotificationDidUpdateDeliver"
+let NotificationPushDidReceived      = "NotificationPushDidReceived"
+let NotificationDeliverChanged       = "NotificationDeliverChanged"
+let NotificationBackMsgNotification  = "NotificationBackMsgNotification"
+let NotificationGPhotoDidChanged     = "NotificationGPhotoDidChanged"
+
+let NotificationReloadDataIMSource   = "NotificationReloadDataIMSource"
+let NotificationUserHeadImgChangedNotification  = "NotificationUserHeadImgChangedNotification"
+let NotificationKickUserNotification     = "NotificationKickUserNotification"
+let NotificationShareExitNotification = "NotificationShareExitNotification"
+let ICShareCancelNotification = "ICShareCancelNotification"
+let ICShareConfirmNotification = "ICShareConfirmNotification"
+let ICShareStayInAppNotification = "ICShareStayInAppNotification"
+let ICShareBackOtherAppNotification = "ICShareBackOtherAppNotification"
