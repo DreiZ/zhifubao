@@ -51,22 +51,55 @@ class XZChatViewController: XZBaseViewController {
             {
                 self.sendTextMessage(message: "束带结发[愉快][愉快][流汗]上岛咖啡士大夫少的发哦发噶是的水电费水电费水电")
         })
-//        DispatchQueue.main.asyncAfter(deadline: .now()+7, execute:
-//            {
-//                self.sendTextMessage(message: "上看的发个[愉快][愉快][流汗]少的发个")
-//        })
-//        DispatchQueue.main.asyncAfter(deadline: .now()+5, execute:
-//            {
-//                self.sendTimeMessage(systemTime: Int(Date().timeIntervalSinceReferenceDate))
-//        })
-//        DispatchQueue.main.asyncAfter(deadline: .now()+8, execute:
-//            {
-//                self.sendOtherTextMessage(message: "阿松的更好[愉快][愉快][流汗]上少的发哦发噶是的水电费水电费水电")
-//        })
+
+        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
+            {
+                self.sendTransferMessage(money: "102")
+        })
+
+        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
+            {
+                self.sendOtherTransferMessage(money: "10")
+        })
+
+        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
+            {
+                self.sendRedMessage(content: "是哒是哒高好似好狗")
+        })
+
+        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
+            {
+                self.sendOtherRedMessage(content: "打扫吧四国赛哦跟佛撒个否问问少的发撒个撒发个")
+        })
+
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+7, execute:
+            {
+                self.sendTextMessage(message: "上看的发个[愉快][愉快][流汗]少的发个")
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now()+5, execute:
+            {
+                self.sendTimeMessage(systemTime: Int(Date().timeIntervalSinceReferenceDate))
+        })
+        DispatchQueue.main.asyncAfter(deadline: .now()+8, execute:
+            {
+                self.sendOtherTextMessage(message: "阿松的更好[愉快][愉快][流汗]上少的发哦发噶是的水电费水电费水电")
+        })
         
         DispatchQueue.main.asyncAfter(deadline: .now()+3, execute:
             {
                 self.sendVoiceMessage(voiceTime: 10)
+        })
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
+            {
+                self.sendRedOpenMessage(content: "是哒是哒高好似好狗")
+        })
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
+            {
+                self.sendOtherOpenRedMessage(content: "打扫吧四国赛哦跟佛撒个否问问少的发撒个撒发个")
         })
         
         
@@ -219,7 +252,7 @@ extension XZChatViewController {
         self.messageSendSucced(messageF: messageF)
     }
     
-    //时间
+    //系统提示
     func sendSystemMessage(systemLeft: String, messageRight: String, systemImage: UIImage?) {
         let messageF : XZMessageFrame = XZMessageHelper.createSystemMessageFrame(systemLeft: systemLeft, messageRight: messageRight, systemImage: systemImage, date: Date(), from: "gxz", to: "idz", isSender: true, receivedSenderByYourself: false)
         
@@ -227,5 +260,51 @@ extension XZChatViewController {
         self.messageSendSucced(messageF: messageF)
     }
     
+    //转账
+    func sendTransferMessage(money : String) {
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeTransfer, content: money, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
+        
+        self.addObject(messageF: messageF, isender: true)
+        self.messageSendSucced(messageF: messageF)
+    }
     
+    //转账
+    func sendOtherTransferMessage(money : String) {
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeTransfer, content: money, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
+        
+        self.addObject(messageF: messageF, isender: false)
+        self.messageSendSucced(messageF: messageF)
+    }
+    
+    //红包
+    func sendRedMessage(content : String) {
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacket, content: content, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
+        
+        self.addObject(messageF: messageF, isender: true)
+        self.messageSendSucced(messageF: messageF)
+    }
+    
+    //红包
+    func sendOtherRedMessage(content : String) {
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacket, content: content, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
+        
+        self.addObject(messageF: messageF, isender: false)
+        self.messageSendSucced(messageF: messageF)
+    }
+    
+    //红包 open
+    func sendRedOpenMessage(content : String) {
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacketOpen, content: content, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
+        
+        self.addObject(messageF: messageF, isender: true)
+        self.messageSendSucced(messageF: messageF)
+    }
+    
+    //红包 open
+    func sendOtherOpenRedMessage(content : String) {
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacketOpen, content: content, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
+        
+        self.addObject(messageF: messageF, isender: false)
+        self.messageSendSucced(messageF: messageF)
+    }
 }

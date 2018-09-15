@@ -16,12 +16,12 @@ class XZChatMessageTransferCell: XZBaseMessageCell {
         return transImage
     }()
     
-    lazy var moneyLabel : UILabel = {
-        let moneyLabel = UILabel()
-        moneyLabel.textColor = UIColor.white
-        moneyLabel.font = MessageFont
-        moneyLabel.textAlignment = .left
-        return moneyLabel
+    lazy var titleLabel : UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.textColor = UIColor.white
+        titleLabel.font = MessageFont
+        titleLabel.textAlignment = .left
+        return titleLabel
     }()
     
     lazy var desLabel : UILabel = {
@@ -34,15 +34,16 @@ class XZChatMessageTransferCell: XZBaseMessageCell {
     
     lazy var typeLabel : UILabel = {
         let typeLabel = UILabel()
-        typeLabel.textColor = UIColor.white
+        typeLabel.textColor = UIColor.init(red: 165.0/255.0, green: 165.0/255.0, blue: 165.0/255.0, alpha: 1)
         typeLabel.font = MessageSubFont
         typeLabel.textAlignment = .left
+        typeLabel.text = "转账"
         return typeLabel
     }()
     
     lazy var iconImageView : UIImageView = {
         let iconImageView = UIImageView()
-        iconImageView.image = UIImage(named: "zhi_yuebao")
+        iconImageView.image = UIImage(named: "zhi_icon")
         return iconImageView
     }()
     
@@ -72,7 +73,7 @@ class XZChatMessageTransferCell: XZBaseMessageCell {
 extension XZChatMessageTransferCell {
     func setupMyUI() {
         self.addSubview(self.transImage)
-        self.addSubview(self.moneyLabel)
+        self.addSubview(self.titleLabel)
         self.addSubview(self.desLabel)
         self.addSubview(self.typeLabel)
         self.addSubview(self.iconImageView)
@@ -81,7 +82,19 @@ extension XZChatMessageTransferCell {
     override func setModelFrame(modelFrame: XZMessageFrame) {
         super.setModelFrame(modelFrame: modelFrame)
         
+        self.transImage.frame = modelFrame.transImageF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
+        self.titleLabel.frame = modelFrame.titleLabelF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
+        self.desLabel.frame = modelFrame.desLabelF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
+        self.typeLabel.frame = modelFrame.typeLabelF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
+        self.iconImageView.frame = modelFrame.iconImageViewF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
         
         
+        self.titleLabel.text = ((modelFrame.model?.message?.content) ?? "0") + "元"
+        
+        if modelFrame.model?.isSender == true {
+            self.desLabel.text = "转账给" + ((modelFrame.model?.message?.to) ?? "")
+        }else {
+            self.desLabel.text = "转账给你"
+        }
     }
 }

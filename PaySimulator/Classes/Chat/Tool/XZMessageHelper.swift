@@ -33,10 +33,10 @@ class XZMessageHelper: NSObject {
             message.content = "[图片]"
         }else if type == TypeVoice {
             message.content = "[语音]"
-        }else if type == TypeRedPacket {
-            message.content = "[红包]"
+        }else if type == TypeRedPacket || type == TypeRedPacketOpen {
+            message.content = content
         }else if type == TypeTransfer {
-            message.content = "[转账]"
+            message.content = content
         }else if type == TypeTime {
             message.content = "[时间]"
         }else {
@@ -61,7 +61,7 @@ class XZMessageHelper: NSObject {
     }
     
     
-    //创建一条本地消息
+    //创建一条时间消息
     class func createSystemTimeMessageFrame(content : String = "[时间]",
                                   date : Date, from : String,
                                   to : String, isSender : Bool, receivedSenderByYourself : Bool, systemTime : Int?) -> XZMessageFrame {

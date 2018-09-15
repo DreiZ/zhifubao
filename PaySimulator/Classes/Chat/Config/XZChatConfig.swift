@@ -158,9 +158,9 @@ var MessageRedBottomSpace : CGFloat {
     if kWindowW == 320 {
         height = 12
     }else if kWindowH == 812 {
-        height = 12
+        height = 13
     }else if kWindowW == 414 {
-        height = 12
+        height = 13
     }else if kWindowW == 375 {
         height = 12
     }

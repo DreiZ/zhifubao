@@ -47,6 +47,21 @@ class XZMessageFrame: NSObject {
     
     /// 系统 frame
     var systemViewF : CGRect?
+    
+    /// 转账、红包 样式
+    var transImageF : CGRect?
+    
+    /// 转账、红包 标题
+    var titleLabelF : CGRect?
+    
+    /// 转账、红包 描述
+    var desLabelF : CGRect?
+    
+    /// 转账、红包 类型
+    var typeLabelF : CGRect?
+    
+    /// 转账、红包 应用icon 
+    var iconImageViewF : CGRect?
 }
 
 extension XZMessageFrame {
@@ -104,6 +119,28 @@ extension XZMessageFrame {
                 systemViewF = CGRect(x: (kWindowW - systemLabelSize.width)/2.0, y: MessageSystemTopSpace, width: systemLabelSize.width, height: systemLabelSize.height)
                 cellHight = MessageSystemHeight + MessageSystemTopSpace + MessageSystemBottomSpace
             }
+            else if model.message?.type == TypeTransfer {
+                
+                bubbleViewF = CGRect(x: headX - MessageMaxWidth - MessageHeadToBubble, y: MessageTopSpace, width: MessageMaxWidth, height: MessageRedHeight)
+                transImageF = CGRect(x: 11.0 + (bubbleViewF?.origin.x)!, y: 16.0 + (bubbleViewF?.origin.y)!, width: 36, height: 36)
+                titleLabelF = CGRect(x: (transImageF?.origin.x)! + (transImageF?.size.width)! + 8, y: (transImageF?.origin.y)!, width: MessageMaxWidth - (transImageF?.size.width)! - 11 - 8 - 12, height: 18)
+                desLabelF = CGRect(x: (titleLabelF?.origin.x)!, y: (transImageF?.origin.y)! + (transImageF?.size.height)!/2.0 + 4, width: (titleLabelF?.size.width)!, height: 14)
+                typeLabelF = CGRect(x: (bubbleViewF?.origin.x)! + 12, y: (bubbleViewF?.origin.y)! + 73, width: 80, height: 14)
+                iconImageViewF = CGRect(x: (bubbleViewF?.origin.x)! + (bubbleViewF?.size.width)! - MessageSystemArrowWidth - 4 - 16, y: (bubbleViewF?.origin.y)! + 73, width: 16, height: 16)
+                
+                cellHight = MessageRedHeight + MessageTopSpace + MessageBottomSpace
+            }
+            else if model.message?.type == TypeRedPacket || model.message?.type == TypeRedPacketOpen {
+                
+                bubbleViewF = CGRect(x: headX - MessageMaxWidth - MessageHeadToBubble, y: MessageTopSpace, width: MessageMaxWidth, height: MessageRedHeight)
+                transImageF = CGRect(x: 11.0 + (bubbleViewF?.origin.x)!, y: 16.0 + (bubbleViewF?.origin.y)!, width: 33, height: 39)
+                titleLabelF = CGRect(x: (transImageF?.origin.x)! + (transImageF?.size.width)! + 8, y: (transImageF?.origin.y)! - 1, width: MessageMaxWidth - (transImageF?.size.width)! - 11 - 8 - 12, height: 18)
+                desLabelF = CGRect(x: (titleLabelF?.origin.x)!, y: (transImageF?.origin.y)! + (transImageF?.size.height)!/2.0 + 6, width: (titleLabelF?.size.width)!, height: 14)
+                typeLabelF = CGRect(x: (bubbleViewF?.origin.x)! + 12, y: (bubbleViewF?.origin.y)! + 73, width: 80, height: 14)
+                iconImageViewF = CGRect(x: (bubbleViewF?.origin.x)! + (bubbleViewF?.size.width)! - MessageSystemArrowWidth - 4 - 16, y: (bubbleViewF?.origin.y)! + 73, width: 16, height: 16)
+                
+                cellHight = MessageRedHeight + MessageTopSpace + MessageBottomSpace
+            }
             
             let activityX : CGFloat = bubbleViewF!.origin.x - 40
             let activityY : CGFloat = (bubbleViewF!.origin.y + bubbleViewF!.size.height)/2.0 - 5.0
@@ -139,6 +176,28 @@ extension XZMessageFrame {
             }else if model.message?.type == TypeTime {
                 headImageViewF = CGRect(x: 0, y: 0, width: 0, height: 0)
                 cellHight = MessageSystemTimeHeight
+            }
+            else if model.message?.type == TypeTransfer {
+                
+                bubbleViewF = CGRect(x: headX + MessageHeadToBubble + MessageHeadWidth, y: MessageTopSpace, width: MessageMaxWidth, height: MessageRedHeight)
+                transImageF = CGRect(x: 11.0 + (bubbleViewF?.origin.x)! + MessageSystemArrowWidth, y: 16.0 + (bubbleViewF?.origin.y)!, width: 36, height: 36)
+                titleLabelF = CGRect(x: (transImageF?.origin.x)! + (transImageF?.size.width)! + 8, y: (transImageF?.origin.y)!, width: MessageMaxWidth - (transImageF?.size.width)! - 11 - 8 - 12, height: 18)
+                desLabelF = CGRect(x: (titleLabelF?.origin.x)!, y: (transImageF?.origin.y)! + (transImageF?.size.height)!/2.0 + 4, width: (titleLabelF?.size.width)!, height: 14)
+                typeLabelF = CGRect(x: (bubbleViewF?.origin.x)! + 12 + MessageSystemArrowWidth, y: (bubbleViewF?.origin.y)! + 73, width: 80, height: 14)
+                iconImageViewF = CGRect(x: (bubbleViewF?.origin.x)! + (bubbleViewF?.size.width)! - 4 - 16, y: (bubbleViewF?.origin.y)! + 73, width: 16, height: 16)
+                
+                cellHight = MessageRedHeight + MessageRedTopSpace + MessageRedBottomSpace
+            }
+            else if model.message?.type == TypeRedPacket || model.message?.type == TypeRedPacketOpen {
+                
+                bubbleViewF = CGRect(x: headX + MessageHeadToBubble + MessageHeadWidth, y: MessageTopSpace, width: MessageMaxWidth, height: MessageRedHeight)
+                transImageF = CGRect(x: 11.0 + (bubbleViewF?.origin.x)! + MessageSystemArrowWidth, y: 16.0 + (bubbleViewF?.origin.y)!, width: 33, height: 39)
+                titleLabelF = CGRect(x: (transImageF?.origin.x)! + (transImageF?.size.width)! + 8, y: (transImageF?.origin.y)! - 1, width: MessageMaxWidth - (transImageF?.size.width)! - 11 - 8 - 12, height: 18)
+                desLabelF = CGRect(x: (titleLabelF?.origin.x)!, y: (transImageF?.origin.y)! + (transImageF?.size.height)!/2.0 + 6, width: (titleLabelF?.size.width)!, height: 14)
+                typeLabelF = CGRect(x: (bubbleViewF?.origin.x)! + 12 + MessageSystemArrowWidth, y: (bubbleViewF?.origin.y)! + 73, width: 80, height: 14)
+                iconImageViewF = CGRect(x: (bubbleViewF?.origin.x)! + (bubbleViewF?.size.width)! - 4 - 16, y: (bubbleViewF?.origin.y)! + 73, width: 16, height: 16)
+                
+                cellHight = MessageRedHeight + MessageRedTopSpace + MessageRedBottomSpace
             }
             
             let activityX : CGFloat = bubbleViewF!.origin.x + (bubbleViewF?.width)! + 40

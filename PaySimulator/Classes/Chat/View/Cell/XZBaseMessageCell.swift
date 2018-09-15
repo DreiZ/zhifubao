@@ -135,7 +135,7 @@ extension XZBaseMessageCell {
             }
             
             if modelFrame.model?.message?.type == TypeFile || modelFrame.model?.message?.type == TypePicText {
-                self.bubbleView.image = UIImage(named: "Dialog_pt.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 0, 10, 0), resizingMode: UIImageResizingMode.stretch)
+                self.bubbleView.image = UIImage(named: "Dialog_pt.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypeText || modelFrame.model?.message?.type == TypeVoice {
                 self.bubbleView.image = UIImage(named: "Dialog_green.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
@@ -144,11 +144,12 @@ extension XZBaseMessageCell {
                 self.bubbleView.image = UIImage(named: "Dialog_orange.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypeRedPacketOpen {
-                self.bubbleView.image = UIImage(named: "Dialog_orange.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
+                self.bubbleView.image = UIImage(named: "Dialog_orange_open.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypeTransfer {
                 self.bubbleView.image = UIImage(named: "Dialog_blue.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
+            
         }else {
             if modelFrame.model?.message?.type == TypeFile || modelFrame.model?.message?.type == TypePicText {
                 self.bubbleView.image = UIImage(named: "Dialog_white.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
@@ -160,7 +161,7 @@ extension XZBaseMessageCell {
                 self.bubbleView.image = UIImage(named: "Dialog_orange.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypeRedPacketOpen {
-                self.bubbleView.image = UIImage(named: "Dialog_orange.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
+                self.bubbleView.image = UIImage(named: "Dialog_orange_open.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypeTransfer {
                 self.bubbleView.image = UIImage(named: "Dialog_blue.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
