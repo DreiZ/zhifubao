@@ -57,7 +57,7 @@ class XZChatMessageRedPacketCell: XZBaseMessageCell {
     }
     
     override class func cellWithTableView(_ tableView : UITableView) -> XZChatMessageRedPacketCell {
-        let identifier = "XZChatMessageRedPacketCell"
+        let identifier = TypeRedPacket
         var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? XZChatMessageRedPacketCell
         if cell == nil {
             cell = XZChatMessageRedPacketCell.init(style: UITableViewCellStyle.default, reuseIdentifier: identifier)
@@ -76,6 +76,13 @@ extension XZChatMessageRedPacketCell {
         self.addSubview(self.desLabel)
         self.addSubview(self.typeLabel)
         self.addSubview(self.iconImageView)
+    }
+    
+    override func setModelFrame(modelFrame: XZMessageFrame) {
+        super.setModelFrame(modelFrame: modelFrame)
+        
+        
+        
     }
 }
 

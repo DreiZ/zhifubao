@@ -57,7 +57,7 @@ class XZChatMessageTransferCell: XZBaseMessageCell {
     }
     
     override class func cellWithTableView(_ tableView : UITableView) -> XZChatMessageTransferCell {
-        let identifier = "XZChatMessageTransferCell"
+        let identifier = TypeTransfer
         var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? XZChatMessageTransferCell
         if cell == nil {
             cell = XZChatMessageTransferCell.init(style: UITableViewCellStyle.default, reuseIdentifier: identifier)
@@ -76,5 +76,12 @@ extension XZChatMessageTransferCell {
         self.addSubview(self.desLabel)
         self.addSubview(self.typeLabel)
         self.addSubview(self.iconImageView)
+    }
+    
+    override func setModelFrame(modelFrame: XZMessageFrame) {
+        super.setModelFrame(modelFrame: modelFrame)
+        
+        
+        
     }
 }

@@ -175,6 +175,7 @@
 		5E552618214906B4004204AF /* XZChatMessageTransferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E552617214906B4004204AF /* XZChatMessageTransferCell.swift */; };
 		5E55261A21490EB1004204AF /* XZMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55261921490EB1004204AF /* XZMessageHelper.swift */; };
 		5E58516A2143981F004A2C4B /* XZBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5851692143981F004A2C4B /* XZBaseModel.swift */; };
+		5E6938E2214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6938E1214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift */; };
 		5EAF7336214272A50027812A /* ZBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF7335214272A50027812A /* ZBaseModel.m */; };
 		5ECE67C82140FB7600C8C5A9 /* XZReceivablesFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECE67C62140FB7600C8C5A9 /* XZReceivablesFooterView.xib */; };
 		5ECE67C92140FB7600C8C5A9 /* XZReceivablesFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE67C72140FB7600C8C5A9 /* XZReceivablesFooterView.swift */; };
@@ -442,6 +443,7 @@
 		5E552617214906B4004204AF /* XZChatMessageTransferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatMessageTransferCell.swift; sourceTree = "<group>"; };
 		5E55261921490EB1004204AF /* XZMessageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMessageHelper.swift; sourceTree = "<group>"; };
 		5E5851692143981F004A2C4B /* XZBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseModel.swift; sourceTree = "<group>"; };
+		5E6938E1214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatMessageRedPacketOpenCell.swift; sourceTree = "<group>"; };
 		5EAF7334214272A50027812A /* ZBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZBaseModel.h; path = PaySimulator/Classes/Tools/ZBaseModel.h; sourceTree = SOURCE_ROOT; };
 		5EAF7335214272A50027812A /* ZBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZBaseModel.m; path = PaySimulator/Classes/Tools/ZBaseModel.m; sourceTree = SOURCE_ROOT; };
 		5ECE67C62140FB7600C8C5A9 /* XZReceivablesFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZReceivablesFooterView.xib; sourceTree = "<group>"; };
@@ -789,6 +791,7 @@
 				5E4157C7214B8D5E00AD8E39 /* XZChatMessageTimeCell.swift */,
 				5E552617214906B4004204AF /* XZChatMessageTransferCell.swift */,
 				5E42F4302147A9310034B691 /* XZChatMessageRedPacketCell.swift */,
+				5E6938E1214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift */,
 				5E42F4322147A9480034B691 /* XZChatMessageSystemCell.swift */,
 			);
 			path = Cell;
@@ -1772,6 +1775,7 @@
 				5E085D68213FD41E003B0918 /* WRNavigationBar.swift in Sources */,
 				E36048562137A1DB00ECF65F /* XZPayHomeVC.swift in Sources */,
 				5E4B4E6721424DF8003D3D23 /* SCLAlertView.swift in Sources */,
+				5E6938E2214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift in Sources */,
 				5E085D6C213FD462003B0918 /* XZReceivablesViewController.swift in Sources */,
 				E36490882140D2F8005F234B /* XZBalanceTabVC.swift in Sources */,
 				5E42F4332147A9480034B691 /* XZChatMessageSystemCell.swift in Sources */,

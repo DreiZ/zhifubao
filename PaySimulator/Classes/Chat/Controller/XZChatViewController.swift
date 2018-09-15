@@ -38,8 +38,9 @@ class XZChatViewController: XZBaseViewController {
         self.iTableView.register(XZChatMessageVoiceCell.self, forCellReuseIdentifier: TypeVoice)
         self.iTableView.register(XZChatMessageTimeCell.self, forCellReuseIdentifier: TypeTime)
         self.iTableView.register(XZChatMessageSystemCell.self, forCellReuseIdentifier: TypeSystem)
-
-
+        self.iTableView.register(XZChatMessageRedPacketCell.self, forCellReuseIdentifier: TypeRedPacket)
+        self.iTableView.register(XZChatMessageTransferCell.self, forCellReuseIdentifier: TypeTransfer)
+        self.iTableView.register(XZChatMessageRedPacketOpenCell.self, forCellReuseIdentifier: TypeRedPacketOpen)
         
         DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
             {

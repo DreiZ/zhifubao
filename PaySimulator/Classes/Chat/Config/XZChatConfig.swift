@@ -272,6 +272,21 @@ var MessageMaxWidth : CGFloat {
     return width
 }
 
+//红包信息 height
+var MessageRedHeight : CGFloat {
+    var height : CGFloat = 214
+    if kWindowW == 320 {
+        height = 95
+    }else if kWindowH == 812 {
+        height = 95
+    }else if kWindowW == 414 {
+        height = 95
+    }else if kWindowW == 375 {
+        height = 95
+    }
+    return height
+}
+
 //信息voice max width
 var MessageVoiceMaxWidth : CGFloat {
     var width : CGFloat = 214
