@@ -32,7 +32,7 @@ let MessageVoiceSpacing : CGFloat = 23
 let MessageVoiceWidth : CGFloat = 12.5
 let MessageVoiceHeight : CGFloat = 17
 
-//信息主要文字大小
+//信息聊天文字大小
 var MessageFont : UIFont {
     var size : CGFloat = 15
     if kWindowW == 320 {
@@ -61,6 +61,7 @@ var MessageSubFont : UIFont {
     return UIFont.systemFont(ofSize: size)
 }
 
+//语音时间文字大小
 var MessageVoiceFont : UIFont {
     var size : CGFloat = 10
     if kWindowW == 320 {
@@ -75,6 +76,7 @@ var MessageVoiceFont : UIFont {
     return UIFont.systemFont(ofSize: size)
 }
 
+//系统时间文字大小
 var MessageTimeFont : UIFont {
     var size : CGFloat = 11
     if kWindowW == 320 {
@@ -89,6 +91,7 @@ var MessageTimeFont : UIFont {
     return UIFont.systemFont(ofSize: size)
 }
 
+//系统提示文字大小-（红包）
 var MessageSystemFont : UIFont {
     var size : CGFloat = 14
     if kWindowW == 320 {
@@ -104,7 +107,7 @@ var MessageSystemFont : UIFont {
 }
 
 //MARK --------------------------------------
-// 消息 上 space
+// 文字消息 上 space
 var MessageTopSpace : CGFloat {
     var height : CGFloat = 10
     if kWindowW == 320 {
@@ -179,6 +182,7 @@ var MessageSystemTimeHeight : CGFloat {
     return height
 }
 
+//系统时间 上边距
 var MessageSystemTimeTopSpace : CGFloat {
     var height : CGFloat = 18
     if kWindowW == 320 {
@@ -193,6 +197,7 @@ var MessageSystemTimeTopSpace : CGFloat {
     return height
 }
 
+//系统时间 下边距
 var MessageSystemTimeBottom : CGFloat {
     var height : CGFloat = 8
     if kWindowW == 320 {
@@ -207,7 +212,7 @@ var MessageSystemTimeBottom : CGFloat {
     return height
 }
 
-//系统消息
+//系统消息 上边距
 var MessageSystemTopSpace : CGFloat {
     var height : CGFloat = 9
     if kWindowW == 320 {
@@ -222,6 +227,7 @@ var MessageSystemTopSpace : CGFloat {
     return height
 }
 
+//系统消息 下边距
 var MessageSystemBottomSpace : CGFloat {
     var height : CGFloat = 10
     if kWindowW == 320 {
@@ -251,7 +257,7 @@ var MessageSystemHeight : CGFloat {
     return height
 }
 
-//信息max width
+//文字信息max width
 var MessageMaxWidth : CGFloat {
     var width : CGFloat = 214
     if kWindowW == 320 {
@@ -298,7 +304,7 @@ var MessageVoiceMinWidth : CGFloat {
 }
 
 
-//信息margin
+//信息文字 margin
 var MessageSystemMargin : CGFloat {
     var width : CGFloat = 11
     if kWindowW == 320 {
@@ -313,7 +319,7 @@ var MessageSystemMargin : CGFloat {
     return width
 }
 
-//信息margin
+//信息arrow width
 var MessageSystemArrowWidth : CGFloat {
     var width : CGFloat = 6
     if kWindowW == 320 {
