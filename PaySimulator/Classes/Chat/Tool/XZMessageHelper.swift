@@ -94,7 +94,7 @@ class XZMessageHelper: NSObject {
     }
     
     //创建一条系统消息
-    class func createSystemMessageFrame(systemLeft : String, messageRight : String, systemImage : UIImage,
+    class func createSystemMessageFrame(systemLeft : String, messageRight : String, systemImage : UIImage?,
                                             date : Date, from : String,
                                             to : String, isSender : Bool, receivedSenderByYourself : Bool) -> XZMessageFrame {
         

@@ -14,7 +14,7 @@ class XZChatMessageSystemCell: XZBaseMessageCell {
         let tempLabel = UILabel()
         tempLabel.textColor = UIColor.white
         tempLabel.font = MessageSystemFont
-        tempLabel.textAlignment = .center
+        tempLabel.textAlignment = .left
         return tempLabel
     }()
    
@@ -52,15 +52,15 @@ class XZChatMessageSystemCell: XZBaseMessageCell {
 extension XZChatMessageSystemCell {
     
     func setupMyUI () {
-        self.addSubview(self.backView)
-        self.addSubview(self.contentLabel)
+        self.contentView.addSubview(self.backView)
+        self.contentView.addSubview(self.contentLabel)
 
-//        self.backView.snp.makeConstraints { (make) in
-//            make.left.equalTo(self.contentLabel.snp.left).offset(-9)
-//            make.right.equalTo(self.contentLabel.snp.left).offset(11)
-//            make.top.equalTo(self.contentLabel.snp.left).offset(-6)
-//            make.bottom.equalTo(self.contentLabel.snp.left).offset(6)
-//        }
+        self.backView.snp.makeConstraints { (make) in
+            make.left.equalTo(self.contentLabel.snp.left).offset(-9)
+            make.right.equalTo(self.contentLabel.snp.right).offset(11)
+            make.top.equalTo(self.contentLabel.snp.top).offset(-4)
+            make.bottom.equalTo(self.contentLabel.snp.bottom).offset(4)
+        }
     }
     
     

@@ -60,6 +60,7 @@ extension XZMessageFrame {
             headImageViewF = CGRect(x: headX, y: MessageTopSpace, width: MessageHeadWidth, height: MessageHeadWidth)
             
             if model.message?.type == TypeText {
+                
                 let chatLabelSize : CGSize = self.size(message: (model.message?.content) ?? "", maxWidth: chatLabelMax, font: MessageFont)
                 let bubbleSize : CGSize = CGSize(width: chatLabelSize.width + MessageSystemMargin * 2 + MessageSystemArrowWidth, height: chatLabelSize.height + MessageSystemMargin * 2.0)
 
@@ -67,7 +68,10 @@ extension XZMessageFrame {
                 chatLabelF = CGRect(x: (bubbleViewF?.origin.x)! + MessageSystemMargin, y: (bubbleViewF?.origin.y)! + MessageSystemMargin - MessageLineSpacing/2.0, width: chatLabelSize.width, height: chatLabelSize.height+2)
                 
                 cellHight = (bubbleViewF?.size.height)! + MessageBottomSpace + MessageTopSpace
-            }else if model.message?.type == TypeVoice {
+                
+            }
+            else if model.message?.type == TypeVoice {
+                
                 let chatVoiceLabelSize : CGSize = self.size(message: (String((model.message?.voiceTime) ?? 1) + "''"), maxWidth: chatLabelMax, font: MessageVoiceFont)
                 
                 let voiceLength = (MessageVoiceMaxWidth - MessageVoiceMinWidth)/59.0 * CGFloat((model.message?.voiceTime)! - 1) + MessageVoiceMinWidth + MessageSystemArrowWidth
@@ -77,15 +81,22 @@ extension XZMessageFrame {
                 voiceIconF = CGRect(x:  headX - MessageHeadToBubble - MessageVoiceSpacing - MessageVoiceWidth, y: (bubbleViewF?.origin.y)! + (MessageHeadWidth - MessageVoiceHeight)/2.0, width: MessageVoiceWidth, height: MessageVoiceHeight)
                 
                 cellHight = (bubbleViewF?.size.height)! + MessageBottomSpace + MessageTopSpace
-            }else if model.message?.type == TypeTime {
+                
+            }
+            else if model.message?.type == TypeTime {
+                
                 bubbleViewF = CGRect(x: 0, y: 0, width: 0, height: 0)
                 headImageViewF = CGRect(x: 0, y: 0, width: 0, height: 0)
                 cellHight = MessageSystemTimeHeight
-            }else if model.message?.type == TypeSystem {
+                
+            }
+            else if model.message?.type == TypeSystem {
+                
                 var message = ((model.message?.systemLeft) ?? "") + ((model.message?.systemRight) ?? "")
                 if model.message?.systemImage != nil {
-                    message = "图 " + message
+                    message = "图 " + message + " "
                 }
+                
                 let systemLabelSize : CGSize = self.size(message: message, maxWidth: chatLabelMax, font: MessageSystemFont)
                 
                 bubbleViewF = CGRect(x: 0, y: 0, width: 0, height: 0)
