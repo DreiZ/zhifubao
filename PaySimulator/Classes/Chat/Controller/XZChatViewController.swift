@@ -13,6 +13,8 @@ class XZChatViewController: XZBaseViewController {
     var dataSource : Array<XZMessageFrame> = []
     var isKeyBoardAppear : Bool = false
     
+    var textView : UITextView?
+    
     lazy var iTableView : UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
@@ -24,7 +26,7 @@ class XZChatViewController: XZBaseViewController {
     
     lazy var chatBoxViewController : XZBoxViewController = {
         let chatBox = XZBoxViewController()
-        
+        chatBox.delegate = self
         return chatBox
     }()
 
@@ -169,7 +171,7 @@ extension XZChatViewController {
 
 
 //MARK : tableview 数据源 & 协议代理
-extension XZChatViewController : UITableViewDataSource, UITableViewDelegate {
+extension XZChatViewController : UITableViewDataSource, UITableViewDelegate ,UIScrollViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataSource.count
     }
@@ -186,6 +188,10 @@ extension XZChatViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let obj : XZMessageFrame = self.dataSource[indexPath.row]
         return obj.cellHight ?? 44
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        let _ =  self.chatBoxViewController.resignFirstResponder()
     }
 }
 
@@ -307,4 +313,99 @@ extension XZChatViewController {
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
     }
+}
+
+
+extension XZChatViewController : XZChatBoxViewControllerDelegate{
+    func changeBoxHeight(chatBoxViewController: XZBoxViewController, chatBoxHeight: CGFloat) {
+        self.chatBoxViewController.view.snp.remakeConstraints { (make) in
+            make.left.bottom.right.equalToSuperview()
+            make.height.equalTo(chatBoxHeight)
+        }
+        
+        if chatBoxHeight == kTabBarHeight {
+            self.iTableView.reloadData()
+            isKeyBoardAppear = false
+        }else {
+            self.scrollToBottom()
+            isKeyBoardAppear = true
+        }
+        
+        if self.textView == nil  {
+            self.textView = chatBoxViewController.chatBox.iTextView
+        }
+    }
+    
+    func sendTextMessage(chatBoxViewController: XZBoxViewController, message: String) {
+        if message.count > 0 {
+            self.sendTextMessage(message: message)
+        }
+    }
+    
+    func senderImageMessage(chatBoxViewController: XZBoxViewController, image: UIImage, imagePath: String) {
+        
+    }
+    
+    func sendVoiceMessage(chatBoxViewController: XZBoxViewController, voicePath: String) {
+        
+    }
+    
+    func voiceDidStartRecording() {
+        
+    }
+    
+    func voiceRecordSoShort() {
+        
+    }
+    
+    func voiceWillDragout(inside: Bool) {
+        
+    }
+    
+    func voiceDidCancleRecording() {
+        
+    }
+    
+    func videoDidAppeared(chatBoxViewController: XZBoxViewController, videoView: XZChatBoxMoreView) {
+        
+    }
+    
+    func sendVideoMessage(chatBoxViewController: XZBoxViewController, videoPath: String) {
+        
+    }
+    
+    func sendFileMessage(chatBoxViewController: XZBoxViewController, fileName: String) {
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

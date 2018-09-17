@@ -63,7 +63,6 @@ class XZBoxViewController: UIViewController {
         self.setupUI()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide (notifi:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardFrameWillChange (notifi:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        
     }
 
     deinit {
@@ -244,6 +243,35 @@ extension XZBoxViewController :  XZChatBoxDelegate {
 }
 
 
+extension XZBoxViewController {
+    override func resignFirstResponder() -> Bool {
+        if self.chatBox.status == XZChatBoxStatus.showVideo {
+            if delegate != nil {
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.delegate?.changeBoxHeight(chatBoxViewController: self, chatBoxHeight: kTabBarHeight)
+                }) { (finished : Bool) in
+                    self.chatBox.status = XZChatBoxStatus.nothing
+                }
+            }
+            return super.resignFirstResponder()
+        }
+        
+        if self.chatBox.status != XZChatBoxStatus.nothing && self.chatBox.status != XZChatBoxStatus.showVideo {
+            self.chatBox.resignFirstResponder()
+            if delegate != nil {
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.delegate?.changeBoxHeight(chatBoxViewController: self, chatBoxHeight: kTabBarHeight)
+                }) { (finished : Bool) in
+                    self.faceView.removeFromSuperview()
+                    self.moreView.removeFromSuperview()
+                    self.chatBox.status = XZChatBoxStatus.nothing
+                }
+            }
+        }
+        
+        return super.resignFirstResponder()
+    }
+}
 
 
 
