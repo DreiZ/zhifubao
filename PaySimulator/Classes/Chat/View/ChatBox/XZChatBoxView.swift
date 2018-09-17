@@ -321,18 +321,21 @@ extension XZChatBoxView {
             self.talkBtn.isHidden = false
             voiceBtn.setImage(UIImage(named: "icon_jianpan"), for: .normal)//图没找到
         }
+        faceBtn.setImage(UIImage(named: "icon_biaoqing"), for: .normal)
         
         if delegate != nil {
             delegate?.chatBoxChangeStatus(chatBox: self, fromStatus: lastStatus, toStatus: self.status)
         }
     }
     
-    //语音操作
+    //表情操作
     @objc func faceBtnDown(sender : UIButton)  {
         let lastStatus = self.status
         
         if  lastStatus == XZChatBoxStatus.showFace {
             self.status = XZChatBoxStatus.showKeyboard
+            talkBtn.isHidden = true
+            iTextView.isHidden = false
             faceBtn.setImage(UIImage(named: "icon_biaoqing"), for: .normal)
             iTextView.becomeFirstResponder()
         }else {
@@ -342,21 +345,8 @@ extension XZChatBoxView {
             status = XZChatBoxStatus.showFace
             faceBtn.setImage(UIImage(named: "icon_jianpan"), for: .normal)
             
-            if lastStatus == XZChatBoxStatus.showVoice {
-                
-            }else if lastStatus == XZChatBoxStatus.showVoice {
-                talkBtn.isHidden = true
-                iTextView.isHidden = false
-                voiceBtn.setImage(UIImage(named: "icon_yuyingshuru"), for: .normal)
-            }else if lastStatus == XZChatBoxStatus.showKeyboard {
-                iTextView.resignFirstResponder()
-                self.status = XZChatBoxStatus.showFace
-            }else if lastStatus == XZChatBoxStatus.showVoice {
-                self.talkBtn.isHidden = true
-                self.iTextView.isHidden = false
-                voiceBtn.setImage(UIImage(named: "icon_yuyingshuru"), for: .normal)
-                self.status = XZChatBoxStatus.showFace
-            }
+            iTextView.resignFirstResponder()
+            self.status = XZChatBoxStatus.showFace
         }
         
         if delegate != nil {
