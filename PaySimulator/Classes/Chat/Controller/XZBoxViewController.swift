@@ -115,13 +115,13 @@ extension XZBoxViewController {
         if chatBox.status == XZChatBoxStatus.showKeyboard && (self.keyboardFrame?.size.height)! <= HEIGHT_CHATBOXVIEW {
             return
         }
-        else if (chatBox.status == XZChatBoxStatus.showFace || chatBox.status == XZChatBoxStatus.showMore) || (self.keyboardFrame?.size.height)! <= HEIGHT_CHATBOXVIEW {
+        else if (chatBox.status == XZChatBoxStatus.showFace || chatBox.status == XZChatBoxStatus.showMore) && (self.keyboardFrame?.size.height)! <= HEIGHT_CHATBOXVIEW {
             return
         }
         
         if delegate != nil {
             delegate?.changeBoxHeight(chatBoxViewController: self, chatBoxHeight: (self.keyboardFrame?.size.height)! + kTabBarHeight)
-//            chatBox.status = XZChatBoxStatus.showKeyboard
+            chatBox.status = XZChatBoxStatus.showKeyboard
         }
     }
 }
@@ -284,7 +284,7 @@ extension XZBoxViewController {
         }
         
         if self.chatBox.status != XZChatBoxStatus.nothing && self.chatBox.status != XZChatBoxStatus.showVoice {
-            self.chatBox.resignFirstResponder()
+            let _ = self.chatBox.resignFirstResponder()
             if delegate != nil {
                 UIView.animate(withDuration: 0.3, animations: {
                     self.delegate?.changeBoxHeight(chatBoxViewController: self, chatBoxHeight: kTabBarHeight)
