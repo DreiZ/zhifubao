@@ -145,20 +145,35 @@ extension XZBoxViewController :  XZChatBoxDelegate {
                 self.moreView.removeFromSuperview()
             }
         }else if toStatus == XZChatBoxStatus.showFace {
+            
             if fromStatus == XZChatBoxStatus.showVoice {
-                self.faceView.frame = CGRect(x: 0, y: kTabBarHeight, width: kWindowW, height: self.faceView.frame.size.height)
+                
                 self.view.addSubview(self.faceView)
+
+                self.faceView.snp.makeConstraints { (make) in
+                    make.left.right.equalToSuperview()
+                    make.height.equalTo(kChatMoreViewHeight)
+                    make.top.equalTo(self.view.snp.top).offset(50)
+                }
                 
                 UIView.animate(withDuration: 0.3, animations: {
+                    self.view.layoutIfNeeded()
                     if self.delegate != nil {
                         self.delegate?.changeBoxHeight(chatBoxViewController: self, chatBoxHeight: kTabBarHeight + HEIGHT_CHATBOXVIEW)
                     }
                 })
             }else {
-                self.faceView.frame = CGRect(x: 0, y: kTabBarHeight + HEIGHT_CHATBOXVIEW, width: kWindowW, height: kTabBarHeight + HEIGHT_CHATBOXVIEW)
                 self.view.addSubview(self.faceView)
+
+                self.view.addSubview(self.faceView)
+                self.faceView.snp.makeConstraints { (make) in
+                    make.left.right.equalToSuperview()
+                    make.height.equalTo(kChatMoreViewHeight)
+                    make.top.equalTo(self.view.snp.top).offset(50)
+                }
                 
                 UIView.animate(withDuration: 0.3, animations: {
+                    self.view.layoutIfNeeded()
                     self.faceView.frame = CGRect(x: 0, y: kTabBarHeight, width: kWindowW, height: kTabBarHeight + HEIGHT_CHATBOXVIEW)
                 }) { (finished : Bool) in
                     self.moreView.removeFromSuperview()
@@ -174,20 +189,32 @@ extension XZBoxViewController :  XZChatBoxDelegate {
             }
         }else if toStatus == XZChatBoxStatus.showMore {
             if fromStatus == XZChatBoxStatus.showVoice {
-                self.moreView.frame = CGRect(x: 0, y: kTabBarHeight, width: kWindowW, height: self.moreView.frame.size.height)
                 self.view.addSubview(self.moreView)
                 
+                self.view.addSubview(self.moreView)
+                self.moreView.snp.makeConstraints { (make) in
+                    make.left.right.equalToSuperview()
+                    make.height.equalTo(kChatMoreViewHeight)
+                    make.top.equalTo(self.view.snp.top).offset(50)
+                }
                 UIView.animate(withDuration: 0.3) {
+                    self.view.layoutIfNeeded()
                     if self.delegate != nil {
                         self.delegate?.changeBoxHeight(chatBoxViewController: self, chatBoxHeight: HEIGHT_CHATBOXVIEW + kTabBarHeight)
                     }
                 }
             }else {
-                self.moreView.frame = CGRect(x: 0, y: kTabBarHeight + HEIGHT_CHATBOXVIEW, width: kWindowW, height: self.moreView.frame.size.height)
                 self.view.addSubview(self.moreView)
                 
+                self.view.addSubview(self.moreView)
+                self.moreView.snp.makeConstraints { (make) in
+                    make.left.right.equalToSuperview()
+                    make.height.equalTo(kChatMoreViewHeight)
+                    make.top.equalTo(self.view.snp.top).offset(50)
+                }
+                
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.moreView.frame = CGRect(x: 0, y: kTabBarHeight, width: kWindowW, height: self.moreView.frame.size.height)
+                    self.view.layoutIfNeeded()
                 }) { (finish : Bool) in
                     self.faceView.removeFromSuperview()
                 }
