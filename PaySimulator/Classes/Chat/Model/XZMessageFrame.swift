@@ -143,7 +143,7 @@ extension XZMessageFrame {
             }
             
             let activityX : CGFloat = bubbleViewF!.origin.x - 40
-            let activityY : CGFloat = (bubbleViewF!.origin.y + bubbleViewF!.size.height)/2.0 - 5.0
+            let activityY : CGFloat = (bubbleViewF!.origin.y + bubbleViewF!.size.height)/2.0 - 10.0
             let activityW : CGFloat = 40.0;
             let activityH : CGFloat = 40.0;
             

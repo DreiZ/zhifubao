@@ -34,7 +34,7 @@ class XZBaseMessageCell: UITableViewCell {
     }()
 
     lazy var activityView : UIActivityIndicatorView = {
-        let activityView = UIActivityIndicatorView()
+        let activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
         
         return activityView
     }()

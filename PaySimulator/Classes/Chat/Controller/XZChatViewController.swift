@@ -200,6 +200,7 @@ extension XZChatViewController : UITableViewDataSource, UITableViewDelegate ,UIS
 extension XZChatViewController {
     
     func addObject (messageF : XZMessageFrame, isender : Bool) {
+        messageF.model?.message?.deliveryState = .delivered
         self.dataSource.append(messageF)
         
         self.iTableView.reloadData()
@@ -215,10 +216,10 @@ extension XZChatViewController {
     }
     
     func messageSendSucced(messageF : XZMessageFrame) {
-        DispatchQueue.main.async {
-            messageF.model?.message?.deliveryState = .delivered
-            self.iTableView.reloadData()
-        }
+//        DispatchQueue.main.async {
+//            messageF.model?.message?.deliveryState = .delivered
+//            self.iTableView.reloadData()
+//        }
     }
     
     //发送 text 数据
@@ -226,7 +227,7 @@ extension XZChatViewController {
         let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
         
         self.addObject(messageF: messageF, isender: true)
-        self.messageSendSucced(messageF: messageF)
+//        self.messageSendSucced(messageF: messageF)
     }
     
     func sendOtherTextMessage(message : String) {
