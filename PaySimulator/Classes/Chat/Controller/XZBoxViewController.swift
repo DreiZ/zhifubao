@@ -114,8 +114,7 @@ extension XZBoxViewController {
         
         if chatBox.status == XZChatBoxStatus.showKeyboard && (self.keyboardFrame?.size.height)! <= HEIGHT_CHATBOXVIEW {
             return
-        }
-        else if (chatBox.status == XZChatBoxStatus.showFace || chatBox.status == XZChatBoxStatus.showMore) && (self.keyboardFrame?.size.height)! <= HEIGHT_CHATBOXVIEW {
+        } else if (chatBox.status == XZChatBoxStatus.showFace || chatBox.status == XZChatBoxStatus.showMore) && (self.keyboardFrame?.size.height)! <= HEIGHT_CHATBOXVIEW {
             return
         }
         
