@@ -16,6 +16,10 @@ let kChatBoxBackColor : UIColor = UIColor.init(red: 245.0/245.0, green: 245.0/25
 /**tabbar高度*/
 let kTabBarHeight : CGFloat = (kWindowH == 812.0 ? (34 + 50) : 50)
 
+let HEIGHT_STATUSBAR : CGFloat   = 20;
+let HEIGHT_NAVBAR : CGFloat      = 44;
+let HEIGHT_CHATBOXVIEW : CGFloat = 215;
+
 let kChatMoreViewHeight : CGFloat = 180
 
 

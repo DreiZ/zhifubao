@@ -260,15 +260,21 @@ extension XZChatBoxView {
     
     //语音button
     @objc func talkButtonDown(sender : UIButton) {
-        
+        if delegate != nil {
+            delegate?.chatBoxDidStartRecordingVoice(chaBox: self)
+        }
     }
     
     @objc func talkButtonUpInside(sender : UIButton) {
-        
+        if delegate != nil {
+            delegate?.chatBoxDidStopRecordingVoice(chaBox: self)
+        }
     }
     
     @objc func talkButtonUpOutside(sender : UIButton) {
-        
+        if delegate != nil {
+            delegate?.chatBoxDidStartRecordingVoice(chaBox: self)
+        }
     }
     
     @objc func talkButtonTouchCancel(sender : UIButton) {
@@ -276,11 +282,15 @@ extension XZChatBoxView {
     }
     
     @objc func talkButtonDragOutside(sender : UIButton) {
-        
+        if delegate != nil {
+            delegate?.chatBoxDidDrag(inside: false)
+        }
     }
     
     @objc func talkButtonDragInside(sender : UIButton) {
-        
+        if delegate != nil {
+            delegate?.chatBoxDidDrag(inside: true)
+        }
     }
     
     //语音操作
@@ -300,19 +310,107 @@ extension XZChatBoxView {
             self.talkBtn.isHidden = false
             voiceBtn.setImage(UIImage(named: "icon_yuyingshuru"), for: .normal)//图没找到
         }
+        
+        if delegate != nil {
+            delegate?.chatBoxChangeStatus(chatBox: self, fromStatus: lastStatus, toStatus: self.status)
+        }
     }
     
     //语音操作
     @objc func faceBtnDown(sender : UIButton)  {
+        let lastStatus = self.status
         
+        if  lastStatus == XZChatBoxStatus.showFace {
+            self.status = XZChatBoxStatus.showKeyboard
+            faceBtn.setImage(UIImage(named: "icon_biaoqing"), for: .normal)
+            iTextView.becomeFirstResponder()
+        }else {
+            talkBtn.isHidden = true
+            iTextView.isHidden = false
+            voiceBtn.setImage(UIImage(named: "icon_yuyingshuru"), for: .normal)
+            status = XZChatBoxStatus.showFace
+            faceBtn.setImage(UIImage(named: "icon_jianpan"), for: .normal)
+            
+            if lastStatus == XZChatBoxStatus.showVideo {
+                
+            }else if lastStatus == XZChatBoxStatus.showVideo {
+                talkBtn.isHidden = true
+                iTextView.isHidden = false
+                voiceBtn.setImage(UIImage(named: "icon_yuyingshuru"), for: .normal)
+            }else if lastStatus == XZChatBoxStatus.showKeyboard {
+                iTextView.resignFirstResponder()
+                self.status = XZChatBoxStatus.showFace
+            }else if lastStatus == XZChatBoxStatus.showVideo {
+                self.talkBtn.isHidden = true
+                self.iTextView.isHidden = false
+                voiceBtn.setImage(UIImage(named: "icon_yuyingshuru"), for: .normal)
+                self.status = XZChatBoxStatus.showFace
+            }
+        }
+        
+        if delegate != nil {
+            delegate?.chatBoxChangeStatus(chatBox: self, fromStatus: lastStatus, toStatus: self.status)
+        }
     }
     
     //语音操作
     @objc func moreBtnDown(sender : UIButton)  {
+        let lastStatus = self.status
         
+        if lastStatus == XZChatBoxStatus.showMore {
+            self.status = XZChatBoxStatus.showKeyboard
+            self.iTextView.becomeFirstResponder()
+        }else {
+            self.talkBtn.isHidden = true
+            self.iTextView.isHidden = false
+            voiceBtn.setImage(UIImage(named: "icon_yuyingshuru"), for: .normal)
+            
+            self.status = XZChatBoxStatus.showMore
+            
+            if lastStatus == XZChatBoxStatus.showFace {
+                faceBtn.setImage(UIImage(named: "icon_biaoqing"), for: .normal)
+            }else if lastStatus == XZChatBoxStatus.showVideo {
+                talkBtn.isHidden = true
+                iTextView.isHidden = false
+                voiceBtn.setImage(UIImage(named: "icon_yuyingshuru"), for: .normal)
+            }else if lastStatus == XZChatBoxStatus.showKeyboard {
+                self.iTextView.resignFirstResponder()
+                self.status = XZChatBoxStatus.showMore
+            }
+        }
+        
+        if delegate != nil {
+            delegate?.chatBoxChangeStatus(chatBox: self, fromStatus: lastStatus, toStatus: self.status)
+        }
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
