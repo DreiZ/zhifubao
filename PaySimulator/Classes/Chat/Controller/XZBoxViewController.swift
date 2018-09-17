@@ -105,7 +105,7 @@ extension XZBoxViewController {
         
         if delegate != nil {
             delegate?.changeBoxHeight(chatBoxViewController: self, chatBoxHeight: kTabBarHeight)
-            chatBox.status = XZChatBoxStatus.nothing
+//            chatBox.status = XZChatBoxStatus.nothing
         }
     }
     
@@ -121,7 +121,7 @@ extension XZBoxViewController {
         
         if delegate != nil {
             delegate?.changeBoxHeight(chatBoxViewController: self, chatBoxHeight: (self.keyboardFrame?.size.height)! + kTabBarHeight)
-            chatBox.status = XZChatBoxStatus.showKeyboard
+//            chatBox.status = XZChatBoxStatus.showKeyboard
         }
     }
 }
@@ -135,7 +135,7 @@ extension XZBoxViewController :  XZChatBoxDelegate {
                     self.faceView.removeFromSuperview()
                     self.moreView.removeFromSuperview()
             })
-        }else if toStatus == XZChatBoxStatus.showVideo {
+        }else if toStatus == XZChatBoxStatus.showVoice {
             UIView.animate(withDuration: 0.3, animations: {
                 if self.delegate != nil {
                     self.delegate?.changeBoxHeight(chatBoxViewController: self, chatBoxHeight: kTabBarHeight)
@@ -145,7 +145,7 @@ extension XZBoxViewController :  XZChatBoxDelegate {
                 self.moreView.removeFromSuperview()
             }
         }else if toStatus == XZChatBoxStatus.showFace {
-            if fromStatus == XZChatBoxStatus.showVideo {
+            if fromStatus == XZChatBoxStatus.showVoice {
                 self.faceView.frame = CGRect(x: 0, y: kTabBarHeight, width: kWindowW, height: self.faceView.frame.size.height)
                 self.view.addSubview(self.faceView)
                 
@@ -173,7 +173,7 @@ extension XZBoxViewController :  XZChatBoxDelegate {
                 }
             }
         }else if toStatus == XZChatBoxStatus.showMore {
-            if fromStatus == XZChatBoxStatus.showVideo {
+            if fromStatus == XZChatBoxStatus.showVoice {
                 self.moreView.frame = CGRect(x: 0, y: kTabBarHeight, width: kWindowW, height: self.moreView.frame.size.height)
                 self.view.addSubview(self.moreView)
                 
@@ -245,18 +245,18 @@ extension XZBoxViewController :  XZChatBoxDelegate {
 
 extension XZBoxViewController {
     override func resignFirstResponder() -> Bool {
-        if self.chatBox.status == XZChatBoxStatus.showVideo {
+        if self.chatBox.status == XZChatBoxStatus.showVoice {
             if delegate != nil {
                 UIView.animate(withDuration: 0.3, animations: {
                     self.delegate?.changeBoxHeight(chatBoxViewController: self, chatBoxHeight: kTabBarHeight)
                 }) { (finished : Bool) in
-                    self.chatBox.status = XZChatBoxStatus.nothing
+                    self.chatBox.status = XZChatBoxStatus.showKeyboard
                 }
             }
             return super.resignFirstResponder()
         }
         
-        if self.chatBox.status != XZChatBoxStatus.nothing && self.chatBox.status != XZChatBoxStatus.showVideo {
+        if self.chatBox.status != XZChatBoxStatus.nothing && self.chatBox.status != XZChatBoxStatus.showVoice {
             self.chatBox.resignFirstResponder()
             if delegate != nil {
                 UIView.animate(withDuration: 0.3, animations: {

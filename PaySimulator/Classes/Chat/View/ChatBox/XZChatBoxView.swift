@@ -78,7 +78,7 @@ class XZChatBoxView: UIView {
         iTextView.scrollsToTop = false
         iTextView.returnKeyType = UIReturnKeyType.send
         iTextView.backgroundColor = UIColor.white
-        
+        iTextView.delegate = self
         return iTextView
     }()
    
@@ -172,7 +172,7 @@ extension XZChatBoxView {
         contView.addSubview(self.voiceBtn)
         self.voiceBtn.snp.makeConstraints { (make) in
             make.top.left.bottom.equalToSuperview()
-            make.width.equalTo(34)
+            make.width.equalTo(38)
         }
         
         
@@ -196,12 +196,19 @@ extension XZChatBoxView {
             make.centerY.equalToSuperview()
             make.height.equalTo(32)
         }
+        
+        contView.addSubview(self.talkBtn)
+        self.talkBtn.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.iTextView)
+        }
+        
+        self.talkBtn.isHidden = true
     }
 
 }
 
 //MARK: textView Delegate
-extension XZChatBoxView : UITextViewDelegate{
+extension XZChatBoxView : UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         self.status = XZChatBoxStatus.showKeyboard
     }
@@ -220,8 +227,11 @@ extension XZChatBoxView : UITextViewDelegate{
                     delegate?.sendTextMessage(chatBox: self, textMessage: self.iTextView.text)
                 }
             }
+            self.iTextView.text = ""
+            
+            return false
         }
-        self.iTextView.text = ""
+        
         
         return true
     }
@@ -293,22 +303,23 @@ extension XZChatBoxView {
         }
     }
     
+    //MARK :-----------------------------------
     //语音操作
     @objc func voiceBtnDown(sender : UIButton)  {
         let lastStatus = self.status
         
-        if lastStatus == XZChatBoxStatus.showVideo {
+        if lastStatus == XZChatBoxStatus.showVoice {
             self.status = XZChatBoxStatus.showKeyboard
             self.talkBtn.isHidden = true
             self.iTextView.isHidden = false
             self.iTextView.becomeFirstResponder()
             voiceBtn.setImage(UIImage(named: "icon_yuyingshuru"), for: .normal)
         }else {
-            self.status = XZChatBoxStatus.showVideo
+            self.status = XZChatBoxStatus.showVoice
             self.iTextView.resignFirstResponder()
             self.iTextView.isHidden = true
             self.talkBtn.isHidden = false
-            voiceBtn.setImage(UIImage(named: "icon_yuyingshuru"), for: .normal)//图没找到
+            voiceBtn.setImage(UIImage(named: "icon_jianpan"), for: .normal)//图没找到
         }
         
         if delegate != nil {
@@ -331,16 +342,16 @@ extension XZChatBoxView {
             status = XZChatBoxStatus.showFace
             faceBtn.setImage(UIImage(named: "icon_jianpan"), for: .normal)
             
-            if lastStatus == XZChatBoxStatus.showVideo {
+            if lastStatus == XZChatBoxStatus.showVoice {
                 
-            }else if lastStatus == XZChatBoxStatus.showVideo {
+            }else if lastStatus == XZChatBoxStatus.showVoice {
                 talkBtn.isHidden = true
                 iTextView.isHidden = false
                 voiceBtn.setImage(UIImage(named: "icon_yuyingshuru"), for: .normal)
             }else if lastStatus == XZChatBoxStatus.showKeyboard {
                 iTextView.resignFirstResponder()
                 self.status = XZChatBoxStatus.showFace
-            }else if lastStatus == XZChatBoxStatus.showVideo {
+            }else if lastStatus == XZChatBoxStatus.showVoice {
                 self.talkBtn.isHidden = true
                 self.iTextView.isHidden = false
                 voiceBtn.setImage(UIImage(named: "icon_yuyingshuru"), for: .normal)
@@ -369,7 +380,7 @@ extension XZChatBoxView {
             
             if lastStatus == XZChatBoxStatus.showFace {
                 faceBtn.setImage(UIImage(named: "icon_biaoqing"), for: .normal)
-            }else if lastStatus == XZChatBoxStatus.showVideo {
+            }else if lastStatus == XZChatBoxStatus.showVoice {
                 talkBtn.isHidden = true
                 iTextView.isHidden = false
                 voiceBtn.setImage(UIImage(named: "icon_yuyingshuru"), for: .normal)
@@ -385,32 +396,3 @@ extension XZChatBoxView {
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import IQKeyboardManagerSwift
 
 class XZChatViewController: XZBaseViewController {
     
@@ -34,7 +35,7 @@ class XZChatViewController: XZBaseViewController {
         super.viewDidLoad()
 
         self.setupUI()
-        
+//        IQKeyboardManager.sharedManager().enable = false
         
         self.iTableView.register(XZChatMessageTextCell.self, forCellReuseIdentifier: TypeText)
         self.iTableView.register(XZChatMessageVoiceCell.self, forCellReuseIdentifier: TypeVoice)
@@ -125,7 +126,7 @@ class XZChatViewController: XZBaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+//         IQKeyboardManager.sharedManager().enable = false
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     

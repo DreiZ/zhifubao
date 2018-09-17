@@ -382,7 +382,7 @@ let GXSelectEmotionKey = "GXSelectEmotionKey"
 
 enum XZChatBoxStatus : String {
     case nothing = "默认状态"
-    case showVoXZe = "录音状态"
+    case showVoice = "录音状态"
     case showFace = "输入表情状态"
     case showMore = "显示“更多”页面状态"
     case showKeyboard = "正常键盘"
