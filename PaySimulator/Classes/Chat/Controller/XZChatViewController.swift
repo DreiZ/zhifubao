@@ -149,7 +149,7 @@ extension XZChatViewController {
         
         self.chatBoxViewController.view.snp.makeConstraints { (make) in
             make.left.bottom.right.equalToSuperview()
-            make.height.equalTo(kTabBarHeight + kChatMoreViewHeight)
+            make.height.equalTo(kTabBarHeight + HEIGHT_CHATBOXVIEW)
         }
         
         self.iTableView.snp.makeConstraints { (make) in
@@ -322,6 +322,9 @@ extension XZChatViewController : XZChatBoxViewControllerDelegate{
         self.chatBoxViewController.view.snp.remakeConstraints { (make) in
             make.left.bottom.right.equalToSuperview()
             make.height.equalTo(chatBoxHeight)
+        }
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
         }
         
         if chatBoxHeight == kTabBarHeight {
