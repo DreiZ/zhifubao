@@ -175,6 +175,7 @@
 		5E552618214906B4004204AF /* XZChatMessageTransferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E552617214906B4004204AF /* XZChatMessageTransferCell.swift */; };
 		5E55261A21490EB1004204AF /* XZMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55261921490EB1004204AF /* XZMessageHelper.swift */; };
 		5E58516A2143981F004A2C4B /* XZBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5851692143981F004A2C4B /* XZBaseModel.swift */; };
+		5E58CAF12150F72500474F9F /* chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E58CAF02150F72500474F9F /* chat.storyboard */; };
 		5E6938E2214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6938E1214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift */; };
 		5E6938E4214CFA3100B04693 /* XZImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6938E3214CFA3100B04693 /* XZImage.swift */; };
 		5EAF7336214272A50027812A /* ZBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF7335214272A50027812A /* ZBaseModel.m */; };
@@ -444,6 +445,7 @@
 		5E552617214906B4004204AF /* XZChatMessageTransferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatMessageTransferCell.swift; sourceTree = "<group>"; };
 		5E55261921490EB1004204AF /* XZMessageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMessageHelper.swift; sourceTree = "<group>"; };
 		5E5851692143981F004A2C4B /* XZBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseModel.swift; sourceTree = "<group>"; };
+		5E58CAF02150F72500474F9F /* chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = chat.storyboard; sourceTree = "<group>"; };
 		5E6938E1214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatMessageRedPacketOpenCell.swift; sourceTree = "<group>"; };
 		5E6938E3214CFA3100B04693 /* XZImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZImage.swift; sourceTree = "<group>"; };
 		5EAF7334214272A50027812A /* ZBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZBaseModel.h; path = PaySimulator/Classes/Tools/ZBaseModel.h; sourceTree = SOURCE_ROOT; };
@@ -1376,6 +1378,7 @@
 				5E4B4E5B21421447003D3D23 /* BillShow.storyboard */,
 				5E4B4E59214213AA003D3D23 /* Bill.storyboard */,
 				E3489739214212550062410B /* withDraw.storyboard */,
+				5E58CAF02150F72500474F9F /* chat.storyboard */,
 				E3D98F3E21363F6100887FAF /* Info.plist */,
 				E3D98F3821363F6100887FAF /* ViewController.swift */,
 				E3D98F3721363F6000887FAF /* PaySimulator-Bridging-Header.h */,
@@ -1681,6 +1684,7 @@
 				5E42F41621475BA00034B691 /* 99.png in Resources */,
 				5E42F3AD21475BA00034B691 /* 11.png in Resources */,
 				5E42F39B21475B9F0034B691 /* 03.png in Resources */,
+				5E58CAF12150F72500474F9F /* chat.storyboard in Resources */,
 				5E42F3D321475BA00034B691 /* 32.png in Resources */,
 				5E42F41521475BA00034B691 /* 98.png in Resources */,
 				5E42F40521475BA00034B691 /* 82.png in Resources */,
@@ -2019,7 +2023,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/PaySimulator/Classes/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PaySimulator/Classes/Resource/PaySimulator-Bridging-Header.h";
@@ -2043,7 +2050,10 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/PaySimulator/Classes/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PaySimulator/Classes/Resource/PaySimulator-Bridging-Header.h";
@@ -2060,7 +2070,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = PaySimulatorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2077,7 +2091,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = PaySimulatorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2093,7 +2111,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = PaySimulatorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2109,7 +2131,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = PaySimulatorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
