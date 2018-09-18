@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FDTake
 //import IQKeyboardManagerSwift
 
 class XZChatViewController: XZBaseViewController {
@@ -45,6 +46,8 @@ class XZChatViewController: XZBaseViewController {
         self.iTableView.register(XZChatMessageRedPacketCell.self, forCellReuseIdentifier: TypeRedPacket)
         self.iTableView.register(XZChatMessageTransferCell.self, forCellReuseIdentifier: TypeTransfer)
         self.iTableView.register(XZChatMessageRedPacketOpenCell.self, forCellReuseIdentifier: TypeRedPacketOpen)
+        self.iTableView.register(XZChatMessageImageCell.self, forCellReuseIdentifier: TypePic)
+        
         
         DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
             {
@@ -316,6 +319,21 @@ extension XZChatViewController {
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
     }
+    
+    //图片
+    func sendImageMessage(image : UIImage) {
+        let messageF : XZMessageFrame = XZMessageHelper.createImageMessageFrame(image: image, date: Date(), from: "gxz", to: "idz", isSender: true, receivedSenderByYourself: false)
+        
+        self.addObject(messageF: messageF, isender: true)
+        self.messageSendSucced(messageF: messageF)
+    }
+    
+    func sendOtherImageMessage(image : UIImage) {
+        let messageF : XZMessageFrame = XZMessageHelper.createImageMessageFrame(image: image, date: Date(), from: "gxz", to: "idz", isSender: false, receivedSenderByYourself: false)
+        
+        self.addObject(messageF: messageF, isender: false)
+        self.messageSendSucced(messageF: messageF)
+    }
 }
 
 
@@ -389,7 +407,13 @@ extension XZChatViewController : XZChatBoxMoreViewDelegate {
     
     func didSelectItem(moreView: XZChatBoxMoreView, selectType: XZChatBoxMoreType) {
         if selectType == XZChatBoxMoreType.album {
-            
+            let fdTakeController : FDTakeController = FDTakeController()
+            fdTakeController.didGetPhoto = {
+                (_ photo: UIImage, _ info: [AnyHashable : Any]) in
+                self.sendImageMessage(image: photo)
+                self.sendOtherImageMessage(image: photo)
+            }
+            fdTakeController.present()
         }
         else if selectType == XZChatBoxMoreType.transfer {
             

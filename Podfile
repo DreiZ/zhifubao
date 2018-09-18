@@ -13,6 +13,7 @@ pod 'IQKeyboardManagerSwift', '5.0.0'
 pod 'MBProgressHUD', '~> 1.1.0'
 
 pod 'SwiftyJSON', '~> 4.0'
+pod 'FDTake'
 
 
 #数据库封装

@@ -127,6 +127,38 @@ class XZMessageHelper: NSObject {
         return modleF
     }
     
+    //创建一条image消息
+    class func createImageMessageFrame( image : UIImage?,
+                                        date : Date, from : String,
+                                        to : String, isSender : Bool, receivedSenderByYourself : Bool) -> XZMessageFrame {
+        
+        let message : XZMessage = XZMessage()
+        message.to = to
+        message.from = from
+        message.type = TypePic
+        message.image = image
+        message.date = Int(date.timeIntervalSinceReferenceDate)
+        
+        let model : XZMessageModel = XZMessageModel()
+        
+        message.content = "[图片]"
+        model.isSender = isSender
+        
+        
+        if isSender {
+            message.deliveryState = .delivering
+        }else {
+            message.deliveryState = .delivered
+        }
+        
+        model.message = message
+        
+        let modleF = XZMessageFrame()
+        modleF.setModel(model: model)
+        
+        return modleF
+    }
+    
     
     class func timeFormatWithDate(time : Int) -> String {
         let formatter = DateFormatter()

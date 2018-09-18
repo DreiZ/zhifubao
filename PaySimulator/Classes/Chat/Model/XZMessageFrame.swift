@@ -62,6 +62,9 @@ class XZMessageFrame: NSObject {
     
     /// 转账、红包 应用icon 
     var iconImageViewF : CGRect?
+    
+    /// image
+    var imageViewF : CGRect?
 }
 
 extension XZMessageFrame {
@@ -141,6 +144,19 @@ extension XZMessageFrame {
                 
                 cellHight = MessageRedHeight + MessageTopSpace + MessageBottomSpace
             }
+            else if model.message?.type == TypePic {
+                
+                var imageSize = CGSize(width: 40, height: 40)
+                if model.message?.image != nil {
+                    imageSize = self.getImageSize(retSize: (model.message?.image?.size)!)
+                }
+                
+                bubbleViewF = CGRect(x: headX - imageSize.width - MessageHeadToBubble, y: MessageTopSpace, width: imageSize.width , height: imageSize.height)
+                
+                imageViewF = CGRect(x: (bubbleViewF?.origin.x)! + MessageSystemMargin, y: (bubbleViewF?.origin.y)! + MessageSystemMargin, width: imageSize.width, height: imageSize.height)
+                
+                cellHight = (bubbleViewF?.size.height)! + MessageBottomSpace + MessageTopSpace
+            }
             
             let activityX : CGFloat = bubbleViewF!.origin.x - 40
             let activityY : CGFloat = (bubbleViewF!.origin.y + bubbleViewF!.size.height)/2.0 - 10.0
@@ -199,6 +215,19 @@ extension XZMessageFrame {
                 
                 cellHight = MessageRedHeight + MessageRedTopSpace + MessageRedBottomSpace
             }
+            else if model.message?.type == TypePic {
+                
+                var imageSize = CGSize(width: 40, height: 40)
+                if model.message?.image != nil {
+                    imageSize = self.getImageSize(retSize: (model.message?.image?.size)!)
+                }
+                
+                bubbleViewF = CGRect(x: headX + MessageHeadToBubble + MessageHeadWidth, y: MessageTopSpace, width: imageSize.width , height: imageSize.height)
+                
+                imageViewF = CGRect(x: (bubbleViewF?.origin.x)! + MessageSystemMargin + MessageSystemArrowWidth, y: (bubbleViewF?.origin.y)! + MessageSystemMargin, width: imageSize.width, height: imageSize.height)
+                
+                cellHight = (bubbleViewF?.size.height)! + MessageBottomSpace + MessageTopSpace
+            }
             
             let activityX : CGFloat = bubbleViewF!.origin.x + (bubbleViewF?.width)! + 40
             let activityY : CGFloat = (bubbleViewF!.origin.y + bubbleViewF!.size.height)/2.0 - 5.0
@@ -212,6 +241,7 @@ extension XZMessageFrame {
 }
 
 extension XZMessageFrame {
+    
     func size(message : String,  maxWidth : CGFloat, font : UIFont) -> CGSize {
         let maxSize : CGSize = CGSize(width: maxWidth, height: CGFloat(MAXFLOAT))
         
@@ -273,6 +303,46 @@ extension XZMessageFrame {
             return attributeStr.string
         }
 }
+
+
+extension XZMessageFrame {
+    func getImageSize(retSize : CGSize) -> CGSize {
+        let scaleH : CGFloat = 0.22
+        let scaleW : CGFloat = 0.38
+        var height : CGFloat = 0.0
+        var width : CGFloat = 0.0
+        
+        if retSize.height/kWindowH + 0.16 > retSize.width/kWindowW {
+            height = kWindowH * scaleH
+            width = retSize.width / retSize.height * height
+        }else {
+            width = kWindowW * scaleW
+            height = retSize.height / retSize.width * width
+        }
+        
+        return CGSize(width: width, height: height)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

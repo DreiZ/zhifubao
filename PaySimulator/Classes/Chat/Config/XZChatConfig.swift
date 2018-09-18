@@ -370,14 +370,30 @@ var MessageSystemArrowWidth : CGFloat {
     if kWindowW == 320 {
         width = 6
     }else if kWindowH == 812 {
-        width = 7
+        width = 6
     }else if kWindowW == 414 {
         width = 6
     }else if kWindowW == 375 {
-        width = 8
+        width = 6
     }
     return width
 }
+
+//信息arrow width
+var MessageSystemArrowHeight : CGFloat {
+    var height : CGFloat = 11
+    if kWindowW == 320 {
+        height = 11
+    }else if kWindowH == 812 {
+        height = 11
+    }else if kWindowW == 414 {
+        height = 11
+    }else if kWindowW == 375 {
+        height = 11
+    }
+    return height
+}
+
 
 
 //let MessageFont : UIFont =  UIFont.systemFont(ofSize: 16)

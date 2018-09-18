@@ -28,7 +28,8 @@ class XZBaseMessageCell: UITableViewCell {
     
     lazy var bubbleView : UIImageView = {
         let imageView = UIImageView()
-        
+        imageView.layer.masksToBounds = true
+        imageView.clipsToBounds = true
         
         return imageView
     }()
@@ -149,6 +150,9 @@ extension XZBaseMessageCell {
             else if modelFrame.model?.message?.type == TypeTransfer {
                 self.bubbleView.image = UIImage(named: "Dialog_blue.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
+            else if modelFrame.model?.message?.type == TypePic {
+                self.bubbleView.image = UIImage(named: "Dialog_pt.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
+            }
             
         }else {
             if modelFrame.model?.message?.type == TypeFile || modelFrame.model?.message?.type == TypePicText {
@@ -166,6 +170,10 @@ extension XZBaseMessageCell {
             else if modelFrame.model?.message?.type == TypeTransfer {
                 self.bubbleView.image = UIImage(named: "Dialog_blue.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
+            else if modelFrame.model?.message?.type == TypePic {
+                self.bubbleView.image = UIImage(named: "Dialog_white.left")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
+            }
+            
         }
     }
 }

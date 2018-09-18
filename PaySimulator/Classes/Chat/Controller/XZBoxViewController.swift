@@ -47,7 +47,7 @@ class XZBoxViewController: UIViewController {
     
     lazy var moreView : XZChatBoxMoreView = {
        let moreView = XZChatBoxMoreView()
-        
+        moreView.deletgate = self
         return moreView
     }()
     
