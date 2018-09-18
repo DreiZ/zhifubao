@@ -243,11 +243,14 @@ extension XZChatBoxView {
         
         NotificationCenter.default.addObserver(self, selector: #selector(emotionDidSelected (notifi:)), name: NSNotification.Name(rawValue: GXEmotionDidSelectNotification), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(deleteBtnClicked), name: NSNotification.Name(rawValue: GXEmotionDidSelectNotification), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(sendMessage), name: NSNotification.Name(rawValue: GXEmotionDidSelectNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(sendMessage), name: NSNotification.Name(rawValue: GXEmotionDidSendNotification), object: nil)
     }
     
     @objc func emotionDidSelected(notifi : NSNotification) {
+        let emotion : XZEmotion = notifi.object as! XZEmotion
         
+        self.iTextView.insertText(emotion.shortCut ?? "")
+        self.iTextView.scrollRangeToVisible(NSRange(location: self.iTextView.text.count, length: 0))
     }
     
     @objc func deleteBtnClicked() {
@@ -255,7 +258,12 @@ extension XZChatBoxView {
     }
     
     @objc func sendMessage() {
-        
+        if self.iTextView.text.count > 0 {
+            if delegate != nil {
+                delegate?.sendTextMessage(chatBox: self, textMessage: self.iTextView.text)
+            }
+            self.iTextView.text = ""
+        }
     }
     
     //去除第一响应者

@@ -28,6 +28,7 @@ class XZChatViewController: XZBaseViewController {
     lazy var chatBoxViewController : XZBoxViewController = {
         let chatBox = XZBoxViewController()
         chatBox.delegate = self
+        chatBox.moreDeletgate = self
         return chatBox
     }()
 
@@ -382,35 +383,25 @@ extension XZChatViewController : XZChatBoxViewControllerDelegate{
     func sendFileMessage(chatBoxViewController: XZBoxViewController, fileName: String) {
         
     }
+}
+
+extension XZChatViewController : XZChatBoxMoreViewDelegate {
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    func didSelectItem(moreView: XZChatBoxMoreView, selectType: XZChatBoxMoreType) {
+        if selectType == XZChatBoxMoreType.album {
+            
+        }
+        else if selectType == XZChatBoxMoreType.transfer {
+            
+        }
+        else if selectType == XZChatBoxMoreType.voice {
+            
+        }
+        else if selectType == XZChatBoxMoreType.time {
+            
+        }
+        else if selectType == XZChatBoxMoreType.redPacket {
+            
+        }
+    }
 }

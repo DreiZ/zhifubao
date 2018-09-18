@@ -8,6 +8,32 @@
 
 import UIKit
 
+
+/************Notification*************/
+
+let GXEmotionDidSelectNotification   = "GXEmotionDidSelectNotification"
+let GXEmotionDidDeleteNotification   = "GXEmotionDidDeleteNotification"
+let GXEmotionDidSendNotification     = "GXEmotionDidSendNotification"
+//let NotificationReceiveUnreadMessage =
+//    "NotificationReceiveUnreadMessage"
+let NotificationDidCreatedConversation = "NotificationDidCreatedConversation"
+let NotificationFirstMessage         = "NotificationFirstMessage"
+let NotificationDidUpdateDeliver     = "NotificationDidUpdateDeliver"
+let NotificationPushDidReceived      = "NotificationPushDidReceived"
+let NotificationDeliverChanged       = "NotificationDeliverChanged"
+let NotificationBackMsgNotification  = "NotificationBackMsgNotification"
+let NotificationGPhotoDidChanged     = "NotificationGPhotoDidChanged"
+
+let NotificationReloadDataIMSource   = "NotificationReloadDataIMSource"
+let NotificationUserHeadImgChangedNotification  = "NotificationUserHeadImgChangedNotification"
+let NotificationKickUserNotification     = "NotificationKickUserNotification"
+let NotificationShareExitNotification = "NotificationShareExitNotification"
+let ICShareCancelNotification = "ICShareCancelNotification"
+let ICShareConfirmNotification = "ICShareConfirmNotification"
+let ICShareStayInAppNotification = "ICShareStayInAppNotification"
+let ICShareBackOtherAppNotification = "ICShareBackOtherAppNotification"
+
+
 let kLineColor : UIColor = UIColor.init(red: 226.0/255.0, green: 226.0/255.0, blue: 228.0/255.0, alpha: 1)
 let kChatBackColor : UIColor = UIColor.init(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1)
 let kChatBoxBackColor : UIColor = UIColor.init(red: 245.0/245.0, green: 245.0/255.0, blue: 248.0/255.0, alpha: 1)
@@ -20,7 +46,7 @@ let HEIGHT_STATUSBAR : CGFloat   = 20;
 let HEIGHT_NAVBAR : CGFloat      = 44;
 let HEIGHT_CHATBOXVIEW : CGFloat = 215;
 
-let kChatMoreViewHeight : CGFloat = 180
+let kChatMoreViewHeight : CGFloat = 215
 
 
 let ICEmotionMaxRows : Int = 3
@@ -405,28 +431,10 @@ enum XZMessageStatus : Int {
     case back = 2            // 消息撤回
 }
 
-
-
-/************Notification*************/
-
-let GXEmotionDidSelectNotification   = "GXEmotionDidSelectNotification"
-let GXEmotionDidDeleteNotification   = "GXEmotionDidDeleteNotification"
-let GXEmotionDidSendNotification     = "GXEmotionDidSendNotification"
-//let NotificationReceiveUnreadMessage =
-//    "NotificationReceiveUnreadMessage"
-let NotificationDidCreatedConversation = "NotificationDidCreatedConversation"
-let NotificationFirstMessage         = "NotificationFirstMessage"
-let NotificationDidUpdateDeliver     = "NotificationDidUpdateDeliver"
-let NotificationPushDidReceived      = "NotificationPushDidReceived"
-let NotificationDeliverChanged       = "NotificationDeliverChanged"
-let NotificationBackMsgNotification  = "NotificationBackMsgNotification"
-let NotificationGPhotoDidChanged     = "NotificationGPhotoDidChanged"
-
-let NotificationReloadDataIMSource   = "NotificationReloadDataIMSource"
-let NotificationUserHeadImgChangedNotification  = "NotificationUserHeadImgChangedNotification"
-let NotificationKickUserNotification     = "NotificationKickUserNotification"
-let NotificationShareExitNotification = "NotificationShareExitNotification"
-let ICShareCancelNotification = "ICShareCancelNotification"
-let ICShareConfirmNotification = "ICShareConfirmNotification"
-let ICShareStayInAppNotification = "ICShareStayInAppNotification"
-let ICShareBackOtherAppNotification = "ICShareBackOtherAppNotification"
+enum XZChatBoxMoreType : Int {
+    case album = 0             //"相册"
+    case transfer = 1          //"转账"
+    case voice = 2             //"语音"
+    case time = 3              //"时间"
+    case redPacket = 4         //"红包"
+}

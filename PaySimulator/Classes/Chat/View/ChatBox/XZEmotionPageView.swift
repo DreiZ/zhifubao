@@ -8,12 +8,18 @@
 
 import UIKit
 
+
 class XZEmotionPageView: UIView {
 
     var emotions : Array<XZEmotion> = []
+    var emotionBlock : ((_ : XZEmotion)->())?
     
-    @objc func emotionBtnClicked()  {
-        
+    @objc func emotionBtnClicked(sender : UIButton)  {
+        if let emotionBlock = emotionBlock {
+            if sender.tag < emotions.count{
+                emotionBlock(emotions[sender.tag])
+            }
+        }
     }
     
     override func layoutSubviews() {
@@ -29,6 +35,7 @@ class XZEmotionPageView: UIView {
             btn.imageEdgeInsets = UIEdgeInsetsMake(6, 6, 6, 6)
             let rect : CGRect = CGRect(x: inset + CGFloat(i % ICEmotionMaxCols) * btnW, y: inset + CGFloat(i / ICEmotionMaxCols)*btnH, width: btnW, height: btnH)
             btn.frame = rect
+            btn.tag = i
             
             i += 1
         }
@@ -41,8 +48,7 @@ class XZEmotionPageView: UIView {
             let button = XZEmotionButton()
             self.addSubview(button)
             button.setEmotion(item) 
-            button.addTarget(self, action: #selector(emotionBtnClicked), for: .touchUpOutside)
+            button.addTarget(self, action: #selector(emotionBtnClicked(sender : )), for: .touchUpInside)
         }
     }
-      
 }

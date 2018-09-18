@@ -31,6 +31,7 @@ class XZEmotionListView: UIView {
     lazy var pageControl : UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.currentPageIndicatorTintColor = UIColor.gray
+        pageControl.pageIndicatorTintColor = UIColor.lightGray
         pageControl.isUserInteractionEnabled = false
         return pageControl
     }()
@@ -109,6 +110,10 @@ extension XZEmotionListView {
             pageView.setEmotions(self.getArr(emotions: emotionArr, index: index, length: length))
             self.iScrollView.addSubview(pageView)
             
+            pageView.emotionBlock = { (emotion : XZEmotion) in
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: GXEmotionDidSelectNotification), object: emotion, userInfo: nil)
+            }
+            
 //            pageView.frame = CGRect(x: CGFloat(i) * kWindowW, y: 0, width: kWindowW, height: kChatMoreViewHeight)
             pageView.snp.makeConstraints { (make) in
                 make.left.equalTo(self.iScrollView.snp.left).offset(CGFloat(i) * kWindowW)
@@ -139,4 +144,3 @@ extension XZEmotionListView {
         return arr
     }
 }
-

@@ -35,6 +35,7 @@ protocol XZChatBoxViewControllerDelegate {
 class XZBoxViewController: UIViewController {
     
     var delegate : XZChatBoxViewControllerDelegate?
+    var moreDeletgate : XZChatBoxMoreViewDelegate?
     
     var keyboardFrame : CGRect?
 
@@ -52,7 +53,6 @@ class XZBoxViewController: UIViewController {
     
     lazy var faceView : XZChatBoxFaceView = {
         let faceView = XZChatBoxFaceView()
-        
         return faceView
     }()
     
@@ -63,6 +63,7 @@ class XZBoxViewController: UIViewController {
         self.setupUI()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide (notifi:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardFrameWillChange (notifi:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
     }
 
     deinit {
@@ -91,7 +92,7 @@ extension XZBoxViewController {
         self.view.addSubview(self.faceView)
         self.faceView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview()
-            make.height.equalTo(kChatMoreViewHeight)
+            make.height.equalTo(HEIGHT_CHATBOXVIEW)
             make.top.equalTo(self.view.snp.top).offset(50)
         }
     }
@@ -151,7 +152,7 @@ extension XZBoxViewController :  XZChatBoxDelegate {
 
                 self.faceView.snp.makeConstraints { (make) in
                     make.left.right.equalToSuperview()
-                    make.height.equalTo(kChatMoreViewHeight)
+                    make.height.equalTo(HEIGHT_CHATBOXVIEW)
                     make.top.equalTo(self.view.snp.top).offset(50)
                 }
                 
@@ -167,7 +168,7 @@ extension XZBoxViewController :  XZChatBoxDelegate {
                 self.view.addSubview(self.faceView)
                 self.faceView.snp.makeConstraints { (make) in
                     make.left.right.equalToSuperview()
-                    make.height.equalTo(kChatMoreViewHeight)
+                    make.height.equalTo(HEIGHT_CHATBOXVIEW)
                     make.top.equalTo(self.view.snp.top).offset(50)
                 }
                 
@@ -300,21 +301,10 @@ extension XZBoxViewController {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+extension XZBoxViewController : XZChatBoxMoreViewDelegate {
+    func didSelectItem(moreView: XZChatBoxMoreView, selectType: XZChatBoxMoreType) {
+        if moreDeletgate != nil {
+            moreDeletgate?.didSelectItem(moreView: moreView, selectType: selectType)
+        }
+    }
+}
