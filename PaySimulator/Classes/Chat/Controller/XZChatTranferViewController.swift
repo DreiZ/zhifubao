@@ -19,6 +19,9 @@ class XZChatTranferViewController: XZBaseViewController {
     }
 
 
+    @IBAction func cancleBtnOnClick(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 extension XZChatTranferViewController {

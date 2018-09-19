@@ -41,6 +41,8 @@
 		5E4B862F2152296500DF4003 /* XZEditRedPacketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B862E2152296500DF4003 /* XZEditRedPacketViewController.swift */; };
 		5E4B863321522A6200DF4003 /* XZEditRedPacketTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B863221522A6200DF4003 /* XZEditRedPacketTableViewController.swift */; };
 		5E4B86352152482E00DF4003 /* XZChatTranferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B86342152482E00DF4003 /* XZChatTranferViewController.swift */; };
+		5E4B86382152549600DF4003 /* BaseEmotion.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B86362152549600DF4003 /* BaseEmotion.plist */; };
+		5E4B86392152549600DF4003 /* AddressBook.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B86372152549600DF4003 /* AddressBook.plist */; };
 		5E4FC20B214610D000E0A5A9 /* XZChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC20A214610D000E0A5A9 /* XZChatViewController.swift */; };
 		5E4FC20D214610FA00E0A5A9 /* XZBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC20C214610FA00E0A5A9 /* XZBoxViewController.swift */; };
 		5E4FC2102146118600E0A5A9 /* XZUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC20F2146118600E0A5A9 /* XZUserModel.swift */; };
@@ -192,6 +194,8 @@
 		5E4B862E2152296500DF4003 /* XZEditRedPacketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZEditRedPacketViewController.swift; sourceTree = "<group>"; };
 		5E4B863221522A6200DF4003 /* XZEditRedPacketTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZEditRedPacketTableViewController.swift; sourceTree = "<group>"; };
 		5E4B86342152482E00DF4003 /* XZChatTranferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatTranferViewController.swift; sourceTree = "<group>"; };
+		5E4B86362152549600DF4003 /* BaseEmotion.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BaseEmotion.plist; sourceTree = "<group>"; };
+		5E4B86372152549600DF4003 /* AddressBook.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AddressBook.plist; sourceTree = "<group>"; };
 		5E4FC20A214610D000E0A5A9 /* XZChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatViewController.swift; sourceTree = "<group>"; };
 		5E4FC20C214610FA00E0A5A9 /* XZBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBoxViewController.swift; sourceTree = "<group>"; };
 		5E4FC20F2146118600E0A5A9 /* XZUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZUserModel.swift; sourceTree = "<group>"; };
@@ -1006,6 +1010,8 @@
 		E3D98F3021363A3900887FAF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				5E4B86372152549600DF4003 /* AddressBook.plist */,
+				5E4B86362152549600DF4003 /* BaseEmotion.plist */,
 				E3D98F3F21363F6100887FAF /* AppDelegate.swift */,
 				E3D98F52213669E100887FAF /* XZCommon.swift */,
 				E3D98F4021363F6100887FAF /* Assets.xcassets */,
@@ -1198,10 +1204,12 @@
 				E3D98F4621363F6100887FAF /* Assets.xcassets in Resources */,
 				5ECE67C82140FB7600C8C5A9 /* XZReceivablesFooterView.xib in Resources */,
 				E360484E2137A11B00ECF65F /* PayMoney.storyboard in Resources */,
+				5E4B86392152549600DF4003 /* AddressBook.plist in Resources */,
 				E36048542137A19100ECF65F /* PayMe.storyboard in Resources */,
 				E360484C2137A10A00ECF65F /* PayHome.storyboard in Resources */,
 				5E4B4E5C21421447003D3D23 /* BillShow.storyboard in Resources */,
 				E36048522137A16700ECF65F /* PayFriend.storyboard in Resources */,
+				5E4B86382152549600DF4003 /* BaseEmotion.plist in Resources */,
 				E3D98F4421363F6100887FAF /* Info.plist in Resources */,
 				5E42F421214760E40034B691 /* BaseEmotion.plist in Resources */,
 				E3D98F4A21363FE900887FAF /* Main.storyboard in Resources */,
