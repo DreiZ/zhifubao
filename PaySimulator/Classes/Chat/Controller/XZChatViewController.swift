@@ -416,10 +416,12 @@ extension XZChatViewController : XZChatBoxMoreViewDelegate {
             fdTakeController.present()
         }
         else if selectType == XZChatBoxMoreType.transfer {
-            
+            let transfervc = UIStoryboard(name: "chat", bundle: nil).instantiateViewController(withIdentifier: "XZChatTranferViewController")
+            self.navigationController?.pushViewController(transfervc, animated: true)
         }
         else if selectType == XZChatBoxMoreType.voice {
-            
+            let voicevc = UIStoryboard(name: "chat", bundle: nil).instantiateViewController(withIdentifier: "XZChatVoiceTimeViewController")
+            self.navigationController?.pushViewController(voicevc, animated: true)
         }
         else if selectType == XZChatBoxMoreType.time {
             let timevc = XZSystemTimeViewController()

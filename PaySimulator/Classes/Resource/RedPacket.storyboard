@@ -16,7 +16,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="XZBillTableViewController" storyboardName="BillShow" referencedIdentifier="XZBillTableViewController" id="1we-6c-DlU" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8LO-Iq-LVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2202" y="-500"/>
+            <point key="canvasLocation" x="2202" y="-458"/>
         </scene>
         <!--Edit Red Packet View Controller-->
         <scene sceneID="lrd-Uj-rGg">
