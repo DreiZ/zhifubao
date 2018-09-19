@@ -7,7 +7,5 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <LKDBHelper/LKDBHelper.h>
 #import <LKDBHelper/NSObject+LKDBHelper.h>
-
-#import "NSString+Extension.h"
-#import "ICFaceManager.h"
+#import "XZAddressBookManager.h"
 #import "KILabel.h"

@@ -29,7 +29,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="146"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="left" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="搜索" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WLZ-SE-G7V">
+                                        <textField opaque="NO" contentMode="left" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="搜索" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WLZ-SE-G7V" customClass="XZSearchTextField" customModule="PaySimulator" customModuleProvider="target">
                                             <rect key="frame" x="10" y="8" width="355" height="26"/>
                                             <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -215,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NFe-Yo-QJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956" y="-166.8665667166417"/>
+            <point key="canvasLocation" x="1102" y="-221"/>
         </scene>
         <!--Address BookVC-->
         <scene sceneID="hUg-rC-MTp">
@@ -236,8 +236,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="37"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="搜索" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJ7-kv-cqN">
-                                            <rect key="frame" x="10" y="3.5" width="355" height="30"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="搜索" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJ7-kv-cqN" customClass="XZSearchTextField" customModule="PaySimulator" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="5.5" width="355" height="26"/>
+                                            <color key="backgroundColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="26" id="H2X-mK-2ds"/>
+                                            </constraints>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>

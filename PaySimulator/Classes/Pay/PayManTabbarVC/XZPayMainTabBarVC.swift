@@ -15,11 +15,11 @@ class XZPayMainTabBarVC: UITabBarController,UITabBarControllerDelegate {
 
         self.delegate = self;
         // Do any additional setup after loading the view.
-        addChileVc(storyName: "PayHome", "主页", "shouye", "shouyea")
-        addChileVc(storyName: "PayMoney","财富", "pinwei", "pinweia")
-        addChileVc(storyName: "PayPraise","口碑", "gouwuche", "gouwuchea")
-        addChileVc(storyName: "PayFriend","朋友", "geren", "gerena")
-        addChileVc(storyName: "PayMe", "我的", "fenlei", "fenleia")
+        addChileVc(storyName: "PayHome", "主页", "icon_shouye", "icon_shouye1")
+        addChileVc(storyName: "PayMoney","财富", "icon_caifu", "icon_caifu1")
+        addChileVc(storyName: "PayPraise","口碑", "icon_koubei", "icon_koubei1")
+        addChileVc(storyName: "PayFriend","朋友", "icon_pengyou", "icon_pengyou1")
+        addChileVc(storyName: "PayMe", "我的", "pay_icon_wode", "pay_icon_wode1")
         //默认点击我的控制器
         selectedIndex = 4;
     }

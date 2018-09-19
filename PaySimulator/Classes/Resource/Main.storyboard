@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Xzz-94-m3q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Xzz-94-m3q">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -46,7 +44,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="260"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xd0-vo-9Mh" userLabel="支付宝模拟器" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="94.333333333333329" height="94.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="93.666666666666671" height="93.666666666666671"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xd0-vo-9Mh" secondAttribute="height" multiplier="1:1" id="dv1-kD-If0"/>
                                         </constraints>
@@ -59,7 +57,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGo-yR-r9y" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
-                                        <rect key="frame" x="94.333333333333343" y="0.0" width="94.333333333333343" height="94.333333333333329"/>
+                                        <rect key="frame" x="93.666666666666686" y="0.0" width="94" height="93.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <state key="normal" title="转账" image="icon_zhuanzhang">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -69,7 +67,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAL-mX-ufX" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
-                                        <rect key="frame" x="188.66666666666666" y="0.0" width="93.666666666666657" height="94.333333333333329"/>
+                                        <rect key="frame" x="187.66666666666666" y="0.0" width="93.666666666666657" height="93.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <state key="normal" title="余额" image="icon_yue">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -79,7 +77,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33h-rO-A42" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
-                                        <rect key="frame" x="282.33333333333331" y="0.0" width="93.666666666666686" height="94.333333333333329"/>
+                                        <rect key="frame" x="281.33333333333331" y="0.0" width="93.666666666666686" height="93.666666666666671"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <state key="normal" title="收款账单" image="icon_shoukuanzhangdan">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -90,7 +88,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oo-KO-nzi" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="94.333333333333343" width="94.333333333333329" height="94.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="93.666666666666657" width="93.666666666666671" height="94"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <state key="normal" title="红包" image="icon_hongbao">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -100,7 +98,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ny9-Pl-zCW" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
-                                        <rect key="frame" x="94.333333333333343" y="94.333333333333343" width="94.333333333333343" height="94.333333333333343"/>
+                                        <rect key="frame" x="93.666666666666686" y="93.666666666666657" width="94" height="94"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <state key="normal" title="提现账单" image="icon_tixianzhangdan">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -234,7 +232,7 @@
         <scene sceneID="z2g-ya-ssq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="um6-cw-g0H" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我" image="icon_wode" selectedImage="icon_wode1" id="8s6-GC-HFf"/>
+                    <tabBarItem key="tabBarItem" title="我" image="main_icon_wode" selectedImage="main_icon_wode1" id="8s6-GC-HFf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x9d-uo-Mwf">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -295,9 +293,9 @@
         <image name="icon_shouye11" width="25" height="25"/>
         <image name="icon_shouyemain" width="25" height="25"/>
         <image name="icon_tixianzhangdan" width="50" height="50"/>
-        <image name="icon_wode" width="25" height="25"/>
-        <image name="icon_wode1" width="19" height="19"/>
         <image name="icon_yue" width="50" height="50"/>
         <image name="icon_zhuanzhang" width="50" height="50"/>
+        <image name="main_icon_wode" width="25" height="25"/>
+        <image name="main_icon_wode1" width="25" height="25"/>
     </resources>
 </document>
