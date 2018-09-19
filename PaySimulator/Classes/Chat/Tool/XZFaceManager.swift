@@ -48,6 +48,8 @@ class XZFaceManager: NSObject {
     
     class func transToModel ()  {
         if let tempArr = XZFaceManager.emojiEmotions {
+            XZFaceManager.emojiMEmotions.removeAll()
+            
             for json in tempArr {
                 if json.type == .dictionary {
                     let tempDict : Dictionary = json.dictionary!
