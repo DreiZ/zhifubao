@@ -160,6 +160,9 @@
 		5E4B4E5E2142216D003D3D23 /* XZPublicTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B4E5D2142216D003D3D23 /* XZPublicTools.swift */; };
 		5E4B4E6721424DF8003D3D23 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B4E6421424DF8003D3D23 /* SCLAlertView.swift */; };
 		5E4B4E6821424DF8003D3D23 /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B4E6521424DF8003D3D23 /* SCLExtensions.swift */; };
+		5E4B86222151D7EA00DF4003 /* XZChatTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B86212151D7EA00DF4003 /* XZChatTimeViewController.swift */; };
+		5E4B86242151D84900DF4003 /* XZChatVoiceTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B86232151D84900DF4003 /* XZChatVoiceTimeViewController.swift */; };
+		5E4B86262151D8B200DF4003 /* XZSystemTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B86252151D8B200DF4003 /* XZSystemTimeViewController.swift */; };
 		5E4FC20B214610D000E0A5A9 /* XZChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC20A214610D000E0A5A9 /* XZChatViewController.swift */; };
 		5E4FC20D214610FA00E0A5A9 /* XZBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC20C214610FA00E0A5A9 /* XZBoxViewController.swift */; };
 		5E4FC2102146118600E0A5A9 /* XZUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC20F2146118600E0A5A9 /* XZUserModel.swift */; };
@@ -429,6 +432,9 @@
 		5E4B4E6521424DF8003D3D23 /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
 		5E4B4E762142675E003D3D23 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		5E4B4E782142676C003D3D23 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		5E4B86212151D7EA00DF4003 /* XZChatTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatTimeViewController.swift; sourceTree = "<group>"; };
+		5E4B86232151D84900DF4003 /* XZChatVoiceTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatVoiceTimeViewController.swift; sourceTree = "<group>"; };
+		5E4B86252151D8B200DF4003 /* XZSystemTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZSystemTimeViewController.swift; sourceTree = "<group>"; };
 		5E4FC20A214610D000E0A5A9 /* XZChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatViewController.swift; sourceTree = "<group>"; };
 		5E4FC20C214610FA00E0A5A9 /* XZBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBoxViewController.swift; sourceTree = "<group>"; };
 		5E4FC20F2146118600E0A5A9 /* XZUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZUserModel.swift; sourceTree = "<group>"; };
@@ -761,6 +767,9 @@
 			children = (
 				5E4FC20A214610D000E0A5A9 /* XZChatViewController.swift */,
 				5E4FC20C214610FA00E0A5A9 /* XZBoxViewController.swift */,
+				5E4B86212151D7EA00DF4003 /* XZChatTimeViewController.swift */,
+				5E4B86232151D84900DF4003 /* XZChatVoiceTimeViewController.swift */,
+				5E4B86252151D8B200DF4003 /* XZSystemTimeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1725,6 +1734,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PaySimulator/Pods-PaySimulator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DateTimePicker/DateTimePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/FDTake/FDTake.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
@@ -1738,6 +1748,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTimePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDTake.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
@@ -1809,6 +1820,7 @@
 				E348975121428EF70062410B /* XZWithdrawalBillTabVC.swift in Sources */,
 				5E4FC21E21463CF200E0A5A9 /* XZChatBoxMoreView.swift in Sources */,
 				5E552618214906B4004204AF /* XZChatMessageTransferCell.swift in Sources */,
+				5E4B86222151D7EA00DF4003 /* XZChatTimeViewController.swift in Sources */,
 				5E42F42F2147A90E0034B691 /* XZChatMessageVoiceCell.swift in Sources */,
 				E3A9AAE2213FA7F700FAEEAF /* XZPayMeNavView.swift in Sources */,
 				E36048432137988600ECF65F /* XZMainHomeVC.swift in Sources */,
@@ -1836,6 +1848,7 @@
 				E36048582137A1F000ECF65F /* XZPayMoneyVC.swift in Sources */,
 				5ECE67CB2140FBBA00C8C5A9 /* XZReceivablesTableViewController.swift in Sources */,
 				5E42F4312147A9310034B691 /* XZChatMessageRedPacketCell.swift in Sources */,
+				5E4B86262151D8B200DF4003 /* XZSystemTimeViewController.swift in Sources */,
 				5E42F311214750030034B691 /* NSString+Extension.m in Sources */,
 				5E4FC224214663F500E0A5A9 /* XZEmotion.swift in Sources */,
 				5ECE67CE2140FC7500C8C5A9 /* XZMyAlertSheetView.swift in Sources */,
@@ -1845,6 +1858,7 @@
 				5E42F4352147ACBD0034B691 /* XZMessageFrame.swift in Sources */,
 				E36048412137986700ECF65F /* XZBaseVC.swift in Sources */,
 				E3D98F4E2136414A00887FAF /* XZMainButton.swift in Sources */,
+				5E4B86242151D84900DF4003 /* XZChatVoiceTimeViewController.swift in Sources */,
 				E3D98F53213669E100887FAF /* XZCommon.swift in Sources */,
 				E35B5D7B213D2C5300E59A88 /* XZUserHelper.swift in Sources */,
 				5E55261A21490EB1004204AF /* XZMessageHelper.swift in Sources */,
@@ -2023,10 +2037,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/PaySimulator/Classes/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PaySimulator/Classes/Resource/PaySimulator-Bridging-Header.h";
@@ -2050,10 +2061,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/PaySimulator/Classes/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PaySimulator/Classes/Resource/PaySimulator-Bridging-Header.h";
@@ -2070,11 +2078,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = PaySimulatorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2091,11 +2095,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = PaySimulatorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2111,11 +2111,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = PaySimulatorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -2131,11 +2127,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = PaySimulatorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

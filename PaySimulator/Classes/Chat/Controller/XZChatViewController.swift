@@ -422,7 +422,8 @@ extension XZChatViewController : XZChatBoxMoreViewDelegate {
             
         }
         else if selectType == XZChatBoxMoreType.time {
-            
+            let timevc = XZSystemTimeViewController()
+            self.navigationController?.pushViewController(timevc, animated: true)
         }
         else if selectType == XZChatBoxMoreType.redPacket {
             

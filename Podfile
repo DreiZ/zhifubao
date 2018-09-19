@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-  platform :ios, '8.0'
+  platform :ios, '9.0'
 
 target 'PaySimulator' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -14,6 +14,7 @@ pod 'MBProgressHUD', '~> 1.1.0'
 
 pod 'SwiftyJSON', '~> 4.0'
 pod 'FDTake'
+pod 'DateTimePicker'
 
 
 #数据库封装

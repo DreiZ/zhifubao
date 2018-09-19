@@ -179,4 +179,14 @@ class XZMessageHelper: NSObject {
         
         return date
     }
+    
+    class func getTime(time : Int, format : String) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        
+        let currentDate = Date.init(timeIntervalSince1970: TimeInterval(time))
+        let date = formatter.string(from: currentDate)
+        
+        return date
+    }
 }
