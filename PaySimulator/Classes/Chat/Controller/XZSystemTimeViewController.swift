@@ -89,7 +89,7 @@ extension XZSystemTimeViewController {
         self.navBar.title = "设置"
         self.navBar.titleLabelColor = UIColor.white
         self.navBar.barBackgroundColor = ddBlueColor()
-        self.navBar.wr_setLeftButton(normalImage: UIImage(named: "icon_fanhui")!, highlightedImage: UIImage(named: "icon_fanhui")!, title: "    ", titleColor: UIColor.white)
+        self.navBar.wr_setLeftButton(normalImage: UIImage(named: "icon_fanhui")!, highlightedImage: UIImage(named: "icon_fanhui")!, title: "        ", titleColor: UIColor.white)
         self.navBar.wr_setRightButton(title: "确定", titleColor: ddBlueColor())
         
         
