@@ -38,6 +38,7 @@
 		5E4B86262151D8B200DF4003 /* XZSystemTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B86252151D8B200DF4003 /* XZSystemTimeViewController.swift */; };
 		5E4B862821521C2B00DF4003 /* XZAddressBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B862721521C2B00DF4003 /* XZAddressBookModel.swift */; };
 		5E4B862B21521C3300DF4003 /* XZAddressBookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B862A21521C3300DF4003 /* XZAddressBookManager.m */; };
+		5E4B862D21521FD900DF4003 /* RedPacket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B862C21521FD900DF4003 /* RedPacket.storyboard */; };
 		5E4FC20B214610D000E0A5A9 /* XZChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC20A214610D000E0A5A9 /* XZChatViewController.swift */; };
 		5E4FC20D214610FA00E0A5A9 /* XZBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC20C214610FA00E0A5A9 /* XZBoxViewController.swift */; };
 		5E4FC2102146118600E0A5A9 /* XZUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC20F2146118600E0A5A9 /* XZUserModel.swift */; };
@@ -186,6 +187,7 @@
 		5E4B862721521C2B00DF4003 /* XZAddressBookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZAddressBookModel.swift; sourceTree = "<group>"; };
 		5E4B862921521C3300DF4003 /* XZAddressBookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZAddressBookManager.h; sourceTree = "<group>"; };
 		5E4B862A21521C3300DF4003 /* XZAddressBookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZAddressBookManager.m; sourceTree = "<group>"; };
+		5E4B862C21521FD900DF4003 /* RedPacket.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RedPacket.storyboard; sourceTree = "<group>"; };
 		5E4FC20A214610D000E0A5A9 /* XZChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatViewController.swift; sourceTree = "<group>"; };
 		5E4FC20C214610FA00E0A5A9 /* XZBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBoxViewController.swift; sourceTree = "<group>"; };
 		5E4FC20F2146118600E0A5A9 /* XZUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZUserModel.swift; sourceTree = "<group>"; };
@@ -1003,6 +1005,7 @@
 				E3D98F4021363F6100887FAF /* Assets.xcassets */,
 				E3D98F4721363FE900887FAF /* LaunchScreen.storyboard */,
 				E3D98F4821363FE900887FAF /* Main.storyboard */,
+				5E4B862C21521FD900DF4003 /* RedPacket.storyboard */,
 				5E4B4E5B21421447003D3D23 /* BillShow.storyboard */,
 				5E4B4E59214213AA003D3D23 /* Bill.storyboard */,
 				E3489739214212550062410B /* withDraw.storyboard */,
@@ -1197,6 +1200,7 @@
 				5E42F421214760E40034B691 /* BaseEmotion.plist in Resources */,
 				E3D98F4A21363FE900887FAF /* Main.storyboard in Resources */,
 				5E58CAF12150F72500474F9F /* chat.storyboard in Resources */,
+				5E4B862D21521FD900DF4003 /* RedPacket.storyboard in Resources */,
 				5E4B4E5A214213AA003D3D23 /* Bill.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
