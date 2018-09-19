@@ -37,7 +37,7 @@ let ICShareBackOtherAppNotification = "ICShareBackOtherAppNotification"
 let kLineColor : UIColor = UIColor.init(red: 226.0/255.0, green: 226.0/255.0, blue: 228.0/255.0, alpha: 1)
 let kChatBackColor : UIColor = UIColor.init(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1)
 let kChatBoxBackColor : UIColor = UIColor.init(red: 245.0/245.0, green: 245.0/255.0, blue: 248.0/255.0, alpha: 1)
-
+let kChatMainColor : UIColor = UIColor.init(red: 0/245.0, green: 179.0/255.0, blue: 237.0/255.0, alpha: 1)
 
 /**tabbar高度*/
 let kTabBarHeight : CGFloat = (kWindowH == 812.0 ? (34 + 50) : 50)

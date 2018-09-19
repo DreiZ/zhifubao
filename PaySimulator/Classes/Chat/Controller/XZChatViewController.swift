@@ -427,6 +427,8 @@ extension XZChatViewController : XZChatBoxMoreViewDelegate {
         }
         else if selectType == XZChatBoxMoreType.redPacket {
             
+            let redpacketvc = UIStoryboard(name: "RedPacket", bundle: nil).instantiateViewController(withIdentifier: "XZEditRedPacketViewController")
+            self.navigationController?.pushViewController(redpacketvc, animated: true)
         }
     }
 }
