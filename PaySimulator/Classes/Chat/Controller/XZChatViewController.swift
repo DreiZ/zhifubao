@@ -254,6 +254,8 @@ extension XZChatViewController {
         
         let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
         
+        messageF.model?.message?.toImage = self.to?.headImage
+        messageF.model?.message?.fromImage = self.from?.headImage
         self.addObject(messageF: messageF, isender: true)
 //        self.messageSendSucced(messageF: messageF)
     }
@@ -265,6 +267,9 @@ extension XZChatViewController {
         }
         
         let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
+        
+        messageF.model?.message?.toImage = self.to?.headImage
+        messageF.model?.message?.fromImage = self.from?.headImage
         
         self.addObject(messageF: messageF, isender: true)
         self.messageSendSucced(messageF: messageF)
@@ -279,6 +284,9 @@ extension XZChatViewController {
         
         let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeVoice, content: "[语音]", date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: voiceTime)
         
+        messageF.model?.message?.toImage = self.to?.headImage
+        messageF.model?.message?.fromImage = self.from?.headImage
+        
         self.addObject(messageF: messageF, isender: true)
         self.messageSendSucced(messageF: messageF)
     }
@@ -290,6 +298,9 @@ extension XZChatViewController {
         }
         
         let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeVoice, content: "[语音]", date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: voiceTime)
+        
+        messageF.model?.message?.toImage = self.to?.headImage
+        messageF.model?.message?.fromImage = self.from?.headImage
         
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
@@ -304,6 +315,9 @@ extension XZChatViewController {
         
         let messageF : XZMessageFrame = XZMessageHelper.createSystemTimeMessageFrame(content: "[时间]", date: Date(), from: fromNickName, to: toNickName, isSender: true, receivedSenderByYourself: false, systemTime: systemTime)
         
+        messageF.model?.message?.toImage = self.to?.headImage
+        messageF.model?.message?.fromImage = self.from?.headImage
+        
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
     }
@@ -316,6 +330,9 @@ extension XZChatViewController {
         }
         
         let messageF : XZMessageFrame = XZMessageHelper.createSystemMessageFrame(systemLeft: systemLeft, messageRight: messageRight, systemImage: systemImage, date: Date(), from: fromNickName, to: toNickName, isSender: true, receivedSenderByYourself: false)
+        
+        messageF.model?.message?.toImage = self.to?.headImage
+        messageF.model?.message?.fromImage = self.from?.headImage
         
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
@@ -330,6 +347,9 @@ extension XZChatViewController {
         
         let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeTransfer, content: money, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
         
+        messageF.model?.message?.toImage = self.to?.headImage
+        messageF.model?.message?.fromImage = self.from?.headImage
+        
         self.addObject(messageF: messageF, isender: true)
         self.messageSendSucced(messageF: messageF)
     }
@@ -342,6 +362,9 @@ extension XZChatViewController {
         }
         
         let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeTransfer, content: money, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
+        
+        messageF.model?.message?.toImage = self.to?.headImage
+        messageF.model?.message?.fromImage = self.from?.headImage
         
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
@@ -356,6 +379,9 @@ extension XZChatViewController {
         
         let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacket, content: content, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
         
+        messageF.model?.message?.toImage = self.to?.headImage
+        messageF.model?.message?.fromImage = self.from?.headImage
+        
         self.addObject(messageF: messageF, isender: true)
         self.messageSendSucced(messageF: messageF)
     }
@@ -368,6 +394,9 @@ extension XZChatViewController {
         }
         
         let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacket, content: content, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
+        
+        messageF.model?.message?.toImage = self.to?.headImage
+        messageF.model?.message?.fromImage = self.from?.headImage
         
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
@@ -382,6 +411,9 @@ extension XZChatViewController {
         
         let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacketOpen, content: content, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
         
+        messageF.model?.message?.toImage = self.to?.headImage
+        messageF.model?.message?.fromImage = self.from?.headImage
+        
         self.addObject(messageF: messageF, isender: true)
         self.messageSendSucced(messageF: messageF)
     }
@@ -394,6 +426,9 @@ extension XZChatViewController {
         }
         
         let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacketOpen, content: content, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
+        
+        messageF.model?.message?.toImage = self.to?.headImage
+        messageF.model?.message?.fromImage = self.from?.headImage
         
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
@@ -408,6 +443,9 @@ extension XZChatViewController {
         
         let messageF : XZMessageFrame = XZMessageHelper.createImageMessageFrame(image: image, date: Date(), from: fromNickName, to: toNickName, isSender: true, receivedSenderByYourself: false)
         
+        messageF.model?.message?.toImage = self.to?.headImage
+        messageF.model?.message?.fromImage = self.from?.headImage
+        
         self.addObject(messageF: messageF, isender: true)
         self.messageSendSucced(messageF: messageF)
     }
@@ -419,6 +457,9 @@ extension XZChatViewController {
         }
         
         let messageF : XZMessageFrame = XZMessageHelper.createImageMessageFrame(image: image, date: Date(), from: fromNickName, to: toNickName, isSender: false, receivedSenderByYourself: false)
+        
+        messageF.model?.message?.toImage = self.to?.headImage
+        messageF.model?.message?.fromImage = self.from?.headImage
         
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)

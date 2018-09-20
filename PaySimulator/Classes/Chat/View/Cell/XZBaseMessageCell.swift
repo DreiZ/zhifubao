@@ -106,7 +106,12 @@ extension XZBaseMessageCell {
         self.headImageView.frame = modelFrame.headImageViewF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
         self.bubbleView.frame = modelFrame.bubbleViewF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
         
-        self.headImageView.image = UIImage(named: "Dialog_Live")
+        if (modelFrame.model?.isSender)! == true {
+            self.headImageView.image = modelFrame.model?.message?.toImage
+        }else {
+            self.headImageView.image = modelFrame.model?.message?.fromImage
+        }
+        
         
         if messageModel?.isSender == true {
             self.activityView.frame = modelFrame.activityF ?? CGRect(x: 0, y: 0, width: 0, height: 0)

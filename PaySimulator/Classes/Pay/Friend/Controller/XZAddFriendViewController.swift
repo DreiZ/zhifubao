@@ -38,6 +38,7 @@ class XZAddFriendViewController: XZBaseViewController {
             return
         }
         
+        
         let userModel : XZUserModel = XZUserModel()
         userModel.headImage = headImage
         userModel.nickName = nickname
