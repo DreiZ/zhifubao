@@ -12,11 +12,16 @@ import FDTake
 
 class XZChatViewController: XZBaseViewController {
     
+    var to : XZUserModel?
+    var from : XZUserModel?
+    
     var dataSource : Array<XZMessageFrame> = []
     var isKeyBoardAppear : Bool = false
     
     var textView : UITextView?
     
+    
+//懒加载------------------------------
     lazy var iTableView : UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
@@ -35,6 +40,20 @@ class XZChatViewController: XZBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        XZFriendListModel.shareSingleton.getDataFromSql()
+        let arr = XZFriendListModel.shareSingleton.friendList
+        print("zzz - \(String(describing: arr))")
+        
+        if arr != nil && (arr?.count)! > 1 {
+            let xmodel = arr![0]
+            self.to = xmodel
+            
+            let smodel = arr![1]
+            self.from = smodel
+        }
+
 
         self.setupUI()
 //        IQKeyboardManager.sharedManager().enable = false
@@ -228,14 +247,24 @@ extension XZChatViewController {
     
     //发送 text 数据
     func sendTextMessage(message : String) {
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
+        guard  let fromNickName =  self.from?.nickName,
+               let toNickName =  self.to?.nickName else {
+            return
+        }
+        
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
         
         self.addObject(messageF: messageF, isender: true)
 //        self.messageSendSucced(messageF: messageF)
     }
     
     func sendOtherTextMessage(message : String) {
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
+        guard  let fromNickName =  self.from?.nickName,
+               let toNickName =  self.to?.nickName else {
+                return
+        }
+        
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
         
         self.addObject(messageF: messageF, isender: true)
         self.messageSendSucced(messageF: messageF)
@@ -243,14 +272,24 @@ extension XZChatViewController {
     
     //语音
     func sendVoiceMessage(voiceTime : Int) {
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeVoice, content: "[语音]", date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: voiceTime)
+        guard  let fromNickName =  self.from?.nickName,
+               let toNickName =  self.to?.nickName else {
+                return
+        }
+        
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeVoice, content: "[语音]", date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: voiceTime)
         
         self.addObject(messageF: messageF, isender: true)
         self.messageSendSucced(messageF: messageF)
     }
     
     func sendOtherVoiceMessage(voiceTime : Int) {
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeVoice, content: "[语音]", date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: voiceTime)
+        guard  let fromNickName =  self.from?.nickName,
+                let toNickName =  self.to?.nickName else {
+                return
+        }
+        
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeVoice, content: "[语音]", date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: voiceTime)
         
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
@@ -258,7 +297,12 @@ extension XZChatViewController {
     
     //时间
     func sendTimeMessage(systemTime : Int) {
-        let messageF : XZMessageFrame = XZMessageHelper.createSystemTimeMessageFrame(content: "[时间]", date: Date(), from: "gxz", to: "idz", isSender: true, receivedSenderByYourself: false, systemTime: systemTime)
+        guard  let fromNickName =  self.from?.nickName,
+            let toNickName =  self.to?.nickName else {
+                return
+        }
+        
+        let messageF : XZMessageFrame = XZMessageHelper.createSystemTimeMessageFrame(content: "[时间]", date: Date(), from: fromNickName, to: toNickName, isSender: true, receivedSenderByYourself: false, systemTime: systemTime)
         
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
@@ -266,7 +310,12 @@ extension XZChatViewController {
     
     //系统提示
     func sendSystemMessage(systemLeft: String, messageRight: String, systemImage: UIImage?) {
-        let messageF : XZMessageFrame = XZMessageHelper.createSystemMessageFrame(systemLeft: systemLeft, messageRight: messageRight, systemImage: systemImage, date: Date(), from: "gxz", to: "idz", isSender: true, receivedSenderByYourself: false)
+        guard  let fromNickName =  self.from?.nickName,
+                let toNickName =  self.to?.nickName else {
+                return
+        }
+        
+        let messageF : XZMessageFrame = XZMessageHelper.createSystemMessageFrame(systemLeft: systemLeft, messageRight: messageRight, systemImage: systemImage, date: Date(), from: fromNickName, to: toNickName, isSender: true, receivedSenderByYourself: false)
         
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
@@ -274,7 +323,12 @@ extension XZChatViewController {
     
     //转账
     func sendTransferMessage(money : String) {
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeTransfer, content: money, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
+        guard  let fromNickName =  self.from?.nickName,
+                let toNickName =  self.to?.nickName else {
+                return
+        }
+        
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeTransfer, content: money, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
         
         self.addObject(messageF: messageF, isender: true)
         self.messageSendSucced(messageF: messageF)
@@ -282,7 +336,12 @@ extension XZChatViewController {
     
     //转账
     func sendOtherTransferMessage(money : String) {
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeTransfer, content: money, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
+        guard  let fromNickName =  self.from?.nickName,
+                let toNickName =  self.to?.nickName else {
+                return
+        }
+        
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeTransfer, content: money, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
         
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
@@ -290,7 +349,12 @@ extension XZChatViewController {
     
     //红包
     func sendRedMessage(content : String) {
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacket, content: content, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
+        guard  let fromNickName =  self.from?.nickName,
+                let toNickName =  self.to?.nickName else {
+                return
+        }
+        
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacket, content: content, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
         
         self.addObject(messageF: messageF, isender: true)
         self.messageSendSucced(messageF: messageF)
@@ -298,7 +362,12 @@ extension XZChatViewController {
     
     //红包
     func sendOtherRedMessage(content : String) {
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacket, content: content, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
+        guard  let fromNickName =  self.from?.nickName,
+                let toNickName =  self.to?.nickName else {
+                return
+        }
+        
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacket, content: content, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
         
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
@@ -306,7 +375,12 @@ extension XZChatViewController {
     
     //红包 open
     func sendRedOpenMessage(content : String) {
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacketOpen, content: content, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
+        guard  let fromNickName =  self.from?.nickName,
+                let toNickName =  self.to?.nickName else {
+                return
+        }
+        
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacketOpen, content: content, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
         
         self.addObject(messageF: messageF, isender: true)
         self.messageSendSucced(messageF: messageF)
@@ -314,7 +388,12 @@ extension XZChatViewController {
     
     //红包 open
     func sendOtherOpenRedMessage(content : String) {
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacketOpen, content: content, date: Date(), path: nil, from: "gxz", to: "idz", fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
+        guard  let fromNickName =  self.from?.nickName,
+                let toNickName =  self.to?.nickName else {
+                return
+        }
+        
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacketOpen, content: content, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
         
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
@@ -322,14 +401,24 @@ extension XZChatViewController {
     
     //图片
     func sendImageMessage(image : UIImage) {
-        let messageF : XZMessageFrame = XZMessageHelper.createImageMessageFrame(image: image, date: Date(), from: "gxz", to: "idz", isSender: true, receivedSenderByYourself: false)
+        guard  let fromNickName =  self.from?.nickName,
+                let toNickName =  self.to?.nickName else {
+                return
+        }
+        
+        let messageF : XZMessageFrame = XZMessageHelper.createImageMessageFrame(image: image, date: Date(), from: fromNickName, to: toNickName, isSender: true, receivedSenderByYourself: false)
         
         self.addObject(messageF: messageF, isender: true)
         self.messageSendSucced(messageF: messageF)
     }
     
     func sendOtherImageMessage(image : UIImage) {
-        let messageF : XZMessageFrame = XZMessageHelper.createImageMessageFrame(image: image, date: Date(), from: "gxz", to: "idz", isSender: false, receivedSenderByYourself: false)
+        guard  let fromNickName =  self.from?.nickName,
+                let toNickName =  self.to?.nickName else {
+                return
+        }
+        
+        let messageF : XZMessageFrame = XZMessageHelper.createImageMessageFrame(image: image, date: Date(), from: fromNickName, to: toNickName, isSender: false, receivedSenderByYourself: false)
         
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
