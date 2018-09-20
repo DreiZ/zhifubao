@@ -182,5 +182,10 @@ extension XZAddressBookVC:UITableViewDataSource,UITableViewDelegate{
     }
     
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let chatvc = XZChatViewController()
+        chatvc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(chatvc, animated: true)
+    }
 }
 

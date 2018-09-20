@@ -153,7 +153,7 @@ extension XZChatViewController {
         
         self.chatBoxViewController.view.snp.makeConstraints { (make) in
             make.left.bottom.right.equalToSuperview()
-            make.height.equalTo(kTabBarHeight + HEIGHT_CHATBOXVIEW)
+            make.height.equalTo(kTabBarHeight)
         }
         
         self.iTableView.snp.makeConstraints { (make) in
