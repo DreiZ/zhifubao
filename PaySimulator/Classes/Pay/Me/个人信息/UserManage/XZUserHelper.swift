@@ -24,11 +24,19 @@ class XZUserHelper: NSObject {
         return userHelper.userHelper;
     }
     
-   
+    override init() {
+        super.init()
+        DDLog("userHelperuserHelperuserHelperuserHelper")
+    }
+    
 }
+
+
+
 //MARK:--取值存值
 extension XZUserHelper {
     
+   
         class func getUserInfo() -> XZUserHelper {
         let userDefaut = UserDefaults.standard
         let user =  XZUserHelper.sharedUserHelper

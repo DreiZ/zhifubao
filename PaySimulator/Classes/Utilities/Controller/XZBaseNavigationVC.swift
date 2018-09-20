@@ -20,7 +20,7 @@ class XZBaseNavigationVC: UINavigationController , UIGestureRecognizerDelegate{
 //        navigationBar.setBackgroundImage(UIImage(named: "navBlue.jpg"), for: .top, barMetrics: .default);
         navigationBar.setBackgroundImage(UIImage(named: "navBlue.jpg"), for: .default)
 //        navigationBar.barTintColor = ddBlueColor()
-        
+        view.backgroundColor = UIColor.white
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white,NSAttributedStringKey.font:UIFont.systemFont(ofSize:18)];
         navigationBar.isTranslucent = false;//不透明
          

@@ -17,7 +17,7 @@ class XZPayHomeVC: XZBaseVC {
         self.view.backgroundColor = ddRandomColor()
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

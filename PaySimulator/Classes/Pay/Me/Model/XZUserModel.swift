@@ -10,23 +10,35 @@ import UIKit
 
 @objcMembers class XZUserModel: NSObject {
     //user id
-    var userId : Int?
+     var userId : Int?
     //头像
-    var headImage : UIImage?
+     var headImage : UIImage?
     //昵称
-    var nickName : String?
+    @objc var nickName : String?
     //真实姓名
-    var trueName : String?
+     var trueName : String?
     //电话号码
-    var tel : String?
+     var tel : String?
     //是否隐藏真实姓名
-    var isHiddenTureName : Bool = false
+     var isHiddenTureName : Bool = false
     //支付宝账号
-    var aliCount : String?
+     var aliCount : String?
     //会员等级
-    var level : String?
+     var level : String?
+    //首字母
+    @objc var acapital : String?
     
     override static func getTableName() -> String {
         return "XZUserModel"
     }
+    
+//    init(dic:[String :  NSObject]) {
+//        super.init()
+//        setValuesForKeys(dic)
+//    }
+//    
+//    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+//        
+//    }
+    
 }

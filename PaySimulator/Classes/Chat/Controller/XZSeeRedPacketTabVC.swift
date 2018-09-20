@@ -44,14 +44,12 @@ extension XZSeeRedPacketTabVC{
      private func setupNavBar(){
         navigationItem.title = "支付宝红包"
         navBarTintColor = ddColor(230, 221, 157)
-        navBarBarTintColor = ddColor(207, 58, 63)
-        
-        
-       
-        
-       
-        navBarTitleColor = ddColor(230, 221, 157)
+        navBarBarTintColor = ddColor(207, 58, 63)//红色
+        navBarShadowImageHidden = true
+        navBarTitleColor = ddColor(230, 221, 157)//金色
+        statusBarStyle = .lightContent
         let leftBtn = XZBaseNavItemBtn(frame: CGRect(x: 0, y: 0, width: 20, height: 20), imgName: "red_fanhui", titleName: "返回")
+        leftBtn.setTitleColor(ddColor(230, 221, 157), for: .normal)
         leftBtn.addTarget(self, action: #selector(clickLeftBtn), for: .touchUpInside)
  
         let leftBar = UIBarButtonItem(customView: leftBtn)
@@ -89,16 +87,40 @@ extension XZSeeRedPacketTabVC{
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! XZSeeRedPacketCell
-      
+        
+        cell.iconImg.image = UIImage(named: "icon_xiaochengxu")
         return cell
      }
     
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 70
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: kWindowW, height: 35))
+        let label = UILabel(frame:.zero )
+        label.textColor = UIColor.lightGray
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.text = "1人领取，共15元"
+        view.addSubview(label)
+        label.snp.makeConstraints { (make) in
+            make.left.equalTo(14)
+            make.top.bottom.right.equalTo(view)
+        }
+        return view
+    }
  
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.001;
+    }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 35
+    }
 
 }
 

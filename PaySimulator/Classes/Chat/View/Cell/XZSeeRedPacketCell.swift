@@ -10,6 +10,12 @@ import UIKit
 
 class XZSeeRedPacketCell: UITableViewCell {
 
+    @IBOutlet weak var iconImg: UIImageView!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var moneylabel: UILabel!
+    @IBOutlet weak var datelabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -13,28 +13,13 @@ class XZAddressBookVC: XZBaseVC {
     //MARK:--数据资源
     let iconResource = ["新的朋友","群聊","生活号","生活圈"]
     //MARK:--懒加载数据源(假数据)
-    let dataList : [[XZAddressBookModel]] = {
-       
+    let dataList : [[XZUserModel]] = {
+ 
+        let friendList = XZFriendListModel.shareSingleton.friendList
+ 
+        let resultArray = XZAddressBookManager.sortObjectsAccordingToInitial(with: friendList);
       
-//        let dataListPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
-        let dataPath = Bundle.main.path(forResource: "AddressBook", ofType: "plist")
-        let dataList = NSArray(contentsOfFile: dataPath!)
-        var mu = Array<XZAddressBookModel>()
-        
-        for  dic in dataList!{
-            
-            mu.append(XZAddressBookModel(dic: dic as! [String : NSObject]))
-        
-        }
-        
-     
-        
-        let resultArray = XZAddressBookManager.sortObjectsAccordingToInitial(with: mu);
-        
-        DDLog(resultArray![0]);
-        
-    
-        return resultArray as! [[XZAddressBookModel]]
+        return resultArray as! [[XZUserModel]]
         
     }()
     
@@ -42,11 +27,15 @@ class XZAddressBookVC: XZBaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
             setupNavBar()//导航栏
- 
-        
+  
         
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
   
     
 
@@ -62,6 +51,8 @@ extension XZAddressBookVC{
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addBtn)
         
     }
+    
+   
     
     //导航栏右侧按钮
     @objc private func clickAddBtn(){
@@ -120,10 +111,9 @@ extension XZAddressBookVC:UITableViewDataSource,UITableViewDelegate{
         let model = self.dataList[indexPath.section-1][indexPath.row]
         
         
-        cell?.titleLabel.text = model.username
-        let url = URL(string: model.headerImage)
+        cell?.titleLabel.text = model.nickName
         
-        cell?.iconImage.kf.setImage(with: url)
+        cell?.iconImage.image = model.headImage
         
         return cell!
         
@@ -167,8 +157,6 @@ extension XZAddressBookVC:UITableViewDataSource,UITableViewDelegate{
         arr.append(UITableViewIndexSearch)
         for item in dataList {
             let title  = item.first?.acapital
-
-           
             arr.append(title!)
         }
         

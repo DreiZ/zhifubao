@@ -39,7 +39,7 @@
     for ( XZAddressBookModel *personModel in arr) {
         //获取name属性的值所在的位置，比如"林丹"，首字母是L，在A~Z中排第11（第一位是0），sectionNumber就为11
         
-        NSInteger sectionNumber = [collation sectionForObject:personModel collationStringSelector:@selector(username)];
+        NSInteger sectionNumber = [collation sectionForObject:personModel collationStringSelector:@selector(nickName)];
   
         personModel.acapital = [collation sectionTitles][sectionNumber];
         //把name为“林丹”的p加入newSectionsArray中的第11个数组中去
@@ -50,7 +50,7 @@
     //对每个section中的数组按照name属性排序
     for (NSInteger index = 0; index < sectionTitlesCount; index++) {
         NSMutableArray *personArrayForSection = newSectionsArray[index];
-        NSArray *sortedPersonArrayForSection = [collation sortedArrayFromArray:personArrayForSection collationStringSelector:@selector(username)];
+        NSArray *sortedPersonArrayForSection = [collation sortedArrayFromArray:personArrayForSection collationStringSelector:@selector(nickName)];
         newSectionsArray[index] = sortedPersonArrayForSection;
     }
     

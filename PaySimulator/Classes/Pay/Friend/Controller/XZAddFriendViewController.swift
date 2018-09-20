@@ -26,10 +26,10 @@ class XZAddFriendViewController: XZBaseViewController {
         self.setupUI()
         
         if arr != nil && (arr?.count)! > 0 {
-            let xmodel = arr![0]
-            self.tableViewController?.headImageView.image = xmodel.headImage
-            self.tableViewController?.trueNameTextField.text = xmodel.trueName
-            self.tableViewController?.nickNameTextField.text = xmodel.nickName
+            let xmodel = arr!.last
+            self.tableViewController?.headImageView.image = xmodel?.headImage
+            self.tableViewController?.trueNameTextField.text = xmodel?.trueName
+            self.tableViewController?.nickNameTextField.text = xmodel?.nickName
             
         }
    
@@ -47,8 +47,18 @@ class XZAddFriendViewController: XZBaseViewController {
             XZPublicTools.shareSingleton.showError(subTitle: "请添加昵称")
             return
         }
+        if nickname.isEmpty {
+            XZPublicTools.shareSingleton.showError(subTitle: "请添加昵称")
+            return
+        }
+        
+       
         
         guard let trueName = self.tableViewController?.trueNameTextField.text else {
+            XZPublicTools.shareSingleton.showError(subTitle: "请添加真实姓名")
+            return
+        }
+        if trueName.isEmpty {
             XZPublicTools.shareSingleton.showError(subTitle: "请添加真实姓名")
             return
         }
@@ -61,7 +71,17 @@ class XZAddFriendViewController: XZBaseViewController {
         
         XZFriendListModel.shareSingleton.addUserModel(userModel)
         
-        let _ = XZFriendListModel.shareSingleton.saveSelfToDB()
+        let isSave = XZFriendListModel.shareSingleton.saveSelfToDB()
+        if isSave {
+            XZPublicTools.shareSingleton.showSuccess(subTitle: "添加好友成功")
+            DispatchQueue.global(qos: .default).asyncAfter(deadline: DispatchTime.now()+0.8) {[weak self] in
+                self?.navigationController?.popViewController(animated: true)
+            }
+           
+            
+        }else{
+            XZPublicTools.shareSingleton.showError(subTitle: "添加失败")
+        }
     }
 }
 

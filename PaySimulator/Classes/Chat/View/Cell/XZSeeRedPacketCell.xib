@@ -21,7 +21,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="维维豆奶" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihv-0I-VNo">
-                        <rect key="frame" x="73.5" y="14" width="58" height="17"/>
+                        <rect key="frame" x="73.5" y="16" width="58" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -33,13 +33,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.00元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMH-rY-gKg">
-                        <rect key="frame" x="258" y="14" width="47" height="16"/>
+                        <rect key="frame" x="258" y="16" width="47" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08-28 10:21:20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gqm-Lj-EUn">
-                        <rect key="frame" x="211.5" y="40" width="93.5" height="16"/>
+                        <rect key="frame" x="211.5" y="42" width="93.5" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -53,12 +53,18 @@
                     <constraint firstItem="ihv-0I-VNo" firstAttribute="leading" secondItem="yHx-g5-cJE" secondAttribute="trailing" constant="14" id="WAn-5v-X6O"/>
                     <constraint firstItem="zMH-rY-gKg" firstAttribute="trailing" secondItem="Gqm-Lj-EUn" secondAttribute="trailing" id="fJK-XP-T9Y"/>
                     <constraint firstItem="Gqm-Lj-EUn" firstAttribute="top" secondItem="zMH-rY-gKg" secondAttribute="bottom" constant="10" id="jPm-Nt-bnz"/>
-                    <constraint firstItem="ihv-0I-VNo" firstAttribute="top" secondItem="yHx-g5-cJE" secondAttribute="top" id="jdF-il-iGh"/>
+                    <constraint firstItem="ihv-0I-VNo" firstAttribute="top" secondItem="yHx-g5-cJE" secondAttribute="top" constant="2" id="jdF-il-iGh"/>
                     <constraint firstItem="zMH-rY-gKg" firstAttribute="top" secondItem="ihv-0I-VNo" secondAttribute="top" id="zHk-GI-XOo"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
-            <point key="canvasLocation" x="25" y="67"/>
+            <connections>
+                <outlet property="datelabel" destination="Gqm-Lj-EUn" id="rlG-wa-kNe"/>
+                <outlet property="iconImg" destination="yHx-g5-cJE" id="uaw-g9-75B"/>
+                <outlet property="moneylabel" destination="zMH-rY-gKg" id="loa-9I-hd0"/>
+                <outlet property="nameLabel" destination="ihv-0I-VNo" id="4wd-vS-HTp"/>
+            </connections>
+            <point key="canvasLocation" x="-114" y="67"/>
         </tableViewCell>
     </objects>
     <resources>

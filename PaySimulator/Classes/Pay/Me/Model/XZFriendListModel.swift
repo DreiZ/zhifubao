@@ -18,17 +18,26 @@ import UIKit
     
     
     //MARK:---------------单例------------------------
+    /*
     static let shareInstance : XZFriendListModel = XZFriendListModel()
     
-    private override init(){
-        super.init()
-    }
+   
     
     //确保唯一性，通过此类方法创建对象
     class var shareSingleton: XZFriendListModel {
         return shareInstance;
     }
+    */
     
+    //MARK:--用户信息单利
+    class var shareSingleton : XZFriendListModel {
+        struct userHelper {
+            static let friendListModel = XZFriendListModel()
+        }
+        return userHelper.friendListModel;
+    }
+    
+ 
 }
 
 extension XZFriendListModel {

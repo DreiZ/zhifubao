@@ -272,27 +272,27 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="头像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLF-sa-gCs">
-                                                    <rect key="frame" x="15" y="13" width="31" height="18"/>
+                                                    <rect key="frame" x="15" y="12" width="31" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_jiantou" translatesAutoresizingMaskIntoConstraints="NO" id="9re-We-oSB">
-                                                    <rect key="frame" x="350.5" y="16.5" width="6.5" height="11"/>
+                                                    <rect key="frame" x="350.5" y="15.5" width="6.5" height="11"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="11" id="fwn-PF-Xcc"/>
                                                         <constraint firstAttribute="width" constant="6.5" id="nbA-k8-8Tj"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Neo-M1-nzM">
-                                                    <rect key="frame" x="16" y="43.5" width="359" height="0.5"/>
+                                                    <rect key="frame" x="16" y="41.5" width="359" height="0.5"/>
                                                     <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.5" id="DGz-OR-ePP"/>
                                                     </constraints>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5aN-5L-H8u">
-                                                    <rect key="frame" x="307.5" y="5.5" width="33" height="33"/>
+                                                    <rect key="frame" x="307.5" y="4.5" width="33" height="33"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="33" id="2Nn-FA-jOM"/>
                                                         <constraint firstAttribute="width" constant="33" id="yLc-iQ-s27"/>
@@ -320,19 +320,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2b-PL-jGa">
-                                                    <rect key="frame" x="15" y="13" width="31" height="18"/>
+                                                    <rect key="frame" x="15" y="12" width="31" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="昵称" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="alM-O1-gO7">
-                                                    <rect key="frame" x="132" y="0.0" width="225" height="43.5"/>
+                                                    <rect key="frame" x="132" y="0.0" width="225" height="42"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HVi-sO-bOs">
-                                                    <rect key="frame" x="16" y="43.5" width="359" height="0.5"/>
+                                                    <rect key="frame" x="16" y="41.5" width="359" height="0.5"/>
                                                     <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.5" id="j8C-LP-rwC"/>
@@ -360,19 +360,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="真实姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsh-YA-Nvy">
-                                                    <rect key="frame" x="15" y="13" width="62" height="18"/>
+                                                    <rect key="frame" x="15" y="12" width="62" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="真实姓名" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ddr-j4-ZCt">
-                                                    <rect key="frame" x="132" y="0.0" width="225" height="43.5"/>
+                                                    <rect key="frame" x="132" y="0.0" width="225" height="42"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVF-Mv-Auj">
-                                                    <rect key="frame" x="16" y="43.5" width="359" height="0.5"/>
+                                                    <rect key="frame" x="16" y="41.5" width="359" height="0.5"/>
                                                     <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.5" id="oBv-6f-2SW"/>
@@ -400,20 +400,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隐藏真实姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3h4-UA-oFn">
-                                                    <rect key="frame" x="15" y="13" width="92" height="18"/>
+                                                    <rect key="frame" x="15" y="12" width="92" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XoL-O6-Wkx">
-                                                    <rect key="frame" x="16" y="43.5" width="359" height="0.5"/>
+                                                    <rect key="frame" x="16" y="41.5" width="359" height="0.5"/>
                                                     <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.5" id="xch-Fy-hM1"/>
                                                     </constraints>
                                                 </view>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qrq-Sa-MYY">
-                                                    <rect key="frame" x="304" y="7" width="51" height="31"/>
+                                                    <rect key="frame" x="304" y="5.5" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
                                             <constraints>

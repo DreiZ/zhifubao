@@ -26,13 +26,7 @@ import UIKit
  
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
-//        if key == "userid" {
-//            userId = value as! String
-//        }
-//
-//        if key == "username" {
-//            userName = value as! String
-//        }
+ 
     }
     
     
