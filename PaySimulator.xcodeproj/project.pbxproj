@@ -44,6 +44,7 @@
 		5E4B86382152549600DF4003 /* BaseEmotion.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B86362152549600DF4003 /* BaseEmotion.plist */; };
 		5E4B86392152549600DF4003 /* AddressBook.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B86372152549600DF4003 /* AddressBook.plist */; };
 		5E4C65B121532C1600478351 /* XZAddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C65B021532C1500478351 /* XZAddFriendViewController.swift */; };
+		5E4C65B5215330F500478351 /* XZAddFriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C65B4215330F500478351 /* XZAddFriendTableViewController.swift */; };
 		5E4FC20B214610D000E0A5A9 /* XZChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC20A214610D000E0A5A9 /* XZChatViewController.swift */; };
 		5E4FC20D214610FA00E0A5A9 /* XZBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC20C214610FA00E0A5A9 /* XZBoxViewController.swift */; };
 		5E4FC2102146118600E0A5A9 /* XZUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC20F2146118600E0A5A9 /* XZUserModel.swift */; };
@@ -198,6 +199,7 @@
 		5E4B86362152549600DF4003 /* BaseEmotion.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BaseEmotion.plist; sourceTree = "<group>"; };
 		5E4B86372152549600DF4003 /* AddressBook.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AddressBook.plist; sourceTree = "<group>"; };
 		5E4C65B021532C1500478351 /* XZAddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZAddFriendViewController.swift; sourceTree = "<group>"; };
+		5E4C65B4215330F500478351 /* XZAddFriendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZAddFriendTableViewController.swift; sourceTree = "<group>"; };
 		5E4FC20A214610D000E0A5A9 /* XZChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatViewController.swift; sourceTree = "<group>"; };
 		5E4FC20C214610FA00E0A5A9 /* XZBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBoxViewController.swift; sourceTree = "<group>"; };
 		5E4FC20F2146118600E0A5A9 /* XZUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZUserModel.swift; sourceTree = "<group>"; };
@@ -802,6 +804,7 @@
 				E360485B2137A23400ECF65F /* XZPayFriendVC.swift */,
 				E3BC6D1221450425000FDB12 /* XZAddressBookVC.swift */,
 				5E4C65B021532C1500478351 /* XZAddFriendViewController.swift */,
+				5E4C65B4215330F500478351 /* XZAddFriendTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1324,6 +1327,7 @@
 				5E4FC2172146122C00E0A5A9 /* XZBaseMessageCell.swift in Sources */,
 				E348975321428EF70062410B /* XZWithdrawalVC.swift in Sources */,
 				E3D98F4521363F6100887FAF /* AppDelegate.swift in Sources */,
+				5E4C65B5215330F500478351 /* XZAddFriendTableViewController.swift in Sources */,
 				5E085D67213FD41E003B0918 /* WRCustomNavigationBar.swift in Sources */,
 				5E4FC2102146118600E0A5A9 /* XZUserModel.swift in Sources */,
 				E3461801213BC041007C2AA6 /* XZUserInfoTabVC.swift in Sources */,

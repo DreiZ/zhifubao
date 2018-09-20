@@ -66,6 +66,9 @@ extension XZAddressBookVC{
     //导航栏右侧按钮
     @objc private func clickAddBtn(){
         DDLog("添加好友")
+        let addfriendvc = UIStoryboard(name: "PayFriend", bundle: nil).instantiateViewController(withIdentifier: "XZAddFriendViewController")
+        addfriendvc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(addfriendvc, animated: true)
     }
 }
 
