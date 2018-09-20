@@ -25,6 +25,18 @@ class XZAddFriendTableViewController: UITableViewController {
 extension XZAddFriendTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if indexPath.row == 0 {
+            let myPhotoManage  = XZMyPhotoManage.sharedPhotoManage
+            
+            myPhotoManage.showActionSheetInVC(factherVC: self, aDelegate: self as XZMyPhotoManageDelegate)
+        }
+    }
+}
+
+//MARK:--相机相册代理方法
+extension XZAddFriendTableViewController : XZMyPhotoManageDelegate {
+    
+    func uploadImage(myImage: UIImage) {
+       headImageView.image = myImage
     }
 }

@@ -21,7 +21,7 @@ let kDefaultAnimationDuration = 2.0
 
 class XZPublicTools: NSObject {
     
-    static let shareInstance : XZPublicTools = XZPublicTools()
+    private static let shareInstance : XZPublicTools = XZPublicTools()
     
     private override init(){}
     

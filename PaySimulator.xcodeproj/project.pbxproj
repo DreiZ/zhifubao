@@ -45,9 +45,11 @@
 		5E4B86392152549600DF4003 /* AddressBook.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B86372152549600DF4003 /* AddressBook.plist */; };
 		5E4C65B121532C1600478351 /* XZAddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C65B021532C1500478351 /* XZAddFriendViewController.swift */; };
 		5E4C65B5215330F500478351 /* XZAddFriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C65B4215330F500478351 /* XZAddFriendTableViewController.swift */; };
+		5E4C65B921534C2B00478351 /* XZBillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C65B821534C2B00478351 /* XZBillModel.swift */; };
+		5E4C65BB21534E4E00478351 /* XZUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C65BA21534E4E00478351 /* XZUserModel.swift */; };
+		5E4C65BD21534EB400478351 /* XZFriendListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C65BC21534EB400478351 /* XZFriendListModel.swift */; };
 		5E4FC20B214610D000E0A5A9 /* XZChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC20A214610D000E0A5A9 /* XZChatViewController.swift */; };
 		5E4FC20D214610FA00E0A5A9 /* XZBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC20C214610FA00E0A5A9 /* XZBoxViewController.swift */; };
-		5E4FC2102146118600E0A5A9 /* XZUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC20F2146118600E0A5A9 /* XZUserModel.swift */; };
 		5E4FC213214611DB00E0A5A9 /* XZChatBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC212214611DB00E0A5A9 /* XZChatBoxView.swift */; };
 		5E4FC2172146122C00E0A5A9 /* XZBaseMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC2162146122C00E0A5A9 /* XZBaseMessageCell.swift */; };
 		5E4FC21C2146182F00E0A5A9 /* XZChatConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC21B2146182F00E0A5A9 /* XZChatConfig.swift */; };
@@ -71,7 +73,6 @@
 		5ECE67CF2140FC7500C8C5A9 /* XZMyAlertSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE67CD2140FC7500C8C5A9 /* XZMyAlertSheetTableViewCell.swift */; };
 		5ECE67D1214115A500C8C5A9 /* XZBillShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE67D0214115A500C8C5A9 /* XZBillShowViewController.swift */; };
 		5ECE67D3214115F500C8C5A9 /* XZBillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE67D2214115F500C8C5A9 /* XZBillTableViewController.swift */; };
-		5ECE67D721411B6B00C8C5A9 /* XZBillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE67D621411B6B00C8C5A9 /* XZBillModel.swift */; };
 		BDCB71468CB2417485916285 /* Pods_PaySimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 146A184C35B4502F43F0D60E /* Pods_PaySimulator.framework */; };
 		E34617F5213B873B007C2AA6 /* XZPayMeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34617F4213B873B007C2AA6 /* XZPayMeTableViewController.swift */; };
 		E3461801213BC041007C2AA6 /* XZUserInfoTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34617FF213BC041007C2AA6 /* XZUserInfoTabVC.swift */; };
@@ -200,9 +201,11 @@
 		5E4B86372152549600DF4003 /* AddressBook.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AddressBook.plist; sourceTree = "<group>"; };
 		5E4C65B021532C1500478351 /* XZAddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZAddFriendViewController.swift; sourceTree = "<group>"; };
 		5E4C65B4215330F500478351 /* XZAddFriendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZAddFriendTableViewController.swift; sourceTree = "<group>"; };
+		5E4C65B821534C2B00478351 /* XZBillModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZBillModel.swift; sourceTree = "<group>"; };
+		5E4C65BA21534E4E00478351 /* XZUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZUserModel.swift; sourceTree = "<group>"; };
+		5E4C65BC21534EB400478351 /* XZFriendListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZFriendListModel.swift; sourceTree = "<group>"; };
 		5E4FC20A214610D000E0A5A9 /* XZChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatViewController.swift; sourceTree = "<group>"; };
 		5E4FC20C214610FA00E0A5A9 /* XZBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBoxViewController.swift; sourceTree = "<group>"; };
-		5E4FC20F2146118600E0A5A9 /* XZUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZUserModel.swift; sourceTree = "<group>"; };
 		5E4FC212214611DB00E0A5A9 /* XZChatBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatBoxView.swift; sourceTree = "<group>"; };
 		5E4FC2162146122C00E0A5A9 /* XZBaseMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseMessageCell.swift; sourceTree = "<group>"; };
 		5E4FC21B2146182F00E0A5A9 /* XZChatConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatConfig.swift; sourceTree = "<group>"; };
@@ -228,7 +231,6 @@
 		5ECE67CD2140FC7500C8C5A9 /* XZMyAlertSheetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZMyAlertSheetTableViewCell.swift; sourceTree = "<group>"; };
 		5ECE67D0214115A500C8C5A9 /* XZBillShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBillShowViewController.swift; sourceTree = "<group>"; };
 		5ECE67D2214115F500C8C5A9 /* XZBillTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBillTableViewController.swift; sourceTree = "<group>"; };
-		5ECE67D621411B6B00C8C5A9 /* XZBillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = XZBillModel.swift; path = PaySimulator/Classes/Pay/Me/Controller/XZBillModel.swift; sourceTree = SOURCE_ROOT; };
 		D3B52F6AFEBEE68D5BA4672D /* Pods-PaySimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaySimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaySimulator/Pods-PaySimulator.debug.xcconfig"; sourceTree = "<group>"; };
 		E34617F4213B873B007C2AA6 /* XZPayMeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPayMeTableViewController.swift; sourceTree = "<group>"; };
 		E34617FF213BC041007C2AA6 /* XZUserInfoTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZUserInfoTabVC.swift; sourceTree = "<group>"; };
@@ -379,6 +381,16 @@
 			path = SCLAlertView;
 			sourceTree = "<group>";
 		};
+		5E4C65B721534C2B00478351 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E4C65B821534C2B00478351 /* XZBillModel.swift */,
+				5E4C65BA21534E4E00478351 /* XZUserModel.swift */,
+				5E4C65BC21534EB400478351 /* XZFriendListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5E4FC2082146107400E0A5A9 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,7 +421,6 @@
 		5E4FC20E2146116100E0A5A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5E4FC20F2146118600E0A5A9 /* XZUserModel.swift */,
 				5E4FC223214663F500E0A5A9 /* XZEmotion.swift */,
 				5E42F4342147ACBD0034B691 /* XZMessageFrame.swift */,
 				5E42F4362147AD460034B691 /* XZMessageModel.swift */,
@@ -880,8 +891,8 @@
 		E3D98F2121363A3900887FAF /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				5E4C65B721534C2B00478351 /* Model */,
 				E3D98F2221363A3900887FAF /* Controller */,
-				E3D98F2321363A3900887FAF /* Model */,
 				E3D98F2421363A3900887FAF /* View */,
 				E3D98F2521363A3900887FAF /* ViewModel */,
 				E34617FA213BBFDC007C2AA6 /* 个人信息 */,
@@ -903,14 +914,6 @@
 				5ECE67D2214115F500C8C5A9 /* XZBillTableViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		E3D98F2321363A3900887FAF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5ECE67D621411B6B00C8C5A9 /* XZBillModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		E3D98F2421363A3900887FAF /* View */ = {
@@ -1329,7 +1332,6 @@
 				E3D98F4521363F6100887FAF /* AppDelegate.swift in Sources */,
 				5E4C65B5215330F500478351 /* XZAddFriendTableViewController.swift in Sources */,
 				5E085D67213FD41E003B0918 /* WRCustomNavigationBar.swift in Sources */,
-				5E4FC2102146118600E0A5A9 /* XZUserModel.swift in Sources */,
 				E3461801213BC041007C2AA6 /* XZUserInfoTabVC.swift in Sources */,
 				E34E152E213E784700D23547 /* XZBaseNavItemBtn.swift in Sources */,
 				E360485E2137A27800ECF65F /* XZPayPraiseVC.swift in Sources */,
@@ -1343,6 +1345,7 @@
 				E36048432137988600ECF65F /* XZMainHomeVC.swift in Sources */,
 				E3D98F4121363F6100887FAF /* ViewController.swift in Sources */,
 				5E42F30E21474E2F0034B691 /* XZExtension.swift in Sources */,
+				5E4C65BD21534EB400478351 /* XZFriendListModel.swift in Sources */,
 				5E42F4392147AD6C0034B691 /* XZMessage.swift in Sources */,
 				5E42F42D2147A8F00034B691 /* XZChatMessageImageCell.swift in Sources */,
 				5ECE67D3214115F500C8C5A9 /* XZBillTableViewController.swift in Sources */,
@@ -1379,10 +1382,12 @@
 				5E42F4352147ACBD0034B691 /* XZMessageFrame.swift in Sources */,
 				E36048412137986700ECF65F /* XZBaseVC.swift in Sources */,
 				E3D98F4E2136414A00887FAF /* XZMainButton.swift in Sources */,
+				5E4C65BB21534E4E00478351 /* XZUserModel.swift in Sources */,
 				5E4B86242151D84900DF4003 /* XZChatVoiceTimeViewController.swift in Sources */,
 				E3D98F53213669E100887FAF /* XZCommon.swift in Sources */,
 				5E4B863321522A6200DF4003 /* XZEditRedPacketTableViewController.swift in Sources */,
 				E35B5D7B213D2C5300E59A88 /* XZUserHelper.swift in Sources */,
+				5E4C65B921534C2B00478351 /* XZBillModel.swift in Sources */,
 				5E55261A21490EB1004204AF /* XZMessageHelper.swift in Sources */,
 				5E42F41D21475E490034B691 /* ICFaceManager.m in Sources */,
 				5E4FC20D214610FA00E0A5A9 /* XZBoxViewController.swift in Sources */,
@@ -1393,7 +1398,6 @@
 				E3BC6D1921450850000FDB12 /* XZAddressFirstCell.swift in Sources */,
 				E3BC6D1321450425000FDB12 /* XZAddressBookVC.swift in Sources */,
 				5E4B4E6821424DF8003D3D23 /* SCLExtensions.swift in Sources */,
-				5ECE67D721411B6B00C8C5A9 /* XZBillModel.swift in Sources */,
 				5ECE67C92140FB7600C8C5A9 /* XZReceivablesFooterView.swift in Sources */,
 				E364909A21413200005F234B /* XZTopUpFinishVC.swift in Sources */,
 			);
