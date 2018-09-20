@@ -16,24 +16,9 @@ class XZAddFriendViewController: XZBaseViewController {
     var tableViewController : XZAddFriendTableViewController?
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        XZFriendListModel.shareSingleton.getDataFromSql()
-        let arr = XZFriendListModel.shareSingleton.friendList
-        print("zzz - \(String(describing: arr))")
         self.setupUI()
-        
-        if arr != nil && (arr?.count)! > 0 {
-            let xmodel = arr![0]
-            self.tableViewController?.headImageView.image = xmodel.headImage
-            self.tableViewController?.trueNameTextField.text = xmodel.trueName
-            self.tableViewController?.nickNameTextField.text = xmodel.nickName
-            
-        }
-   
-        
     }
     
     override func rightBtnOnClick() {
@@ -61,7 +46,12 @@ class XZAddFriendViewController: XZBaseViewController {
         
         XZFriendListModel.shareSingleton.addUserModel(userModel)
         
-        let _ = XZFriendListModel.shareSingleton.saveSelfToDB()
+        let saveStatus = XZFriendListModel.shareSingleton.saveSelfToDB()
+        if saveStatus {
+            self.navigationController?.popViewController(animated: true)
+        }else{
+            XZPublicTools.shareSingleton.showError(subTitle: "添加失败")
+        }
     }
 }
 

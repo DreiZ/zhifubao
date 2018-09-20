@@ -11,6 +11,7 @@ import Foundation
 import NVActivityIndicatorView
 
 
+
 let kSuccessTitle = "提示"
 let kErrorTitle = "提示"
 let kNoticeTitle = " 提醒"

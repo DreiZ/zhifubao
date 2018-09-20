@@ -31,8 +31,6 @@
 		5E4B4E5A214213AA003D3D23 /* Bill.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B4E59214213AA003D3D23 /* Bill.storyboard */; };
 		5E4B4E5C21421447003D3D23 /* BillShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B4E5B21421447003D3D23 /* BillShow.storyboard */; };
 		5E4B4E5E2142216D003D3D23 /* XZPublicTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B4E5D2142216D003D3D23 /* XZPublicTools.swift */; };
-		5E4B4E6721424DF8003D3D23 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B4E6421424DF8003D3D23 /* SCLAlertView.swift */; };
-		5E4B4E6821424DF8003D3D23 /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B4E6521424DF8003D3D23 /* SCLExtensions.swift */; };
 		5E4B86242151D84900DF4003 /* XZChatVoiceTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B86232151D84900DF4003 /* XZChatVoiceTimeViewController.swift */; };
 		5E4B86262151D8B200DF4003 /* XZSystemTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B86252151D8B200DF4003 /* XZSystemTimeViewController.swift */; };
 		5E4B862821521C2B00DF4003 /* XZAddressBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B862721521C2B00DF4003 /* XZAddressBookModel.swift */; };
@@ -48,6 +46,8 @@
 		5E4C65B921534C2B00478351 /* XZBillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C65B821534C2B00478351 /* XZBillModel.swift */; };
 		5E4C65BB21534E4E00478351 /* XZUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C65BA21534E4E00478351 /* XZUserModel.swift */; };
 		5E4C65BD21534EB400478351 /* XZFriendListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C65BC21534EB400478351 /* XZFriendListModel.swift */; };
+		5E4C65C121538C5900478351 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C65BF21538C5900478351 /* SCLAlertView.swift */; };
+		5E4C65C221538C5900478351 /* SCLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C65C021538C5900478351 /* SCLExtensions.swift */; };
 		5E4FC20B214610D000E0A5A9 /* XZChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC20A214610D000E0A5A9 /* XZChatViewController.swift */; };
 		5E4FC20D214610FA00E0A5A9 /* XZBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC20C214610FA00E0A5A9 /* XZBoxViewController.swift */; };
 		5E4FC213214611DB00E0A5A9 /* XZChatBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FC212214611DB00E0A5A9 /* XZChatBoxView.swift */; };
@@ -187,8 +187,6 @@
 		5E4B4E59214213AA003D3D23 /* Bill.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Bill.storyboard; sourceTree = "<group>"; };
 		5E4B4E5B21421447003D3D23 /* BillShow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BillShow.storyboard; sourceTree = "<group>"; };
 		5E4B4E5D2142216D003D3D23 /* XZPublicTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZPublicTools.swift; sourceTree = "<group>"; };
-		5E4B4E6421424DF8003D3D23 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
-		5E4B4E6521424DF8003D3D23 /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
 		5E4B4E762142675E003D3D23 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		5E4B4E782142676C003D3D23 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		5E4B86232151D84900DF4003 /* XZChatVoiceTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatVoiceTimeViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +205,8 @@
 		5E4C65B821534C2B00478351 /* XZBillModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZBillModel.swift; sourceTree = "<group>"; };
 		5E4C65BA21534E4E00478351 /* XZUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZUserModel.swift; sourceTree = "<group>"; };
 		5E4C65BC21534EB400478351 /* XZFriendListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZFriendListModel.swift; sourceTree = "<group>"; };
+		5E4C65BF21538C5900478351 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		5E4C65C021538C5900478351 /* SCLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLExtensions.swift; sourceTree = "<group>"; };
 		5E4FC20A214610D000E0A5A9 /* XZChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatViewController.swift; sourceTree = "<group>"; };
 		5E4FC20C214610FA00E0A5A9 /* XZBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBoxViewController.swift; sourceTree = "<group>"; };
 		5E4FC212214611DB00E0A5A9 /* XZChatBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatBoxView.swift; sourceTree = "<group>"; };
@@ -334,7 +334,7 @@
 		5E085D63213FD41E003B0918 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				5E4B4E6221424DF8003D3D23 /* SCLAlertView */,
+				5E4C65BE21538C5900478351 /* SCLAlertView */,
 				5E085D64213FD41E003B0918 /* WRNavigationBar */,
 			);
 			path = lib;
@@ -378,15 +378,6 @@
 			path = ChatImage;
 			sourceTree = "<group>";
 		};
-		5E4B4E6221424DF8003D3D23 /* SCLAlertView */ = {
-			isa = PBXGroup;
-			children = (
-				5E4B4E6421424DF8003D3D23 /* SCLAlertView.swift */,
-				5E4B4E6521424DF8003D3D23 /* SCLExtensions.swift */,
-			);
-			path = SCLAlertView;
-			sourceTree = "<group>";
-		};
 		5E4C65B721534C2B00478351 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +386,15 @@
 				5E4C65BC21534EB400478351 /* XZFriendListModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5E4C65BE21538C5900478351 /* SCLAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				5E4C65BF21538C5900478351 /* SCLAlertView.swift */,
+				5E4C65C021538C5900478351 /* SCLExtensions.swift */,
+			);
+			path = SCLAlertView;
 			sourceTree = "<group>";
 		};
 		5E4FC2082146107400E0A5A9 /* Chat */ = {
@@ -1323,7 +1323,6 @@
 				5E42F314214756A80034B691 /* XZFaceManager.swift in Sources */,
 				5E085D68213FD41E003B0918 /* WRNavigationBar.swift in Sources */,
 				E36048562137A1DB00ECF65F /* XZPayHomeVC.swift in Sources */,
-				5E4B4E6721424DF8003D3D23 /* SCLAlertView.swift in Sources */,
 				5E6938E2214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift in Sources */,
 				5E085D6C213FD462003B0918 /* XZReceivablesViewController.swift in Sources */,
 				E36490882140D2F8005F234B /* XZBalanceTabVC.swift in Sources */,
@@ -1356,6 +1355,7 @@
 				E36048432137988600ECF65F /* XZMainHomeVC.swift in Sources */,
 				E3D98F4121363F6100887FAF /* ViewController.swift in Sources */,
 				5E42F30E21474E2F0034B691 /* XZExtension.swift in Sources */,
+				5E4C65C121538C5900478351 /* SCLAlertView.swift in Sources */,
 				5E4C65BD21534EB400478351 /* XZFriendListModel.swift in Sources */,
 				5E42F4392147AD6C0034B691 /* XZMessage.swift in Sources */,
 				5E42F42D2147A8F00034B691 /* XZChatMessageImageCell.swift in Sources */,
@@ -1380,6 +1380,7 @@
 				5E4FC2222146636D00E0A5A9 /* XZEmotionListView.swift in Sources */,
 				5E4FC21C2146182F00E0A5A9 /* XZChatConfig.swift in Sources */,
 				5ECE67D1214115A500C8C5A9 /* XZBillShowViewController.swift in Sources */,
+				5E4C65C221538C5900478351 /* SCLExtensions.swift in Sources */,
 				E36048582137A1F000ECF65F /* XZPayMoneyVC.swift in Sources */,
 				5ECE67CB2140FBBA00C8C5A9 /* XZReceivablesTableViewController.swift in Sources */,
 				5E42F4312147A9310034B691 /* XZChatMessageRedPacketCell.swift in Sources */,
@@ -1409,7 +1410,6 @@
 				E36048622137A2B100ECF65F /* XZPayMeVC.swift in Sources */,
 				E3BC6D1921450850000FDB12 /* XZAddressFirstCell.swift in Sources */,
 				E3BC6D1321450425000FDB12 /* XZAddressBookVC.swift in Sources */,
-				5E4B4E6821424DF8003D3D23 /* SCLExtensions.swift in Sources */,
 				5ECE67C92140FB7600C8C5A9 /* XZReceivablesFooterView.swift in Sources */,
 				E364909A21413200005F234B /* XZTopUpFinishVC.swift in Sources */,
 			);

@@ -16,6 +16,11 @@ class XZMessage: NSObject {
     var from : String?
     // 消息目的地群组id
     var to : String?
+    
+    var fromImage : UIImage?
+    // 消息目的地群组id
+    var toImage : UIImage?
+    
     // 消息ID
     var messageId : String?
     // 消息发送状态
