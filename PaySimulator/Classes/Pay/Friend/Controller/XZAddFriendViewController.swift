@@ -8,28 +8,79 @@
 
 import UIKit
 
-class XZAddFriendViewController: UIViewController {
+class XZAddFriendViewController: XZBaseViewController {
 
+    @IBOutlet weak var contView: UIView!
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    
+    var tableViewController : XZAddFriendTableViewController?
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        XZFriendListModel.shareSingleton.getDataFromSql()
+        let arr = XZFriendListModel.shareSingleton.friendList
+        print("zzz - \(String(describing: arr))")
+        self.setupUI()
+        
+        if arr != nil && (arr?.count)! > 0 {
+            let xmodel = arr![0]
+            self.tableViewController?.headImageView.image = xmodel.headImage
+            self.tableViewController?.trueNameTextField.text = xmodel.trueName
+            self.tableViewController?.nickNameTextField.text = xmodel.nickName
+            
+        }
+   
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func rightBtnOnClick() {
+        
+        guard let headImage = tableViewController?.headImageView.image else {
+            XZPublicTools.shareSingleton.showError(subTitle: "请添加图片")
+            return
+        }
+        
+        guard let nickname = self.tableViewController?.nickNameTextField.text else {
+            XZPublicTools.shareSingleton.showError(subTitle: "请添加昵称")
+            return
+        }
+        
+        guard let trueName = self.tableViewController?.trueNameTextField.text else {
+            XZPublicTools.shareSingleton.showError(subTitle: "请添加真实姓名")
+            return
+        }
+        
+        let userModel : XZUserModel = XZUserModel()
+        userModel.headImage = headImage
+        userModel.nickName = nickname
+        userModel.trueName = trueName
+        userModel.isHiddenTureName = (tableViewController?.hiddenSwitch.isOn)!
+        
+        XZFriendListModel.shareSingleton.addUserModel(userModel)
+        
+        let _ = XZFriendListModel.shareSingleton.saveSelfToDB()
     }
-    */
+}
 
+
+extension XZAddFriendViewController {
+    func setupUI () {
+        self.view.backgroundColor = kChatBoxBackColor
+        
+        topConstraint.constant = 44
+        
+        self.navBar.title = "添加联系人"
+        self.navBar.wr_setRightButton(title: "确定", titleColor: ddBlueColor())
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addFriendToContTableView" {
+            let iTabelViewController : XZAddFriendTableViewController = segue.destination as! XZAddFriendTableViewController
+            self.tableViewController = iTabelViewController
+            
+        }
+    }
 }

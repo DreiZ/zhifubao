@@ -65,10 +65,20 @@ class XZBaseViewController: UIViewController {
         if self.navigationController?.childViewControllers.count != 1 {
             navBar.wr_setLeftButton(normalImage: UIImage(named: "icon_fanhuiblue")!, highlightedImage: UIImage(named: "icon_fanhuiblue")!, title:"返回" , titleColor: ddBlueColor())
         }
+        
+        navBar.onClickRightButton = {() in
+            self.rightBtnOnClick()
+        }
     }
     
     @objc fileprivate func back()
     {
         _ = navigationController?.popViewController(animated: true)
+    }
+}
+
+extension XZBaseViewController {
+    @objc func rightBtnOnClick() {
+        
     }
 }
