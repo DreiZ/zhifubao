@@ -11,6 +11,11 @@ import UIKit
 class XZEditRedPacketViewController:  XZBaseViewController {
 
     @IBOutlet weak var topContainer: NSLayoutConstraint!
+    
+   
+   
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

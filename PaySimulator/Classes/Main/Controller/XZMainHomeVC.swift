@@ -63,9 +63,9 @@ class XZMainHomeVC: XZBaseVC {
     }
     
     
-    //MARK:--拦截提现跳转
+    //MARK:--拦截跳转
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showWithDrawalVC" {
+        if segue.identifier == "showWithDrawalVC" {//提现
             let tabVC = segue.destination as! XZWithdrawalVC
             tabVC.hidesBottomBarWhenPushed = true
             let backIetm = UIBarButtonItem()
@@ -73,7 +73,13 @@ class XZMainHomeVC: XZBaseVC {
             navigationItem.backBarButtonItem = backIetm
 //            navigationController?.pushViewController(tabVC, animated: true)
             
+        }else if (segue.identifier == "pushRedpacket"){ //红包
+            let redVC = segue.destination as! XZEditRedPacketViewController
+            redVC.hidesBottomBarWhenPushed = true
         }
+       
+        
+        
     }
     
 }

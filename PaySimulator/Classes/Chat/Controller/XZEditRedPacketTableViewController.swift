@@ -96,6 +96,7 @@ extension XZEditRedPacketTableViewController  {
         showBtn.setTitle("预览效果", for: .normal)
         showBtn.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         showBtn.setTitleColor(UIColor.white, for: .normal)
+        showBtn.addTarget(self, action: #selector(clickShowBtn), for: .touchUpInside)
         footer.addSubview(showBtn)
         
         showBtn.snp.makeConstraints { (make ) in
@@ -110,5 +111,14 @@ extension XZEditRedPacketTableViewController  {
 }
 
 extension XZEditRedPacketTableViewController {
+    
+    
+   @objc func clickShowBtn(){
+    
+    let seeRedPacketTabVC = UIStoryboard(name: "RedPacket", bundle: nil).instantiateViewController(withIdentifier: "XZSeeRedPacketTabVC") as? XZSeeRedPacketTabVC
+    self.navigationController?.pushViewController(seeRedPacketTabVC!, animated: true)
+    
+    
+    }
     
 }

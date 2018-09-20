@@ -97,7 +97,7 @@
                                         </state>
                                         <connections>
                                             <action selector="clickMainButton:" destination="o6K-1x-FXJ" eventType="touchUpInside" id="iEo-0A-KOK"/>
-                                            <segue destination="fUm-6S-kcn" kind="push" id="PMG-Ou-JZg"/>
+                                            <segue destination="fUm-6S-kcn" kind="push" identifier="pushRedpacket" id="PMG-Ou-JZg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ny9-Pl-zCW" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">

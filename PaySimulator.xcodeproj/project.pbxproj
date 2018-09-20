@@ -103,6 +103,9 @@
 		E364908A2140D8D3005F234B /* XZBalanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36490892140D8D3005F234B /* XZBalanceVC.swift */; };
 		E364909A21413200005F234B /* XZTopUpFinishVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3649098214131FF005F234B /* XZTopUpFinishVC.swift */; };
 		E364909B21413200005F234B /* XZTopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3649099214131FF005F234B /* XZTopUpVC.swift */; };
+		E38F8AB62153514A00B0F506 /* XZSeeRedPacketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38F8AB42153514A00B0F506 /* XZSeeRedPacketCell.xib */; };
+		E38F8AB821536F5F00B0F506 /* XZSeeRedPacketTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38F8AB721536F5F00B0F506 /* XZSeeRedPacketTabVC.swift */; };
+		E38F8ABA215379DA00B0F506 /* XZSeeRedPacketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38F8AB9215379DA00B0F506 /* XZSeeRedPacketCell.swift */; };
 		E3A9AADF213F663A00FAEEAF /* XZMyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9AADE213F663A00FAEEAF /* XZMyPickerView.swift */; };
 		E3A9AAE2213FA7F700FAEEAF /* XZPayMeNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A9AAE0213FA7F700FAEEAF /* XZPayMeNavView.swift */; };
 		E3A9AAE3213FA7F700FAEEAF /* XZPayMeNavView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3A9AAE1213FA7F700FAEEAF /* XZPayMeNavView.xib */; };
@@ -259,6 +262,9 @@
 		E36490892140D8D3005F234B /* XZBalanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBalanceVC.swift; sourceTree = "<group>"; };
 		E3649098214131FF005F234B /* XZTopUpFinishVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZTopUpFinishVC.swift; sourceTree = "<group>"; };
 		E3649099214131FF005F234B /* XZTopUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZTopUpVC.swift; sourceTree = "<group>"; };
+		E38F8AB42153514A00B0F506 /* XZSeeRedPacketCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XZSeeRedPacketCell.xib; sourceTree = "<group>"; };
+		E38F8AB721536F5F00B0F506 /* XZSeeRedPacketTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZSeeRedPacketTabVC.swift; sourceTree = "<group>"; };
+		E38F8AB9215379DA00B0F506 /* XZSeeRedPacketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZSeeRedPacketCell.swift; sourceTree = "<group>"; };
 		E3A9AADE213F663A00FAEEAF /* XZMyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMyPickerView.swift; sourceTree = "<group>"; };
 		E3A9AAE0213FA7F700FAEEAF /* XZPayMeNavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZPayMeNavView.swift; sourceTree = "<group>"; };
 		E3A9AAE1213FA7F700FAEEAF /* XZPayMeNavView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZPayMeNavView.xib; sourceTree = "<group>"; };
@@ -400,6 +406,7 @@
 				5E4B862E2152296500DF4003 /* XZEditRedPacketViewController.swift */,
 				5E4B863221522A6200DF4003 /* XZEditRedPacketTableViewController.swift */,
 				5E4B86342152482E00DF4003 /* XZChatTranferViewController.swift */,
+				E38F8AB721536F5F00B0F506 /* XZSeeRedPacketTabVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -437,6 +444,8 @@
 				5E42F4302147A9310034B691 /* XZChatMessageRedPacketCell.swift */,
 				5E6938E1214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift */,
 				5E42F4322147A9480034B691 /* XZChatMessageSystemCell.swift */,
+				E38F8AB9215379DA00B0F506 /* XZSeeRedPacketCell.swift */,
+				E38F8AB42153514A00B0F506 /* XZSeeRedPacketCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1203,6 +1212,7 @@
 				E3461806213BC655007C2AA6 /* XZPayUserInfoCell.xib in Resources */,
 				5E42F425214762BE0034B691 /* info.json in Resources */,
 				E348973A214212550062410B /* withDraw.storyboard in Resources */,
+				E38F8AB62153514A00B0F506 /* XZSeeRedPacketCell.xib in Resources */,
 				E36048602137A29200ECF65F /* PayPraise.storyboard in Resources */,
 				E3D98F4621363F6100887FAF /* Assets.xcassets in Resources */,
 				5ECE67C82140FB7600C8C5A9 /* XZReceivablesFooterView.xib in Resources */,
@@ -1331,6 +1341,7 @@
 				E360485E2137A27800ECF65F /* XZPayPraiseVC.swift in Sources */,
 				E3D98F512136426200887FAF /* UIView+KRExtension.m in Sources */,
 				E3461805213BC655007C2AA6 /* XZPayUserInfoCell.swift in Sources */,
+				E38F8ABA215379DA00B0F506 /* XZSeeRedPacketCell.swift in Sources */,
 				E348975121428EF70062410B /* XZWithdrawalBillTabVC.swift in Sources */,
 				5E4FC21E21463CF200E0A5A9 /* XZChatBoxMoreView.swift in Sources */,
 				5E552618214906B4004204AF /* XZChatMessageTransferCell.swift in Sources */,
@@ -1371,6 +1382,7 @@
 				5ECE67CE2140FC7500C8C5A9 /* XZMyAlertSheetView.swift in Sources */,
 				5E6938E4214CFA3100B04693 /* XZImage.swift in Sources */,
 				5E58516A2143981F004A2C4B /* XZBaseModel.swift in Sources */,
+				E38F8AB821536F5F00B0F506 /* XZSeeRedPacketTabVC.swift in Sources */,
 				E3BC6D0F2144EE4D000FDB12 /* XZPayFriendCellTableViewCell.swift in Sources */,
 				5E42F4352147ACBD0034B691 /* XZMessageFrame.swift in Sources */,
 				E36048412137986700ECF65F /* XZBaseVC.swift in Sources */,
