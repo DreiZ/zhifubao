@@ -33,7 +33,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmD-0m-AFJ">
                                 <rect key="frame" x="0.0" y="85" width="375" height="582"/>
                                 <connections>
-                                    <segue destination="282-c7-pWm" kind="embed" id="hhd-be-256"/>
+                                    <segue destination="282-c7-pWm" kind="embed" identifier="redPacketToTableView" id="hhd-be-256"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -87,7 +87,7 @@
                                                         <constraint firstAttribute="width" constant="46" id="ziv-4P-bxf"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="tintColor" red="0.0" green="0.70196078431372544" blue="0.92941176470588238" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.0" green="0.70196078431372544" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="收红包"/>
                                                     <connections>
                                                         <action selector="receiveBtnOnClick:" destination="282-c7-pWm" eventType="touchUpInside" id="m7Y-y0-bNv"/>
@@ -100,6 +100,7 @@
                                                         <constraint firstAttribute="height" constant="25" id="hac-yQ-h6R"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="tintColor" red="0.0" green="0.70196078431372544" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="发红包"/>
                                                     <connections>
                                                         <action selector="sendBtnOnClick:" destination="282-c7-pWm" eventType="touchUpInside" id="nFr-1o-U7F"/>

@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import DateTimePicker
 
 class XZEditRedPacketTableViewController: UITableViewController {
 
+    var to : XZUserModel?
+    var from : XZUserModel?
+    
     //收红包
     @IBOutlet weak var receiveBtn: UIButton!
     //发红包
@@ -34,22 +38,70 @@ class XZEditRedPacketTableViewController: UITableViewController {
     
     var isSend : Bool = true
     
+    var setMessageData : ((_ : XZMessage)->())?
+    var sendDate = Date()
+    
+    lazy var picker : DateTimePicker = {
+        let min = Date().addingTimeInterval(-60 * 60 * 24 * 365 * 5)
+        let max = Date().addingTimeInterval(60 * 60 * 24 * 4)
+        let picker = DateTimePicker.create(minimumDate: min, maximumDate: max)
+        picker.highlightColor = ddBlueColor()
+        picker.cancelButtonTitle = "取消"
+        picker.doneButtonTitle = "确定"
+        picker.todayButtonTitle = "今天"
+        picker.dateFormat = "YYYY/MM/dd HH:mm"
+        picker.frame = CGRect(x: 0, y: kWindowH - picker.frame.size.height, width: picker.frame.size.width, height: picker.frame.size.height)
+        
+        picker.completionHandler = {(didSelectDate : Date) in
+            self.sendDate = didSelectDate
+            self.sendTimeLabel.text = didSelectDate.shortTimeTextOfDate()
+        }
+        
+        picker.dismissHandler = { () in
+            self.picker.removeFromSuperview()
+        }
+        
+        return picker
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.setupUI()
+        self.setData()
     }
     
     
     @IBAction func receiveBtnOnClick(_ sender: Any) {
+        self.isSend = false
+        self.receiveBtn.isSelected = true
+        self.sendBtn.isSelected = false
         
+        self.sendImageView.image = to?.headImage
+        self.sendNameLabel.text = to?.trueName
+        
+        self.receiveImageView.image = from?.headImage
+        self.receiveNameLabel.text = from?.trueName
     }
     
     @IBAction func sendBtnOnClick(_ sender: Any) {
+        self.isSend = true
+        self.receiveBtn.isSelected = false
+        self.sendBtn.isSelected = true
         
+        self.sendImageView.image = from?.headImage
+        self.sendNameLabel.text = from?.trueName
+        
+        self.receiveImageView.image = to?.headImage
+        self.receiveNameLabel.text = to?.trueName
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 && indexPath.row == 2 {
+            
+            self.view.addSubview(picker)
+        }
+    }
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView()
@@ -84,6 +136,17 @@ extension XZEditRedPacketTableViewController  {
         sendBtn.isSelected = true
         
         self.tableView.tableFooterView = self.footerView()
+        
+       
+    }
+    
+    func setData () {
+        self.sendImageView.image = from?.headImage
+        self.sendNameLabel.text = from?.trueName
+        
+        self.receiveImageView.image = to?.headImage
+        self.receiveNameLabel.text = to?.trueName
+        self.sendTimeLabel.text = self.sendDate.shortTimeTextOfDate()
     }
     
     func footerView () -> UIView {
@@ -114,6 +177,17 @@ extension XZEditRedPacketTableViewController {
     
     
    @objc func clickShowBtn(){
+    
+    if setMessageData != nil {
+        let message : XZMessage = XZMessage()
+        message.systemTime = self.sendDate
+        message.content = self.amountTextFeild.text
+        message.transferMark = self.marketTextFeild.text
+        self.setMessageData!(message)
+        
+        self.navigationController?.popViewController(animated: true)
+        return
+    }
     
     let seeRedPacketTabVC = UIStoryboard(name: "RedPacket", bundle: nil).instantiateViewController(withIdentifier: "XZSeeRedPacketTabVC") as? XZSeeRedPacketTabVC
     self.navigationController?.pushViewController(seeRedPacketTabVC!, animated: true)

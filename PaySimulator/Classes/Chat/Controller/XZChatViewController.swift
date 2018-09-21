@@ -565,8 +565,13 @@ extension XZChatViewController : XZChatBoxMoreViewDelegate {
         }
         else if selectType == XZChatBoxMoreType.redPacket {
             
-            let redpacketvc = UIStoryboard(name: "RedPacket", bundle: nil).instantiateViewController(withIdentifier: "XZEditRedPacketViewController")
-            self.navigationController?.pushViewController(redpacketvc, animated: true)
+            let redpacketvc = UIStoryboard(name: "RedPacket", bundle: nil).instantiateViewController(withIdentifier: "XZEditRedPacketViewController") as? XZEditRedPacketViewController
+            redpacketvc?.to = self.to
+            redpacketvc?.from = self.from
+            redpacketvc?.setMessageData = { (message : XZMessage) in
+                
+            }
+            self.navigationController?.pushViewController(redpacketvc!, animated: true)
         }
     }
 }
