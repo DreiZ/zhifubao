@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FDTake
+//import FDTake
 //import IQKeyboardManagerSwift
 
 class XZChatViewController: XZBaseViewController {
@@ -537,13 +537,9 @@ extension XZChatViewController : XZChatBoxMoreViewDelegate {
     
     func didSelectItem(moreView: XZChatBoxMoreView, selectType: XZChatBoxMoreType) {
         if selectType == XZChatBoxMoreType.album {
-            let fdTakeController : FDTakeController = FDTakeController()
-            fdTakeController.didGetPhoto = {
-                (_ photo: UIImage, _ info: [AnyHashable : Any]) in
-                self.sendImageMessage(image: photo)
-                self.sendOtherImageMessage(image: photo)
-            }
-            fdTakeController.present()
+            let myPhotoManage  = XZMyPhotoManage.sharedPhotoManage
+            
+            myPhotoManage.showActionSheetInVC(factherVC: self, aDelegate: self as XZMyPhotoManageDelegate)
         }
         else if selectType == XZChatBoxMoreType.transfer {
             let transfervc = UIStoryboard(name: "chat", bundle: nil).instantiateViewController(withIdentifier: "XZChatTranferViewController") as? XZChatTranferViewController
@@ -572,5 +568,12 @@ extension XZChatViewController : XZChatBoxMoreViewDelegate {
             let redpacketvc = UIStoryboard(name: "RedPacket", bundle: nil).instantiateViewController(withIdentifier: "XZEditRedPacketViewController")
             self.navigationController?.pushViewController(redpacketvc, animated: true)
         }
+    }
+}
+
+extension XZChatViewController : XZMyPhotoManageDelegate {
+    
+    func uploadImage(myImage: UIImage) {
+        self.sendImageMessage(image: myImage)
     }
 }

@@ -146,19 +146,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		5E4B4E8021426C64003D3D23 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		1148BAE4CDE60ADD2009EBA1 /* Pods-PaySimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaySimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaySimulator/Pods-PaySimulator.release.xcconfig"; sourceTree = "<group>"; };
 		146A184C35B4502F43F0D60E /* Pods_PaySimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaySimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +214,7 @@
 		5E6938E1214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatMessageRedPacketOpenCell.swift; sourceTree = "<group>"; };
 		5E6938E3214CFA3100B04693 /* XZImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZImage.swift; sourceTree = "<group>"; };
 		5E7C8DBA2154A028002620E3 /* XZDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZDate.swift; sourceTree = "<group>"; };
+		5E7C8DBC2154DB06002620E3 /* FDTake.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FDTake.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EAF7334214272A50027812A /* ZBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZBaseModel.h; path = PaySimulator/Classes/Tools/ZBaseModel.h; sourceTree = SOURCE_ROOT; };
 		5EAF7335214272A50027812A /* ZBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZBaseModel.m; path = PaySimulator/Classes/Tools/ZBaseModel.m; sourceTree = SOURCE_ROOT; };
 		5ECE67C62140FB7600C8C5A9 /* XZReceivablesFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZReceivablesFooterView.xib; sourceTree = "<group>"; };
@@ -510,6 +498,7 @@
 		6B0552CAAD1764AB0A323297 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E7C8DBC2154DB06002620E3 /* FDTake.framework */,
 				5E4B4E782142676C003D3D23 /* libsqlite3.tbd */,
 				5E4B4E762142675E003D3D23 /* libsqlite3.0.tbd */,
 				146A184C35B4502F43F0D60E /* Pods_PaySimulator.framework */,
@@ -1119,7 +1108,6 @@
 				E3D98EDA213638C300887FAF /* Frameworks */,
 				E3D98EDB213638C300887FAF /* Resources */,
 				62D9AF544165EDB4CB7A568F /* [CP] Embed Pods Frameworks */,
-				5E4B4E8021426C64003D3D23 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1267,7 +1255,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-PaySimulator/Pods-PaySimulator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DateTimePicker/DateTimePicker.framework",
-				"${BUILT_PRODUCTS_DIR}/FDTake/FDTake.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -1281,7 +1268,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTimePicker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDTake.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -1579,10 +1565,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/PaySimulator/Classes/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PaySimulator/Classes/Resource/PaySimulator-Bridging-Header.h";
@@ -1606,10 +1589,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/PaySimulator/Classes/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PaySimulator/Classes/Resource/PaySimulator-Bridging-Header.h";
@@ -1626,11 +1606,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = PaySimulatorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1647,11 +1623,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = PaySimulatorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1667,11 +1639,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = PaySimulatorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1687,11 +1655,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7483HXR3HC;
 				INFOPLIST_FILE = PaySimulatorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pay.zcf.PaySimulatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

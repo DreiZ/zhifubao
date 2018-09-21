@@ -8,12 +8,12 @@ target 'PaySimulator' do
 pod 'SnapKit'      , '~> 4.0.0' # Masonry
 pod 'Alamofire'    , '~> 4.7'   # AFN
 pod 'Kingfisher'   , '~>4.0'    # SDWebImage
-pod 'FMDB'
+#pod 'FMDB'
 pod 'IQKeyboardManagerSwift', '5.0.0'
 pod 'MBProgressHUD', '~> 1.1.0'
 
 pod 'SwiftyJSON', '~> 4.0'
-pod 'FDTake'
+#pod 'FDTake'
 pod 'DateTimePicker'
 
 
