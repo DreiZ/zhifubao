@@ -11,7 +11,7 @@ import DateTimePicker
 
 class XZSystemTimeViewController: XZBaseViewController {
     
-    var setMessageData : ((_ : XZMessageModel)->())?
+    var setMessageData : ((_ : XZMessage)->())?
     
     var selectDate : Date = Date()
 
@@ -191,6 +191,13 @@ extension XZSystemTimeViewController {
         picker.completionHandler = {(didSelectDate : Date) in
             self.selectDate = didSelectDate
             self.setDate()
+            
+            if self.setMessageData != nil {
+                let message : XZMessage = XZMessage()
+                message.systemTime = self.selectDate
+                self.setMessageData!(message)
+            }
+            self.navigationController?.popViewController(animated: true)
         }
         self.view.addSubview(picker)
     }

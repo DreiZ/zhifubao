@@ -66,13 +66,13 @@ class XZMessageHelper: NSObject {
     //创建一条时间消息
     class func createSystemTimeMessageFrame(content : String = "[时间]",
                                   date : Date, from : String,
-                                  to : String, isSender : Bool, receivedSenderByYourself : Bool, systemTime : Int?) -> XZMessageFrame {
+                                  to : String, isSender : Bool, receivedSenderByYourself : Bool, systemTime : Date?) -> XZMessageFrame {
         
         let message : XZMessage = XZMessage()
         message.to = to
         message.from = from
         message.type = TypeTime
-        message.systemTime = systemTime ?? 1
+        message.systemTime = systemTime ?? Date()
         message.date = Int(date.timeIntervalSinceReferenceDate)
         
         let model : XZMessageModel = XZMessageModel()

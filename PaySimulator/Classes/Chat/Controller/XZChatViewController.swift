@@ -67,82 +67,82 @@ class XZChatViewController: XZBaseViewController {
         self.iTableView.register(XZChatMessageRedPacketOpenCell.self, forCellReuseIdentifier: TypeRedPacketOpen)
         self.iTableView.register(XZChatMessageImageCell.self, forCellReuseIdentifier: TypePic)
         
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
-            {
-                self.sendTimeMessage(systemTime: Int(Date().timeIntervalSinceReferenceDate))
-        })
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
-            {
-                self.sendTextMessage(message: "束带结发[愉快][愉快][流汗]上岛咖啡士大夫少的发哦发噶是的水电费水电费水电")
-        })
-
-        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
-            {
-                self.sendTransferMessage(money: "102", mark:"" )
-        })
-
-        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
-            {
-                self.sendOtherTransferMessage(money: "10")
-        })
-
-        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
-            {
-                self.sendRedMessage(content: "是哒是哒高好似好狗")
-        })
-
-        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
-            {
-                self.sendOtherRedMessage(content: "打扫吧四国赛哦跟佛撒个否问问少的发撒个撒发个")
-        })
-
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+7, execute:
-            {
-                self.sendTextMessage(message: "上看的发个[愉快][愉快][流汗]少的发个")
-        })
-        DispatchQueue.main.asyncAfter(deadline: .now()+5, execute:
-            {
-                self.sendTimeMessage(systemTime: Int(Date().timeIntervalSinceReferenceDate))
-        })
-        DispatchQueue.main.asyncAfter(deadline: .now()+8, execute:
-            {
-                self.sendOtherTextMessage(message: "阿松的更好[愉快][愉快][流汗]上少的发哦发噶是的水电费水电费水电")
-        })
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+3, execute:
-            {
-                self.sendVoiceMessage(voiceTime: 10, isVoiceRead: false )
-        })
-        
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
-            {
-                self.sendRedOpenMessage(content: "是哒是哒高好似好狗")
-        })
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
-            {
-                self.sendOtherOpenRedMessage(content: "打扫吧四国赛哦跟佛撒个否问问少的发撒个撒发个")
-        })
-        
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+4, execute:
-            {
-                self.sendSystemMessage(systemLeft: "您领取了徐脂虎的 ", messageRight: "红包", systemImage: nil)
-        })
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+3, execute:
-            {
-                self.sendOtherVoiceMessage(voiceTime: 1, isVoiceRead: false)
-        })
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+4, execute:
-            {
-                self.sendSystemMessage(systemLeft: "您领取了徐脂虎的 ", messageRight: "红包", systemImage: UIImage(named: "redEnvelop-icon"))
-        })
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
+//            {
+//                self.sendTimeMessage(systemTime: Date())
+//        })
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
+//            {
+//                self.sendTextMessage(message: "束带结发[愉快][愉快][流汗]上岛咖啡士大夫少的发哦发噶是的水电费水电费水电")
+//        })
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
+//            {
+//                self.sendTransferMessage(money: "102", mark:"" )
+//        })
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
+//            {
+//                self.sendOtherTransferMessage(money: "10")
+//        })
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
+//            {
+//                self.sendRedMessage(content: "是哒是哒高好似好狗")
+//        })
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
+//            {
+//                self.sendOtherRedMessage(content: "打扫吧四国赛哦跟佛撒个否问问少的发撒个撒发个")
+//        })
+//
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now()+7, execute:
+//            {
+//                self.sendTextMessage(message: "上看的发个[愉快][愉快][流汗]少的发个")
+//        })
+//        DispatchQueue.main.asyncAfter(deadline: .now()+5, execute:
+//            {
+//                self.sendTimeMessage(systemTime: Date())
+//        })
+//        DispatchQueue.main.asyncAfter(deadline: .now()+8, execute:
+//            {
+//                self.sendOtherTextMessage(message: "阿松的更好[愉快][愉快][流汗]上少的发哦发噶是的水电费水电费水电")
+//        })
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now()+3, execute:
+//            {
+//                self.sendVoiceMessage(voiceTime: 10, isVoiceRead: false )
+//        })
+//        
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
+//            {
+//                self.sendRedOpenMessage(content: "是哒是哒高好似好狗")
+//        })
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
+//            {
+//                self.sendOtherOpenRedMessage(content: "打扫吧四国赛哦跟佛撒个否问问少的发撒个撒发个")
+//        })
+//        
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now()+4, execute:
+//            {
+//                self.sendSystemMessage(systemLeft: "您领取了徐脂虎的 ", messageRight: "红包", systemImage: nil)
+//        })
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now()+3, execute:
+//            {
+//                self.sendOtherVoiceMessage(voiceTime: 1, isVoiceRead: false)
+//        })
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now()+4, execute:
+//            {
+//                self.sendSystemMessage(systemLeft: "您领取了徐脂虎的 ", messageRight: "红包", systemImage: UIImage(named: "redEnvelop-icon"))
+//        })
 
         
     }
@@ -307,7 +307,7 @@ extension XZChatViewController {
     }
     
     //时间
-    func sendTimeMessage(systemTime : Int) {
+    func sendTimeMessage(systemTime : Date) {
         guard  let fromNickName =  self.from?.nickName,
             let toNickName =  self.to?.nickName else {
                 return
@@ -555,13 +555,16 @@ extension XZChatViewController : XZChatBoxMoreViewDelegate {
         }
         else if selectType == XZChatBoxMoreType.voice {
             let voicevc = UIStoryboard(name: "chat", bundle: nil).instantiateViewController(withIdentifier: "XZChatVoiceTimeViewController") as? XZChatVoiceTimeViewController
-                voicevc?.setMessageData = {(message : XZMessage) in
-                    self.sendVoiceMessage(voiceTime: message.voiceTime, isVoiceRead: message.isVoiceRead)
+            voicevc?.setMessageData = {(message : XZMessage) in
+                self.sendVoiceMessage(voiceTime: message.voiceTime, isVoiceRead: message.isVoiceRead)
             }
             self.navigationController?.pushViewController(voicevc!, animated: true)
         }
         else if selectType == XZChatBoxMoreType.time {
             let timevc = XZSystemTimeViewController()
+            timevc.setMessageData = {(message : XZMessage) in
+                self.sendTimeMessage(systemTime: message.systemTime)
+            }
             self.navigationController?.pushViewController(timevc, animated: true)
         }
         else if selectType == XZChatBoxMoreType.redPacket {

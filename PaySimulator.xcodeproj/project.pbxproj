@@ -65,6 +65,7 @@
 		5E58CAF12150F72500474F9F /* chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E58CAF02150F72500474F9F /* chat.storyboard */; };
 		5E6938E2214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6938E1214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift */; };
 		5E6938E4214CFA3100B04693 /* XZImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6938E3214CFA3100B04693 /* XZImage.swift */; };
+		5E7C8DBB2154A028002620E3 /* XZDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7C8DBA2154A028002620E3 /* XZDate.swift */; };
 		5EAF7336214272A50027812A /* ZBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF7335214272A50027812A /* ZBaseModel.m */; };
 		5ECE67C82140FB7600C8C5A9 /* XZReceivablesFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECE67C62140FB7600C8C5A9 /* XZReceivablesFooterView.xib */; };
 		5ECE67C92140FB7600C8C5A9 /* XZReceivablesFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE67C72140FB7600C8C5A9 /* XZReceivablesFooterView.swift */; };
@@ -225,6 +226,7 @@
 		5E58CAF02150F72500474F9F /* chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = chat.storyboard; sourceTree = "<group>"; };
 		5E6938E1214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatMessageRedPacketOpenCell.swift; sourceTree = "<group>"; };
 		5E6938E3214CFA3100B04693 /* XZImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZImage.swift; sourceTree = "<group>"; };
+		5E7C8DBA2154A028002620E3 /* XZDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZDate.swift; sourceTree = "<group>"; };
 		5EAF7334214272A50027812A /* ZBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZBaseModel.h; path = PaySimulator/Classes/Tools/ZBaseModel.h; sourceTree = SOURCE_ROOT; };
 		5EAF7335214272A50027812A /* ZBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZBaseModel.m; path = PaySimulator/Classes/Tools/ZBaseModel.m; sourceTree = SOURCE_ROOT; };
 		5ECE67C62140FB7600C8C5A9 /* XZReceivablesFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XZReceivablesFooterView.xib; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 				5E42F41C21475E490034B691 /* ICFaceManager.m */,
 				5E55261921490EB1004204AF /* XZMessageHelper.swift */,
 				5E6938E3214CFA3100B04693 /* XZImage.swift */,
+				5E7C8DBA2154A028002620E3 /* XZDate.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1378,6 +1381,7 @@
 				5E4FC226214664A900E0A5A9 /* XZEmotionPageView.swift in Sources */,
 				E35B5D78213CC01300E59A88 /* XZMyPhotoManage.swift in Sources */,
 				5E4FC2222146636D00E0A5A9 /* XZEmotionListView.swift in Sources */,
+				5E7C8DBB2154A028002620E3 /* XZDate.swift in Sources */,
 				5E4FC21C2146182F00E0A5A9 /* XZChatConfig.swift in Sources */,
 				5ECE67D1214115A500C8C5A9 /* XZBillShowViewController.swift in Sources */,
 				5E4C65C221538C5900478351 /* SCLExtensions.swift in Sources */,
