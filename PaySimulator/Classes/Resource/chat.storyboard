@@ -32,6 +32,9 @@
                                         <state key="normal" title="转账记录">
                                             <color key="titleColor" red="0.062745098039215685" green="0.55686274509803924" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="transferHistoryBtnOnClick:" destination="294-GW-je3" eventType="touchUpInside" id="uIv-Mn-dSQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TO5-Zi-iAc">
                                         <rect key="frame" x="15" y="0.0" width="31" height="44"/>
@@ -105,8 +108,8 @@
                                     <constraint firstAttribute="height" constant="40" id="a5b-Z8-lsK"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="添加备注（50字以内）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0rr-sb-fl9">
                                 <rect key="frame" x="15" y="306.5" width="345" height="40"/>
@@ -127,6 +130,9 @@
                                 <state key="normal" title="确认转账">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="sureBtnOnClick:" destination="294-GW-je3" eventType="touchUpInside" id="Ehy-qj-VVv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -163,6 +169,11 @@
                         <viewLayoutGuide key="safeArea" id="QCe-QK-eo6"/>
                     </view>
                     <connections>
+                        <outlet property="amountTextField" destination="Thr-uI-dFk" id="bZk-qe-nj6"/>
+                        <outlet property="markTextField" destination="0rr-sb-fl9" id="NId-ZK-a2X"/>
+                        <outlet property="toHeadImageView" destination="eOJ-U1-uhw" id="frH-Mv-GoS"/>
+                        <outlet property="toNameLabel" destination="hFq-ci-qmv" id="g3s-gC-msY"/>
+                        <outlet property="toTelLabel" destination="CW9-dJ-iTb" id="9Oe-fs-tCb"/>
                         <outlet property="topConstraint" destination="qCn-Vi-gDX" id="ued-tx-13O"/>
                     </connections>
                 </viewController>
@@ -187,14 +198,20 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPj-6M-A4i">
-                                        <rect key="frame" x="100" y="17.5" width="32" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1秒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPj-6M-A4i">
+                                        <rect key="frame" x="100" y="17.5" width="40" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="zUB-Dj-3aM"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" value="1" minValue="1" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="Wvj-jw-ctg">
-                                        <rect key="frame" x="191" y="11.5" width="180" height="31"/>
+                                        <rect key="frame" x="199" y="11.5" width="172" height="31"/>
+                                        <connections>
+                                            <action selector="voiceSliderValueChange:" destination="dYf-Z0-LM5" eventType="valueChanged" id="hhx-Ea-3r4"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -243,6 +260,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zDf-6B-S5M"/>
                     </view>
+                    <connections>
+                        <outlet property="isReadSwitch" destination="1pl-zc-EG9" id="gts-jq-LTd"/>
+                        <outlet property="secLabel" destination="wPj-6M-A4i" id="FaO-2l-f8i"/>
+                        <outlet property="topConstraint" destination="ejb-8L-dqe" id="PMf-EJ-oLt"/>
+                        <outlet property="voiceSlider" destination="Wvj-jw-ctg" id="nlO-72-LrL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nd9-bX-5uF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

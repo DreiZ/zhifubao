@@ -9,6 +9,9 @@
 import UIKit
 
 class XZEditRedPacketViewController:  XZBaseViewController {
+    
+    
+    var setMessageData : ((_ : XZMessageModel)->())?
 
     @IBOutlet weak var topContainer: NSLayoutConstraint!
     

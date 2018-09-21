@@ -12,9 +12,9 @@ class XZMessageHelper: NSObject {
     
     //创建一条本地消息
     class func createMessageFrame(type : String, content : String,
-                            date : Date, path : String?, from : String,
-                            to : String, fileKey : String?,
-                            isSender : Bool, receivedSenderByYourself : Bool, voiceTime : Int?) -> XZMessageFrame {
+                                  date : Date, path : String?, from : String,
+                                  to : String, fileKey : String?,
+                                  isSender : Bool, receivedSenderByYourself : Bool, voiceTime : Int?, isVoiceRead : Bool, transferMark : String?) -> XZMessageFrame {
         
         let message : XZMessage = XZMessage()
         message.to = to
@@ -23,6 +23,8 @@ class XZMessageHelper: NSObject {
         message.fileKey = fileKey
         message.date = Int(date.timeIntervalSinceReferenceDate)
         message.voiceTime = voiceTime ?? 1
+        message.transferMark = transferMark
+        message.isVoiceRead = isVoiceRead
         
         let model : XZMessageModel = XZMessageModel()
 
@@ -160,6 +162,7 @@ class XZMessageHelper: NSObject {
     }
     
     
+    //MARK: -----------------相关方法-------------------------
     class func timeFormatWithDate(time : Int) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"

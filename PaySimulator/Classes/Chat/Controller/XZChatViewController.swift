@@ -80,7 +80,7 @@ class XZChatViewController: XZBaseViewController {
 
         DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
             {
-                self.sendTransferMessage(money: "102")
+                self.sendTransferMessage(money: "102", mark:"" )
         })
 
         DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
@@ -114,7 +114,7 @@ class XZChatViewController: XZBaseViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now()+3, execute:
             {
-                self.sendVoiceMessage(voiceTime: 10)
+                self.sendVoiceMessage(voiceTime: 10, isVoiceRead: false )
         })
         
         
@@ -136,7 +136,7 @@ class XZChatViewController: XZBaseViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now()+3, execute:
             {
-                self.sendOtherVoiceMessage(voiceTime: 1)
+                self.sendOtherVoiceMessage(voiceTime: 1, isVoiceRead: false)
         })
         
         DispatchQueue.main.asyncAfter(deadline: .now()+4, execute:
@@ -252,7 +252,7 @@ extension XZChatViewController {
             return
         }
         
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil, isVoiceRead: false, transferMark: nil)
         
         messageF.model?.message?.toImage = self.to?.headImage
         messageF.model?.message?.fromImage = self.from?.headImage
@@ -266,7 +266,7 @@ extension XZChatViewController {
                 return
         }
         
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeText, content: message, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil, isVoiceRead: false, transferMark: nil)
         
         messageF.model?.message?.toImage = self.to?.headImage
         messageF.model?.message?.fromImage = self.from?.headImage
@@ -276,13 +276,13 @@ extension XZChatViewController {
     }
     
     //语音
-    func sendVoiceMessage(voiceTime : Int) {
+    func sendVoiceMessage(voiceTime : Int, isVoiceRead : Bool) {
         guard  let fromNickName =  self.from?.nickName,
                let toNickName =  self.to?.nickName else {
                 return
         }
         
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeVoice, content: "[语音]", date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: voiceTime)
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeVoice, content: "[语音]", date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: voiceTime, isVoiceRead: isVoiceRead, transferMark: nil)
         
         messageF.model?.message?.toImage = self.to?.headImage
         messageF.model?.message?.fromImage = self.from?.headImage
@@ -291,13 +291,13 @@ extension XZChatViewController {
         self.messageSendSucced(messageF: messageF)
     }
     
-    func sendOtherVoiceMessage(voiceTime : Int) {
+    func sendOtherVoiceMessage(voiceTime : Int, isVoiceRead : Bool) {
         guard  let fromNickName =  self.from?.nickName,
                 let toNickName =  self.to?.nickName else {
                 return
         }
         
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeVoice, content: "[语音]", date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: voiceTime)
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeVoice, content: "[语音]", date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: voiceTime, isVoiceRead: isVoiceRead, transferMark: nil)
         
         messageF.model?.message?.toImage = self.to?.headImage
         messageF.model?.message?.fromImage = self.from?.headImage
@@ -339,13 +339,13 @@ extension XZChatViewController {
     }
     
     //转账
-    func sendTransferMessage(money : String) {
+    func sendTransferMessage(money : String, mark : String) {
         guard  let fromNickName =  self.from?.nickName,
                 let toNickName =  self.to?.nickName else {
                 return
         }
         
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeTransfer, content: money, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeTransfer, content: money, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil, isVoiceRead: false, transferMark: mark)
         
         messageF.model?.message?.toImage = self.to?.headImage
         messageF.model?.message?.fromImage = self.from?.headImage
@@ -361,7 +361,7 @@ extension XZChatViewController {
                 return
         }
         
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeTransfer, content: money, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeTransfer, content: money, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil, isVoiceRead: false, transferMark: nil)
         
         messageF.model?.message?.toImage = self.to?.headImage
         messageF.model?.message?.fromImage = self.from?.headImage
@@ -377,7 +377,7 @@ extension XZChatViewController {
                 return
         }
         
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacket, content: content, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacket, content: content, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil, isVoiceRead: false, transferMark: nil)
         
         messageF.model?.message?.toImage = self.to?.headImage
         messageF.model?.message?.fromImage = self.from?.headImage
@@ -393,7 +393,7 @@ extension XZChatViewController {
                 return
         }
         
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacket, content: content, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacket, content: content, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil, isVoiceRead: false, transferMark: nil)
         
         messageF.model?.message?.toImage = self.to?.headImage
         messageF.model?.message?.fromImage = self.from?.headImage
@@ -409,7 +409,7 @@ extension XZChatViewController {
                 return
         }
         
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacketOpen, content: content, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil)
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacketOpen, content: content, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: true, receivedSenderByYourself: false, voiceTime: nil, isVoiceRead: false, transferMark: nil)
         
         messageF.model?.message?.toImage = self.to?.headImage
         messageF.model?.message?.fromImage = self.from?.headImage
@@ -425,7 +425,7 @@ extension XZChatViewController {
                 return
         }
         
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacketOpen, content: content, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil)
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(type: TypeRedPacketOpen, content: content, date: Date(), path: nil, from: fromNickName, to: toNickName, fileKey: nil, isSender: false, receivedSenderByYourself: false, voiceTime: nil, isVoiceRead: false, transferMark: nil)
         
         messageF.model?.message?.toImage = self.to?.headImage
         messageF.model?.message?.fromImage = self.from?.headImage
@@ -546,12 +546,19 @@ extension XZChatViewController : XZChatBoxMoreViewDelegate {
             fdTakeController.present()
         }
         else if selectType == XZChatBoxMoreType.transfer {
-            let transfervc = UIStoryboard(name: "chat", bundle: nil).instantiateViewController(withIdentifier: "XZChatTranferViewController")
-            self.navigationController?.pushViewController(transfervc, animated: true)
+            let transfervc = UIStoryboard(name: "chat", bundle: nil).instantiateViewController(withIdentifier: "XZChatTranferViewController") as? XZChatTranferViewController
+            transfervc?.to = to
+            transfervc?.setMessageData = {(message : XZMessage) in
+                self.sendTransferMessage(money: message.content!, mark: message.transferMark ?? "")
+            }
+            self.navigationController?.pushViewController(transfervc!, animated: true)
         }
         else if selectType == XZChatBoxMoreType.voice {
-            let voicevc = UIStoryboard(name: "chat", bundle: nil).instantiateViewController(withIdentifier: "XZChatVoiceTimeViewController")
-            self.navigationController?.pushViewController(voicevc, animated: true)
+            let voicevc = UIStoryboard(name: "chat", bundle: nil).instantiateViewController(withIdentifier: "XZChatVoiceTimeViewController") as? XZChatVoiceTimeViewController
+                voicevc?.setMessageData = {(message : XZMessage) in
+                    self.sendVoiceMessage(voiceTime: message.voiceTime, isVoiceRead: message.isVoiceRead)
+            }
+            self.navigationController?.pushViewController(voicevc!, animated: true)
         }
         else if selectType == XZChatBoxMoreType.time {
             let timevc = XZSystemTimeViewController()

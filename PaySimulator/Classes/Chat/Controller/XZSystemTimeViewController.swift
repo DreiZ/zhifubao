@@ -11,6 +11,8 @@ import DateTimePicker
 
 class XZSystemTimeViewController: XZBaseViewController {
     
+    var setMessageData : ((_ : XZMessageModel)->())?
+    
     var selectDate : Date = Date()
 
     lazy var yearLabel : UILabel = {

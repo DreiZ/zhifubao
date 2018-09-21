@@ -19,6 +19,7 @@ class XZAddFriendViewController: XZBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
+
     }
     
     override func rightBtnOnClick() {
