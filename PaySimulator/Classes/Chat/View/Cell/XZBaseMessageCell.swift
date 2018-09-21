@@ -156,7 +156,7 @@ extension XZBaseMessageCell {
                 self.bubbleView.image = UIImage(named: "Dialog_blue.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             else if modelFrame.model?.message?.type == TypePic {
-                self.bubbleView.image = UIImage(named: "Dialog_pt.right")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
+                self.bubbleView.image = UIImage(named: "Dialog_white.left. mirroring")?.resizableImage(withCapInsets: UIEdgeInsetsMake(MessageHeadWidth - 10, 10, 10, 10), resizingMode: UIImageResizingMode.stretch)
             }
             
         }else {
