@@ -84,7 +84,8 @@ class XZSystemTimeViewController: XZBaseViewController {
     }
 }
 
-extension XZSystemTimeViewController {
+extension XZSystemTimeViewController : DateTimePickerDelegate{
+    
     func setupUI () {
         self.view.backgroundColor = kChatBackColor
         
@@ -188,6 +189,7 @@ extension XZSystemTimeViewController {
         picker.dateFormat = "YYYY/MM/dd HH:mm"
         picker.frame = CGRect(x: 0, y: kWindowH - picker.frame.size.height, width: picker.frame.size.width, height: picker.frame.size.height)
   
+        picker.delegate = self
         picker.completionHandler = {(didSelectDate : Date) in
             self.selectDate = didSelectDate
             self.setDate()
@@ -200,6 +202,11 @@ extension XZSystemTimeViewController {
             self.navigationController?.popViewController(animated: true)
         }
         self.view.addSubview(picker)
+    }
+    
+    func dateTimePicker(_ picker: DateTimePicker, didSelectDate: Date) {
+        self.selectDate = didSelectDate
+        self.setDate()
     }
 }
 

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import DateTimePicker
+
 
 class XZEditRedPacketTableViewController: UITableViewController {
 
@@ -41,28 +41,8 @@ class XZEditRedPacketTableViewController: UITableViewController {
     var setMessageData : ((_ : XZMessage)->())?
     var sendDate = Date()
     
-    lazy var picker : DateTimePicker = {
-        let min = Date().addingTimeInterval(-60 * 60 * 24 * 365 * 5)
-        let max = Date().addingTimeInterval(60 * 60 * 24 * 4)
-        let picker = DateTimePicker.create(minimumDate: min, maximumDate: max)
-        picker.highlightColor = ddBlueColor()
-        picker.cancelButtonTitle = "取消"
-        picker.doneButtonTitle = "确定"
-        picker.todayButtonTitle = "今天"
-        picker.dateFormat = "YYYY/MM/dd HH:mm"
-        picker.frame = CGRect(x: 0, y: kWindowH - picker.frame.size.height, width: picker.frame.size.width, height: picker.frame.size.height)
-        
-        picker.completionHandler = {(didSelectDate : Date) in
-            self.sendDate = didSelectDate
-            self.sendTimeLabel.text = didSelectDate.shortTimeTextOfDate()
-        }
-        
-        picker.dismissHandler = { () in
-            self.picker.removeFromSuperview()
-        }
-        
-        return picker
-    }()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,8 +78,20 @@ class XZEditRedPacketTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 && indexPath.row == 2 {
-            
-            self.view.addSubview(picker)
+
+            let spicker = HcdDateTimePickerView(datePickerMode: DatePickerDateHourMinuteMode, defaultDateTime: Date())
+            spicker?.topViewColor = kChatMainColor
+
+            spicker?.clickedOkBtn = {(dateTimeStr : String?) in
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-M-d HH:mm"
+                let tempDate = formatter.date(from: dateTimeStr!)
+                self.sendDate = tempDate ?? Date()
+                self.sendTimeLabel.text = self.sendDate.shortTimeTextOfDate()
+            }
+
+            self.view.addSubview(spicker!)
+            spicker?.showHcdDateTimePicker()
         }
     }
     
@@ -188,12 +180,17 @@ extension XZEditRedPacketTableViewController {
         
         self.navigationController?.popViewController(animated: true)
         return
+        
     }
     
     let seeRedPacketTabVC = UIStoryboard(name: "RedPacket", bundle: nil).instantiateViewController(withIdentifier: "XZSeeRedPacketTabVC") as? XZSeeRedPacketTabVC
     self.navigationController?.pushViewController(seeRedPacketTabVC!, animated: true)
     
     
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
     }
     
 }

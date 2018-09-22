@@ -15,7 +15,7 @@ pod 'MBProgressHUD', '~> 1.1.0'
 pod 'SwiftyJSON', '~> 4.0'
 #pod 'FDTake'
 pod 'DateTimePicker'
-
+pod 'HcdDateTimePicker'
 
 #数据库封装
 pod 'LKDBHelper'
