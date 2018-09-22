@@ -91,7 +91,7 @@ extension XZChatMessageVoiceCell {
         if modelFrame.model?.isSender ?? true {
             self.voiceImage.image = UIImage(named: "spk_i")?.withRenderingMode(.alwaysTemplate)
             self.voiceImage.tintColor = UIColor.white
-            let transform : CGAffineTransform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/180.0));
+            let transform : CGAffineTransform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/1));
             self.voiceImage.transform = transform
             
             self.durationLabel.textAlignment = .right

@@ -21,9 +21,9 @@ class XZMessageHelper: NSObject {
         message.from = from
         message.type = type
         message.fileKey = fileKey
-        message.date = Int(date.timeIntervalSinceReferenceDate)
+        message.date = date
         message.voiceTime = voiceTime ?? 1
-        message.transferMark = transferMark
+        message.mark = transferMark
         message.isVoiceRead = isVoiceRead
         
         let model : XZMessageModel = XZMessageModel()
@@ -73,7 +73,7 @@ class XZMessageHelper: NSObject {
         message.from = from
         message.type = TypeTime
         message.systemTime = systemTime ?? Date()
-        message.date = Int(date.timeIntervalSinceReferenceDate)
+        message.date = date
         
         let model : XZMessageModel = XZMessageModel()
         
@@ -107,7 +107,7 @@ class XZMessageHelper: NSObject {
         message.systemLeft = systemLeft
         message.systemRight = messageRight
         message.systemImage = systemImage
-        message.date = Int(date.timeIntervalSinceReferenceDate)
+        message.date = date
         
         let model : XZMessageModel = XZMessageModel()
         
@@ -139,7 +139,7 @@ class XZMessageHelper: NSObject {
         message.from = from
         message.type = TypePic
         message.image = image
-        message.date = Int(date.timeIntervalSinceReferenceDate)
+        message.date = date
         
         let model : XZMessageModel = XZMessageModel()
         
@@ -160,6 +160,23 @@ class XZMessageHelper: NSObject {
         
         return modleF
     }
+    
+    //MARK: ---------------传入 message---------------------
+    //创建一条本地消息
+    class func createMessageFrame(message : XZMessage) -> XZMessageFrame {
+        
+        message.date = Date()
+        
+        let model : XZMessageModel = XZMessageModel()
+        model.message = message
+        
+        let modleF = XZMessageFrame()
+        modleF.setModel(model: model)
+        
+        return modleF
+    }
+    
+    
     
     
     //MARK: -----------------相关方法-------------------------

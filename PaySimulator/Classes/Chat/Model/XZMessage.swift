@@ -24,9 +24,9 @@ class XZMessage: NSObject {
     // 消息ID
     var messageId : String?
     // 消息发送状态
-    var deliveryState : MessageDeliveryState = MessageDeliveryState.pending
+    var deliveryState : MessageDeliveryState = MessageDeliveryState.delivered
     // 消息时间
-    var date : Int?
+    var date : Date?
     // 本地消息标识:(消息+时间)的MD5
     var localMsgId : String?
     // 消息文本内容
@@ -41,8 +41,8 @@ class XZMessage: NSObject {
     var systemTime : Date = Date()
     // image
     var image : UIImage?
-    // transfer
-    var transferMark : String?
+    // mark
+    var mark : String?
     
     // 显示消息左侧提示
     var systemLeft : String?

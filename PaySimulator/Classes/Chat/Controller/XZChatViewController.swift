@@ -12,6 +12,8 @@ import UIKit
 
 class XZChatViewController: XZBaseViewController {
     
+    var isSelfSend : Bool = true
+    
     var to : XZUserModel?
     var from : XZUserModel?
     
@@ -464,6 +466,19 @@ extension XZChatViewController {
         self.addObject(messageF: messageF, isender: false)
         self.messageSendSucced(messageF: messageF)
     }
+    
+    //MARK: 发送 Message
+    
+    func senMessage (message : XZMessage) {
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(message: message)
+        
+        messageF.model?.message?.toImage = self.isSelfSend ? self.to?.headImage : self.from?.headImage
+        messageF.model?.message?.fromImage = self.isSelfSend ? self.from?.headImage : self.to?.headImage
+        messageF.model?.isSender = self.isSelfSend
+        
+        
+        self.addObject(messageF: messageF, isender: self.isSelfSend)
+    }
 }
 
 
@@ -545,7 +560,7 @@ extension XZChatViewController : XZChatBoxMoreViewDelegate {
             let transfervc = UIStoryboard(name: "chat", bundle: nil).instantiateViewController(withIdentifier: "XZChatTranferViewController") as? XZChatTranferViewController
             transfervc?.to = to
             transfervc?.setMessageData = {(message : XZMessage) in
-                self.sendTransferMessage(money: message.content!, mark: message.transferMark ?? "")
+                self.sendTransferMessage(money: message.content!, mark: message.mark ?? "")
             }
             self.navigationController?.pushViewController(transfervc!, animated: true)
         }
@@ -569,7 +584,8 @@ extension XZChatViewController : XZChatBoxMoreViewDelegate {
             redpacketvc?.to = self.to
             redpacketvc?.from = self.from
             redpacketvc?.setMessageData = { (message : XZMessage) in
-                
+                self.senMessage(message: message)
+//                self.sendRedMessage(content: message.transferMark!)
             }
             self.navigationController?.pushViewController(redpacketvc!, animated: true)
         }

@@ -45,7 +45,7 @@ class XZChatTranferViewController: XZBaseViewController {
         if setMessageData != nil {
             let message : XZMessage = XZMessage()
             message.content = amountTextField.text
-            message.transferMark = markTextField.text
+            message.mark = markTextField.text
             setMessageData!(message)
         }
         self.navigationController?.popViewController(animated: true)

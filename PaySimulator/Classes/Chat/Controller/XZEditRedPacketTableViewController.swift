@@ -182,7 +182,8 @@ extension XZEditRedPacketTableViewController {
         let message : XZMessage = XZMessage()
         message.systemTime = self.sendDate
         message.content = self.amountTextFeild.text
-        message.transferMark = self.marketTextFeild.text
+        message.mark = self.marketTextFeild.text
+        message.type = TypeRedPacket
         self.setMessageData!(message)
         
         self.navigationController?.popViewController(animated: true)
