@@ -48,7 +48,11 @@ class XZMainHomeVC: XZBaseVC {
             print(arr ?? "zzz")
             break
         case 4://红包
-            
+            XZChatListModel.dropTable()
+            XZUserModel.dropTable()
+            XZChatModel.dropTable()
+            XZChatListModel.dropTable()
+            XZMessage.dropTable()
             break
         case 5://提现账单
             
@@ -77,9 +81,6 @@ class XZMainHomeVC: XZBaseVC {
             let redVC = segue.destination as! XZEditRedPacketViewController
             redVC.hidesBottomBarWhenPushed = true
         }
-       
-        
-        
     }
     
 }

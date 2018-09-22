@@ -19,7 +19,7 @@ class XZAddFriendViewController: XZBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
-
+//        XZFriendListModel.shareSingleton.dropFriendListTable()
     }
     
     override func rightBtnOnClick() {
@@ -39,12 +39,24 @@ class XZAddFriendViewController: XZBaseViewController {
             return
         }
         
+        XZFriendListModel.shareSingleton.getDataFromSql()
+       
         
         let userModel : XZUserModel = XZUserModel()
+        userModel.userId = 1000
         userModel.headImage = headImage
         userModel.nickName = nickname
         userModel.trueName = trueName
         userModel.isHiddenTureName = (tableViewController?.hiddenSwitch.isOn)!
+        
+        if let arr = XZFriendListModel.shareSingleton.friendList {
+            if arr.count > 0 {
+                let tempUserModel = arr.last
+                if let user = tempUserModel {
+                    userModel.userId = user.userId + 1
+                }
+            }
+        }
         
         XZFriendListModel.shareSingleton.addUserModel(userModel)
         

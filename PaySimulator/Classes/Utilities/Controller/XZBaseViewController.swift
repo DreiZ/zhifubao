@@ -73,12 +73,17 @@ class XZBaseViewController: UIViewController {
     
     @objc fileprivate func back()
     {
+        self.leftBtnOnClick()
         _ = navigationController?.popViewController(animated: true)
     }
 }
 
 extension XZBaseViewController {
     @objc func rightBtnOnClick() {
+        
+    }
+    
+    @objc func leftBtnOnClick() {
         
     }
 }

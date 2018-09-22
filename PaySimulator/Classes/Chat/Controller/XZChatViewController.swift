@@ -12,6 +12,8 @@ import UIKit
 
 class XZChatViewController: XZBaseViewController {
     
+    var chatModel : XZChatModel?
+    //--------------------------------
     var isSelfSend : Bool = true
     
     var to : XZUserModel?
@@ -39,9 +41,11 @@ class XZChatViewController: XZBaseViewController {
         chatBox.moreDeletgate = self
         return chatBox
     }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         
         XZFriendListModel.shareSingleton.getDataFromSql()
@@ -68,6 +72,8 @@ class XZChatViewController: XZBaseViewController {
         self.iTableView.register(XZChatMessageTransferCell.self, forCellReuseIdentifier: TypeTransfer)
         self.iTableView.register(XZChatMessageRedPacketOpenCell.self, forCellReuseIdentifier: TypeRedPacketOpen)
         self.iTableView.register(XZChatMessageImageCell.self, forCellReuseIdentifier: TypePic)
+        
+        self.setHistroy()
         
 //        
 //        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
@@ -153,6 +159,10 @@ class XZChatViewController: XZBaseViewController {
         super.viewWillAppear(animated)
 //         IQKeyboardManager.sharedManager().enable = false
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.saveHistoryData()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -607,5 +617,41 @@ extension XZChatViewController : XZMyPhotoManageDelegate {
         message.image = myImage
         self.senMessage(message: message)
 //        self.sendImageMessage(image: myImage)
+    }
+}
+
+extension XZChatViewController {
+    func setHistroy() {
+        XZChatListModel.shareSingleton.getDataFromSql()
+        let arr = XZChatListModel.shareSingleton.chatList
+
+        let chatId = String(format: "%d%d", from?.userId ?? "", to?.userId ?? "")
+
+        if let sarr = arr {
+            if sarr.count > 0 {
+                for item in sarr {
+                    if item.chatId == Int(chatId) {
+                        chatModel = item
+                    }
+                }
+            }
+        }
+
+        if chatModel == nil {
+            self.chatModel = XZChatModel()
+//            self.chatModel?.to = self.to
+//            self.chatModel?.from = self.from
+            self.chatModel?.chatId = Int(chatId) ?? 10001000
+        }
+    }
+    
+    func saveHistoryData() {
+        let chatModel = XZChatModel()
+        chatModel.chatId = 10000
+        chatModel.fromModel = from
+        chatModel.toModel = to
+        
+        XZChatListModel.shareSingleton.addChatModel(chatModel)
+        let _ = XZChatListModel.shareSingleton.saveSelfToDB()
     }
 }

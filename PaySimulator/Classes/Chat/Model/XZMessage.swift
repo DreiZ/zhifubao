@@ -8,7 +8,7 @@
 
 import UIKit
 
-class XZMessage: NSObject {
+@objcMembers class XZMessage: NSObject {
     
     // 消息来源用户名
     var senderName : String?
@@ -56,4 +56,14 @@ class XZMessage: NSObject {
     
     // (0:未读 1:已读 2:撤回)
     var status : XZMessageStatus = XZMessageStatus.unRead
+    
+    override static func getTableName() -> String {
+        return "XZMessage"
+    }
+    
+    class func dropTable () {
+        let globalHelper = XZMessage.getUsingLKDBHelper()
+        ///删除所有表   delete all table
+        globalHelper.dropAllTable()
+    }
 }

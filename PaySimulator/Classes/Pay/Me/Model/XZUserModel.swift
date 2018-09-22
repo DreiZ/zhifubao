@@ -10,7 +10,7 @@ import UIKit
 
 @objcMembers class XZUserModel: NSObject {
     //user id
-     var userId : Int?
+     var userId : Int = 1000
     //头像
      var headImage : UIImage?
     //昵称
@@ -28,6 +28,10 @@ import UIKit
     //首字母
     @objc var acapital : String?
     
+    override static func getPrimaryKey() -> String {
+        return "userId"
+    }
+    
     override static func getTableName() -> String {
         return "XZUserModel"
     }
@@ -40,5 +44,10 @@ import UIKit
 //    override func setValue(_ value: Any?, forUndefinedKey key: String) {
 //        
 //    }
+    class func dropTable () {
+        let globalHelper = XZUserModel.getUsingLKDBHelper()
+        ///删除所有表   delete all table
+        globalHelper.dropAllTable()
+    }
     
 }

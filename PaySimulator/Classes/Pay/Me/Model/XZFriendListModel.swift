@@ -34,28 +34,12 @@ import UIKit
         print("zzz --- init ")
     }
     
-
-//    class var shareUserManage : XZFriendListModel {
-//        struct  shareSingleton{
-//            static let shareUserManage = XZFriendListModel()
-//        }
-//        return shareSingleton.shareUserManage
-//    }
-    
     class var shareSingleton : XZFriendListModel {
         struct userHelper {
             static let friendListModel = XZFriendListModel()
         }
         return userHelper.friendListModel;
     }
-    
-//
-//    class var sharedPhotoManage : XZMyPhotoManage {
-//        struct  photoManage{
-//            static let sharedPhotoManage = XZMyPhotoManage()
-//        }
-//        return photoManage.sharedPhotoManage
-//    }
 }
 
 extension XZFriendListModel {
@@ -81,7 +65,7 @@ extension XZFriendListModel {
         return self.saveToDB()
     }
     
-     func dropFriendListTable () {
+     class func dropTable () {
         let globalHelper = XZFriendListModel.getUsingLKDBHelper()
         ///删除所有表   delete all table
         globalHelper.dropAllTable()
