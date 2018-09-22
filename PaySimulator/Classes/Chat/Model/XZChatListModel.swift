@@ -46,7 +46,33 @@ extension XZChatListModel {
     }
     
     func addChatModel(_ chatModel : XZChatModel) {
+//        if self.chatList != nil {
+//            self.chatList?.append(chatModel)
+//        }else {
+//            self.chatList = []
+//            self.chatList?.append(chatModel)
+//        }
+        
         if self.chatList != nil {
+            var has = false
+            var i = 0
+            var index = -1
+
+            for item in self.chatList! {
+                if item.chatId == chatModel.chatId {
+                    has = true
+                    index = i
+                }
+                i += 1
+            }
+
+            if has {
+                self.chatList?.remove(at: index)
+                self.chatList?.insert(chatModel, at: 0)
+            }else {
+                self.chatList?.insert(chatModel, at: 0)
+            }
+
             self.chatList?.append(chatModel)
         }else {
             self.chatList = []

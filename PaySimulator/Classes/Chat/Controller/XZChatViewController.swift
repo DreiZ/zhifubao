@@ -625,7 +625,7 @@ extension XZChatViewController {
         XZChatListModel.shareSingleton.getDataFromSql()
         let arr = XZChatListModel.shareSingleton.chatList
 
-        let chatId = String(format: "%d%d", from?.userId ?? "", to?.userId ?? "")
+        let chatId = String(format: "%d%d", from?.userId ?? "1000", to?.userId ?? "1001")
 
         if let sarr = arr {
             if sarr.count > 0 {
@@ -639,19 +639,14 @@ extension XZChatViewController {
 
         if chatModel == nil {
             self.chatModel = XZChatModel()
-//            self.chatModel?.to = self.to
-//            self.chatModel?.from = self.from
+            self.chatModel?.toModel = self.to
+            self.chatModel?.fromModel = self.from
             self.chatModel?.chatId = Int(chatId) ?? 10001000
         }
     }
     
     func saveHistoryData() {
-        let chatModel = XZChatModel()
-        chatModel.chatId = 10000
-        chatModel.fromModel = from
-        chatModel.toModel = to
-        
-        XZChatListModel.shareSingleton.addChatModel(chatModel)
+        XZChatListModel.shareSingleton.addChatModel(self.chatModel!)
         let _ = XZChatListModel.shareSingleton.saveSelfToDB()
     }
 }
