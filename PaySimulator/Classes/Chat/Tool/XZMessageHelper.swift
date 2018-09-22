@@ -24,7 +24,6 @@ class XZMessageHelper: NSObject {
         message.date = date
         message.voiceTime = voiceTime ?? 1
         message.mark = transferMark
-        message.isVoiceRead = isVoiceRead
         
         let model : XZMessageModel = XZMessageModel()
 

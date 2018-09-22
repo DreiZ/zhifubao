@@ -44,6 +44,7 @@ class XZChatTranferViewController: XZBaseViewController {
     @IBAction func sureBtnOnClick(_ sender: Any) {
         if setMessageData != nil {
             let message : XZMessage = XZMessage()
+            message.type = TypeTransfer
             message.content = amountTextField.text
             message.mark = markTextField.text
             setMessageData!(message)

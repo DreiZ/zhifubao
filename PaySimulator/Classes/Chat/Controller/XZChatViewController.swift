@@ -507,7 +507,11 @@ extension XZChatViewController : XZChatBoxViewControllerDelegate{
     
     func sendTextMessage(chatBoxViewController: XZBoxViewController, message: String) {
         if message.count > 0 {
-            self.sendTextMessage(message: message)
+//            self.sendTextMessage(message: message)
+            let messageModel : XZMessage = XZMessage()
+            messageModel.type = TypeText
+            messageModel.content = message
+            self.senMessage(message: messageModel)
         }
     }
     
@@ -560,21 +564,24 @@ extension XZChatViewController : XZChatBoxMoreViewDelegate {
             let transfervc = UIStoryboard(name: "chat", bundle: nil).instantiateViewController(withIdentifier: "XZChatTranferViewController") as? XZChatTranferViewController
             transfervc?.to = to
             transfervc?.setMessageData = {(message : XZMessage) in
-                self.sendTransferMessage(money: message.content!, mark: message.mark ?? "")
+                    self.senMessage(message: message)
+//                self.sendTransferMessage(money: message.content!, mark: message.mark ?? "")
             }
             self.navigationController?.pushViewController(transfervc!, animated: true)
         }
         else if selectType == XZChatBoxMoreType.voice {
             let voicevc = UIStoryboard(name: "chat", bundle: nil).instantiateViewController(withIdentifier: "XZChatVoiceTimeViewController") as? XZChatVoiceTimeViewController
             voicevc?.setMessageData = {(message : XZMessage) in
-                self.sendVoiceMessage(voiceTime: message.voiceTime, isVoiceRead: message.isVoiceRead)
+                self.senMessage(message: message)
+//                self.sendVoiceMessage(voiceTime: message.voiceTime, isVoiceRead: message.isVoiceRead)
             }
             self.navigationController?.pushViewController(voicevc!, animated: true)
         }
         else if selectType == XZChatBoxMoreType.time {
             let timevc = XZSystemTimeViewController()
             timevc.setMessageData = {(message : XZMessage) in
-                self.sendTimeMessage(systemTime: message.systemTime)
+                self.senMessage(message: message)
+//                self.sendTimeMessage(systemTime: message.systemTime)
             }
             self.navigationController?.pushViewController(timevc, animated: true)
         }
@@ -595,6 +602,10 @@ extension XZChatViewController : XZChatBoxMoreViewDelegate {
 extension XZChatViewController : XZMyPhotoManageDelegate {
     
     func uploadImage(myImage: UIImage) {
-        self.sendImageMessage(image: myImage)
+        let message : XZMessage = XZMessage()
+        message.type = TypePic
+        message.image = myImage
+        self.senMessage(message: message)
+//        self.sendImageMessage(image: myImage)
     }
 }

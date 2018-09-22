@@ -45,8 +45,9 @@ extension XZChatVoiceTimeViewController {
     override func rightBtnOnClick() {
         if setMessageData != nil {
             let message : XZMessage = XZMessage()
+            message.type = TypeVoice
             message.voiceTime = Int(voiceSlider.value)
-            message.isVoiceRead = isReadSwitch.isOn
+            message.status = isReadSwitch.isOn ? XZMessageStatus.read : XZMessageStatus.unRead
             setMessageData!(message)
         }
         self.navigationController?.popViewController(animated: true)

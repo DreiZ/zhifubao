@@ -196,6 +196,7 @@ extension XZSystemTimeViewController : DateTimePickerDelegate{
             
             if self.setMessageData != nil {
                 let message : XZMessage = XZMessage()
+                message.type = TypeTime
                 message.systemTime = self.selectDate
                 self.setMessageData!(message)
             }

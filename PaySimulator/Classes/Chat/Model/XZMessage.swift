@@ -35,8 +35,6 @@ class XZMessage: NSObject {
     var fileKey : String?
     // 音频文件的秒数
     var voiceTime : Int = 1
-    // 音频文件的秒数
-    var isVoiceRead : Bool = false
     // 显示系统时间
     var systemTime : Date = Date()
     // image
