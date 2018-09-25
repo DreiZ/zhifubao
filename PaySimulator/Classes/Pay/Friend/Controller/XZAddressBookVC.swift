@@ -40,8 +40,8 @@ class XZAddressBookVC: XZBaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            setupNavBar()//导航栏
-  
+        setupNavBar()//导航栏
+        self.myTableView.separatorStyle = .none
         
     }
 }

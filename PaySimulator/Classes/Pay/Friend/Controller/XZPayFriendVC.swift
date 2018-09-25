@@ -133,7 +133,10 @@ extension XZPayFriendVC:UITableViewDelegate,UITableViewDataSource{
         let dAction = UITableViewRowAction(style: .default, title: "删除聊天") { (rowAction, indexPath) in
             
             print(rowAction,indexPath)
-            
+            let chatModel = self.dataList[indexPath.row]
+            self.dataList.remove(at: indexPath.row)
+            self.myTableView.reloadData()
+            XZChatListModel.shareSingleton.removeChatModel(chatModel)
         }
         
         dAction.backgroundColor = ddColorFromHex("#a5a5a5")

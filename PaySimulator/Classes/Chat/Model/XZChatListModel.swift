@@ -75,6 +75,31 @@ extension XZChatListModel {
         return self.saveToDB()
     }
     
+    func removeChatModel(_ chatModel : XZChatModel) {
+        if self.chatList != nil {
+            var has = false
+            var i = 0
+            var index = -1
+            
+            for item in self.chatList! {
+                if item.chatId == chatModel.chatId {
+                    has = true
+                    index = i
+                }
+                i += 1
+            }
+            
+            if has {
+                self.chatList?.remove(at: index)
+                
+                let queue = DispatchQueue(label: "deleteSelfFromDB",qos: .utility)
+                queue.async {
+                    let _  = XZChatListModel.shareSingleton.saveSelfToDB()
+                }
+            }
+        }
+    }
+    
     class func dropTable () {
         let globalHelper = XZChatListModel.getUsingLKDBHelper()
         ///删除所有表   delete all table
