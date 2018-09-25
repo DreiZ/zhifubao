@@ -137,6 +137,7 @@ extension XZChatViewController : UITableViewDataSource, UITableViewDelegate ,UIS
         
         let cell = XZBaseMessageCell.cellWithTableView(tableView, identifier: (obj.model?.message?.type) ?? "XZBaseMessageCell")
         cell.setModelFrame(modelFrame: obj)
+        cell.longPressDelegate = self
         return cell
     }
     
@@ -148,6 +149,29 @@ extension XZChatViewController : UITableViewDataSource, UITableViewDelegate ,UIS
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         let _ =  self.chatBoxViewController.resignFirstResponder()
+    }
+}
+
+extension XZChatViewController : BaseCellDelegate {
+    func contentPress(_ message: XZMessageFrame?) {
+        
+        if message != nil {
+            message?.model?.message?.status = XZMessageStatus.read
+            for item in (self.chatModel?.messageList)! {
+                if item.date == message?.model?.message?.date{
+                    item.status = XZMessageStatus.read
+                }
+            }
+        }
+    }
+    
+    func longPress(longRecognizer: UILongPressGestureRecognizer) {
+        
+    }
+    
+    
+    func headImageClick(eId: String) {
+        
     }
 }
 

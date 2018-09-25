@@ -10,6 +10,7 @@ import UIKit
 
 protocol BaseCellDelegate {
     func longPress(longRecognizer : UILongPressGestureRecognizer)
+    func contentPress(_ message : XZMessageFrame?)
     func headImageClick(eId : String)
 }
 

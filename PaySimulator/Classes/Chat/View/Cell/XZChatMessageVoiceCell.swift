@@ -9,6 +9,8 @@
 import UIKit
 
 class XZChatMessageVoiceCell: XZBaseMessageCell {
+    
+    var voiceRead : (()->())?
 
     lazy var voiceImage : UIImageView = {
         let vImage = UIImageView()
@@ -117,6 +119,9 @@ extension XZChatMessageVoiceCell {
     
     
     @objc func voiceBtnOnClick() {
-        
+        if self.longPressDelegate != nil {
+            self.redView.isHidden = true
+            self.longPressDelegate?.contentPress(self.modelFrame)
+        }
     }
 }
