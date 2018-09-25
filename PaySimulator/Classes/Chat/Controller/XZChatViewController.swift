@@ -51,11 +51,8 @@ class XZChatViewController: XZBaseViewController {
         let arr = XZFriendListModel.shareSingleton.friendList
         print("zzz - \(String(describing: arr))")
         
-        if arr != nil && (arr?.count)! > 1 {
-            let xmodel = arr![0]
-            self.to = xmodel
-            
-            let smodel = arr![1]
+        if arr != nil && (arr?.count)! > 0 {
+            let smodel = arr?.last
             self.from = smodel
         }
 
