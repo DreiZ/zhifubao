@@ -83,6 +83,7 @@ class XZChatViewController: XZBaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.saveHistoryData()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -382,6 +383,9 @@ extension XZChatViewController {
     
     func saveHistoryData() {
         XZChatListModel.shareSingleton.addChatModel(self.chatModel!)
-        let _ = XZChatListModel.shareSingleton.saveSelfToDB()
+        let queue = DispatchQueue(label: "saveSelfToDB",qos: .utility)
+        queue.async {
+            let _  = XZChatListModel.shareSingleton.saveSelfToDB()
+        }
     }
 }
