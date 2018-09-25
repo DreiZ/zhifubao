@@ -54,6 +54,20 @@ extension XZFriendListModel {
     
     func addUserModel(_ userModel : XZUserModel) {
         if self.friendList != nil {
+            if (self.friendList?.count)! > 0 {
+                let friendListCount = (self.friendList?.count ?? 0) - 1
+                self.friendList?.insert(userModel, at: friendListCount)
+            }else {
+                self.friendList?.append(userModel)
+            }
+        }else {
+            self.friendList = []
+            self.friendList?.append(userModel)
+        }
+    }
+    
+    func addSelfUserModel(_ userModel : XZUserModel) {
+        if self.friendList != nil {
             self.friendList?.append(userModel)
         }else {
             self.friendList = []

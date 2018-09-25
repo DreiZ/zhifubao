@@ -50,11 +50,11 @@ class XZAddFriendViewController: XZBaseViewController {
         userModel.isHiddenTureName = (tableViewController?.hiddenSwitch.isOn)!
         
         if let arr = XZFriendListModel.shareSingleton.friendList {
-            if arr.count > 0 {
-                let tempUserModel = arr.last
-                if let user = tempUserModel {
-                    userModel.userId = user.userId + 1
-                }
+            if arr.count > 1 {
+                let tempUserModel = arr[arr.count-2]
+//                if let user = tempUserModel {
+                    userModel.userId = tempUserModel.userId + 1
+//                }
             }
         }
         

@@ -14,6 +14,11 @@ class XZMainHomeVC: XZBaseVC {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.init(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1)
+        
+        let isFirst = UserDefaults.standard.bool(forKey: "kIsFirstLoad")
+        if !isFirst {
+            self.setFirstUserData()
+        }
     }
 
    
@@ -83,4 +88,21 @@ class XZMainHomeVC: XZBaseVC {
         }
     }
     
+}
+
+extension XZMainHomeVC {
+    func setFirstUserData() {
+        let userModel : XZUserModel = XZUserModel()
+        userModel.userId = 9999
+        userModel.nickName = "支付宝"
+        userModel.trueName = "支付宝"
+        
+        userModel.aliCount = "zcf@163.com"
+        userModel.isHiddenTureName = false
+        
+        XZFriendListModel.shareSingleton.addSelfUserModel(userModel)
+        let _ = XZFriendListModel.shareSingleton.saveSelfToDB()
+        
+        UserDefaults.standard.set(true, forKey: "kIsFirstLoad")
+    }
 }

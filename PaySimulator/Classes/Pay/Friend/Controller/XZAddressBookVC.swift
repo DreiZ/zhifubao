@@ -15,6 +15,7 @@ class XZAddressBookVC: XZBaseVC {
     //MARK:--懒加载数据源(假数据)
     let dataList : [[XZUserModel]] = {
  
+        XZFriendListModel.shareSingleton.getDataFromSql()
         let friendList = XZFriendListModel.shareSingleton.friendList
  
         let resultArray = XZAddressBookManager.sortObjectsAccordingToInitial(with: friendList);

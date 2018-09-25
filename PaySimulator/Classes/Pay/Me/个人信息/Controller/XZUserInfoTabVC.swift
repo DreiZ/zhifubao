@@ -103,14 +103,28 @@ extension XZUserInfoTabVC{
             userInfo.payAccount = self?.payAccountLB?.text//账号
             userInfo.VIPLevel = self?.starsLevel?.text//等级
             userInfo.saveUserInfo()//保存
-            self?.navigationController?.popViewController(animated: true)
+//            self?.navigationController?.popViewController(animated: true)
             
+            
+            
+            let userModel : XZUserModel = XZUserModel()
+            userModel.userId = 9999
+            userModel.headImage = self?.iconImage?.image
+            userModel.nickName = self?.userNameLB?.text
+            userModel.trueName = self?.userNameLB?.text
+            
+            userModel.aliCount = self?.payAccountLB?.text
+            userModel.isHiddenTureName = false
+            
+            XZFriendListModel.shareSingleton.addSelfUserModel(userModel)
+            let saveStatus = XZFriendListModel.shareSingleton.saveSelfToDB()
+            if saveStatus {
+                self?.navigationController?.popViewController(animated: true)
+            }else{
+                XZPublicTools.shareSingleton.showError(subTitle: "添加失败")
+            }
         }
- 
     }
-    
- 
-    
 }
     // MARK: - Table view data source
 extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
