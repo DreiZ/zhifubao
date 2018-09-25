@@ -30,6 +30,8 @@ protocol XZChatBoxViewControllerDelegate {
     func sendVideoMessage(chatBoxViewController : XZBoxViewController, videoPath : String)
     
     func sendFileMessage(chatBoxViewController : XZBoxViewController, fileName : String)
+    
+    func chatBoxVoiceSelectRole()
 }
 
 class XZBoxViewController: UIViewController {
@@ -127,6 +129,12 @@ extension XZBoxViewController {
 }
 
 extension XZBoxViewController :  XZChatBoxDelegate {
+    func chatBoxVoiceSelectRole() {
+        if delegate != nil {
+            delegate?.chatBoxVoiceSelectRole()
+        }
+    }
+    
     func chatBoxChangeStatus(chatBox: XZChatBoxView, fromStatus: XZChatBoxStatus, toStatus: XZChatBoxStatus) {
         if toStatus == XZChatBoxStatus.showKeyboard {
             DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute:

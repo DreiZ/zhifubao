@@ -9,7 +9,8 @@
 import UIKit
 
 @objcMembers class XZMessage: NSObject {
-    
+    // 是否为self 发送
+    var isSelfSender : Bool = true
     // 消息来源用户名
     var senderName : String?
     // 消息来源用户id

@@ -107,9 +107,9 @@ extension XZBaseMessageCell {
         self.bubbleView.frame = modelFrame.bubbleViewF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
         
         if (modelFrame.model?.isSender)! == true {
-            self.headImageView.image = modelFrame.model?.message?.toImage
-        }else {
             self.headImageView.image = modelFrame.model?.message?.fromImage
+        }else {
+            self.headImageView.image = modelFrame.model?.message?.toImage
         }
         
         

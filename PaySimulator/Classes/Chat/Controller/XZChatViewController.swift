@@ -46,8 +46,7 @@ class XZChatViewController: XZBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
+
         XZFriendListModel.shareSingleton.getDataFromSql()
         let arr = XZFriendListModel.shareSingleton.friendList
         print("zzz - \(String(describing: arr))")
@@ -160,11 +159,10 @@ extension XZChatViewController {
     
     func setHistoryDataShow() {
         for message in self.chatModel?.messageList ?? [] {
-            let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(message: message)
+            let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(message: message, isSender: message.isSelfSender)
             
-            messageF.model?.message?.toImage = self.isSelfSend ? self.to?.headImage : self.from?.headImage
-            messageF.model?.message?.fromImage = self.isSelfSend ? self.from?.headImage : self.to?.headImage
-            messageF.model?.isSender = self.isSelfSend
+            messageF.model?.message?.toImage = self.to?.headImage
+            messageF.model?.message?.fromImage = self.from?.headImage
             
             messageF.model?.message?.deliveryState = .delivered
             self.dataSource.append(messageF)
@@ -198,11 +196,12 @@ extension XZChatViewController {
 
     //MARK: 发送 Message
     func senMessage (message : XZMessage) {
-        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(message: message)
+        message.isSelfSender = isSelfSend
         
-        messageF.model?.message?.toImage = self.isSelfSend ? self.to?.headImage : self.from?.headImage
-        messageF.model?.message?.fromImage = self.isSelfSend ? self.from?.headImage : self.to?.headImage
-        messageF.model?.isSender = self.isSelfSend
+        let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(message: message, isSender: isSelfSend)
+        
+        messageF.model?.message?.toImage = self.to?.headImage
+        messageF.model?.message?.fromImage = self.from?.headImage
         
         //添加历史数据
         self.chatModel?.messageList.append(message)
@@ -212,6 +211,17 @@ extension XZChatViewController {
 
 
 extension XZChatViewController : XZChatBoxViewControllerDelegate{
+    func chatBoxVoiceSelectRole() {
+        let seletRoleView = XZSendRoleView(frame: CGRect(x: 0, y: 0, width: kWindowW, height: kWindowH))
+        seletRoleView.setData(selfUser: self.from!, toUser: self.to!, isSelectSelf: self.isSelfSend)
+        seletRoleView.selectBlock = {(isSelf : Bool) in
+            self.isSelfSend = isSelf
+        }
+        
+        self.view.addSubview(seletRoleView)
+    }
+    
+    
     func changeBoxHeight(chatBoxViewController: XZBoxViewController, chatBoxHeight: CGFloat) {
         self.chatBoxViewController.view.snp.remakeConstraints { (make) in
             make.left.bottom.right.equalToSuperview()

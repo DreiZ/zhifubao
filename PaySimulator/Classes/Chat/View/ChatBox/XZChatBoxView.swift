@@ -18,6 +18,8 @@ protocol XZChatBoxDelegate {
      */
     func chatBoxChangeStatus(chatBox : XZChatBoxView, fromStatus : XZChatBoxStatus, toStatus : XZChatBoxStatus )
     
+    func chatBoxVoiceSelectRole()
+    
     /**
      *  发送消息
      *
@@ -314,6 +316,12 @@ extension XZChatBoxView {
     //MARK :-----------------------------------
     //语音操作
     @objc func voiceBtnDown(sender : UIButton)  {
+        if delegate != nil {
+            self.iTextView.resignFirstResponder()
+            delegate?.chatBoxVoiceSelectRole()
+            return;
+        }
+        
         let lastStatus = self.status
         
         if lastStatus == XZChatBoxStatus.showVoice {
