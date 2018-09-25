@@ -9,10 +9,10 @@
 import UIKit
 @objcMembers class XZChatModel : NSObject {
     //会话信息
-    var messageList : [XZMessage]?
+    var messageList : [XZMessage] = []
     var toModel : XZUserModel?
     var fromModel : XZUserModel?
-    var chatId : Int = 12000
+    var chatId : Int = 10001001
     
     
     override static func getPrimaryKey() -> String {

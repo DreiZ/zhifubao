@@ -13,9 +13,9 @@ import UIKit
     // 消息来源用户名
     var senderName : String?
     // 消息来源用户id
-    var from : String?
+    var fromUser : String?
     // 消息目的地群组id
-    var to : String?
+    var toUser : String?
     
     var fromImage : UIImage?
     // 消息目的地群组id

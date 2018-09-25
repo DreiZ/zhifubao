@@ -93,7 +93,7 @@ extension XZBaseMessageCell {
     
     @objc func headClicked()  {
         if longPressDelegate != nil {
-            longPressDelegate?.headImageClick(eId: self.modelFrame?.model?.message?.from ?? "")
+            longPressDelegate?.headImageClick(eId: self.modelFrame?.model?.message?.fromUser ?? "")
         }
     }
 }

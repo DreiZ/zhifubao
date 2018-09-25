@@ -75,6 +75,8 @@ class XZChatViewController: XZBaseViewController {
         
         self.setHistroy()
         
+        self.setHistoryDataShow()
+        
 //        
 //        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
 //            {
@@ -233,6 +235,21 @@ extension XZChatViewController : UITableViewDataSource, UITableViewDelegate ,UIS
 
 
 extension XZChatViewController {
+    
+    func setHistoryDataShow() {
+        for message in self.chatModel?.messageList ?? [] {
+            let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(message: message)
+            
+            messageF.model?.message?.toImage = self.isSelfSend ? self.to?.headImage : self.from?.headImage
+            messageF.model?.message?.fromImage = self.isSelfSend ? self.from?.headImage : self.to?.headImage
+            messageF.model?.isSender = self.isSelfSend
+            
+            messageF.model?.message?.deliveryState = .delivered
+            self.dataSource.append(messageF)
+            self.iTableView.reloadData()
+            self.scrollToBottom()
+        }
+    }
     
     func addObject (messageF : XZMessageFrame, isender : Bool) {
         messageF.model?.message?.deliveryState = .delivered
@@ -486,7 +503,8 @@ extension XZChatViewController {
         messageF.model?.message?.fromImage = self.isSelfSend ? self.from?.headImage : self.to?.headImage
         messageF.model?.isSender = self.isSelfSend
         
-        
+        //添加历史数据
+        self.chatModel?.messageList.append(message)
         self.addObject(messageF: messageF, isender: self.isSelfSend)
     }
 }
@@ -626,22 +644,32 @@ extension XZChatViewController {
         let arr = XZChatListModel.shareSingleton.chatList
 
         let chatId = String(format: "%d%d", from?.userId ?? "1000", to?.userId ?? "1001")
-
+        var tempChatModel : XZChatModel?
+        
         if let sarr = arr {
             if sarr.count > 0 {
                 for item in sarr {
+                    print("zzz--------%d   %d",item.chatId,chatId)
                     if item.chatId == Int(chatId) {
-                        chatModel = item
+                        tempChatModel = item
                     }
                 }
             }
         }
 
-        if chatModel == nil {
+        if tempChatModel == nil {
             self.chatModel = XZChatModel()
             self.chatModel?.toModel = self.to
             self.chatModel?.fromModel = self.from
-            self.chatModel?.chatId = Int(chatId) ?? 10001000
+            self.chatModel?.chatId = Int(chatId) ?? 10001001
+        }else {
+            self.chatModel = XZChatModel()
+            self.chatModel?.toModel = tempChatModel?.toModel
+            self.chatModel?.fromModel = tempChatModel?.fromModel
+            self.chatModel?.chatId = tempChatModel?.chatId ?? 10001001
+            for item in tempChatModel?.messageList ?? [] {
+                self.chatModel?.messageList.append(item)
+            }
         }
     }
     

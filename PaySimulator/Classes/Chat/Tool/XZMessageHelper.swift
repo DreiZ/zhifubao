@@ -17,8 +17,8 @@ class XZMessageHelper: NSObject {
                                   isSender : Bool, receivedSenderByYourself : Bool, voiceTime : Int?, isVoiceRead : Bool, transferMark : String?) -> XZMessageFrame {
         
         let message : XZMessage = XZMessage()
-        message.to = to
-        message.from = from
+        message.toUser = to
+        message.fromUser = from
         message.type = type
         message.fileKey = fileKey
         message.date = date
@@ -68,8 +68,8 @@ class XZMessageHelper: NSObject {
                                   to : String, isSender : Bool, receivedSenderByYourself : Bool, systemTime : Date?) -> XZMessageFrame {
         
         let message : XZMessage = XZMessage()
-        message.to = to
-        message.from = from
+        message.toUser = to
+        message.fromUser = from
         message.type = TypeTime
         message.systemTime = systemTime ?? Date()
         message.date = date
@@ -100,8 +100,8 @@ class XZMessageHelper: NSObject {
                                             to : String, isSender : Bool, receivedSenderByYourself : Bool) -> XZMessageFrame {
         
         let message : XZMessage = XZMessage()
-        message.to = to
-        message.from = from
+        message.toUser = to
+        message.fromUser = from
         message.type = TypeSystem
         message.systemLeft = systemLeft
         message.systemRight = messageRight
@@ -134,8 +134,8 @@ class XZMessageHelper: NSObject {
                                         to : String, isSender : Bool, receivedSenderByYourself : Bool) -> XZMessageFrame {
         
         let message : XZMessage = XZMessage()
-        message.to = to
-        message.from = from
+        message.toUser = to
+        message.fromUser = from
         message.type = TypePic
         message.image = image
         message.date = date

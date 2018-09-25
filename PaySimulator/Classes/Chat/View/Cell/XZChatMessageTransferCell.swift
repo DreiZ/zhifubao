@@ -92,7 +92,7 @@ extension XZChatMessageTransferCell {
         self.titleLabel.text = ((modelFrame.model?.message?.content) ?? "0") + "元"
         
         if modelFrame.model?.isSender == true {
-            self.desLabel.text = "转账给" + ((modelFrame.model?.message?.to) ?? "")
+            self.desLabel.text = "转账给" + ((modelFrame.model?.message?.toUser) ?? "")
         }else {
             self.desLabel.text = "转账给你"
         }
