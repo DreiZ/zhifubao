@@ -12,14 +12,30 @@ class XZPayFriendVC: XZBaseVC {
 
     @IBOutlet weak var myTableView: UITableView!
     
+    var dataList : [XZChatModel] = {
+        
+        XZChatListModel.shareSingleton.getDataFromSql()
+        let friendList = XZChatListModel.shareSingleton.chatList
+        
+        return friendList ?? []
+    }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        XZChatListModel.shareSingleton.getDataFromSql()
+        let friendList = XZChatListModel.shareSingleton.chatList
+        
+        dataList = friendList ?? []
+        
+        if self.myTableView != nil  {
+            self.myTableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupNavigationUI()//设置导航栏 相关方法
     }
-    
- 
-
 }
 //MARK:-- 有关UI设置的所有方法
 extension XZPayFriendVC{
@@ -41,6 +57,8 @@ extension XZPayFriendVC{
         let secondBar = UIBarButtonItem(customView: firendBtn)
         navigationItem.rightBarButtonItems = [firstBar,secondBar]
         
+        
+        self.myTableView.separatorStyle = .none
     };
     
     
@@ -63,14 +81,36 @@ extension XZPayFriendVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = XZPayFriendCellTableViewCell.cellWithTableView(tableView)
         
+        let chatModel = dataList[indexPath.row]
+        cell.iconImg.image = chatModel.toModel?.headImage
+        cell.titleLabel.text = chatModel.toModel?.trueName
+        var subTitle = "新的朋友"
+        var time = Date().shortTimeTextOfDate()
+        if chatModel.messageList.count > 0 {
+            let message = chatModel.messageList.last
+            time = (message?.date ?? Date()).shortTimeTextOfDate()
+            if message?.type == TypeText {
+                subTitle = message?.content ?? ""
+            }else if message?.type == TypePic {
+                subTitle = "[图片]"
+            }else if message?.type == TypeTransfer {
+                subTitle = "[转账]转账" + (message?.content ?? "") + "元"
+            }else if message?.type == TypeVoice {
+                subTitle = "[语音]"
+            }else if message?.type == TypeRedPacket {
+                subTitle = "[红包]" + (message?.content ?? "")
+            }
+        }
         
+        cell.detailLabel.text = subTitle
+        cell.timeLabel.text = time
         return cell
         
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.dataList.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -101,9 +141,15 @@ extension XZPayFriendVC:UITableViewDelegate,UITableViewDataSource{
         
     }
     
-    
-    
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let chatModel = dataList[indexPath.row]
+        if  chatModel.toModel != nil {
+            let chatvc = XZChatViewController()
+            chatvc.to = chatModel.toModel
+            chatvc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(chatvc, animated: true)
+        }
+    }
 }
 
 

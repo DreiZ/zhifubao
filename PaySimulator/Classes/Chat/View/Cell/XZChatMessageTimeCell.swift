@@ -63,9 +63,8 @@ extension XZChatMessageTimeCell {
     override func setModelFrame(modelFrame: XZMessageFrame) {
         super.setModelFrame(modelFrame: modelFrame)
         
-//        self.timeLabel.text = XZMessageHelper.timeFormatWithDate(time: (modelFrame.model?.message?.systemTime) ?? 1530000000)
-        self.timeLabel.text = modelFrame.model?.message?.systemTime.dayFromWeekday()
-//            Date(timeIntervalSince1970: TimeInterval((modelFrame.model?.message?.systemTime) ?? 1530000000)).dayFromWeekday()
+//        self.timeLabel.text = modelFrame.model?.message?.systemTime.dayFromWeekday()
+
         self.timeLabel.text = modelFrame.model?.message?.systemTime.shortTimeTextOfDate()
     }
 }

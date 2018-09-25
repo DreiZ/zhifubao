@@ -10,13 +10,15 @@ import UIKit
 import Kingfisher
 class XZAddressBookVC: XZBaseVC {
 
+    @IBOutlet weak var myTableView: UITableView!
     //MARK:--数据资源
     let iconResource = ["新的朋友","群聊","生活号","生活圈"]
     //MARK:--懒加载数据源(假数据)
-    let dataList : [[XZUserModel]] = {
+    var dataList : [[XZUserModel]] = {
  
         XZFriendListModel.shareSingleton.getDataFromSql()
-        let friendList = XZFriendListModel.shareSingleton.friendList
+        var friendList = XZFriendListModel.shareSingleton.friendList
+        friendList?.removeLast()
  
         let resultArray = XZAddressBookManager.sortObjectsAccordingToInitial(with: friendList);
       
@@ -24,6 +26,17 @@ class XZAddressBookVC: XZBaseVC {
         
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        XZFriendListModel.shareSingleton.getDataFromSql()
+        var friendList = XZFriendListModel.shareSingleton.friendList
+        friendList?.removeLast()
+        let resultArray = XZAddressBookManager.sortObjectsAccordingToInitial(with: friendList);
+        dataList = resultArray as! [[XZUserModel]]
+        
+        if self.myTableView != nil  {
+            self.myTableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +44,6 @@ class XZAddressBookVC: XZBaseVC {
   
         
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    
-  
-    
-
 }
 
 //MARK:--UI相关
@@ -113,6 +117,7 @@ extension XZAddressBookVC:UITableViewDataSource,UITableViewDelegate{
         
         
         cell?.titleLabel.text = model.nickName
+        cell?.detailLabel.text = model.trueName
         
         cell?.iconImage.image = model.headImage
         

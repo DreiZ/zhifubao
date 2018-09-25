@@ -49,7 +49,6 @@ class XZChatViewController: XZBaseViewController {
 
         XZFriendListModel.shareSingleton.getDataFromSql()
         let arr = XZFriendListModel.shareSingleton.friendList
-        print("zzz - \(String(describing: arr))")
         
         if arr != nil && (arr?.count)! > 0 {
             let smodel = arr?.last
@@ -352,7 +351,7 @@ extension XZChatViewController {
         XZChatListModel.shareSingleton.getDataFromSql()
         let arr = XZChatListModel.shareSingleton.chatList
 
-        let chatId = String(format: "%d%d", from?.userId ?? "1000", to?.userId ?? "1001")
+        let chatId = to?.userId ?? 1001 //String(format: "%d%d", from?.userId ?? "1000", to?.userId ?? "1001")
         var tempChatModel : XZChatModel?
         
         if let sarr = arr {
@@ -369,12 +368,12 @@ extension XZChatViewController {
             self.chatModel = XZChatModel()
             self.chatModel?.toModel = self.to
             self.chatModel?.fromModel = self.from
-            self.chatModel?.chatId = Int(chatId) ?? 10001001
+            self.chatModel?.chatId = chatId
         }else {
             self.chatModel = XZChatModel()
             self.chatModel?.toModel = tempChatModel?.toModel
             self.chatModel?.fromModel = tempChatModel?.fromModel
-            self.chatModel?.chatId = tempChatModel?.chatId ?? 10001001
+            self.chatModel?.chatId = tempChatModel?.chatId ?? 1001
             for item in tempChatModel?.messageList ?? [] {
                 self.chatModel?.messageList.append(item)
             }
