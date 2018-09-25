@@ -163,8 +163,9 @@ class XZMessageHelper: NSObject {
     //MARK: ---------------传入 message---------------------
     //创建一条本地消息
     class func createMessageFrame(message : XZMessage, isSender : Bool) -> XZMessageFrame {
-        
-        message.date = Date()
+        if message.date == nil {
+            message.date = Date()
+        }
         
         let model : XZMessageModel = XZMessageModel()
         model.message = message

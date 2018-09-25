@@ -56,7 +56,7 @@ import UIKit
     var lnk : String?
     
     // (0:未读 1:已读 2:撤回)
-    var status : XZMessageStatus = XZMessageStatus.unRead
+    var status : XZMessageStatus?
     
     override static func getTableName() -> String {
         return "XZMessage"
