@@ -10,14 +10,25 @@ import UIKit
 
 class XZReceivablesTableViewController: UITableViewController {
 
+    var tranferModel : XZTranferModel?
     var editType : BillType = .Receivables
+    
     //转入 转出按钮
     @IBOutlet weak var transferTypeLeftBtn: UIButton!
     @IBOutlet weak var transferTypeRightBtn: UIButton!
     
     //交易对象
     @IBOutlet weak var nameLabel: UILabel!
-    
+    @IBOutlet weak var toImageView: UIImageView!
+    @IBOutlet weak var toAliAcountTextField: UITextField!
+    @IBOutlet weak var AmountTextField: UITextField!
+    @IBOutlet weak var markTextField: UITextField!
+    @IBOutlet weak var toUserLevel: UILabel!
+    @IBOutlet weak var receiveTypeLabel: UILabel!
+    @IBOutlet weak var billClassLabel: UILabel!
+    @IBOutlet weak var createTimeLabel: UILabel!
+    @IBOutlet weak var transferStatus: UILabel!
+    @IBOutlet weak var billOrderNO: UITextField!
     
     let receiveTypeArr : [String] = ["余额", "余额宝", "银行卡"]
     let transactionStateArr : [String] = ["交易成功", "待付款"]
@@ -26,7 +37,6 @@ class XZReceivablesTableViewController: UITableViewController {
     var dataAlert : XZMyAlertSheetView = {
         let dataAlert = XZMyAlertSheetView()
         
-        
         return dataAlert
     }()
     
@@ -34,6 +44,7 @@ class XZReceivablesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setData()
         self.setupUI()
     }
 
@@ -44,23 +55,101 @@ class XZReceivablesTableViewController: UITableViewController {
             if indexPath.row == 0 {
                 self.dataAlert.title = "选择会员等级"
                 self.dataAlert.setDataArr(dataArr: gradeArr)
+                dataAlert.selectBlock = {(_ selectedIndex : Int) in
+                    self.tranferModel?.toUser?.level = selectedIndex
+                    self.reloadTableViewData()
+                }
                 self.dataAlert.showInView(showView: self.view)
             }else if indexPath.row == 1 {
                 self.dataAlert.title = "收款方式"
                 self.dataAlert.setDataArr(dataArr: receiveTypeArr)
+                dataAlert.selectBlock = {(_ selectedIndex : Int) in
+                    self.tranferModel?.paymentMethod = self.receiveTypeArr[selectedIndex]
+                    self.reloadTableViewData()
+                }
                 self.dataAlert.showInView(showView: self.view)
             }else if indexPath.row == 2 {
                 
             }else if indexPath.row == 3 {
+                let spicker = HcdDateTimePickerView(datePickerMode: DatePickerDateHourMinuteMode, defaultDateTime: Date())
+                spicker?.topViewColor = kChatMainColor
                 
+                spicker?.clickedOkBtn = {(dateTimeStr : String?) in
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy-MM-d HH:mm"
+                    let tempDate = formatter.date(from: dateTimeStr!)
+                    self.tranferModel?.createTime = tempDate
+
+                    self.reloadTableViewData()
+                }
+                
+                self.view.addSubview(spicker!)
+                spicker?.showHcdDateTimePicker()
             }else if indexPath.row == 4 {
                 self.dataAlert.title = "交易状态"
                 self.dataAlert.setDataArr(dataArr: transactionStateArr)
+                dataAlert.selectBlock = {(_ selectedIndex : Int) in
+                    self.tranferModel?.state = self.transactionStateArr[selectedIndex]
+                    self.reloadTableViewData()
+                }
                 self.dataAlert.showInView(showView: self.view)
+            }
+        }else if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                let addressBookVC = UIStoryboard(name: "PayFriend", bundle: nil).instantiateViewController(withIdentifier: "XZAddressBookVC") as? XZAddressBookVC
+                addressBookVC?.selectUserBlock = {(user : XZUserModel) in
+                    self.tranferModel?.toUser = user
+                    self.reloadTableViewData()
+                }
+                self.navigationController?.pushViewController(addressBookVC!, animated: true)
             }
         }
     }
     
+    
+    
+    @IBAction func transferInOnClick(_ sender: Any) {
+        self.tranferModel?.isTransferIn = true
+        
+        if self.tranferModel?.isTransferIn ?? true {
+            self.transferTypeLeftBtn.setTitleColor(UIColor.white, for: .normal)
+            self.transferTypeLeftBtn.backgroundColor = kChatMainColor
+            
+            self.transferTypeRightBtn.setTitleColor(kChatMainColor, for: .normal)
+            self.transferTypeRightBtn.backgroundColor = UIColor.white
+        }else{
+            self.transferTypeRightBtn.setTitleColor(UIColor.white, for: .normal)
+            self.transferTypeRightBtn.backgroundColor = kChatMainColor
+            
+            self.transferTypeLeftBtn.setTitleColor(kChatMainColor, for: .normal)
+            self.transferTypeLeftBtn.backgroundColor = UIColor.white
+        }
+            
+    }
+    
+    
+    @IBAction func transferOutClick(_ sender: Any) {
+        self.tranferModel?.isTransferIn = false
+        
+        if self.tranferModel?.isTransferIn ?? true {
+            self.transferTypeLeftBtn.setTitleColor(UIColor.white, for: .normal)
+            self.transferTypeLeftBtn.backgroundColor = kChatMainColor
+            
+            self.transferTypeRightBtn.setTitleColor(kChatMainColor, for: .normal)
+            self.transferTypeRightBtn.backgroundColor = UIColor.white
+        }else{
+            self.transferTypeRightBtn.setTitleColor(UIColor.white, for: .normal)
+            self.transferTypeRightBtn.backgroundColor = kChatMainColor
+            
+            self.transferTypeLeftBtn.setTitleColor(kChatMainColor, for: .normal)
+            self.transferTypeLeftBtn.backgroundColor = UIColor.white
+        }
+            
+    }
+    
+    @IBAction func refreshBtnOnClick(_ sender: Any) {
+        self.getOrderNo()
+    }
     
     
 }
@@ -76,7 +165,25 @@ extension XZReceivablesTableViewController {
         self.transferTypeRightBtn.layer.borderColor = ddColorFromHex("e8e8e8").cgColor
         self.transferTypeRightBtn.layer.borderWidth = 1
         
+        self.transferTypeLeftBtn.layer.masksToBounds = true
+        self.transferTypeLeftBtn.layer.cornerRadius = 4
+        self.transferTypeLeftBtn.layer.borderColor = ddColorFromHex("e8e8e8").cgColor
+        self.transferTypeLeftBtn.layer.borderWidth = 1
+        
         self.setupFooterView()
+        
+        self.toAliAcountTextField.delegate = self
+        self.AmountTextField.delegate = self
+        self.markTextField.delegate = self
+        
+        self.toAliAcountTextField.tag = 0
+        self.AmountTextField.tag = 1
+        self.markTextField.tag = 2
+        
+        self.toAliAcountTextField.addTarget(self, action: #selector(textFieldDidChange (textField:)), for: UIControlEvents.editingChanged)
+        self.AmountTextField.addTarget(self, action: #selector(textFieldDidChange (textField:)), for: UIControlEvents.editingChanged)
+        self.markTextField.addTarget(self, action: #selector(textFieldDidChange (textField:)), for: UIControlEvents.editingChanged)
+
     }
     
     private func setupFooterView() {
@@ -88,9 +195,64 @@ extension XZReceivablesTableViewController {
         }
         self.tableView.tableFooterView = footer
     }
+    
+    func setData () {
+        if self.tranferModel == nil {
+            self.tranferModel = XZTranferModel()
+        }
+    }
+    
+    func reloadTableViewData() {
+        if self.tranferModel?.isTransferIn ?? true {
+            self.transferTypeLeftBtn.setTitleColor(UIColor.white, for: .normal)
+            self.transferTypeLeftBtn.backgroundColor = kChatMainColor
+            
+            self.transferTypeRightBtn.setTitleColor(kChatMainColor, for: .normal)
+            self.transferTypeRightBtn.backgroundColor = UIColor.white
+        }else{
+            self.transferTypeRightBtn.setTitleColor(UIColor.white, for: .normal)
+            self.transferTypeRightBtn.backgroundColor = kChatMainColor
+            
+            self.transferTypeLeftBtn.setTitleColor(kChatMainColor, for: .normal)
+            self.transferTypeLeftBtn.backgroundColor = UIColor.white
+        }
+        
+        self.nameLabel.text = self.tranferModel?.toUser?.trueName
+        self.toImageView.image = self.tranferModel?.toUser?.headImage
+        self.toAliAcountTextField.text = self.tranferModel?.toUser?.aliCount
+        self.AmountTextField.text = self.tranferModel?.amount
+        self.markTextField.text = self.tranferModel?.mark
+        
+
+        self.toUserLevel.text = gradeArr[self.tranferModel?.toUser?.level ?? 0]
+        self.receiveTypeLabel.text = self.tranferModel?.paymentMethod
+        self.billClassLabel.text = self.tranferModel?.billClass
+        self.createTimeLabel.text = self.tranferModel?.createTime?.stringOfDate(formatter:"yyyy-MM-d HH:mm")
+        
+        self.transferStatus.text = self.tranferModel?.state
+        self.billOrderNO.text = self.tranferModel?.billNo
+//        @IBOutlet weak var billOrderNo: UILabel!
+    }
 }
 
 //t
-extension XZReceivablesTableViewController {
+extension XZReceivablesTableViewController : UITextFieldDelegate {
+    @objc func textFieldDidChange(textField : UITextField) {
+        if textField.tag == 0 {
+            self.tranferModel?.toUser?.aliCount = textField.text
+        }else if textField.tag == 1 {
+            self.tranferModel?.amount = textField.text ?? ""
+        }else if textField.tag == 2 {
+            self.tranferModel?.mark = textField.text
+        }
+    }
     
+    func getOrderNo() {
+        var orderNo = (self.tranferModel?.createTime?.stringOfDate(formatter:"yyyyMMdd")) ?? "" + "200040011100"
+        for _ in ["1","0", "0", "0", "6", "5", "0", "3", "3", "6", "7", "7"] {
+            orderNo = orderNo + String(format: "%ld", arc4random() % 10)
+        }
+        self.tranferModel?.billNo = orderNo
+        self.reloadTableViewData()
+    }
 }

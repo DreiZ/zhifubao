@@ -9,6 +9,9 @@
 import UIKit
 import Kingfisher
 class XZAddressBookVC: XZBaseVC {
+    
+    var selectUserBlock : ((_ user : XZUserModel) -> ())?
+    
 
     @IBOutlet weak var myTableView: UITableView!
     //MARK:--数据资源
@@ -181,6 +184,12 @@ extension XZAddressBookVC:UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section > 0 {
+            if self.selectUserBlock != nil {
+                self.selectUserBlock!(self.dataList[indexPath.section-1][indexPath.row])
+                self.navigationController?.popViewController(animated: true)
+                return
+            }
+            
             let chatvc = XZChatViewController()
             chatvc.to = self.dataList[indexPath.section-1][indexPath.row]
             chatvc.hidesBottomBarWhenPushed = true

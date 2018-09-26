@@ -67,16 +67,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="熊大" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzB-9V-GBy">
-                                                    <rect key="frame" x="315" y="18.5" width="25" height="14.5"/>
+                                                    <rect key="frame" x="313" y="18.5" width="25" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a2f-HL-Cdl">
-                                                    <rect key="frame" x="344" y="20.5" width="16" height="9"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a2f-HL-Cdl">
+                                                    <rect key="frame" x="344" y="17" width="16" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="16" id="aCk-RH-g4D"/>
-                                                        <constraint firstAttribute="width" secondItem="a2f-HL-Cdl" secondAttribute="height" multiplier="15:8" id="scp-yc-oWc"/>
+                                                        <constraint firstAttribute="width" secondItem="a2f-HL-Cdl" secondAttribute="height" multiplier="15:15" id="scp-yc-oWc"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mV6-SA-hS5">
@@ -104,7 +104,7 @@
                                                 <constraint firstItem="jzB-9V-GBy" firstAttribute="centerY" secondItem="G6H-Tb-CnX" secondAttribute="centerY" id="YQt-Qy-7lb"/>
                                                 <constraint firstItem="G6H-Tb-CnX" firstAttribute="leading" secondItem="fLc-D9-b96" secondAttribute="leading" constant="16" id="ZEx-HH-hyV"/>
                                                 <constraint firstItem="mV6-SA-hS5" firstAttribute="leading" secondItem="fLc-D9-b96" secondAttribute="leading" id="cUq-sb-62V"/>
-                                                <constraint firstItem="a2f-HL-Cdl" firstAttribute="leading" secondItem="jzB-9V-GBy" secondAttribute="trailing" constant="4" id="iFs-3x-Q5c"/>
+                                                <constraint firstItem="a2f-HL-Cdl" firstAttribute="leading" secondItem="jzB-9V-GBy" secondAttribute="trailing" constant="6" id="iFs-3x-Q5c"/>
                                                 <constraint firstAttribute="bottom" secondItem="mV6-SA-hS5" secondAttribute="bottom" id="iPQ-Uc-T9v"/>
                                                 <constraint firstItem="epG-5s-tra" firstAttribute="top" secondItem="fLc-D9-b96" secondAttribute="top" id="uwy-Yn-h0s"/>
                                             </constraints>
@@ -145,6 +145,9 @@
                                                     <state key="normal" title=" 转入">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="transferInOnClick:" destination="FQY-xw-evQ" eventType="touchUpInside" id="YrV-LO-dPj"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doe-te-jRu">
                                                     <rect key="frame" x="317" y="12.5" width="43" height="26"/>
@@ -156,6 +159,9 @@
                                                     <state key="normal" title="转出">
                                                         <color key="titleColor" red="0.0" green="0.70196078431372544" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="transferOutClick:" destination="FQY-xw-evQ" eventType="touchUpInside" id="dFh-BP-AwA"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -197,10 +203,10 @@
                                                         <constraint firstAttribute="height" constant="0.5" id="gVB-0O-8tU"/>
                                                     </constraints>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_shuaxin" translatesAutoresizingMaskIntoConstraints="NO" id="a5y-tb-vrn">
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_shuaxin" translatesAutoresizingMaskIntoConstraints="NO" id="a5y-tb-vrn">
                                                     <rect key="frame" x="333" y="14" width="20" height="22"/>
                                                 </imageView>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="对方账号（邮箱/手机）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ovs-SS-Qyb">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="对方账号（邮箱/手机）" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ovs-SS-Qyb">
                                                     <rect key="frame" x="16" y="0.5" width="307" height="49"/>
                                                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -245,11 +251,11 @@
                                                         <constraint firstAttribute="height" constant="0.5" id="KYy-g4-p3W"/>
                                                     </constraints>
                                                 </view>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="金额（元）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hTe-6r-Feo">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="金额（元）" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hTe-6r-Feo">
                                                     <rect key="frame" x="16" y="0.5" width="359" height="49"/>
                                                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -287,7 +293,7 @@
                                                         <constraint firstAttribute="height" constant="0.5" id="u7r-xQ-bmx"/>
                                                     </constraints>
                                                 </view>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="收款备注（可不填）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ev-ip-pum">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="收款备注（可不填）" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1Ev-ip-pum">
                                                     <rect key="frame" x="16" y="0.5" width="337" height="49"/>
                                                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -538,29 +544,46 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_shuaxin" translatesAutoresizingMaskIntoConstraints="NO" id="hEJ-vH-LI6">
-                                                    <rect key="frame" x="333" y="14" width="20" height="22"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukn-Jj-K14">
                                                     <rect key="frame" x="16" y="16.5" width="43" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9234sdjfhsodofh293423" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTO-21-JM5">
-                                                    <rect key="frame" x="76" y="18" width="142.5" height="14.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FqA-aG-mwh">
+                                                    <rect key="frame" x="320" y="5" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="E4o-c2-D7J"/>
+                                                        <constraint firstAttribute="height" constant="40" id="bcY-2b-1gX"/>
+                                                    </constraints>
+                                                    <state key="normal" image="btn_shuaxin"/>
+                                                    <connections>
+                                                        <action selector="refreshBtnOnClick:" destination="FQY-xw-evQ" eventType="touchUpInside" id="Fmi-mc-Smf"/>
+                                                    </connections>
+                                                </button>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PkH-EQ-xCd">
+                                                    <rect key="frame" x="82" y="0.0" width="97" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hNO-jY-YXv">
+                                                    <rect key="frame" x="76" y="0.0" width="244" height="50"/>
                                                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="hEJ-vH-LI6" secondAttribute="trailing" constant="22" id="Fd3-qT-yEM"/>
-                                                <constraint firstItem="hEJ-vH-LI6" firstAttribute="centerY" secondItem="CR7-kr-lr4" secondAttribute="centerY" id="cbd-7v-QAJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="FqA-aG-mwh" secondAttribute="trailing" constant="15" id="CIl-UA-ohq"/>
+                                                <constraint firstItem="FqA-aG-mwh" firstAttribute="centerY" secondItem="CR7-kr-lr4" secondAttribute="centerY" id="Vna-pq-jZP"/>
+                                                <constraint firstItem="hNO-jY-YXv" firstAttribute="leading" secondItem="ukn-Jj-K14" secondAttribute="trailing" constant="17" id="Xel-E2-SUq"/>
+                                                <constraint firstAttribute="bottom" secondItem="hNO-jY-YXv" secondAttribute="bottom" id="gEd-yM-chS"/>
                                                 <constraint firstItem="ukn-Jj-K14" firstAttribute="centerY" secondItem="CR7-kr-lr4" secondAttribute="centerY" id="ghP-qJ-feC"/>
-                                                <constraint firstItem="eTO-21-JM5" firstAttribute="centerY" secondItem="CR7-kr-lr4" secondAttribute="centerY" id="tZc-aQ-eSe"/>
+                                                <constraint firstItem="hNO-jY-YXv" firstAttribute="top" secondItem="CR7-kr-lr4" secondAttribute="top" id="kyU-lN-yoa"/>
                                                 <constraint firstItem="ukn-Jj-K14" firstAttribute="leading" secondItem="CR7-kr-lr4" secondAttribute="leading" constant="16" id="wIf-J4-NAp"/>
-                                                <constraint firstItem="eTO-21-JM5" firstAttribute="leading" secondItem="ukn-Jj-K14" secondAttribute="trailing" constant="17" id="zyP-YA-tIK"/>
+                                                <constraint firstItem="FqA-aG-mwh" firstAttribute="leading" secondItem="hNO-jY-YXv" secondAttribute="trailing" id="wZm-0w-0U6"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -575,7 +598,17 @@
                     <navigationItem key="navigationItem" id="4iD-UU-quu"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="AmountTextField" destination="hTe-6r-Feo" id="bdx-QK-TGX"/>
+                        <outlet property="billClassLabel" destination="2RI-lG-cGE" id="VQc-Em-ktG"/>
+                        <outlet property="billOrderNO" destination="hNO-jY-YXv" id="phb-1w-fun"/>
+                        <outlet property="createTimeLabel" destination="UwD-P2-yeF" id="Zy8-c2-78H"/>
+                        <outlet property="markTextField" destination="1Ev-ip-pum" id="LcN-uF-nkr"/>
                         <outlet property="nameLabel" destination="jzB-9V-GBy" id="3RX-IC-7qA"/>
+                        <outlet property="receiveTypeLabel" destination="aNg-X8-Y8f" id="ItM-tz-W5d"/>
+                        <outlet property="toAliAcountTextField" destination="ovs-SS-Qyb" id="LdD-W2-3eH"/>
+                        <outlet property="toImageView" destination="a2f-HL-Cdl" id="3Io-eW-5Lo"/>
+                        <outlet property="toUserLevel" destination="nCp-He-241" id="qVL-MW-ip2"/>
+                        <outlet property="transferStatus" destination="YKJ-eQ-gBn" id="mnI-hr-IGo"/>
                         <outlet property="transferTypeLeftBtn" destination="tAz-4F-AfQ" id="TJl-1M-F8J"/>
                         <outlet property="transferTypeRightBtn" destination="doe-te-jRu" id="y57-pN-yGy"/>
                     </connections>

@@ -23,8 +23,8 @@ import UIKit
      var isHiddenTureName : Bool = false
     //支付宝账号
      var aliCount : String?
-    //会员等级
-     var level : String?
+    //会员等级 0：无 1：钻石会员 2：铂金会员 3：黄金会员 4：大众会员
+     var level : Int = 0
     //首字母
     @objc var acapital : String?
     

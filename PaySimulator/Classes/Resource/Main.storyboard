@@ -50,39 +50,39 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xd0-vo-9Mh" secondAttribute="height" multiplier="1:1" id="dv1-kD-If0"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="支付模拟器" image="icon_alipay">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="clickMainButton:" destination="o6K-1x-FXJ" eventType="touchUpInside" id="bHO-Vo-qoT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGo-yR-r9y" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
-                                        <rect key="frame" x="93.666666666666686" y="0.0" width="94" height="93.666666666666671"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <rect key="frame" x="92.666666666666686" y="0.0" width="94" height="93.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="转账" image="icon_zhuanzhang">
-                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="clickMainButton:" destination="o6K-1x-FXJ" eventType="touchUpInside" id="IJr-S6-1CB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAL-mX-ufX" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
-                                        <rect key="frame" x="187.66666666666666" y="0.0" width="93.666666666666657" height="93.666666666666671"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <rect key="frame" x="186.66666666666666" y="0.0" width="93.666666666666657" height="93.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="余额" image="icon_yue">
-                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="clickMainButton:" destination="o6K-1x-FXJ" eventType="touchUpInside" id="qbf-ZT-W4O"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33h-rO-A42" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
-                                        <rect key="frame" x="281.33333333333331" y="0.0" width="93.666666666666686" height="93.666666666666671"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <rect key="frame" x="280.33333333333331" y="0.0" width="93.666666666666686" height="93.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="收款账单" image="icon_shoukuanzhangdan">
-                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="clickMainButton:" destination="o6K-1x-FXJ" eventType="touchUpInside" id="wA8-fn-2z4"/>
@@ -91,9 +91,9 @@
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oo-KO-nzi" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="93.666666666666657" width="93.666666666666671" height="94"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                        <state key="normal" title="红包" image="icon_hongbao">
-                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="红包" image="hongbao">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="clickMainButton:" destination="o6K-1x-FXJ" eventType="touchUpInside" id="iEo-0A-KOK"/>
@@ -101,10 +101,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ny9-Pl-zCW" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">
-                                        <rect key="frame" x="93.666666666666686" y="93.666666666666657" width="94" height="94"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <rect key="frame" x="92.666666666666686" y="93.666666666666657" width="94" height="94"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="提现账单" image="icon_tixianzhangdan">
-                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="clickMainButton:" destination="o6K-1x-FXJ" eventType="touchUpInside" id="gka-Z7-eC8"/>
@@ -112,7 +112,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="HGo-yR-r9y" firstAttribute="height" secondItem="xd0-vo-9Mh" secondAttribute="height" id="0Tm-fw-6Tp"/>
                                     <constraint firstItem="xd0-vo-9Mh" firstAttribute="width" secondItem="pmx-Pj-Wh5" secondAttribute="width" multiplier="1/4" id="0jg-0d-dXm"/>
@@ -298,10 +298,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="hongbao" width="50" height="50"/>
         <image name="icon_alipay" width="50" height="50"/>
         <image name="icon_gengduo" width="25" height="25"/>
         <image name="icon_gengduo454" width="25" height="25"/>
-        <image name="icon_hongbao" width="50" height="50"/>
         <image name="icon_shoukuanzhangdan" width="50" height="50"/>
         <image name="icon_shouye11" width="25" height="25"/>
         <image name="icon_shouyemain" width="25" height="25"/>

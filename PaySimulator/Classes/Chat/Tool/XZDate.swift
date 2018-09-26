@@ -34,6 +34,14 @@ extension Date {
         return comps?.weekday ?? 1
     }
     
+    func stringOfDate(formatter : String) -> String {
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = formatter
+        let dateString = dateFormat.string(from: self)
+        
+        return dateString
+    }
+    
     func shortTimeTextOfDate() -> String {
         var interval = self.timeIntervalSince(Date())
         interval = -interval
