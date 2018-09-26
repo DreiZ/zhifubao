@@ -11,7 +11,8 @@ import UIKit
 class XZReceivablesViewController: XZBaseViewController {
 
     var editType : BillType = .Receivables
-    
+    var iTabelViewController : UITableViewController?
+    var tranferModel : XZTranferModel?
     @IBOutlet weak var contView: UIView!
     
 
@@ -31,6 +32,14 @@ extension XZReceivablesViewController {
         self.contView.snp.makeConstraints { (make) in
             make.left.bottom.right.equalTo(self.view)
             make.top.equalTo(self.view.snp.top).offset(DDSafeAreaTopHeight)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "receivableToTabelView" {
+            let iTabelViewController : XZReceivablesTableViewController = segue.destination as! XZReceivablesTableViewController
+            self.iTabelViewController = iTabelViewController
+            iTabelViewController.tranferModel = self.tranferModel
         }
     }
 }

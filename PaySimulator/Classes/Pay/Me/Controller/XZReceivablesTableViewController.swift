@@ -46,6 +46,7 @@ class XZReceivablesTableViewController: UITableViewController {
         
         self.setData()
         self.setupUI()
+        self.reloadTableViewData()
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -69,7 +70,12 @@ class XZReceivablesTableViewController: UITableViewController {
                 }
                 self.dataAlert.showInView(showView: self.view)
             }else if indexPath.row == 2 {
-                
+                let  myPickerView = XZMyAlertSheetTextFieldView(frame:CGRect(x: 0, y: 0, width: kWindowW, height: kWindowH))
+                myPickerView.doneBlock = {(text : String) in
+                    self.tranferModel?.billClass = text
+                    self.reloadTableViewData()
+                }
+                myPickerView.showInView(showView: self.view)
             }else if indexPath.row == 3 {
                 let spicker = HcdDateTimePickerView(datePickerMode: DatePickerDateHourMinuteMode, defaultDateTime: Date())
                 spicker?.topViewColor = kChatMainColor
@@ -184,12 +190,14 @@ extension XZReceivablesTableViewController {
         self.AmountTextField.addTarget(self, action: #selector(textFieldDidChange (textField:)), for: UIControlEvents.editingChanged)
         self.markTextField.addTarget(self, action: #selector(textFieldDidChange (textField:)), for: UIControlEvents.editingChanged)
 
+        self.tableView.keyboardDismissMode = .onDrag
     }
     
     private func setupFooterView() {
         let footer = XZReceivablesFooterView.loadMyView()
         footer.selectBlock = { () in
             if let show = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "XZBillShowViewController") as? XZBillShowViewController{
+                show.tranferModel = self.tranferModel
                 self.navigationController?.pushViewController(show, animated: true)
             }
         }

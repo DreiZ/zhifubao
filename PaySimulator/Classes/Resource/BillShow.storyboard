@@ -74,6 +74,10 @@
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_dengji" translatesAutoresizingMaskIntoConstraints="NO" id="MUy-th-yXT">
                                                     <rect key="frame" x="147" y="22" width="14" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14" id="IZn-G3-Sib"/>
+                                                        <constraint firstAttribute="width" constant="14" id="TaW-S8-Ukg"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Soumeses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYf-qd-Z0Y">
                                                     <rect key="frame" x="164" y="12" width="71" height="17"/>
@@ -84,9 +88,9 @@
                                                     <rect key="frame" x="123" y="-2" width="132" height="45"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="余额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hit-4f-Ucy">
-                                                    <rect key="frame" x="173" y="99.5" width="29" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="1" green="0.52941176470588236" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="174" y="99.5" width="27" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -340,7 +344,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标签和备注" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hR2-ul-x7w">
-                                                    <rect key="frame" x="15" y="17.5" width="71.5" height="17"/>
+                                                    <rect key="frame" x="15" y="16.5" width="71.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -383,7 +387,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="申请电子回单" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y57-d7-a3u">
-                                                    <rect key="frame" x="15" y="17.5" width="86" height="17"/>
+                                                    <rect key="frame" x="15" y="16.5" width="86" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -418,7 +422,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查看来往记录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YV1-sJ-rBw">
-                                                    <rect key="frame" x="15" y="17.5" width="86" height="17"/>
+                                                    <rect key="frame" x="15" y="16.5" width="86" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -447,7 +451,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="对此订单有疑问" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5T-CC-W47">
-                                                    <rect key="frame" x="15" y="17.5" width="100" height="17"/>
+                                                    <rect key="frame" x="15" y="16.5" width="100" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -472,6 +476,20 @@
                             <outlet property="delegate" destination="qVi-cg-jS8" id="tnn-zR-gol"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="amountLabel" destination="ODs-RV-Jlq" id="jIo-cs-i4s"/>
+                        <outlet property="billTypeLabel" destination="WjK-aj-ngR" id="2Dh-Pa-TzP"/>
+                        <outlet property="billstateLabel" destination="hit-4f-Ucy" id="A6z-H8-zCo"/>
+                        <outlet property="createTimeLabel" destination="5aL-ok-Ids" id="WFl-fm-ofX"/>
+                        <outlet property="orderNoLabel" destination="ZXX-zh-Vp5" id="l2S-LU-rKG"/>
+                        <outlet property="receiveReasonLabel" destination="ehJ-06-QjO" id="sFe-De-Btz"/>
+                        <outlet property="receiveTypeLabel" destination="7X8-qn-oEG" id="6WP-xY-6pW"/>
+                        <outlet property="toUserAliCountLabel" destination="M54-7x-7F0" id="tiC-no-rsr"/>
+                        <outlet property="toUserBtn" destination="cR0-dd-jDM" id="x9T-uG-v3z"/>
+                        <outlet property="toUserImageView" destination="hui-sn-4Fx" id="fBu-pN-dft"/>
+                        <outlet property="userLevelImageView" destination="MUy-th-yXT" id="bKo-0V-JvC"/>
+                        <outlet property="userNameLabel" destination="mYf-qd-Z0Y" id="Wgy-6E-mAM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsB-bL-9Oe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

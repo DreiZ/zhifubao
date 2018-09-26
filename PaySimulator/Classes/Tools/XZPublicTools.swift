@@ -157,13 +157,23 @@ extension XZPublicTools {
     func showEdit(title: String = kInfoTitle, subTitle: String, sureTitle: String , placeholder: String = "请输入", sureBlock : @escaping (String?) -> ()) {
         let appearance = SCLAlertView.SCLAppearance(
             kTextFieldHeight: 60,
-            showCloseButton: true
+            showCloseButton: true,
+            circleBackgroundColor : UIColor.white,
+            contentViewColor : UIColor.white,
+            contentViewBorderColor : kChatMainColor,
+            titleColor : kChatMainColor,
+            subTitleColor : kChatMainColor
         )
         let alert = SCLAlertView(appearance: appearance)
+        
         let txt = alert.addTextField(placeholder)
-        _ = alert.addButton(sureTitle) {
+
+        alert.dismissBlock = {() in
             sureBlock(txt.text ?? "")
         }
+//        _ = alert.addButton(sureTitle) {
+//            sureBlock(txt.text ?? "")
+//        }
         _ = alert.showEdit(title, subTitle:subTitle)
     }
     

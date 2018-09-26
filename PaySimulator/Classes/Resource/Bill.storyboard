@@ -27,7 +27,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="FQY-xw-evQ" kind="embed" id="8Ln-xq-kI4"/>
+                                    <segue destination="FQY-xw-evQ" kind="embed" identifier="receivableToTabelView" id="8Ln-xq-kI4"/>
                                 </connections>
                             </containerView>
                         </subviews>

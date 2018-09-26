@@ -64,6 +64,7 @@
 		5E58516A2143981F004A2C4B /* XZBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5851692143981F004A2C4B /* XZBaseModel.swift */; };
 		5E58CAF12150F72500474F9F /* chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E58CAF02150F72500474F9F /* chat.storyboard */; };
 		5E5F6573215B1DE500189234 /* XZTranferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6572215B1DE500189234 /* XZTranferModel.swift */; };
+		5E5F6575215B661F00189234 /* XZMyAlertSheetTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6574215B661F00189234 /* XZMyAlertSheetTextFieldView.swift */; };
 		5E6938E2214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6938E1214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift */; };
 		5E6938E4214CFA3100B04693 /* XZImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6938E3214CFA3100B04693 /* XZImage.swift */; };
 		5E6BF4122159E2DC004B0E90 /* XZSendRoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6BF4112159E2DC004B0E90 /* XZSendRoleView.swift */; };
@@ -216,6 +217,7 @@
 		5E5851692143981F004A2C4B /* XZBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseModel.swift; sourceTree = "<group>"; };
 		5E58CAF02150F72500474F9F /* chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = chat.storyboard; sourceTree = "<group>"; };
 		5E5F6572215B1DE500189234 /* XZTranferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZTranferModel.swift; sourceTree = "<group>"; };
+		5E5F6574215B661F00189234 /* XZMyAlertSheetTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMyAlertSheetTextFieldView.swift; sourceTree = "<group>"; };
 		5E6938E1214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatMessageRedPacketOpenCell.swift; sourceTree = "<group>"; };
 		5E6938E3214CFA3100B04693 /* XZImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZImage.swift; sourceTree = "<group>"; };
 		5E6BF4112159E2DC004B0E90 /* XZSendRoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZSendRoleView.swift; sourceTree = "<group>"; };
@@ -671,6 +673,7 @@
 				5ECE67CD2140FC7500C8C5A9 /* XZMyAlertSheetTableViewCell.swift */,
 				5ECE67CC2140FC7400C8C5A9 /* XZMyAlertSheetView.swift */,
 				E3A9AADE213F663A00FAEEAF /* XZMyPickerView.swift */,
+				5E5F6574215B661F00189234 /* XZMyAlertSheetTextFieldView.swift */,
 			);
 			path = "选择器Pickerview";
 			sourceTree = "<group>";
@@ -1416,6 +1419,7 @@
 				E364908A2140D8D3005F234B /* XZBalanceVC.swift in Sources */,
 				5E42F30C21474B1F0034B691 /* XZEmotionButton.swift in Sources */,
 				E36048622137A2B100ECF65F /* XZPayMeVC.swift in Sources */,
+				5E5F6575215B661F00189234 /* XZMyAlertSheetTextFieldView.swift in Sources */,
 				E3BC6D1921450850000FDB12 /* XZAddressFirstCell.swift in Sources */,
 				E3BC6D1321450425000FDB12 /* XZAddressBookVC.swift in Sources */,
 				5ECE67C92140FB7600C8C5A9 /* XZReceivablesFooterView.swift in Sources */,

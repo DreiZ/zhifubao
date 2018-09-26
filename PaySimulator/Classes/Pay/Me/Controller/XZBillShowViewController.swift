@@ -12,6 +12,8 @@ class XZBillShowViewController: XZBaseViewController {
     
     //订单状态 收款和付款
     var type : BillType = BillType.Receivables
+    var tranferModel : XZTranferModel?
+    var iTabelViewController : UITableViewController?
     
     @IBOutlet weak var contview: UIView!
     
@@ -38,9 +40,9 @@ extension XZBillShowViewController {
     
         if segue.identifier == "XZBillShowSegueTableView" {
             let iTabelViewController : XZBillTableViewController = segue.destination as! XZBillTableViewController
-            
+            iTabelViewController.tranferModel = self.tranferModel
             iTabelViewController.billType = BillType.Receivables
-            
+            self.iTabelViewController = iTabelViewController
         }
     }
 }
