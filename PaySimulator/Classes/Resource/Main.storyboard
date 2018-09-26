@@ -86,7 +86,6 @@
                                         </state>
                                         <connections>
                                             <action selector="clickMainButton:" destination="o6K-1x-FXJ" eventType="touchUpInside" id="wA8-fn-2z4"/>
-                                            <segue destination="FFs-45-ltr" kind="push" id="5J4-xG-5oD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oo-KO-nzi" customClass="XZMainButton" customModule="PaySimulator" customModuleProvider="target">

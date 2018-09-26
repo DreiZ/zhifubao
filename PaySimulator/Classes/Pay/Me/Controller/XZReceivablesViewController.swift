@@ -10,7 +10,7 @@ import UIKit
 
 class XZReceivablesViewController: XZBaseViewController {
 
-    var editType : BillType = .Receivables
+    var editType : BillType?
     var iTabelViewController : UITableViewController?
     var tranferModel : XZTranferModel?
     @IBOutlet weak var contView: UIView!
@@ -27,7 +27,12 @@ class XZReceivablesViewController: XZBaseViewController {
 
 extension XZReceivablesViewController {
     func setupUI(){
-        self.navBar.title = "收款账单"
+        if editType! == .Transfer {
+            self.navBar.title = "转账账单"
+        }else {
+            self.navBar.title = "收款账单"
+        }
+        
         
         self.contView.snp.makeConstraints { (make) in
             make.left.bottom.right.equalTo(self.view)
@@ -39,7 +44,9 @@ extension XZReceivablesViewController {
         if segue.identifier == "receivableToTabelView" {
             let iTabelViewController : XZReceivablesTableViewController = segue.destination as! XZReceivablesTableViewController
             self.iTabelViewController = iTabelViewController
+            iTabelViewController.editType = self.editType
             iTabelViewController.tranferModel = self.tranferModel
+            
         }
     }
 }

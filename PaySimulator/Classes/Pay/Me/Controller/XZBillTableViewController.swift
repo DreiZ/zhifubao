@@ -10,10 +10,11 @@ import UIKit
 
 class XZBillTableViewController: UITableViewController {
 
-    var billType : BillType = .Receivables
+    var billType : BillType?
     var tranferModel : XZTranferModel?
     
     
+    @IBOutlet weak var secondtitleLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userLevelImageView: UIImageView!
     @IBOutlet weak var toUserImageView: UIImageView!
@@ -32,9 +33,7 @@ class XZBillTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if billType == .Receivables {
-            print("zzz 传值成功")
-        }
+        
         let level = ["", "userleve1", "userleve2", "userleve3", "userleve4"]
         toUserImageView.layer.cornerRadius = 12.5
         toUserImageView.layer.masksToBounds = true
@@ -51,6 +50,12 @@ class XZBillTableViewController: UITableViewController {
         billTypeLabel.text = self.tranferModel?.billClass
         createTimeLabel.text = self.tranferModel?.createTime?.stringOfDate(formatter: "YYYY-MM-dd HH:mm")
         orderNoLabel.text = self.tranferModel?.billNo
+        
+        if self.billType! == .Transfer  {
+            self.secondtitleLabel.text = "转账备注"
+        }else {
+            self.secondtitleLabel.text = "收款理由" 
+        }
     }
 
 }

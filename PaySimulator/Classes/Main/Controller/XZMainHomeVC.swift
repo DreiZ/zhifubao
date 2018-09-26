@@ -52,8 +52,12 @@ class XZMainHomeVC: XZBaseVC {
            self.navigationController?.pushViewController(balance, animated: true)
             break
         case 3://收款账单
-            let arr =  XZFaceManager.sgetEmojiEmotion()
-            print(arr ?? "zzz")
+            let transfervc = UIStoryboard(name: "Bill", bundle: nil).instantiateViewController(withIdentifier: "XZReceivablesViewController") as? XZReceivablesViewController
+            guard let transfer = transfervc else {
+                return
+            }
+            transfer.editType = .Receivables
+            self.navigationController?.pushViewController(transfer, animated: true)
             break
         case 4://红包
             XZChatListModel.dropTable()

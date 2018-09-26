@@ -11,7 +11,7 @@ import UIKit
 class XZReceivablesTableViewController: UITableViewController {
 
     var tranferModel : XZTranferModel?
-    var editType : BillType = .Receivables
+    var editType : BillType?
     
     //转入 转出按钮
     @IBOutlet weak var transferTypeLeftBtn: UIButton!
@@ -29,6 +29,7 @@ class XZReceivablesTableViewController: UITableViewController {
     @IBOutlet weak var createTimeLabel: UILabel!
     @IBOutlet weak var transferStatus: UILabel!
     @IBOutlet weak var billOrderNO: UITextField!
+    @IBOutlet weak var typeCell: UITableViewCell!
     
     let receiveTypeArr : [String] = ["余额", "余额宝", "银行卡"]
     let transactionStateArr : [String] = ["交易成功", "待付款"]
@@ -46,6 +47,8 @@ class XZReceivablesTableViewController: UITableViewController {
         
         self.setData()
         self.setupUI()
+        
+        
         self.reloadTableViewData()
     }
 
@@ -198,6 +201,7 @@ extension XZReceivablesTableViewController {
         footer.selectBlock = { () in
             if let show = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "XZBillShowViewController") as? XZBillShowViewController{
                 show.tranferModel = self.tranferModel
+                show.type = self.editType
                 self.navigationController?.pushViewController(show, animated: true)
             }
         }
@@ -241,6 +245,20 @@ extension XZReceivablesTableViewController {
         self.billOrderNO.text = self.tranferModel?.billNo
 //        @IBOutlet weak var billOrderNo: UILabel!
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            if indexPath.row == 1 {
+                if editType! == .Transfer {
+                    return 50.0
+                }else{
+                    return 0.0
+                }
+            }
+        }
+        
+        return 50
+    }
 }
 
 //t
@@ -256,7 +274,8 @@ extension XZReceivablesTableViewController : UITextFieldDelegate {
     }
     
     func getOrderNo() {
-        var orderNo = (self.tranferModel?.createTime?.stringOfDate(formatter:"yyyyMMdd")) ?? "" + "200040011100"
+        var orderNo = (self.tranferModel?.createTime?.stringOfDate(formatter:"yyyyMMdd")) ?? ""
+        orderNo = orderNo + "200040011100"
         for _ in ["1","0", "0", "0", "6", "5", "0", "3", "3", "6", "7", "7"] {
             orderNo = orderNo + String(format: "%ld", arc4random() % 10)
         }

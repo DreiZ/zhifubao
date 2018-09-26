@@ -161,19 +161,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收款" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehJ-06-QjO">
-                                                    <rect key="frame" x="320" y="8.5" width="29" height="17"/>
+                                                    <rect key="frame" x="332" y="8.5" width="29" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_jiantou" translatesAutoresizingMaskIntoConstraints="NO" id="6EL-8g-KDO">
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_jiantou" translatesAutoresizingMaskIntoConstraints="NO" id="6EL-8g-KDO">
                                                     <rect key="frame" x="355" y="11.5" width="6" height="11"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ehJ-06-QjO" firstAttribute="centerY" secondItem="UfN-eE-rcO" secondAttribute="centerY" id="0v6-9O-g3n"/>
                                                 <constraint firstItem="FRR-gb-n4l" firstAttribute="leading" secondItem="UfN-eE-rcO" secondAttribute="leading" constant="15" id="Dc2-nQ-ApS"/>
-                                                <constraint firstAttribute="trailing" secondItem="ehJ-06-QjO" secondAttribute="trailing" constant="26" id="PBz-Cs-wCH"/>
+                                                <constraint firstAttribute="trailing" secondItem="ehJ-06-QjO" secondAttribute="trailing" constant="14" id="PBz-Cs-wCH"/>
                                                 <constraint firstItem="6EL-8g-KDO" firstAttribute="centerY" secondItem="UfN-eE-rcO" secondAttribute="centerY" id="YMg-0m-b8i"/>
                                                 <constraint firstItem="FRR-gb-n4l" firstAttribute="centerY" secondItem="UfN-eE-rcO" secondAttribute="centerY" id="nqt-aQ-nX7"/>
                                                 <constraint firstAttribute="trailing" secondItem="6EL-8g-KDO" secondAttribute="trailing" constant="14" id="rY1-Xu-DWP"/>
@@ -194,17 +194,17 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ssdfwer****23423" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M54-7x-7F0">
-                                                    <rect key="frame" x="228" y="8.5" width="121" height="17"/>
+                                                    <rect key="frame" x="240" y="8.5" width="121" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_jiantou" translatesAutoresizingMaskIntoConstraints="NO" id="wX4-Xn-sWc">
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_jiantou" translatesAutoresizingMaskIntoConstraints="NO" id="wX4-Xn-sWc">
                                                     <rect key="frame" x="355" y="11.5" width="6" height="11"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="M54-7x-7F0" secondAttribute="trailing" constant="26" id="30x-HG-45x"/>
+                                                <constraint firstAttribute="trailing" secondItem="M54-7x-7F0" secondAttribute="trailing" constant="14" id="30x-HG-45x"/>
                                                 <constraint firstItem="EHR-8i-A46" firstAttribute="centerY" secondItem="xQM-ob-r7P" secondAttribute="centerY" id="RpW-WN-oNy"/>
                                                 <constraint firstAttribute="trailing" secondItem="wX4-Xn-sWc" secondAttribute="trailing" constant="14" id="eTA-bk-ue2"/>
                                                 <constraint firstItem="M54-7x-7F0" firstAttribute="centerY" secondItem="xQM-ob-r7P" secondAttribute="centerY" id="klM-3G-xVj"/>
@@ -484,6 +484,7 @@
                         <outlet property="orderNoLabel" destination="ZXX-zh-Vp5" id="l2S-LU-rKG"/>
                         <outlet property="receiveReasonLabel" destination="ehJ-06-QjO" id="sFe-De-Btz"/>
                         <outlet property="receiveTypeLabel" destination="7X8-qn-oEG" id="6WP-xY-6pW"/>
+                        <outlet property="secondtitleLabel" destination="FRR-gb-n4l" id="Z7j-Il-ll5"/>
                         <outlet property="toUserAliCountLabel" destination="M54-7x-7F0" id="tiC-no-rsr"/>
                         <outlet property="toUserBtn" destination="cR0-dd-jDM" id="x9T-uG-v3z"/>
                         <outlet property="toUserImageView" destination="hui-sn-4Fx" id="fBu-pN-dft"/>

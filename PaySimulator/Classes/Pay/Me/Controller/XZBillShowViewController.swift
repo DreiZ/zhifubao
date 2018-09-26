@@ -11,7 +11,7 @@ import UIKit
 class XZBillShowViewController: XZBaseViewController {
     
     //订单状态 收款和付款
-    var type : BillType = BillType.Receivables
+    var type : BillType?
     var tranferModel : XZTranferModel?
     var iTabelViewController : UITableViewController?
     
@@ -41,7 +41,7 @@ extension XZBillShowViewController {
         if segue.identifier == "XZBillShowSegueTableView" {
             let iTabelViewController : XZBillTableViewController = segue.destination as! XZBillTableViewController
             iTabelViewController.tranferModel = self.tranferModel
-            iTabelViewController.billType = BillType.Receivables
+            iTabelViewController.billType = self.type
             self.iTabelViewController = iTabelViewController
         }
     }
