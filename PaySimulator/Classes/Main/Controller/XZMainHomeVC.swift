@@ -44,9 +44,12 @@ class XZMainHomeVC: XZBaseVC {
             self.navigationController?.pushViewController(transfer, animated: true)
             break
         case 2://余额
-           let chatvc = XZChatViewController()
-           chatvc.hidesBottomBarWhenPushed = true
-           self.navigationController?.pushViewController(chatvc, animated: true)
+           let balancevc = UIStoryboard(name: "PayMe", bundle: nil).instantiateViewController(withIdentifier: "XZBalanceVC") as? XZBalanceVC
+           balancevc?.hidesBottomBarWhenPushed = true
+           guard let balance = balancevc else {
+            return
+           }
+           self.navigationController?.pushViewController(balance, animated: true)
             break
         case 3://收款账单
             let arr =  XZFaceManager.sgetEmojiEmotion()

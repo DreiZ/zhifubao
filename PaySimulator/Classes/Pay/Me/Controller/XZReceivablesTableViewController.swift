@@ -59,9 +59,10 @@ class XZReceivablesTableViewController: UITableViewController {
                 self.dataAlert.showInView(showView: self.view)
             }
         }
-        
-        
     }
+    
+    
+    
 }
 
 extension XZReceivablesTableViewController {
