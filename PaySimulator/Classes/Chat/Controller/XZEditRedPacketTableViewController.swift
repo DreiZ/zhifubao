@@ -62,6 +62,7 @@ class XZEditRedPacketTableViewController: UITableViewController {
         self.isSend = false
         self.receiveBtn.isSelected = true
         self.sendBtn.isSelected = false
+        self.redPacket?.isReceive = true
         
         guard let redBacketModel = self.redPacket else {
             self.sendImageView.image = to?.headImage
@@ -86,6 +87,7 @@ class XZEditRedPacketTableViewController: UITableViewController {
         self.isSend = true
         self.receiveBtn.isSelected = false
         self.sendBtn.isSelected = true
+        self.redPacket?.isReceive = false
         
         guard let redBacketModel = self.redPacket else {
             self.sendImageView.image = from?.headImage
@@ -119,7 +121,7 @@ class XZEditRedPacketTableViewController: UITableViewController {
                 formatter.dateFormat = "yyyy-M-d HH:mm:ss"
                 let tempDate = formatter.date(from: dateTimeStr!)
                 self.sendDate = tempDate ?? Date()
-                self.sendTimeLabel.text = self.sendDate.shortTimeTextOfDate()
+                self.sendTimeLabel.text = self.sendDate.stringOfDate(formatter: "MM:dd HH:mm:ss")
                 
                 guard let redBacketModel = self.redPacket else {
                     return
@@ -241,20 +243,31 @@ extension XZEditRedPacketTableViewController {
     
    @objc func clickShowBtn(){
     
-    if setMessageData != nil {
-        let message : XZMessage = XZMessage()
-        message.systemTime = self.sendDate
-        message.content = self.amountTextFeild.text
-        message.mark = self.marketTextFeild.text
-        message.type = TypeRedPacket
-        self.setMessageData!(message)
-        
-        self.navigationController?.popViewController(animated: true)
-        return
-        
-    }
+        if setMessageData != nil {
+            let message : XZMessage = XZMessage()
+            message.systemTime = self.sendDate
+            message.content = self.amountTextFeild.text
+            message.mark = self.marketTextFeild.text
+            message.type = TypeRedPacket
+            self.setMessageData!(message)
+            
+            self.navigationController?.popViewController(animated: true)
+            return
+            
+        }
     
-    let seeRedPacketTabVC = UIStoryboard(name: "RedPacket", bundle: nil).instantiateViewController(withIdentifier: "XZSeeRedPacketTabVC") as? XZSeeRedPacketTabVC
+        self.redPacket?.isHeadHadAdd = self.ImageAddSwith.isOn
+        if (self.redPacket?.isReceive)! {
+            let seeRedPacketTabVC = UIStoryboard(name: "RedPacket", bundle: nil).instantiateViewController(withIdentifier: "XZSeeRedPacketReceiveTabVC") as? XZSeeRedPacketReceiveTabVC
+//            self.redPacket?.amount = self.amountTextFeild.text
+//            self.redPacket?.mark = self.marketTextFeild.text
+            seeRedPacketTabVC?.redPacket = self.redPacket
+            self.navigationController?.pushViewController(seeRedPacketTabVC!, animated: true)
+        
+            return
+        }
+    
+        let seeRedPacketTabVC = UIStoryboard(name: "RedPacket", bundle: nil).instantiateViewController(withIdentifier: "XZSeeRedPacketTabVC") as? XZSeeRedPacketTabVC
         self.redPacket?.amount = self.amountTextFeild.text
         self.redPacket?.mark = self.marketTextFeild.text
         seeRedPacketTabVC?.redPacket = self.redPacket

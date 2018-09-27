@@ -28,8 +28,10 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_icon_touxiang" translatesAutoresizingMaskIntoConstraints="NO" id="yHx-g5-cJE">
                         <rect key="frame" x="14" y="14" width="45.5" height="45.5"/>
                         <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="12" id="LUk-aC-O0O"/>
                             <constraint firstAttribute="width" constant="46" id="eEG-UX-7xS"/>
                             <constraint firstAttribute="height" constant="46" id="hL0-f6-jRD"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="12" id="sUH-Ms-FKT"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.00元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMH-rY-gKg">
@@ -44,20 +46,51 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T45-Zb-aF6">
+                        <rect key="frame" x="0.0" y="73" width="320" height="0.5"/>
+                        <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="xJY-UK-78x"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k67-0R-gJv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="0.5"/>
+                        <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="GkN-hB-W3h"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hongb_icon_tianjia_default" translatesAutoresizingMaskIntoConstraints="NO" id="WuS-Oc-ROc">
+                        <rect key="frame" x="47.5" y="47.5" width="12" height="12"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="OSG-Nz-yan"/>
+                            <constraint firstAttribute="width" constant="12" id="n1R-hf-BGv"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="zMH-rY-gKg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="3kr-oa-eJq"/>
+                    <constraint firstAttribute="bottom" secondItem="T45-Zb-aF6" secondAttribute="bottom" id="4gK-O9-l4K"/>
                     <constraint firstItem="ihv-0I-VNo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="4h4-Pv-0Ap"/>
                     <constraint firstAttribute="trailing" secondItem="zMH-rY-gKg" secondAttribute="trailing" constant="15" id="8mC-wp-hsx"/>
+                    <constraint firstItem="k67-0R-gJv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="9ZZ-Sw-kba"/>
                     <constraint firstItem="Gqm-Lj-EUn" firstAttribute="top" secondItem="zMH-rY-gKg" secondAttribute="bottom" constant="10" id="C5c-V1-bX1"/>
+                    <constraint firstItem="k67-0R-gJv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="GhJ-80-EII"/>
                     <constraint firstAttribute="trailing" secondItem="Gqm-Lj-EUn" secondAttribute="trailing" constant="15" id="IJv-re-KjK"/>
+                    <constraint firstItem="WuS-Oc-ROc" firstAttribute="bottom" secondItem="yHx-g5-cJE" secondAttribute="bottom" id="RAp-oy-hZk"/>
                     <constraint firstItem="yHx-g5-cJE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Tmk-Qw-xFc"/>
+                    <constraint firstItem="WuS-Oc-ROc" firstAttribute="trailing" secondItem="yHx-g5-cJE" secondAttribute="trailing" id="eeD-NU-kdg"/>
+                    <constraint firstAttribute="trailing" secondItem="T45-Zb-aF6" secondAttribute="trailing" id="gMb-6H-wEg"/>
+                    <constraint firstAttribute="trailing" secondItem="k67-0R-gJv" secondAttribute="trailing" id="gud-Jz-QFL"/>
+                    <constraint firstItem="T45-Zb-aF6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jVN-rW-XTA"/>
                     <constraint firstItem="ihv-0I-VNo" firstAttribute="leading" secondItem="yHx-g5-cJE" secondAttribute="trailing" constant="14" id="mfE-lz-Dnv"/>
                     <constraint firstItem="yHx-g5-cJE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="woL-Us-HdI"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="addImageView" destination="WuS-Oc-ROc" id="txw-oc-8FW"/>
                 <outlet property="datelabel" destination="Gqm-Lj-EUn" id="rlG-wa-kNe"/>
                 <outlet property="iconImg" destination="yHx-g5-cJE" id="uaw-g9-75B"/>
                 <outlet property="moneylabel" destination="zMH-rY-gKg" id="loa-9I-hd0"/>
@@ -67,6 +100,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="hongb_icon_tianjia_default" width="16" height="16"/>
         <image name="red_icon_touxiang" width="36" height="36"/>
     </resources>
 </document>

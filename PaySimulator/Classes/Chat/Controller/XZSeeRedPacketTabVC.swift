@@ -37,7 +37,7 @@ class XZSeeRedPacketTabVC: UITableViewController {
         iconImage.layer.cornerRadius = 34
         iconImage.layer.masksToBounds = true
         
-        tableViewFooterView.frame = CGRect(x: 0, y: 0, width: kWindowW, height: kWindowH-238-70-35-DDSafeAreaTopHeight)
+        tableViewFooterView.frame = CGRect(x: 0, y: 0, width: kWindowW, height: kWindowH-200-70-35-DDSafeAreaTopHeight)
     }
 }
 
@@ -90,7 +90,9 @@ extension XZSeeRedPacketTabVC{
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! XZSeeRedPacketCell
-        
+        cell.addImageView.layer.cornerRadius = 6
+        cell.addImageView.layer.masksToBounds = true
+        cell.addImageView.isHidden = !(self.redPacket?.isHeadHadAdd ?? true)
         cell.iconImg.image = self.redPacket?.toUser?.headImage
         cell.nameLabel.text = self.redPacket?.toUser?.trueName
         cell.moneylabel.text = (self.redPacket?.amount ?? "0") + "元"
