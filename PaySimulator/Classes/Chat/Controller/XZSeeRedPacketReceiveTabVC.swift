@@ -21,6 +21,7 @@ class XZSeeRedPacketReceiveTabVC: UITableViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var markLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var numLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,8 @@ class XZSeeRedPacketReceiveTabVC: UITableViewController {
         
         fromHeadImageView.layer.cornerRadius = 34
         fromHeadImageView.layer.masksToBounds = true
+        
+        self.getOrderNo()
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,5 +79,14 @@ extension XZSeeRedPacketReceiveTabVC {
     //返回
     @objc func clickLeftBtn(){
         navigationController?.popViewController(animated: true)
+    }
+    
+    func getOrderNo() {
+        var orderNo = (self.redPacket?.time?.stringOfDate(formatter:"yyyyMMdd")) ?? ""
+        orderNo = orderNo + "0206302200000000"
+        for _ in ["5","8", "0", "0", "2", "9", "0", "8", "8", "3", "2", "3", "7"] {
+            orderNo = orderNo + String(format: "%ld", arc4random() % 10)
+        }
+        self.numLabel.text = "红包编号：" + orderNo
     }
 }

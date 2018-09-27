@@ -38,6 +38,8 @@ class XZSeeRedPacketTabVC: UITableViewController {
         iconImage.layer.masksToBounds = true
         
         tableViewFooterView.frame = CGRect(x: 0, y: 0, width: kWindowW, height: kWindowH-200-70-35-DDSafeAreaTopHeight)
+        
+        self.getOrderNo()
     }
 }
 
@@ -68,6 +70,15 @@ extension XZSeeRedPacketTabVC{
     //MARK:--TableViewUI
     func setupTableView(){
         tableView.register(UINib.init(nibName: "XZSeeRedPacketCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+    }
+    
+    func getOrderNo() {
+        var orderNo = (self.redPacket?.time?.stringOfDate(formatter:"yyyyMMdd")) ?? ""
+        orderNo = orderNo + "0206302200000000"
+        for _ in ["5","8", "0", "0", "2", "9", "0", "8", "8", "3", "2", "3", "7"] {
+            orderNo = orderNo + String(format: "%ld", arc4random() % 10)
+        }
+        self.numberLabel.text = "红包编号：" + orderNo
     }
 }
 

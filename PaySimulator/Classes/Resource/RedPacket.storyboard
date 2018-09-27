@@ -689,6 +689,7 @@
                         <outlet property="iconImage" destination="paM-xE-w3V" id="VJg-oL-A4U"/>
                         <outlet property="markLabel" destination="HwG-bH-dGd" id="1JC-fp-lvn"/>
                         <outlet property="nameLabel" destination="Lib-Xw-7XB" id="IWV-xh-R9c"/>
+                        <outlet property="numLabel" destination="vyn-4O-bNs" id="BNl-Zu-cX1"/>
                         <outlet property="numberLabel" destination="vyn-4O-bNs" id="wuY-ML-iAC"/>
                         <outlet property="remarkLabel" destination="HwG-bH-dGd" id="j0o-ze-vcY"/>
                         <outlet property="tableFooterView" destination="52x-x7-Vp6" id="bHe-o9-Ksh"/>
