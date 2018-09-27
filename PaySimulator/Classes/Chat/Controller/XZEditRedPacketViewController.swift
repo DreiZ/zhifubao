@@ -11,6 +11,9 @@ import UIKit
 
 class XZEditRedPacketViewController:  XZBaseViewController {
     
+    //单独生成红包
+    var redPacket : XZRedPacketModel?
+    
     var tableViewController : XZEditRedPacketTableViewController?
     var setMessageData : ((_ : XZMessage)->())?
     var to : XZUserModel?
@@ -45,11 +48,7 @@ extension XZEditRedPacketViewController {
             self.tableViewController = iTabelViewController
             iTabelViewController.to = self.to
             iTabelViewController.from = self.from
-            iTabelViewController.setMessageData = {(message : XZMessage) in
-                if self.setMessageData != nil {
-                    self.setMessageData!(message)
-                }
-            }
+            iTabelViewController.redPacket = self.redPacket
         }
     }
 }

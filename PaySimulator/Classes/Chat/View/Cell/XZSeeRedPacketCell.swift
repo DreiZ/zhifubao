@@ -19,6 +19,8 @@ class XZSeeRedPacketCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        iconImg.layer.masksToBounds = true
+        iconImg.layer.cornerRadius = 23
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

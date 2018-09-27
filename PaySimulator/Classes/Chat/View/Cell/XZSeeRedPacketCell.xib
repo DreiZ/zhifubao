@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,7 +28,8 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red_icon_touxiang" translatesAutoresizingMaskIntoConstraints="NO" id="yHx-g5-cJE">
                         <rect key="frame" x="14" y="14" width="45.5" height="45.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="yHx-g5-cJE" secondAttribute="height" multiplier="43:43" id="sZZ-MN-lrs"/>
+                            <constraint firstAttribute="width" constant="46" id="eEG-UX-7xS"/>
+                            <constraint firstAttribute="height" constant="46" id="hL0-f6-jRD"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.00元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMH-rY-gKg">
@@ -46,15 +46,14 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="yHx-g5-cJE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="7CY-Fc-zP7"/>
-                    <constraint firstAttribute="trailing" secondItem="zMH-rY-gKg" secondAttribute="trailing" constant="15" id="G8h-69-SA9"/>
-                    <constraint firstItem="yHx-g5-cJE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="HNa-bS-VNk"/>
-                    <constraint firstAttribute="bottom" secondItem="yHx-g5-cJE" secondAttribute="bottom" constant="14" id="QmE-NS-SPa"/>
-                    <constraint firstItem="ihv-0I-VNo" firstAttribute="leading" secondItem="yHx-g5-cJE" secondAttribute="trailing" constant="14" id="WAn-5v-X6O"/>
-                    <constraint firstItem="zMH-rY-gKg" firstAttribute="trailing" secondItem="Gqm-Lj-EUn" secondAttribute="trailing" id="fJK-XP-T9Y"/>
-                    <constraint firstItem="Gqm-Lj-EUn" firstAttribute="top" secondItem="zMH-rY-gKg" secondAttribute="bottom" constant="10" id="jPm-Nt-bnz"/>
-                    <constraint firstItem="ihv-0I-VNo" firstAttribute="top" secondItem="yHx-g5-cJE" secondAttribute="top" constant="2" id="jdF-il-iGh"/>
-                    <constraint firstItem="zMH-rY-gKg" firstAttribute="top" secondItem="ihv-0I-VNo" secondAttribute="top" id="zHk-GI-XOo"/>
+                    <constraint firstItem="zMH-rY-gKg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="3kr-oa-eJq"/>
+                    <constraint firstItem="ihv-0I-VNo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="4h4-Pv-0Ap"/>
+                    <constraint firstAttribute="trailing" secondItem="zMH-rY-gKg" secondAttribute="trailing" constant="15" id="8mC-wp-hsx"/>
+                    <constraint firstItem="Gqm-Lj-EUn" firstAttribute="top" secondItem="zMH-rY-gKg" secondAttribute="bottom" constant="10" id="C5c-V1-bX1"/>
+                    <constraint firstAttribute="trailing" secondItem="Gqm-Lj-EUn" secondAttribute="trailing" constant="15" id="IJv-re-KjK"/>
+                    <constraint firstItem="yHx-g5-cJE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Tmk-Qw-xFc"/>
+                    <constraint firstItem="ihv-0I-VNo" firstAttribute="leading" secondItem="yHx-g5-cJE" secondAttribute="trailing" constant="14" id="mfE-lz-Dnv"/>
+                    <constraint firstItem="yHx-g5-cJE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="woL-Us-HdI"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>

@@ -10,14 +10,17 @@ import UIKit
 let cellIdentifier = "XZSeeRedPacketCell"
 class XZSeeRedPacketTabVC: UITableViewController {
 
+    //单独生成红包
+    var redPacket : XZRedPacketModel?
+    
+    @IBOutlet weak var tableViewHeadView: UIView!
+    @IBOutlet weak var tableViewFooterView: UIView!
+    
+    
     //属性
-    
     @IBOutlet weak var iconImage: UIImageView!
-    
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var remarkLabel: UILabel!
-    
     @IBOutlet weak var bottomBtn: UIButton!
     @IBOutlet weak var numberLabel: UILabel!
     
@@ -25,17 +28,17 @@ class XZSeeRedPacketTabVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         setupNavBar()
         setupTableView()
+        
+        iconImage.image = self.redPacket?.fromUser?.headImage
+        nameLabel.text = self.redPacket?.fromUser?.trueName
+        remarkLabel.text = self.redPacket?.mark
+        iconImage.layer.cornerRadius = 34
+        iconImage.layer.masksToBounds = true
+        
+        tableViewFooterView.frame = CGRect(x: 0, y: 0, width: kWindowW, height: kWindowH-238-70-35-DDSafeAreaTopHeight)
     }
-
-   
-  
 }
 
 //MARK:--UI相关
@@ -88,7 +91,10 @@ extension XZSeeRedPacketTabVC{
     
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! XZSeeRedPacketCell
         
-        cell.iconImg.image = UIImage(named: "icon_xiaochengxu")
+        cell.iconImg.image = self.redPacket?.toUser?.headImage
+        cell.nameLabel.text = self.redPacket?.toUser?.trueName
+        cell.moneylabel.text = (self.redPacket?.amount ?? "0") + "元"
+        cell.datelabel.text = self.redPacket?.time?.stringOfDate(formatter: "MM-dd HH:mm:ss")
         return cell
      }
     
@@ -102,7 +108,7 @@ extension XZSeeRedPacketTabVC{
         let label = UILabel(frame:.zero )
         label.textColor = UIColor.lightGray
         label.font = UIFont.systemFont(ofSize: 12)
-        label.text = "1人领取，共15元"
+        label.text = String(format: "1人领取，共%@元", self.redPacket?.amount ?? "0")
         view.addSubview(label)
         label.snp.makeConstraints { (make) in
             make.left.equalTo(14)
@@ -123,5 +129,3 @@ extension XZSeeRedPacketTabVC{
     }
 
 }
-
-

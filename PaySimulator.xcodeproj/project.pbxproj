@@ -63,6 +63,7 @@
 		5E55261A21490EB1004204AF /* XZMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55261921490EB1004204AF /* XZMessageHelper.swift */; };
 		5E58516A2143981F004A2C4B /* XZBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5851692143981F004A2C4B /* XZBaseModel.swift */; };
 		5E58CAF12150F72500474F9F /* chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E58CAF02150F72500474F9F /* chat.storyboard */; };
+		5E5EC32F215C7F3E00E6ED03 /* XZRedPacketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5EC32E215C7F3E00E6ED03 /* XZRedPacketModel.swift */; };
 		5E5F6573215B1DE500189234 /* XZTranferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6572215B1DE500189234 /* XZTranferModel.swift */; };
 		5E5F6575215B661F00189234 /* XZMyAlertSheetTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6574215B661F00189234 /* XZMyAlertSheetTextFieldView.swift */; };
 		5E6938E2214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6938E1214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift */; };
@@ -216,6 +217,7 @@
 		5E55261921490EB1004204AF /* XZMessageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMessageHelper.swift; sourceTree = "<group>"; };
 		5E5851692143981F004A2C4B /* XZBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseModel.swift; sourceTree = "<group>"; };
 		5E58CAF02150F72500474F9F /* chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = chat.storyboard; sourceTree = "<group>"; };
+		5E5EC32E215C7F3E00E6ED03 /* XZRedPacketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZRedPacketModel.swift; sourceTree = "<group>"; };
 		5E5F6572215B1DE500189234 /* XZTranferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZTranferModel.swift; sourceTree = "<group>"; };
 		5E5F6574215B661F00189234 /* XZMyAlertSheetTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMyAlertSheetTextFieldView.swift; sourceTree = "<group>"; };
 		5E6938E1214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatMessageRedPacketOpenCell.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 			children = (
 				5E4C65B821534C2B00478351 /* XZBillModel.swift */,
 				5E4C65BA21534E4E00478351 /* XZUserModel.swift */,
+				5E5EC32E215C7F3E00E6ED03 /* XZRedPacketModel.swift */,
 				5E4C65BC21534EB400478351 /* XZFriendListModel.swift */,
 				5E5F6572215B1DE500189234 /* XZTranferModel.swift */,
 			);
@@ -1413,6 +1416,7 @@
 				E35B5D7B213D2C5300E59A88 /* XZUserHelper.swift in Sources */,
 				5E4C65B921534C2B00478351 /* XZBillModel.swift in Sources */,
 				5E55261A21490EB1004204AF /* XZMessageHelper.swift in Sources */,
+				5E5EC32F215C7F3E00E6ED03 /* XZRedPacketModel.swift in Sources */,
 				5E42F41D21475E490034B691 /* ICFaceManager.m in Sources */,
 				5E4FC20D214610FA00E0A5A9 /* XZBoxViewController.swift in Sources */,
 				5E085D6A213FD444003B0918 /* XZBaseViewController.swift in Sources */,

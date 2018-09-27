@@ -38,7 +38,12 @@ class XZBalanceTabVC: UITableViewController {
     }
 
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 1 {
+            let withdrawalVC = UIStoryboard(name: "withDraw", bundle: nil).instantiateViewController(withIdentifier: "XZWithdrawalVC")
+            self.navigationController?.pushViewController(withdrawalVC, animated: true)
+        }
+    }
 }
 
 

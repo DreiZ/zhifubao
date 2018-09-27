@@ -416,7 +416,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.99215686274509807" green="0.97647058823529409" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="qSV-6v-mYp" userLabel="HeaderView">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="322"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="238"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redBg" translatesAutoresizingMaskIntoConstraints="NO" id="aU9-4a-l0S">
@@ -456,15 +456,15 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="tsf-lC-0pT" userLabel="footView">
-                            <rect key="frame" x="0.0" y="394" width="375" height="254"/>
+                            <rect key="frame" x="0.0" y="310" width="375" height="339"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeN-Jp-pwH">
-                                    <rect key="frame" x="126" y="182.5" width="123" height="30"/>
+                                    <rect key="frame" x="126" y="269.5" width="123" height="30"/>
                                     <state key="normal" title="查看我的红包记录"/>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="红包编号：20186516581685165165415814964189" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9U-q7-dF0">
-                                    <rect key="frame" x="54.5" y="232.5" width="266" height="13.5"/>
+                                    <rect key="frame" x="54.5" y="314.5" width="266" height="13.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -472,15 +472,15 @@
                             </subviews>
                             <color key="backgroundColor" red="0.99215686274509807" green="0.97647058823529409" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="N9U-q7-dF0" secondAttribute="bottom" constant="8" id="JPD-42-Z5O"/>
+                                <constraint firstItem="YeN-Jp-pwH" firstAttribute="centerX" secondItem="tsf-lC-0pT" secondAttribute="centerX" id="8Sl-tg-SLS"/>
+                                <constraint firstAttribute="bottom" secondItem="N9U-q7-dF0" secondAttribute="bottom" constant="11" id="JPD-42-Z5O"/>
+                                <constraint firstItem="N9U-q7-dF0" firstAttribute="top" secondItem="YeN-Jp-pwH" secondAttribute="bottom" constant="15" id="Yzm-ov-9SV"/>
                                 <constraint firstItem="N9U-q7-dF0" firstAttribute="centerX" secondItem="tsf-lC-0pT" secondAttribute="centerX" id="o5L-02-9sx"/>
-                                <constraint firstItem="YeN-Jp-pwH" firstAttribute="centerX" secondItem="tsf-lC-0pT" secondAttribute="centerX" id="vpZ-zJ-HSv"/>
-                                <constraint firstItem="N9U-q7-dF0" firstAttribute="top" secondItem="YeN-Jp-pwH" secondAttribute="bottom" constant="20" id="yOa-RX-jce"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mOV-Ox-n8X">
-                                <rect key="frame" x="0.0" y="350" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="266" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mOV-Ox-n8X" id="J86-vr-5gU">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -499,11 +499,13 @@
                         <outlet property="nameLabel" destination="gpQ-OK-9bq" id="eih-1Z-qSS"/>
                         <outlet property="numberLabel" destination="N9U-q7-dF0" id="8P1-Z0-med"/>
                         <outlet property="remarkLabel" destination="kkk-O1-L4Q" id="KUk-8h-F1S"/>
+                        <outlet property="tableViewFooterView" destination="tsf-lC-0pT" id="sx7-RU-64J"/>
+                        <outlet property="tableViewHeadView" destination="qSV-6v-mYp" id="bd0-U3-T7j"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCp-Y4-auO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4577" y="-420"/>
+            <point key="canvasLocation" x="4576.8000000000002" y="-420.53973013493254"/>
         </scene>
     </scenes>
     <resources>

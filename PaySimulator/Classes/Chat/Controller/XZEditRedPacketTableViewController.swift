@@ -11,6 +11,9 @@ import UIKit
 
 class XZEditRedPacketTableViewController: UITableViewController {
 
+    //单独生成红包
+    var redPacket : XZRedPacketModel?
+    
     var to : XZUserModel?
     var from : XZUserModel?
     
@@ -42,7 +45,10 @@ class XZEditRedPacketTableViewController: UITableViewController {
     var sendDate = Date()
     
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        marketTextFeild.resignFirstResponder()
+        amountTextFeild.resignFirstResponder()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,11 +63,23 @@ class XZEditRedPacketTableViewController: UITableViewController {
         self.receiveBtn.isSelected = true
         self.sendBtn.isSelected = false
         
-        self.sendImageView.image = to?.headImage
-        self.sendNameLabel.text = to?.trueName
+        guard let redBacketModel = self.redPacket else {
+            self.sendImageView.image = to?.headImage
+            self.sendNameLabel.text = to?.trueName
+            
+            self.receiveImageView.image = from?.headImage
+            self.receiveNameLabel.text = from?.trueName
+            return
+        }
+        self.sendImageView.image = redBacketModel.toUser?.headImage
+        self.sendNameLabel.text = redBacketModel.toUser?.trueName
         
-        self.receiveImageView.image = from?.headImage
-        self.receiveNameLabel.text = from?.trueName
+        self.receiveImageView.image = redBacketModel.fromUser?.headImage
+        self.receiveNameLabel.text = redBacketModel.fromUser?.trueName
+        
+        let tempUser = redBacketModel.toUser
+        redBacketModel.toUser = redBacketModel.fromUser
+        redBacketModel.fromUser = tempUser
     }
     
     @IBAction func sendBtnOnClick(_ sender: Any) {
@@ -69,29 +87,71 @@ class XZEditRedPacketTableViewController: UITableViewController {
         self.receiveBtn.isSelected = false
         self.sendBtn.isSelected = true
         
-        self.sendImageView.image = from?.headImage
-        self.sendNameLabel.text = from?.trueName
+        guard let redBacketModel = self.redPacket else {
+            self.sendImageView.image = from?.headImage
+            self.sendNameLabel.text = from?.trueName
+            
+            self.receiveImageView.image = to?.headImage
+            self.receiveNameLabel.text = to?.trueName
+            return
+        }
+        self.sendImageView.image = redBacketModel.toUser?.headImage
+        self.sendNameLabel.text = redBacketModel.toUser?.trueName
         
-        self.receiveImageView.image = to?.headImage
-        self.receiveNameLabel.text = to?.trueName
+        self.receiveImageView.image = redBacketModel.fromUser?.headImage
+        self.receiveNameLabel.text = redBacketModel.fromUser?.trueName
+        let tempUser = redBacketModel.toUser
+        redBacketModel.toUser = redBacketModel.fromUser
+        redBacketModel.fromUser = tempUser
     }
-    
+   
+    //MARK: ------tableview------------------------------
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
         if indexPath.section == 1 && indexPath.row == 2 {
-
-            let spicker = HcdDateTimePickerView(datePickerMode: DatePickerDateHourMinuteMode, defaultDateTime: Date())
+            marketTextFeild.resignFirstResponder()
+            amountTextFeild.resignFirstResponder()
+            let spicker = HcdDateTimePickerView(datePickerMode: DatePickerDateTimeMode, defaultDateTime: Date())
             spicker?.topViewColor = kChatMainColor
 
             spicker?.clickedOkBtn = {(dateTimeStr : String?) in
                 let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy-M-d HH:mm"
+                formatter.dateFormat = "yyyy-M-d HH:mm:ss"
                 let tempDate = formatter.date(from: dateTimeStr!)
                 self.sendDate = tempDate ?? Date()
                 self.sendTimeLabel.text = self.sendDate.shortTimeTextOfDate()
+                
+                guard let redBacketModel = self.redPacket else {
+                    return
+                }
+                redBacketModel.time = self.sendDate
+//                self.redPacket?.time = self.sendDate
             }
 
             self.view.addSubview(spicker!)
             spicker?.showHcdDateTimePicker()
+        }else if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                guard let redBacketModel = self.redPacket else {
+                    return
+                }
+                let addressBookVC = UIStoryboard(name: "PayFriend", bundle: nil).instantiateViewController(withIdentifier: "XZAddressBookVC") as? XZAddressBookVC
+                addressBookVC?.selectUserBlock = {(user : XZUserModel) in
+                    redBacketModel.fromUser = user
+                    self.setData()
+                }
+                self.navigationController?.pushViewController(addressBookVC!, animated: true)
+            }else if indexPath.row == 1 {
+                guard let redBacketModel = self.redPacket else {
+                    return
+                }
+                let addressBookVC = UIStoryboard(name: "PayFriend", bundle: nil).instantiateViewController(withIdentifier: "XZAddressBookVC") as? XZAddressBookVC
+                addressBookVC?.selectUserBlock = {(user : XZUserModel) in
+                    redBacketModel.toUser = user
+                    self.setData()
+                }
+                self.navigationController?.pushViewController(addressBookVC!, animated: true)
+            }
         }
     }
     
@@ -133,12 +193,23 @@ extension XZEditRedPacketTableViewController  {
     }
     
     func setData () {
-        self.sendImageView.image = from?.headImage
-        self.sendNameLabel.text = from?.trueName
         
-        self.receiveImageView.image = to?.headImage
-        self.receiveNameLabel.text = to?.trueName
-        self.sendTimeLabel.text = self.sendDate.shortTimeTextOfDate()
+        guard let redBacketModel = self.redPacket else {
+            self.sendImageView.image = from?.headImage
+            self.sendNameLabel.text = from?.trueName
+            
+            self.receiveImageView.image = to?.headImage
+            self.receiveNameLabel.text = to?.trueName
+            self.sendTimeLabel.text = self.sendDate.shortTimeTextOfDate()
+            return
+        }
+        
+        self.sendImageView.image = redBacketModel.fromUser?.headImage
+        self.sendNameLabel.text = redBacketModel.fromUser?.trueName
+        
+        self.receiveImageView.image = redBacketModel.toUser?.headImage
+        self.receiveNameLabel.text = redBacketModel.toUser?.trueName
+        self.sendTimeLabel.text = redBacketModel.time?.shortTimeTextOfDate()
     }
     
     func footerView () -> UIView {
@@ -184,9 +255,10 @@ extension XZEditRedPacketTableViewController {
     }
     
     let seeRedPacketTabVC = UIStoryboard(name: "RedPacket", bundle: nil).instantiateViewController(withIdentifier: "XZSeeRedPacketTabVC") as? XZSeeRedPacketTabVC
-    self.navigationController?.pushViewController(seeRedPacketTabVC!, animated: true)
-    
-    
+        self.redPacket?.amount = self.amountTextFeild.text
+        self.redPacket?.mark = self.marketTextFeild.text
+        seeRedPacketTabVC?.redPacket = self.redPacket
+        self.navigationController?.pushViewController(seeRedPacketTabVC!, animated: true)
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

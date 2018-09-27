@@ -12,7 +12,7 @@
         <!--WithdrawalVC-->
         <scene sceneID="uNY-mw-I8B">
             <objects>
-                <viewController id="UJd-mN-KPg" customClass="XZWithdrawalVC" customModule="PaySimulator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="XZWithdrawalVC" id="UJd-mN-KPg" customClass="XZWithdrawalVC" customModule="PaySimulator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bdi-16-Uq5"/>
                         <viewControllerLayoutGuide type="bottom" id="1A9-Oe-610"/>

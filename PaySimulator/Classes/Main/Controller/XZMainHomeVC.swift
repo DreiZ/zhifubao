@@ -88,6 +88,7 @@ class XZMainHomeVC: XZBaseVC {
         }else if (segue.identifier == "pushRedpacket"){ //红包
             let redVC = segue.destination as! XZEditRedPacketViewController
             redVC.hidesBottomBarWhenPushed = true
+            redVC.redPacket = XZRedPacketModel()
         }
     }
     
