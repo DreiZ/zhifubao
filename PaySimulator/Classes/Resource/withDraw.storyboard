@@ -88,7 +88,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择银行" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAo-cO-vA4">
-                                                    <rect key="frame" x="8" y="16.5" width="57.5" height="17"/>
+                                                    <rect key="frame" x="15" y="16.5" width="57.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -113,7 +113,7 @@
                                                 <constraint firstItem="CNW-mt-70z" firstAttribute="leading" secondItem="WrO-4f-Nzb" secondAttribute="trailing" constant="5" id="VMP-Cx-e8W"/>
                                                 <constraint firstItem="WrO-4f-Nzb" firstAttribute="centerY" secondItem="kDb-n8-OXd" secondAttribute="centerY" id="ZgH-j4-lgc"/>
                                                 <constraint firstItem="FAo-cO-vA4" firstAttribute="centerY" secondItem="kDb-n8-OXd" secondAttribute="centerY" id="j2z-WJ-ivx"/>
-                                                <constraint firstItem="FAo-cO-vA4" firstAttribute="leading" secondItem="kDb-n8-OXd" secondAttribute="leading" constant="8" id="uhj-ZD-4Vb"/>
+                                                <constraint firstItem="FAo-cO-vA4" firstAttribute="leading" secondItem="kDb-n8-OXd" secondAttribute="leading" constant="15" id="uhj-ZD-4Vb"/>
                                                 <constraint firstItem="CNW-mt-70z" firstAttribute="centerY" secondItem="kDb-n8-OXd" secondAttribute="centerY" id="vn1-k9-AwO"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -126,7 +126,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="银行卡尾号（后四位数）" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qxe-Ad-iZS">
-                                                    <rect key="frame" x="8" y="14" width="359" height="16"/>
+                                                    <rect key="frame" x="15" y="14" width="352" height="16"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -135,7 +135,7 @@
                                             <constraints>
                                                 <constraint firstItem="qxe-Ad-iZS" firstAttribute="centerY" secondItem="iai-hk-wG1" secondAttribute="centerY" id="Uc2-iS-5l2"/>
                                                 <constraint firstAttribute="trailing" secondItem="qxe-Ad-iZS" secondAttribute="trailing" constant="8" id="ZvQ-g7-MQC"/>
-                                                <constraint firstItem="qxe-Ad-iZS" firstAttribute="leading" secondItem="iai-hk-wG1" secondAttribute="leading" constant="8" id="ats-JH-wVm"/>
+                                                <constraint firstItem="qxe-Ad-iZS" firstAttribute="leading" secondItem="iai-hk-wG1" secondAttribute="leading" constant="15" id="ats-JH-wVm"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -147,7 +147,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="持卡人姓名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spo-bd-aAc">
-                                                    <rect key="frame" x="8" y="14" width="359" height="16"/>
+                                                    <rect key="frame" x="15" y="14" width="352" height="16"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -155,7 +155,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="spo-bd-aAc" secondAttribute="trailing" constant="8" id="2TS-n2-ZoB"/>
-                                                <constraint firstItem="spo-bd-aAc" firstAttribute="leading" secondItem="Bk1-Kp-n9w" secondAttribute="leading" constant="8" id="i9C-BU-u2F"/>
+                                                <constraint firstItem="spo-bd-aAc" firstAttribute="leading" secondItem="Bk1-Kp-n9w" secondAttribute="leading" constant="15" id="i9C-BU-u2F"/>
                                                 <constraint firstItem="spo-bd-aAc" firstAttribute="centerY" secondItem="Bk1-Kp-n9w" secondAttribute="centerY" id="pJL-r2-zy4"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -168,14 +168,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="提现金额（元）" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9tF-dT-FUp">
-                                                    <rect key="frame" x="8" y="13" width="359" height="16"/>
+                                                    <rect key="frame" x="15" y="13" width="352" height="16"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="9tF-dT-FUp" firstAttribute="leading" secondItem="zIh-Iv-Si3" secondAttribute="leading" constant="8" id="Ilw-6U-nHk"/>
+                                                <constraint firstItem="9tF-dT-FUp" firstAttribute="leading" secondItem="zIh-Iv-Si3" secondAttribute="leading" constant="15" id="Ilw-6U-nHk"/>
                                                 <constraint firstItem="9tF-dT-FUp" firstAttribute="centerY" secondItem="zIh-Iv-Si3" secondAttribute="centerY" id="R9g-iz-v96"/>
                                                 <constraint firstAttribute="trailing" secondItem="9tF-dT-FUp" secondAttribute="trailing" constant="8" id="zqO-7d-5mA"/>
                                             </constraints>
@@ -193,7 +193,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="创建时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9K-Ox-S0H">
-                                                    <rect key="frame" x="8" y="13.5" width="57.5" height="17"/>
+                                                    <rect key="frame" x="15" y="13.5" width="57.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -208,7 +208,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="yrd-BE-XL8" firstAttribute="centerY" secondItem="IVp-jz-3TA" secondAttribute="centerY" id="Ehw-FF-bMD"/>
-                                                <constraint firstItem="s9K-Ox-S0H" firstAttribute="leading" secondItem="IVp-jz-3TA" secondAttribute="leading" constant="8" id="cew-sZ-loB"/>
+                                                <constraint firstItem="s9K-Ox-S0H" firstAttribute="leading" secondItem="IVp-jz-3TA" secondAttribute="leading" constant="15" id="cew-sZ-loB"/>
                                                 <constraint firstAttribute="trailing" secondItem="yrd-BE-XL8" secondAttribute="trailing" constant="8" id="qCi-g7-iG7"/>
                                                 <constraint firstItem="s9K-Ox-S0H" firstAttribute="centerY" secondItem="IVp-jz-3TA" secondAttribute="centerY" id="vbu-DZ-gAs"/>
                                             </constraints>
@@ -222,7 +222,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="到账时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfN-i0-fwX">
-                                                    <rect key="frame" x="8" y="13.5" width="57.5" height="17"/>
+                                                    <rect key="frame" x="15" y="13.5" width="57.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -237,7 +237,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="sfN-i0-fwX" firstAttribute="centerY" secondItem="oql-HI-4jI" secondAttribute="centerY" id="LgP-hK-k8T"/>
-                                                <constraint firstItem="sfN-i0-fwX" firstAttribute="leading" secondItem="oql-HI-4jI" secondAttribute="leading" constant="8" id="LyM-zi-sKD"/>
+                                                <constraint firstItem="sfN-i0-fwX" firstAttribute="leading" secondItem="oql-HI-4jI" secondAttribute="leading" constant="15" id="LyM-zi-sKD"/>
                                                 <constraint firstAttribute="trailing" secondItem="cLe-kU-ekQ" secondAttribute="trailing" constant="8" id="iSE-Pc-P5y"/>
                                                 <constraint firstItem="cLe-kU-ekQ" firstAttribute="centerY" secondItem="oql-HI-4jI" secondAttribute="centerY" id="oBJ-Ip-ONg"/>
                                             </constraints>
@@ -255,13 +255,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCa-RF-fuW">
-                                                    <rect key="frame" x="8" y="13.5" width="43" height="17"/>
+                                                    <rect key="frame" x="15" y="13.5" width="43" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5434156491268516658146581516" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="NUd-uI-JUg">
-                                                    <rect key="frame" x="59" y="11" width="271" height="20"/>
+                                                    <rect key="frame" x="66" y="11" width="264" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="AJw-gm-Z1K"/>
                                                     </constraints>
@@ -284,7 +284,7 @@
                                                 <constraint firstItem="NUd-uI-JUg" firstAttribute="bottom" secondItem="hCa-RF-fuW" secondAttribute="bottom" id="UgQ-dH-pBm"/>
                                                 <constraint firstItem="NUd-uI-JUg" firstAttribute="leading" secondItem="hCa-RF-fuW" secondAttribute="trailing" constant="8" id="aNG-WO-YeT"/>
                                                 <constraint firstItem="HeX-Z0-wW5" firstAttribute="leading" secondItem="NUd-uI-JUg" secondAttribute="trailing" constant="12" id="lbz-gh-qPn"/>
-                                                <constraint firstItem="hCa-RF-fuW" firstAttribute="leading" secondItem="YuJ-Am-y16" secondAttribute="leading" constant="8" id="mou-5z-bAW"/>
+                                                <constraint firstItem="hCa-RF-fuW" firstAttribute="leading" secondItem="YuJ-Am-y16" secondAttribute="leading" constant="15" id="mou-5z-bAW"/>
                                                 <constraint firstAttribute="trailing" secondItem="HeX-Z0-wW5" secondAttribute="trailing" constant="8" id="omk-SG-klp"/>
                                             </constraints>
                                         </tableViewCellContentView>

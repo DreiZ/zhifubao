@@ -65,6 +65,7 @@
 		5E58CAF12150F72500474F9F /* chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E58CAF02150F72500474F9F /* chat.storyboard */; };
 		5E5EC32F215C7F3E00E6ED03 /* XZRedPacketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5EC32E215C7F3E00E6ED03 /* XZRedPacketModel.swift */; };
 		5E5EC331215CB6B700E6ED03 /* XZSeeRedPacketReceiveTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5EC330215CB6B700E6ED03 /* XZSeeRedPacketReceiveTabVC.swift */; };
+		5E5EC333215CD36700E6ED03 /* XZBankListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5EC332215CD36700E6ED03 /* XZBankListVC.swift */; };
 		5E5F6573215B1DE500189234 /* XZTranferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6572215B1DE500189234 /* XZTranferModel.swift */; };
 		5E5F6575215B661F00189234 /* XZMyAlertSheetTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6574215B661F00189234 /* XZMyAlertSheetTextFieldView.swift */; };
 		5E6938E2214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6938E1214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift */; };
@@ -220,6 +221,7 @@
 		5E58CAF02150F72500474F9F /* chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = chat.storyboard; sourceTree = "<group>"; };
 		5E5EC32E215C7F3E00E6ED03 /* XZRedPacketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZRedPacketModel.swift; sourceTree = "<group>"; };
 		5E5EC330215CB6B700E6ED03 /* XZSeeRedPacketReceiveTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZSeeRedPacketReceiveTabVC.swift; sourceTree = "<group>"; };
+		5E5EC332215CD36700E6ED03 /* XZBankListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBankListVC.swift; sourceTree = "<group>"; };
 		5E5F6572215B1DE500189234 /* XZTranferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZTranferModel.swift; sourceTree = "<group>"; };
 		5E5F6574215B661F00189234 /* XZMyAlertSheetTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMyAlertSheetTextFieldView.swift; sourceTree = "<group>"; };
 		5E6938E1214CA72200B04693 /* XZChatMessageRedPacketOpenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatMessageRedPacketOpenCell.swift; sourceTree = "<group>"; };
@@ -596,6 +598,7 @@
 				E348974A21428EF60062410B /* XZWithdrawalBillTabVC.swift */,
 				E348974B21428EF60062410B /* XZWithdrawalTabVC.swift */,
 				E348974C21428EF60062410B /* XZWithdrawalVC.swift */,
+				5E5EC332215CD36700E6ED03 /* XZBankListVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1330,6 +1333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E5EC333215CD36700E6ED03 /* XZBankListVC.swift in Sources */,
 				5EAF7336214272A50027812A /* ZBaseModel.m in Sources */,
 				5E4FC213214611DB00E0A5A9 /* XZChatBoxView.swift in Sources */,
 				5E42F314214756A80034B691 /* XZFaceManager.swift in Sources */,

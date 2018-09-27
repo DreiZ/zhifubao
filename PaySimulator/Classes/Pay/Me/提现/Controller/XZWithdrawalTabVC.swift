@@ -85,8 +85,15 @@ extension XZWithdrawalTabVC {
         
     }
     
-    
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                let bankListVC = XZBankListVC()
+                bankListVC.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(bankListVC, animated: true)
+            }
+        }
+    }
 }
 
 
