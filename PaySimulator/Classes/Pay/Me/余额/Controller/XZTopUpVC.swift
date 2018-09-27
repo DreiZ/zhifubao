@@ -17,7 +17,10 @@ class XZTopUpVC: XZBaseVC {
     
     @IBAction func nexBtn(_ sender: UIButton) {
         
-        
+        let userModel = XZFriendListModel.shareSingleton.getUserModel()
+        userModel?.balance += Double(self.moneyTextField.text ?? "0") ?? 0.0
+        XZFriendListModel.shareSingleton.addSelfUserModel(userModel!)
+        let _ = XZFriendListModel.shareSingleton.saveSelfToDB()
 
         let payMeStoryBoard = UIStoryboard(name: "PayMe", bundle: nil)
         //identifier获取指定的界面（VC）

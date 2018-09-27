@@ -25,6 +25,10 @@ import UIKit
      var aliCount : String?
     //会员等级 0：无 1：钻石会员 2：铂金会员 3：黄金会员 4：大众会员
      var level : Int = 0
+    
+    var balance : Double = 0.00
+    //电话号码
+    
     //首字母
     @objc var acapital : String?
     

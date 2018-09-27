@@ -9,6 +9,10 @@
 import UIKit
 
 class XZBalanceVC: XZBaseVC {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,6 +11,7 @@ import UIKit
 class XZBalanceTabVC: UITableViewController {
 
     //storyBoard属性
+    var userModel : XZUserModel?
     
     @IBOutlet weak var balanceLabel: UILabel!
     
@@ -20,10 +21,12 @@ class XZBalanceTabVC: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        userModel = XZFriendListModel.shareSingleton.getUserModel()
 //        navBarBarTintColor = .white
 //        navBarTintColor = ddBlueColor()
 //        title = "余额"
 //        navBarTitleColor = .black
+        balanceLabel.text = String(format: "%.2f", (userModel?.balance) ?? 0)
     }
     
     override func viewDidLoad() {

@@ -15,7 +15,13 @@ class XZTopUpFinishVC: XZBaseVC {
     @IBOutlet weak var moneyLabel: UILabel!
     
     @IBAction func finishBtn(_ sender: UIButton) {//完成按钮
-        
+        for viewController in self.navigationController?.viewControllers ?? [] {
+            if viewController is XZBalanceVC {
+                self.navigationController?.popToViewController(viewController, animated: true)
+                return
+            }
+        }
+
         self.navigationController?.popViewController(animated: false)
         
     }
