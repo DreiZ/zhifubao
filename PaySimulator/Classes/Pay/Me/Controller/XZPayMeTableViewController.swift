@@ -10,6 +10,8 @@ import UIKit
 
 class XZPayMeTableViewController: UITableViewController {
 
+    
+    var userModel : XZUserModel?
     //MARK:--headerView属性
     //MARK:--定义闭包（按钮点击事件，传到控制器中）
     //声明
@@ -34,6 +36,8 @@ class XZPayMeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.userModel = XZFriendListModel.shareSingleton.getUserModel()
+        
         //设置table下拉蓝色背景
         addBluebackGroundView()
         self.headerView.backgroundColor = ddBlueColor()
@@ -61,10 +65,10 @@ extension XZPayMeTableViewController{
     
     //headerViewx数据更新
     private func uploadHeaderViewData(){
-        let userInfo = XZUserHelper.getUserInfo()
+//        let userInfo = XZUserHelper.getUserInfo()
  
         //姓名
-        if let userName = userInfo.userName  {
+        if let userName = userModel?.trueName  {
             
             self.nameLabel.text = userName
             
@@ -73,7 +77,7 @@ extension XZPayMeTableViewController{
         }
         
         //账号
-        if let payAccount = userInfo.payAccount {
+        if let payAccount = userModel?.aliCount {
             if isPhoneNumber(phoneNumber: payAccount){//手机号
                 let phoneStr = payAccount as NSString
                 let range = NSMakeRange(3, 5);
@@ -96,13 +100,13 @@ extension XZPayMeTableViewController{
         self.starsImage.image = UIImage(named: "icon_xinhao")
         
         //头像
-        guard let userImg = userInfo.iconImage else {
-            iconImage.image = UIImage(named: "baidu")
+        guard let userImg = userModel?.headImage else {
+            iconImage.image = UIImage(named: "headIcon")
             return;
         }
-        let imgData = Data(base64Encoded: userImg)
-        iconImage.image = UIImage(data: imgData!)
-        
+//        let imgData = Data(base64Encoded: userImg)
+//        iconImage.image = UIImage(data: imgData!)
+        iconImage.image = userImg
         
      }
     

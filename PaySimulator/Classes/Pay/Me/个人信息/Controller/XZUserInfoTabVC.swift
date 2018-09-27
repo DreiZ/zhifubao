@@ -13,6 +13,8 @@ private let XZPayUserInfoCellID = "XZPayUserInfoCellID";
 
 class XZUserInfoTabVC: XZBaseViewController {
 
+    var userModel : XZUserModel?
+    
     //MARK:--数据源Array
     private lazy var dataList : [String] = {
        return ["头像","昵称","支付宝账号","会员等级"]
@@ -32,7 +34,7 @@ class XZUserInfoTabVC: XZBaseViewController {
     private lazy var myPickerView : XZMyPickerView = {[weak self] in
         
         let  myPickerView = XZMyPickerView(frame:CGRect(x: 0, y: 0, width: kWindowW, height: kWindowH))
-        myPickerView.componentsArray = [["大众会员","白金","黄金","铂金","钻石","💎💎"]]
+        myPickerView.componentsArray = [["无", "钻石会员", "铂金会员", "黄金会员", "大众会员"]]
         myPickerView.clickFinishBlock = {[weak self] (selectorStr : String) in
             let userInfo = XZUserHelper.getUserInfo()
             userInfo.VIPLevel = selectorStr
@@ -55,7 +57,8 @@ class XZUserInfoTabVC: XZBaseViewController {
     
     override func viewDidLoad() {
        super.viewDidLoad()
- 
+        
+        self.userModel = XZFriendListModel.shareSingleton.getUserModel()
         //设置UI
         setupUI()
         //设置nav右侧按钮
@@ -93,19 +96,19 @@ extension XZUserInfoTabVC{
         self.navBar.wr_setRightButton(title: "确定", titleColor: ddBlueColor())
         self.navBar.onClickRightButton = {[weak self] in 
  
-            //储存用户信息
-            let userInfo = XZUserHelper.getUserInfo()
-            if (self?.iconImageStr) != nil{
-                userInfo.iconImage = self?.iconImageStr//储存头像
-            }
-          
-            userInfo.userName = self?.userNameLB?.text//姓名
-            userInfo.payAccount = self?.payAccountLB?.text//账号
-            userInfo.VIPLevel = self?.starsLevel?.text//等级
-            userInfo.saveUserInfo()//保存
-//            self?.navigationController?.popViewController(animated: true)
-            
-            
+//            //储存用户信息
+//            let userInfo = XZUserHelper.getUserInfo()
+//            if (self?.iconImageStr) != nil{
+//                userInfo.iconImage = self?.iconImageStr//储存头像
+//            }
+//
+//            userInfo.userName = self?.userNameLB?.text//姓名
+//            userInfo.payAccount = self?.payAccountLB?.text//账号
+//            userInfo.VIPLevel = self?.starsLevel?.text//等级
+//            userInfo.saveUserInfo()//保存
+////            self?.navigationController?.popViewController(animated: true)
+//
+//
             
             let userModel : XZUserModel = XZUserModel()
             userModel.userId = 9999
@@ -139,7 +142,7 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: XZPayUserInfoCellID)  as! XZPayUserInfoCell;
         
         //用户信息
-          let userInfo = XZUserHelper.getUserInfo();
+//          let userInfo = XZUserHelper.getUserInfo();
         
         if indexPath.row == 0 {//显示头像
             cell.detailLabel.isHidden = true;
@@ -148,13 +151,13 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
              iconImage = cell.iconImage
           
             
-            guard let userImg = userInfo.iconImage else {
-                cell.iconImage.image = UIImage(named: "baidu")
+            guard let userImg = userModel?.headImage else {
+                cell.iconImage.image = UIImage(named: "headIcon")
                 return cell
             }
-            let imgData = Data(base64Encoded: userImg)
+//            let imgData = Data(base64Encoded: userImg)
             
-            cell.iconImage.image = UIImage(data: imgData!)
+            cell.iconImage.image = userImg
             
            
         }else {
@@ -164,14 +167,16 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
   
         if indexPath.row == 1 {//用户名
             self.userNameLB = cell.detailLabel
-            self.userNameLB?.text = userInfo.userName ?? ""
+            self.userNameLB?.text = userModel?.trueName ?? ""
             
         }else if indexPath.row == 2{//账号
             self.payAccountLB = cell.detailLabel
-            self.payAccountLB?.text = userInfo.payAccount ?? ""
+            self.payAccountLB?.text = userModel?.aliCount ?? ""
         }else if indexPath.row == 3{//会员等级
             self.starsLevel = cell.detailLabel
-            self.starsLevel?.text = userInfo.VIPLevel  ?? ""
+            let level = ["无", "钻石会员", "铂金会员", "黄金会员", "大众会员"]
+            
+            self.starsLevel?.text = level[(userModel?.level) ?? 0]
         }
        
         cell.titleLabel.text = dataList[indexPath.row];

@@ -51,43 +51,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="628"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="l4u-qU-Mxn" userLabel="headerView">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="l4u-qU-Mxn" userLabel="headerView">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7C-d2-bQN">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baidu" translatesAutoresizingMaskIntoConstraints="NO" id="a6m-04-xcs">
-                                            <rect key="frame" x="15" y="0.0" width="38" height="38"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headIcon" translatesAutoresizingMaskIntoConstraints="NO" id="a6m-04-xcs">
+                                            <rect key="frame" x="15" y="0.0" width="58" height="58"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="a6m-04-xcs" secondAttribute="height" multiplier="1:1" id="QEu-IJ-zcF"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_xinhao" translatesAutoresizingMaskIntoConstraints="NO" id="mQa-G5-k5T">
-                                            <rect key="frame" x="43" y="-25" width="20" height="20"/>
+                                            <rect key="frame" x="63" y="43" width="20" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="20" id="CSA-kt-aff"/>
                                                 <constraint firstAttribute="height" constant="20" id="Hnz-Gn-Sfo"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="杨大力 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0w-Jz-Agb">
-                                            <rect key="frame" x="69" y="4" width="53.666666666666657" height="19.666666666666668"/>
+                                            <rect key="frame" x="89" y="4" width="53.666666666666657" height="19.666666666666668"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="             " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lX-Af-xfM">
-                                            <rect key="frame" x="69" y="35.666666666666664" width="47" height="16"/>
+                                            <rect key="frame" x="89" y="35.666666666666664" width="47" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="右" translatesAutoresizingMaskIntoConstraints="NO" id="tFh-CE-hzw">
-                                            <rect key="frame" x="382" y="-5.666666666666667" width="13" height="13"/>
+                                            <rect key="frame" x="382" y="28.333333333333325" width="13" height="13"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuF-jH-Yue">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
                                             <connections>
                                                 <action selector="clickRightButton:" destination="XnJ-NG-xeR" eventType="touchUpInside" id="eCZ-e0-zZp"/>
                                             </connections>
@@ -1306,7 +1306,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="baidu" width="38" height="38"/>
+        <image name="headIcon" width="45" height="45"/>
         <image name="icon_baoxianfuwu" width="17" height="19"/>
         <image name="icon_chongzhi" width="20" height="15"/>
         <image name="icon_chongzhi1" width="40" height="40"/>

@@ -68,6 +68,12 @@ extension XZFriendListModel {
     
     func addSelfUserModel(_ userModel : XZUserModel) {
         if self.friendList != nil {
+            if (self.friendList?.count)! > 0 {
+                let item = self.friendList?.last
+                if item?.userId == 9999 {
+                    self.friendList?.removeLast()
+                }
+            }
             self.friendList?.append(userModel)
         }else {
             self.friendList = []
@@ -75,13 +81,32 @@ extension XZFriendListModel {
         }
     }
     
+    func getUserModel() -> XZUserModel? {
+        self.getDataFromSql()
+        if self.friendList != nil {
+            if (self.friendList?.count)! > 0 {
+                let item = self.friendList?.last
+                if item?.userId == 9999 {
+                    return item
+                }
+            }
+        }
+        return nil
+    }
+    
     func saveSelfToDB() -> Bool {
         return self.saveToDB()
     }
     
      class func dropTable () {
+        let item = XZFriendListModel.shareSingleton.getUserModel()
+        
         let globalHelper = XZFriendListModel.getUsingLKDBHelper()
         ///删除所有表   delete all table
         globalHelper.dropAllTable()
+        
+        if let userModel = item {
+            XZFriendListModel.shareSingleton.addUserModel(userModel)
+        }
     }
 }

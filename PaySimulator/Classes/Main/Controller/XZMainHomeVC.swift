@@ -60,11 +60,7 @@ class XZMainHomeVC: XZBaseVC {
             self.navigationController?.pushViewController(transfer, animated: true)
             break
         case 4://红包
-            XZChatListModel.dropTable()
-            XZUserModel.dropTable()
-            XZChatModel.dropTable()
-            XZChatListModel.dropTable()
-            XZMessage.dropTable()
+//            XZBaseModel.dropTable()
             break
         case 5://提现账单
             

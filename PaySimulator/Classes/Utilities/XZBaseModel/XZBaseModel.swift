@@ -27,6 +27,15 @@ import UIKit
 }
 
 extension XZBaseModel {
+    
+    class func dropTable() {
+        XZFriendListModel.dropTable()
+        XZUserModel.dropTable()
+        XZChatModel.dropTable()
+        XZChatListModel.dropTable()
+        XZMessage.dropTable()
+    }
+    
     func test () {
         //let globalHelper = XZBaseModel.getUsingLKDBHelper()
         /////删除所有表   delete all table
