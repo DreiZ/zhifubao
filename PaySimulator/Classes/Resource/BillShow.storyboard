@@ -255,7 +255,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="70l-5P-h1d">
                                                     <rect key="frame" x="15" y="6.5" width="360" height="0.0"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.5" id="6pY-8d-CGP"/>
                                                     </constraints>
@@ -478,9 +478,11 @@
                     </tableView>
                     <connections>
                         <outlet property="amountLabel" destination="ODs-RV-Jlq" id="jIo-cs-i4s"/>
+                        <outlet property="billHistoryCell" destination="1LD-8a-qlL" id="Cae-2L-MUc"/>
                         <outlet property="billTypeLabel" destination="WjK-aj-ngR" id="2Dh-Pa-TzP"/>
                         <outlet property="billstateLabel" destination="hit-4f-Ucy" id="A6z-H8-zCo"/>
                         <outlet property="createTimeLabel" destination="5aL-ok-Ids" id="WFl-fm-ofX"/>
+                        <outlet property="electronicReturnCell" destination="vgr-Y8-gso" id="Top-eN-Jmw"/>
                         <outlet property="orderNoLabel" destination="ZXX-zh-Vp5" id="l2S-LU-rKG"/>
                         <outlet property="receiveReasonLabel" destination="ehJ-06-QjO" id="sFe-De-Btz"/>
                         <outlet property="receiveTypeLabel" destination="7X8-qn-oEG" id="6WP-xY-6pW"/>

@@ -29,6 +29,8 @@ class XZBillTableViewController: UITableViewController {
     @IBOutlet weak var createTimeLabel: UILabel!
     @IBOutlet weak var orderNoLabel: UILabel!
     
+    @IBOutlet weak var electronicReturnCell: UITableViewCell!
+    @IBOutlet weak var billHistoryCell: UITableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +58,27 @@ class XZBillTableViewController: UITableViewController {
         }else {
             self.secondtitleLabel.text = "收款理由" 
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            if indexPath.row == 0{
+                return 125
+            }else if indexPath.row == 5 || indexPath.row == 8 {
+                return 13
+            }
+            return 34
+        }else if indexPath.section == 1 {
+            if indexPath.row == 1 || indexPath.row == 2 {
+                if self.billType! == .Transfer  {
+                    return 50
+                }else {
+                    return 0
+                }
+            }
+        }
+
+        return 50
     }
 
 }
