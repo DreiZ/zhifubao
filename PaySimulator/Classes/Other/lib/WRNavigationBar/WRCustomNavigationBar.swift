@@ -197,7 +197,7 @@ class WRCustomNavigationBar: UIView
         backgroundView.frame = self.bounds
         backgroundImageView.frame = self.bounds
         leftButton.frame = CGRect(x: margin, y: top, width: buttonWidth, height: buttonHeight)
-        rightButton.frame = CGRect(x: WRScreenWidth-buttonWidth-margin, y: top, width: buttonWidth, height: buttonHeight)
+        rightButton.frame = CGRect(x: WRScreenWidth-buttonWidth-5, y: top, width: buttonWidth, height: buttonHeight)
         titleLabel.frame = CGRect(x: (WRScreenWidth-titleLabelWidth)/2.0, y: top, width: titleLabelWidth, height: titleLabelHeight)
         bottomLine.frame = CGRect(x: 0, y: bounds.height-0.5, width: WRScreenWidth, height: 0.5)
     }

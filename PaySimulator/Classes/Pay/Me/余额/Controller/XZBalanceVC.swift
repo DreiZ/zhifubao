@@ -8,15 +8,17 @@
 
 import UIKit
 
-class XZBalanceVC: XZBaseVC {
+class XZBalanceVC: XZBaseViewController {
+    
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        topConstraint.constant = DDSafeAreaTopHeight - (DDSafeAreaTopHeight - 44)
         // Do any additional setup after loading the view.
         setupNavBar()
     }
@@ -26,33 +28,22 @@ extension XZBalanceVC{
     
         private func setupNavBar(){
  
-            navBarBarTintColor = ddBlueColor()
-            navBarTintColor = .white
-            navBarTitleColor = .white
-            navBarShadowImageHidden = true;
- 
-            navigationItem.title = "余额"
-            
-            //右侧按钮
-            let rightBtn = XZBaseNavItemBtn(frame: CGRect(x: 0, y: 0, width: 40, height: 40), titleName: "明细")
-            rightBtn.setTitleColor(UIColor.white, for: .normal)
-            rightBtn.addTarget(self, action: #selector(clickRightItem), for: .touchUpInside)
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
-            
-            let backIetm = UIBarButtonItem()
-            
-            backIetm.title = "返回";
-            self.navigationItem.backBarButtonItem = backIetm;
+            self.navBar.title = "余额"
+            self.navBar.titleLabelColor = UIColor.white
+            self.navBar.titleLabelFont = UIFont.boldSystemFont(ofSize: 18)
+            self.navBar.barBackgroundColor = ddBlueColor()
+            self.navBar.wr_setLeftButton(normalImage: UIImage(named: "icon_fanhui")!, highlightedImage:UIImage(named: "icon_fanhui")!, title: "我的", titleColor: UIColor.white)
+            self.navBar.wr_setRightButton(title: "明细", titleColor: UIColor.white)
+
         }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
-        
         return .lightContent
     }
     
-    
-     @objc private  func clickRightItem(){
-        DDLog(clickRightItem)
+
+    override func rightBtnOnClick() {
+        
     }
-    
+
 }

@@ -30,7 +30,7 @@ class XZBaseNavItemBtn: UIButton {
             self.setTitle(titleName, for: .normal)
         }
         self.setTitleColor(UIColor.white, for: .normal)
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 16);
+        self.titleLabel?.font = UIFont.systemFont(ofSize: 15);
         
         
     }

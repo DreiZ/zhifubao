@@ -58,8 +58,5 @@ extension XZPayMeVC{
         navigationItem.title = "我的"
         
     }
-    
-    
-    
 }
 

@@ -14,24 +14,23 @@ class XZBalanceTabVC: UITableViewController {
     var userModel : XZUserModel?
     
     @IBOutlet weak var balanceLabel: UILabel!
-    
     @IBOutlet weak var yuebaoLabel: UILabel!
-    
     @IBOutlet weak var goYuebaoBtn: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         userModel = XZFriendListModel.shareSingleton.getUserModel()
-//        navBarBarTintColor = .white
-//        navBarTintColor = ddBlueColor()
-//        title = "余额"
-//        navBarTitleColor = .black
         balanceLabel.text = String(format: "%.2f", (userModel?.balance) ?? 0)
+        
+        self.tableView.separatorStyle = .none
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        goYuebaoBtn.layer.masksToBounds = true
+        goYuebaoBtn.layer.cornerRadius = 2
+        goYuebaoBtn.layer.borderWidth = 1
+        goYuebaoBtn.layer.borderColor = UIColor(red: 144.0/255.0, green: 186.0/255.0, blue: 216.0/255.0, alpha: 1).cgColor
         //导航设置
 //        setupNavBar()
         
