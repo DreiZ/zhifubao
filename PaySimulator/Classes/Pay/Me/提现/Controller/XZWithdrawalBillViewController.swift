@@ -26,7 +26,7 @@ class XZWithdrawalBillViewController: XZBaseViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //goXZWithdrawalBillTabVC
         
-        if segue.identifier == "goXZWithdrawalBillTabVC" {
+        if segue.identifier == "withdrawalToTableView" {
             let vc = segue.destination as! XZWithdrawalBillTabVC
             vc.withDrawaleModel = self.withDrawaleModel
         }

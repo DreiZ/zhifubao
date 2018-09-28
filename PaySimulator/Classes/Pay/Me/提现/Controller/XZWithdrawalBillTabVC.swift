@@ -52,9 +52,9 @@ class XZWithdrawalBillTabVC: UITableViewController {
         self.toBankLabel.text = (self.withDrawaleModel?.bankName ?? "") + "(\(self.withDrawaleModel?.bankName ?? ""))" + (self.withDrawaleModel?.cardUserName ?? "")
         
         self.billClassLabel.text = "其他"
-        self.billCreateTimeLabel.text = self.withDrawaleModel?.creatTime?.stringOfDate(formatter: "YYYY:MM:dd HH")
+        self.billCreateTimeLabel.text = self.withDrawaleModel?.creatTime?.stringOfDate(formatter: "YYYY-MM-dd HH:mm")
         self.orderNoLabel.text = self.withDrawaleModel?.orderNum
-        self.statusLabel.text = "处理中"
+        self.statusLabel.text = "交易成功"
 
 //        @IBOutlet weak var arriveTimeBtn: UIButton!
 //        @IBOutlet weak var arriveTimeLabel: UILabel!

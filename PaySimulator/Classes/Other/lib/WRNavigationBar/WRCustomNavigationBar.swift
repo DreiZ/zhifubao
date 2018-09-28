@@ -188,7 +188,7 @@ class WRCustomNavigationBar: UIView
     func updateFrame()
     {
         let top:CGFloat = WRCustomNavigationBar.isIphoneX ? 44 : 20
-        let margin:CGFloat = 18
+        let margin:CGFloat = 16
         let buttonHeight:CGFloat = 44
         let buttonWidth:CGFloat = 60
         let titleLabelHeight:CGFloat = 44
@@ -254,8 +254,8 @@ extension WRCustomNavigationBar
         leftButton.setTitle(title, for: .normal)
         leftButton.setTitleColor(titleColor, for: .normal)
         if normal != nil && title != nil{
-            leftButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 0)
-            leftButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 4)
+            leftButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 0)
+            leftButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16)
         } else {
             leftButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             leftButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
