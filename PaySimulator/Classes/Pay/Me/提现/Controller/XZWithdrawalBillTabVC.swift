@@ -12,12 +12,25 @@ class XZWithdrawalBillTabVC: UITableViewController {
 
     
     //MARK:--storyBoard属性
+    @IBOutlet weak var bankImageView: UIImageView!
+    @IBOutlet weak var bankNameLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var withDrawalDesLabel: UILabel!
+    @IBOutlet weak var creatTimeLabel: UILabel!
+    @IBOutlet weak var middleTimeLabel: UILabel!
+    @IBOutlet weak var endTimeLabel: UILabel!
+    @IBOutlet weak var toBankLabel: UILabel!
+    @IBOutlet weak var billClassLabel: UILabel!
+    @IBOutlet weak var billCreateTimeLabel: UILabel!
+    @IBOutlet weak var orderNoLabel: UILabel!
+    
+    
     
     @IBOutlet weak var arriveTimeBtn: UIButton!
-    
     @IBOutlet weak var arriveTimeLabel: UILabel!
-    
     @IBOutlet weak var statusLabel: UILabel!
+    
+    
     
     var withDrawaleModel : XZWithdrawalModel?
     
@@ -26,79 +39,28 @@ class XZWithdrawalBillTabVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.tableView.separatorStyle = .none
         DDLog("传值 = \(String(describing: withDrawaleModel))")
         
-     
+        self.bankImageView.image = self.withDrawaleModel?.bankImage
+        self.bankNameLabel.text = self.withDrawaleModel?.bankName
+        self.amountLabel.text = self.withDrawaleModel?.money
+        self.withDrawalDesLabel.text = "快速提现"
+        self.creatTimeLabel.text = self.withDrawaleModel?.creatTime?.stringOfDate(formatter: "MM:dd HH:mm")
+        self.middleTimeLabel.text = self.withDrawaleModel?.creatTime?.stringOfDate(formatter: "MM:dd HH:mm")
+        self.endTimeLabel.text = self.withDrawaleModel?.endTime?.stringOfDate(formatter: "MM:dd HH:mm")
+        self.toBankLabel.text = (self.withDrawaleModel?.bankName ?? "") + "(\(self.withDrawaleModel?.bankName ?? ""))" + (self.withDrawaleModel?.cardUserName ?? "")
+        
+        self.billClassLabel.text = "其他"
+        self.billCreateTimeLabel.text = self.withDrawaleModel?.creatTime?.stringOfDate(formatter: "YYYY:MM:dd HH")
+        self.orderNoLabel.text = self.withDrawaleModel?.orderNum
+        self.statusLabel.text = "处理中"
+
+//        @IBOutlet weak var arriveTimeBtn: UIButton!
+//        @IBOutlet weak var arriveTimeLabel: UILabel!
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
    
-    }
-
     // MARK: - Table view data source
-
-   
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -14,12 +14,29 @@ class XZBankListVC: XZBaseViewController {
     
     var drawalModel : XZWithdrawalModel?
     
-    var titleSoure = ["建设银行", "招商银行", "农业银行", "中国银行"]
-    var imageSoure = [UIImage(named: ""), UIImage(named: ""), UIImage(named: ""), UIImage(named: "")]
+    var titleSoure = ["中国工商银行", "中国光大银行", "广发银行", "华夏银行",
+                      "交通银行", "中国民生银行", "中国农业银行", "上海浦东发展银行",
+                      "上海银行", "兴业银行", "中国邮政", "招商银行",
+                      "中国银行", "中信银行"]
+    
+    var imageSoure = [UIImage(named: "icon_gongshang"),
+                      UIImage(named: "icon_guangda"),
+                      UIImage(named: "icon_guangfa"),
+                      UIImage(named: "icon_huaxia"),
+                      UIImage(named: "icon_jiaotong"),
+                      UIImage(named: "icon_mingsheng"),
+                      UIImage(named: "icon_nongye"),
+                      UIImage(named: "icon_pufa"),
+                      UIImage(named: "icon_shanghai"),
+                      UIImage(named: "icon_xingye"),
+                      UIImage(named: "icon_youzheng"),
+                      UIImage(named: "icon_zhaoshang"),
+                      UIImage(named: "icon_zhongguo"),
+                      UIImage(named: "icon_zhongxing"),]
     
     var iTableView : UITableView = {
         let itableView = UITableView(frame: CGRect(x: 0, y: DDSafeAreaTopHeight, width: kWindowW, height: kWindowH - DDSafeAreaTopHeight), style: UITableViewStyle.plain)
-        itableView.separatorStyle = .none
+//        itableView.separatorStyle = .none
         itableView.backgroundColor = kChatBackColor
         
         return itableView
@@ -69,6 +86,8 @@ extension XZBankListVC : UITableViewDelegate, UITableViewDataSource {
         let cell = UITableViewCell()
         cell.selectionStyle = .none
         cell.textLabel?.text = titleSoure[indexPath.row]
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
+        cell.imageView?.image = imageSoure[indexPath.row]
         return cell
     }
     
@@ -79,6 +98,7 @@ extension XZBankListVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if self.bankSelect != nil {
             self.bankSelect!(imageSoure[indexPath.row]!, titleSoure[indexPath.row])
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }

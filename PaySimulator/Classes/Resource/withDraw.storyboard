@@ -93,19 +93,18 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_chongzhi1" translatesAutoresizingMaskIntoConstraints="NO" id="CNW-mt-70z">
-                                                    <rect key="frame" x="342" y="12.5" width="25" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="CEl-tm-wcs"/>
-                                                        <constraint firstAttribute="height" constant="25" id="bvQ-l2-jpB"/>
-                                                    </constraints>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_zhaoshang" translatesAutoresizingMaskIntoConstraints="NO" id="CNW-mt-70z">
+                                                    <rect key="frame" x="344" y="13.5" width="23" height="23"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WrO-4f-Nzb">
-                                                    <rect key="frame" x="263" y="10.5" width="74" height="27"/>
+                                                    <rect key="frame" x="265" y="10.5" width="74" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <state key="normal" title="中国建设银行">
                                                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="bankOnClick:" destination="W4a-kt-eUb" eventType="touchUpInside" id="d3b-Dg-9av"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -129,7 +128,7 @@
                                                     <rect key="frame" x="15" y="14" width="352" height="16"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -171,7 +170,7 @@
                                                     <rect key="frame" x="15" y="13" width="352" height="16"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -204,6 +203,9 @@
                                                     <state key="normal" title="2018-08-27 10:42:02">
                                                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="creatTimeOnClick:" destination="W4a-kt-eUb" eventType="touchUpInside" id="G5L-us-3Z3"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -233,6 +235,9 @@
                                                     <state key="normal" title="2018-08-27 10:42:02">
                                                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="endTimeOnClick:" destination="W4a-kt-eUb" eventType="touchUpInside" id="vDT-4Z-lq1"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -247,7 +252,7 @@
                             </tableViewSection>
                             <tableViewSection id="oJU-s5-riE">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Wos-oa-SKT">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="44" id="Wos-oa-SKT">
                                         <rect key="frame" x="0.0" y="377" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wos-oa-SKT" id="YuJ-Am-y16">
@@ -261,10 +266,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5434156491268516658146581516" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="NUd-uI-JUg">
-                                                    <rect key="frame" x="66" y="11" width="264" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="AJw-gm-Z1K"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="66" y="0.0" width="264" height="43.5"/>
                                                     <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -276,16 +278,21 @@
                                                         <constraint firstAttribute="width" constant="25" id="fuG-tt-ElB"/>
                                                     </constraints>
                                                     <state key="normal" image="btn_shuaxin"/>
+                                                    <connections>
+                                                        <action selector="orderNoOnClick:" destination="W4a-kt-eUb" eventType="touchUpInside" id="qWH-rv-ZXf"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="hCa-RF-fuW" firstAttribute="centerY" secondItem="YuJ-Am-y16" secondAttribute="centerY" id="EdD-JR-ag4"/>
                                                 <constraint firstItem="HeX-Z0-wW5" firstAttribute="centerY" secondItem="YuJ-Am-y16" secondAttribute="centerY" id="I5E-85-udf"/>
-                                                <constraint firstItem="NUd-uI-JUg" firstAttribute="bottom" secondItem="hCa-RF-fuW" secondAttribute="bottom" id="UgQ-dH-pBm"/>
-                                                <constraint firstItem="NUd-uI-JUg" firstAttribute="leading" secondItem="hCa-RF-fuW" secondAttribute="trailing" constant="8" id="aNG-WO-YeT"/>
-                                                <constraint firstItem="HeX-Z0-wW5" firstAttribute="leading" secondItem="NUd-uI-JUg" secondAttribute="trailing" constant="12" id="lbz-gh-qPn"/>
+                                                <constraint firstAttribute="bottom" secondItem="NUd-uI-JUg" secondAttribute="bottom" id="bf0-uo-BZD"/>
+                                                <constraint firstItem="HeX-Z0-wW5" firstAttribute="leading" secondItem="NUd-uI-JUg" secondAttribute="trailing" constant="12" id="cRW-M9-uET"/>
+                                                <constraint firstItem="NUd-uI-JUg" firstAttribute="top" secondItem="YuJ-Am-y16" secondAttribute="top" id="kxd-UM-ICZ"/>
                                                 <constraint firstItem="hCa-RF-fuW" firstAttribute="leading" secondItem="YuJ-Am-y16" secondAttribute="leading" constant="15" id="mou-5z-bAW"/>
                                                 <constraint firstAttribute="trailing" secondItem="HeX-Z0-wW5" secondAttribute="trailing" constant="8" id="omk-SG-klp"/>
+                                                <constraint firstItem="NUd-uI-JUg" firstAttribute="leading" secondItem="hCa-RF-fuW" secondAttribute="trailing" constant="8" id="rg3-Fr-2up"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -298,6 +305,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="bankImageView" destination="CNW-mt-70z" id="Olg-0m-AQH"/>
                         <outlet property="bankNumTF" destination="qxe-Ad-iZS" id="0cE-tL-bNU"/>
                         <outlet property="cardNameTF" destination="spo-bd-aAc" id="Za0-eT-h5h"/>
                         <outlet property="chooseBankBtn" destination="WrO-4f-Nzb" id="q6z-B9-aPF"/>
@@ -349,7 +357,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="处理中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vam-cR-juC">
                                                     <rect key="frame" x="166" y="99" width="43" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.9882352941176471" green="0.47058823529411764" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.55294117647058827" green="0.55294117647058827" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -724,9 +732,20 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="3HO-5q-pgt"/>
                     <connections>
+                        <outlet property="amountLabel" destination="Wwi-ID-RLo" id="3cl-3z-UHD"/>
                         <outlet property="arriveTimeBtn" destination="u4k-Lr-1Dv" id="DP4-6l-MWF"/>
                         <outlet property="arriveTimeLabel" destination="IsD-8R-zWb" id="Fpd-EI-isf"/>
+                        <outlet property="bankImageView" destination="amI-62-4HL" id="94d-rm-DgE"/>
+                        <outlet property="bankNameLabel" destination="dGY-Zi-zI6" id="NzY-d5-Xt7"/>
+                        <outlet property="billClassLabel" destination="gHZ-i5-JQ7" id="nd7-kF-K2Q"/>
+                        <outlet property="billCreateTimeLabel" destination="VL3-39-2wG" id="yKo-Rx-vXN"/>
+                        <outlet property="creatTimeLabel" destination="LIt-Ma-oIK" id="pdu-QZ-4Zn"/>
+                        <outlet property="endTimeLabel" destination="IsD-8R-zWb" id="jJW-By-aX7"/>
+                        <outlet property="middleTimeLabel" destination="jKL-Vv-alk" id="qeL-OY-r3y"/>
+                        <outlet property="orderNoLabel" destination="ApQ-oT-QxT" id="4a1-zH-UKR"/>
                         <outlet property="statusLabel" destination="vam-cR-juC" id="hSU-ls-3mD"/>
+                        <outlet property="toBankLabel" destination="sS2-xR-WVY" id="LsI-ny-RhB"/>
+                        <outlet property="withDrawalDesLabel" destination="KXL-sg-bxs" id="Xck-Sh-fF3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFu-hZ-LsT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -754,8 +773,8 @@
     <resources>
         <image name="btn_shuaxin" width="20" height="22"/>
         <image name="icon_chenggong" width="17" height="17"/>
-        <image name="icon_chongzhi1" width="40" height="40"/>
         <image name="icon_dengdai" width="17" height="17"/>
         <image name="icon_jianshe" width="21" height="22"/>
+        <image name="icon_zhaoshang" width="23" height="23"/>
     </resources>
 </document>

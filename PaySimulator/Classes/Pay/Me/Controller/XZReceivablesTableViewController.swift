@@ -80,12 +80,12 @@ class XZReceivablesTableViewController: UITableViewController {
                 }
                 myPickerView.showInView(showView: self.view)
             }else if indexPath.row == 3 {
-                let spicker = HcdDateTimePickerView(datePickerMode: DatePickerDateHourMinuteMode, defaultDateTime: Date())
+                let spicker = HcdDateTimePickerView(datePickerMode: DatePickerTimeMode, defaultDateTime: Date())
                 spicker?.topViewColor = kChatMainColor
                 
                 spicker?.clickedOkBtn = {(dateTimeStr : String?) in
                     let formatter = DateFormatter()
-                    formatter.dateFormat = "yyyy-MM-d HH:mm"
+                    formatter.dateFormat = "yyyy-MM-d HH:mm:ss"
                     let tempDate = formatter.date(from: dateTimeStr!)
                     self.tranferModel?.createTime = tempDate
 
