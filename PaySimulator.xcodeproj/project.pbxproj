@@ -61,6 +61,7 @@
 		5E5526162148AF16004204AF /* KILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5526152148AF15004204AF /* KILabel.m */; };
 		5E552618214906B4004204AF /* XZChatMessageTransferCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E552617214906B4004204AF /* XZChatMessageTransferCell.swift */; };
 		5E55261A21490EB1004204AF /* XZMessageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55261921490EB1004204AF /* XZMessageHelper.swift */; };
+		5E55B6D2215DDC1000696381 /* XZWithdrawalBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E55B6D1215DDC1000696381 /* XZWithdrawalBillViewController.swift */; };
 		5E58516A2143981F004A2C4B /* XZBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5851692143981F004A2C4B /* XZBaseModel.swift */; };
 		5E58CAF12150F72500474F9F /* chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E58CAF02150F72500474F9F /* chat.storyboard */; };
 		5E5EC32F215C7F3E00E6ED03 /* XZRedPacketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5EC32E215C7F3E00E6ED03 /* XZRedPacketModel.swift */; };
@@ -217,6 +218,7 @@
 		5E5526152148AF15004204AF /* KILabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KILabel.m; sourceTree = "<group>"; };
 		5E552617214906B4004204AF /* XZChatMessageTransferCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatMessageTransferCell.swift; sourceTree = "<group>"; };
 		5E55261921490EB1004204AF /* XZMessageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZMessageHelper.swift; sourceTree = "<group>"; };
+		5E55B6D1215DDC1000696381 /* XZWithdrawalBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZWithdrawalBillViewController.swift; sourceTree = "<group>"; };
 		5E5851692143981F004A2C4B /* XZBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZBaseModel.swift; sourceTree = "<group>"; };
 		5E58CAF02150F72500474F9F /* chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = chat.storyboard; sourceTree = "<group>"; };
 		5E5EC32E215C7F3E00E6ED03 /* XZRedPacketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZRedPacketModel.swift; sourceTree = "<group>"; };
@@ -599,6 +601,7 @@
 				E348974B21428EF60062410B /* XZWithdrawalTabVC.swift */,
 				E348974C21428EF60062410B /* XZWithdrawalVC.swift */,
 				5E5EC332215CD36700E6ED03 /* XZBankListVC.swift */,
+				5E55B6D1215DDC1000696381 /* XZWithdrawalBillViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1367,6 +1370,7 @@
 				E348975121428EF70062410B /* XZWithdrawalBillTabVC.swift in Sources */,
 				5E4FC21E21463CF200E0A5A9 /* XZChatBoxMoreView.swift in Sources */,
 				5E5EC331215CB6B700E6ED03 /* XZSeeRedPacketReceiveTabVC.swift in Sources */,
+				5E55B6D2215DDC1000696381 /* XZWithdrawalBillViewController.swift in Sources */,
 				5E552618214906B4004204AF /* XZChatMessageTransferCell.swift in Sources */,
 				5E42F42F2147A90E0034B691 /* XZChatMessageVoiceCell.swift in Sources */,
 				E3A9AAE2213FA7F700FAEEAF /* XZPayMeNavView.swift in Sources */,

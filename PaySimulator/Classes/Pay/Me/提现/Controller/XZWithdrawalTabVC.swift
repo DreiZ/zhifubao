@@ -62,13 +62,8 @@ class XZWithdrawalTabVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //goXZWithdrawalBillTabVC
         
-        if segue.identifier == "goXZWithdrawalBillTabVC" {
-            let vc = segue.destination as! XZWithdrawalBillTabVC
-           
-            let backBarItem = UIBarButtonItem()
-            backBarItem.title = "返回"
-            vc.navigationItem.backBarButtonItem = backBarItem
-            vc.title = "账单详情"
+        if segue.identifier == "XZWithdrawalBillViewController" {
+            let vc = segue.destination as! XZWithdrawalBillViewController
            
             //传值
             vc.withDrawaleModel = self.withDrawaleModel

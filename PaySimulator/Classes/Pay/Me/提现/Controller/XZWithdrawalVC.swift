@@ -8,29 +8,28 @@
 
 import UIKit
 
-class XZWithdrawalVC: XZBaseVC {
+class XZWithdrawalVC: XZBaseViewController {
+    
+    
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    
     override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        setupNavBar()
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
-        // Do any additional setup after loading the view.
+        
+        topConstraint.constant = DDSafeAreaTopHeight - (DDSafeAreaTopHeight - 44)
     }
 
 }
+
 //MARK:--UI相关
 extension XZWithdrawalVC{
     
     func setupNavBar(){
-//        let backIetm = UIBarButtonItem()
-        
- 
-        title = "提现账单"
-        
+        self.navBar.title = "转账账单"
     }
-    
-    
 }

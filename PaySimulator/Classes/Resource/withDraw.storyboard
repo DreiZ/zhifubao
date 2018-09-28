@@ -37,6 +37,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ijc-3d-vTz"/>
+                    <connections>
+                        <outlet property="topConstraint" destination="i4A-pj-vlh" id="OTI-QH-aq9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMF-Ah-ZOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -65,7 +68,7 @@
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <segue destination="0z5-aC-9Ho" kind="push" identifier="goXZWithdrawalBillTabVC" id="L9e-zx-9tB"/>
+                                        <segue destination="ta5-6b-05W" kind="push" id="7gd-Yq-FBR"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -326,9 +329,9 @@
             <objects>
                 <tableViewController id="0z5-aC-9Ho" customClass="XZWithdrawalBillTabVC" customModule="PaySimulator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Efc-MC-dUN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="582"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="Uhu-YL-82q">
                                 <cells>
@@ -686,7 +689,7 @@
                                         <rect key="frame" x="0.0" y="583" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gsr-vD-VNe" id="0Ec-Xu-d66">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="对此单有疑问" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM9-8R-Xg2">
@@ -750,24 +753,44 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFu-hZ-LsT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3330.4000000000001" y="152.47376311844079"/>
+            <point key="canvasLocation" x="4428" y="-109"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="MKu-2I-Hcv">
+        <!--Withdrawal Bill View Controller-->
+        <scene sceneID="5p7-IT-mIl">
             <objects>
-                <viewController id="rrf-2q-kGi" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="XZWithdrawalBillViewController" id="ta5-6b-05W" customClass="XZWithdrawalBillViewController" customModule="PaySimulator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JcW-1c-3YW"/>
-                        <viewControllerLayoutGuide type="bottom" id="2gT-bB-uhQ"/>
+                        <viewControllerLayoutGuide type="top" id="udI-0u-BP7"/>
+                        <viewControllerLayoutGuide type="bottom" id="LIg-tp-Epq"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="s6H-RK-GfB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" id="Yki-GL-TuN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3p-SC-iYe">
+                                <rect key="frame" x="0.0" y="65" width="375" height="582"/>
+                                <connections>
+                                    <segue destination="0z5-aC-9Ho" kind="embed" id="38I-by-0EG"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="f3p-SC-iYe" firstAttribute="leading" secondItem="Yki-GL-TuN" secondAttribute="leading" id="2ya-4y-Qsc"/>
+                            <constraint firstAttribute="trailing" secondItem="f3p-SC-iYe" secondAttribute="trailing" id="PCr-d8-0TT"/>
+                            <constraint firstItem="LIg-tp-Epq" firstAttribute="top" secondItem="f3p-SC-iYe" secondAttribute="bottom" id="qPG-aT-0eb"/>
+                            <constraint firstItem="f3p-SC-iYe" firstAttribute="top" secondItem="udI-0u-BP7" secondAttribute="bottom" constant="45" id="xqr-uj-Iya"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="lzv-Ln-mpk"/>
+                    <connections>
+                        <outlet property="topConstraint" destination="xqr-uj-Iya" id="BF9-WK-jEN"/>
+                        <outlet property="topContaint" destination="Yki-GL-TuN" id="yZh-aE-2pP"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JR7-DG-l5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vCf-eM-J2y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="3350" y="152"/>
         </scene>
     </scenes>
     <resources>
