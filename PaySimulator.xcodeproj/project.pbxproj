@@ -34,6 +34,7 @@
 		5E4B77B5215F483300871720 /* XZSearchAddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B77B4215F483300871720 /* XZSearchAddressBookViewController.swift */; };
 		5E4B77C1215F5D7900871720 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B77C0215F5D7900871720 /* StringExtension.swift */; };
 		5E4B77C3215F70C400871720 /* XZUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B77C2215F70C400871720 /* XZUserTableViewCell.swift */; };
+		5E4B77C5215F810100871720 /* XZChaListEditMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B77C4215F810100871720 /* XZChaListEditMessageVC.swift */; };
 		5E4B86242151D84900DF4003 /* XZChatVoiceTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B86232151D84900DF4003 /* XZChatVoiceTimeViewController.swift */; };
 		5E4B86262151D8B200DF4003 /* XZSystemTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B86252151D8B200DF4003 /* XZSystemTimeViewController.swift */; };
 		5E4B862821521C2B00DF4003 /* XZAddressBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B862721521C2B00DF4003 /* XZAddressBookModel.swift */; };
@@ -192,6 +193,7 @@
 		5E4B77B4215F483300871720 /* XZSearchAddressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZSearchAddressBookViewController.swift; sourceTree = "<group>"; };
 		5E4B77C0215F5D7900871720 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5E4B77C2215F70C400871720 /* XZUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZUserTableViewCell.swift; sourceTree = "<group>"; };
+		5E4B77C4215F810100871720 /* XZChaListEditMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChaListEditMessageVC.swift; sourceTree = "<group>"; };
 		5E4B86232151D84900DF4003 /* XZChatVoiceTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZChatVoiceTimeViewController.swift; sourceTree = "<group>"; };
 		5E4B86252151D8B200DF4003 /* XZSystemTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZSystemTimeViewController.swift; sourceTree = "<group>"; };
 		5E4B862721521C2B00DF4003 /* XZAddressBookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XZAddressBookModel.swift; sourceTree = "<group>"; };
@@ -848,6 +850,7 @@
 			children = (
 				E36048512137A16700ECF65F /* PayFriend.storyboard */,
 				E360485B2137A23400ECF65F /* XZPayFriendVC.swift */,
+				5E4B77C4215F810100871720 /* XZChaListEditMessageVC.swift */,
 				E3BC6D1221450425000FDB12 /* XZAddressBookVC.swift */,
 				5E4C65B021532C1500478351 /* XZAddFriendViewController.swift */,
 				5E4C65B4215330F500478351 /* XZAddFriendTableViewController.swift */,
@@ -1362,6 +1365,7 @@
 				E34617F5213B873B007C2AA6 /* XZPayMeTableViewController.swift in Sources */,
 				E360484A2137A0C700ECF65F /* XZPayMainTabBarVC.swift in Sources */,
 				5E4157C8214B8D5E00AD8E39 /* XZChatMessageTimeCell.swift in Sources */,
+				5E4B77C5215F810100871720 /* XZChaListEditMessageVC.swift in Sources */,
 				E34E1526213E5E0A00D23547 /* XZEditUserInfoVC.swift in Sources */,
 				E3A9AADF213F663A00FAEEAF /* XZMyPickerView.swift in Sources */,
 				5E42F42B2147A8DB0034B691 /* XZChatMessageTextCell.swift in Sources */,

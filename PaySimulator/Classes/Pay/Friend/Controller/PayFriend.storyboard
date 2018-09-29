@@ -739,6 +739,7 @@
                     <connections>
                         <outlet property="myTableView" destination="HbC-8j-duR" id="Vux-R4-5A9"/>
                         <outlet property="searchTextField" destination="iJ7-kv-cqN" id="sno-WT-d0u"/>
+                        <outlet property="topConstraint" destination="3S1-i8-Yzm" id="6ND-FF-4HW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvC-9B-t4p" userLabel="First Responder" sceneMemberID="firstResponder"/>

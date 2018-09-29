@@ -8,10 +8,11 @@
 
 import UIKit
 import Kingfisher
-class XZAddressBookVC: XZBaseVC {
+class XZAddressBookVC: XZBaseViewController {
     
     var selectUserBlock : ((_ user : XZUserModel) -> ())?
     
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var myTableView: UITableView!
     
@@ -42,10 +43,15 @@ class XZAddressBookVC: XZBaseVC {
         if self.myTableView != nil  {
             self.myTableView.reloadData()
         }
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.topConstraint.constant = DDSafeAreaTopHeight - (DDSafeAreaTopHeight - 44)
+        
         setupNavBar()//导航栏
         self.myTableView.separatorStyle = .none
         
@@ -77,13 +83,13 @@ class XZAddressBookVC: XZBaseVC {
 extension XZAddressBookVC{
     
     func setupNavBar(){
-        title = "通讯录"
-        let addBtn = XZBaseNavItemBtn(frame: CGRect(x: 0, y: 0, width: 20, height: 20), imgName: "icon_tianjia1", titleName: "")
-        addBtn.addTarget(self, action: #selector(clickAddBtn), for: .touchUpInside)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addBtn)
-        
+        self.navBar.title = "通讯录"
+        self.navBar.wr_setRightButton(image: UIImage(named: "icon_tianjia1")!)
     }
 
+    override func rightBtnOnClick() {
+        self.clickAddBtn()
+    }
     
     //导航栏右侧按钮
     @objc private func clickAddBtn(){
@@ -241,7 +247,7 @@ extension XZAddressBookVC:UITableViewDataSource,UITableViewDelegate{
                 self.navigationController?.pushViewController(addfriendvc, animated: true)
                 
             }
-            eAction.backgroundColor = ddColorFromHex("#a5a5a5")
+            eAction.backgroundColor = UIColor.red
             
             //删除
             let dAction = UITableViewRowAction(style: .default, title: "删除") { (rowAction, indexPath) in
@@ -267,7 +273,7 @@ extension XZAddressBookVC:UITableViewDataSource,UITableViewDelegate{
                 self.myTableView.reloadData()
             }
             
-            dAction.backgroundColor = UIColor.red
+            dAction.backgroundColor = ddColorFromHex("#a5a5a5")
             return [eAction,dAction]
         }
         return nil

@@ -36,6 +36,8 @@ class XZPayFriendVC: XZBaseVC {
         super.viewDidLoad()
 
         setupNavigationUI()//设置导航栏 相关方法
+        
+        
         let leftView = UIView.init(frame: CGRect(x: 0, y: 0, width: 28, height: 25))
         let searchImageView = UIImageView()
         searchImageView.image = UIImage(named: "icon_sousuo")
@@ -46,6 +48,8 @@ class XZPayFriendVC: XZBaseVC {
         }
         searchTextField.leftView = leftView
         searchTextField.leftViewMode = .always
+        
+        self.myTableView.backgroundColor = UIColor(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, alpha: 1)
     }
 }
 //MARK:-- 有关UI设置的所有方法
@@ -58,7 +62,7 @@ extension XZPayFriendVC{
         navBarTintColor = UIColor.white
         navBarBarTintColor = ddBlueColor()
         navBarTitleColor = UIColor.white
-        let addBtn = XZBaseNavItemBtn(frame: CGRect(x: 0, y: 0, width: 20, height: 20), imgName: "icon_tianjia", titleName: "")
+        let addBtn = XZBaseNavItemBtn(frame: CGRect(x: 0, y: 0, width: 20, height: 20), imgName: "icon_tianjiaw", titleName: "")
         addBtn.addTarget(self, action: #selector(clickAddBtn), for: .touchUpInside)
 //       addBtn.backgroundColor = ddRandomColor()
         let firendBtn = XZBaseNavItemBtn(frame: CGRect.zero, imgName: "icon_tongxunlu", titleName: "")
@@ -133,9 +137,9 @@ extension XZPayFriendVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         //编辑
         let eAction = UITableViewRowAction(style: .default, title: "编辑") { (rowAction, indexPath) in
-         
-            print(rowAction,indexPath)
-            
+            let messagevc = XZChaListEditMessageVC()
+            messagevc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(messagevc, animated: true)
         }
         
         eAction.backgroundColor = UIColor.red
@@ -163,6 +167,22 @@ extension XZPayFriendVC:UITableViewDelegate,UITableViewDataSource{
             chatvc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(chatvc, animated: true)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10.0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.01
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
     }
 }
 
