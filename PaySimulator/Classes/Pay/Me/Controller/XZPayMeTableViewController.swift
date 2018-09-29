@@ -12,9 +12,8 @@ class XZPayMeTableViewController: UITableViewController {
 
     
     var userModel : XZUserModel?
-    //MARK:--headerView属性
+
     //MARK:--定义闭包（按钮点击事件，传到控制器中）
-    //声明
     var clickHeaderRightBlock : ((_ sender:UIButton) ->())?
     //Xib属性
     @IBOutlet weak var iconImage: UIImageView!//头像
@@ -42,6 +41,10 @@ class XZPayMeTableViewController: UITableViewController {
         addBluebackGroundView()
         self.headerView.backgroundColor = ddBlueColor()
  
+        iconImage.layer.masksToBounds = true
+        iconImage.layer.cornerRadius = 3
+        iconImage.layer.borderColor = UIColor(red: 102.0/255.0, green: 167.0/255.0, blue: 223.0/255.0, alpha: 1).cgColor
+        iconImage.layer.borderWidth = 1
     }
  
     override func viewWillAppear(_ animated: Bool) {
@@ -66,14 +69,14 @@ extension XZPayMeTableViewController{
     //headerViewx数据更新
     private func uploadHeaderViewData(){
 //        let userInfo = XZUserHelper.getUserInfo()
- 
+        self.userModel = XZFriendListModel.shareSingleton.getUserModel()
         //姓名
         if let userName = userModel?.trueName  {
             
             self.nameLabel.text = userName
             
         }else{
-            self.nameLabel.text = "杨大力";
+            self.nameLabel.text = "";
         }
         
         //账号
@@ -96,8 +99,13 @@ extension XZPayMeTableViewController{
             self.accountLabel.text = "123456789"
         }
         
-        //会员等级
-        self.starsImage.image = UIImage(named: "icon_xinhao")
+        if self.userModel?.level == 0 {
+            self.starsImage.isHidden = true
+        }else {
+            let level = ["", "userleve1", "userleve2", "userleve3", "userleve4"]
+            self.starsImage.isHidden = false
+            self.starsImage.image = UIImage(named: level[self.userModel?.level ?? 0])
+        }
         
         //头像
         guard let userImg = userModel?.headImage else {
@@ -118,19 +126,17 @@ extension XZPayMeTableViewController{
     
     //分区高度
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
- 
         return 10
     }
+    
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.01
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
         return nil
- 
     }
-    //cell点击方法
+
     
     //scrollerView滚动方法
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -141,7 +147,6 @@ extension XZPayMeTableViewController{
             bjFrame?.size.height = -point.y
             self.bjBlueImgView?.frame = bjFrame!
         }
-        
     }
     
     
@@ -149,6 +154,4 @@ extension XZPayMeTableViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
 }
-
