@@ -92,9 +92,6 @@ extension XZAddressBookVC:UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
-        
         if indexPath.section == 0 {
             
             var cell = tableView.dequeueReusableCell(withIdentifier: "XZAddressFirstCell") as? XZAddressFirstCell
@@ -108,10 +105,9 @@ extension XZAddressBookVC:UITableViewDataSource,UITableViewDelegate{
           
             return cell!
         }
+
         
-        
-        
-          var cell = tableView.dequeueReusableCell(withIdentifier: "XZAddressSecondCell") as? XZAddressSecondCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "XZAddressSecondCell") as? XZAddressSecondCell
         if cell == nil {
             cell = Bundle.main.loadNibNamed("XZAddressSecondCell", owner: nil, options: nil)?.first as? XZAddressSecondCell
         }
@@ -124,9 +120,7 @@ extension XZAddressBookVC:UITableViewDataSource,UITableViewDelegate{
         
         cell?.iconImage.image = model.headImage
         
-        return cell!
-        
-        
+        return cell!  
     }
     
     //分区头
