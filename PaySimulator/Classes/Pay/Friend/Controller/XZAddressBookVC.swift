@@ -190,5 +190,39 @@ extension XZAddressBookVC:UITableViewDataSource,UITableViewDelegate{
             self.navigationController?.pushViewController(chatvc, animated: true)
         }
     }
+    
+    //左滑删除
+    //编辑样式
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        if indexPath.section > 0 {
+            //删除
+            let dAction = UITableViewRowAction(style: .default, title: "删除") { (rowAction, indexPath) in
+                let model = self.dataList[indexPath.section-1][indexPath.row]
+                self.dataList[indexPath.section-1].remove(at: indexPath.row)
+                if self.dataList[indexPath.section-1].count == 0 {
+                    self.dataList.remove(at: indexPath.section-1)
+                }
+                
+                XZFriendListModel.shareSingleton.getDataFromSql()
+                var friendList = XZFriendListModel.shareSingleton.friendList
+                var index = 0
+                for item in friendList ?? [] {
+                    if item.userId == model.userId {
+                        friendList?.remove(at: index)
+                        break
+                    }
+                    index += 0
+                }
+                
+                XZFriendListModel.shareSingleton.friendList = friendList
+                let _ = XZFriendListModel.shareSingleton.saveSelfToDB()
+                self.myTableView.reloadData()
+            }
+            
+            dAction.backgroundColor = UIColor.red
+            return [dAction]
+        }
+        return nil
+    }
 }
 
