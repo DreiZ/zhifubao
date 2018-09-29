@@ -66,6 +66,29 @@ extension XZFriendListModel {
         }
     }
     
+    func updateUserModel(_ userModel : XZUserModel) {
+        if self.friendList != nil {
+            if (self.friendList?.count)! > 0 {
+                for item in self.friendList! {
+                    if item.userId == userModel.userId {
+                        item.headImage = userModel.headImage
+                        item.trueName = userModel.trueName
+                        item.nickName = userModel.nickName
+                        item.aliCount = userModel.aliCount
+                        item.tel = userModel.tel
+                        item.level = userModel.level
+                        item.isHiddenTureName = userModel.isHiddenTureName
+                    }
+                }
+            }else {
+                self.friendList?.append(userModel)
+            }
+        }else {
+            self.friendList = []
+            self.friendList?.append(userModel)
+        }
+    }
+    
     func addSelfUserModel(_ userModel : XZUserModel) {
         if self.friendList != nil {
             if (self.friendList?.count)! > 0 {

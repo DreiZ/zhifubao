@@ -13,6 +13,8 @@ class XZAddFriendViewController: XZBaseViewController {
     @IBOutlet weak var contView: UIView!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
+    var fUserModel : XZUserModel?
+    
     var tableViewController : XZAddFriendTableViewController?
     
     
@@ -20,6 +22,17 @@ class XZAddFriendViewController: XZBaseViewController {
         super.viewDidLoad()
         self.setupUI()
 //        XZFriendListModel.shareSingleton.dropFriendListTable()
+        guard let user = fUserModel else {
+            return
+        }
+        tableViewController?.headImageView.image = user.headImage
+        tableViewController?.trueNameTextField.text = user.trueName
+        tableViewController?.nickNameTextField.text = user.nickName
+        tableViewController?.acountLabel.text = user.aliCount
+        tableViewController?.telLabel.text = user.tel
+        tableViewController?.hiddenSwitch.isOn = user.isHiddenTureName
+        let gradeArr : [String] = ["无", "钻石会员", "铂金会员", "黄金会员", "大众会员"]
+        tableViewController?.levelLabel.text = gradeArr[user.level]
     }
     
     override func rightBtnOnClick() {
@@ -62,6 +75,17 @@ class XZAddFriendViewController: XZBaseViewController {
             }
         }
         
+        if self.fUserModel != nil {
+            userModel.userId = (self.fUserModel?.userId)!
+            XZFriendListModel.shareSingleton.updateUserModel(userModel)
+            let saveStatus = XZFriendListModel.shareSingleton.saveSelfToDB()
+            if saveStatus {
+                self.navigationController?.popViewController(animated: true)
+            }else{
+                XZPublicTools.shareSingleton.showError(subTitle: "更新失败")
+            }
+            return
+        }
         XZFriendListModel.shareSingleton.addUserModel(userModel)
         
         let saveStatus = XZFriendListModel.shareSingleton.saveSelfToDB()

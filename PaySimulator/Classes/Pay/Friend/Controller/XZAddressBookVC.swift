@@ -59,8 +59,7 @@ extension XZAddressBookVC{
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addBtn)
         
     }
-    
-   
+
     
     //导航栏右侧按钮
     @objc private func clickAddBtn(){
@@ -106,21 +105,35 @@ extension XZAddressBookVC:UITableViewDataSource,UITableViewDelegate{
             return cell!
         }
 
-        
-        var cell = tableView.dequeueReusableCell(withIdentifier: "XZAddressSecondCell") as? XZAddressSecondCell
-        if cell == nil {
-            cell = Bundle.main.loadNibNamed("XZAddressSecondCell", owner: nil, options: nil)?.first as? XZAddressSecondCell
-        }
-        
         let model = self.dataList[indexPath.section-1][indexPath.row]
-        
-        
-        cell?.titleLabel.text = model.nickName
-        cell?.detailLabel.text = model.trueName
-        
-        cell?.iconImage.image = model.headImage
-        
-        return cell!  
+        if model.isHiddenTureName {
+            var cell = tableView.dequeueReusableCell(withIdentifier: "XZAddressFirstCell") as? XZAddressFirstCell
+            if cell == nil {
+                cell = Bundle.main.loadNibNamed("XZAddressFirstCell", owner: nil, options: nil)?.first as? XZAddressFirstCell
+            }
+            
+            cell?.titleLabel.text = model.nickName
+            cell?.iconImage.image = model.headImage
+            
+            return cell!
+        }else{
+            var cell = tableView.dequeueReusableCell(withIdentifier: "XZAddressSecondCell") as? XZAddressSecondCell
+            if cell == nil {
+                cell = Bundle.main.loadNibNamed("XZAddressSecondCell", owner: nil, options: nil)?.first as? XZAddressSecondCell
+            }
+            
+            cell?.titleLabel.text = model.nickName
+            if model.isHiddenTureName {
+                cell?.detailLabel.text = ""
+            }else {
+                cell?.detailLabel.text = model.trueName
+            }
+            
+            
+            cell?.iconImage.image = model.headImage
+            
+            return cell!
+        }
     }
     
     //分区头
@@ -195,6 +208,17 @@ extension XZAddressBookVC:UITableViewDataSource,UITableViewDelegate{
     //编辑样式
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         if indexPath.section > 0 {
+            
+            //编辑
+            let eAction = UITableViewRowAction(style: .default, title: "编辑") { (rowAction, indexPath) in
+                let addfriendvc = UIStoryboard(name: "PayFriend", bundle: nil).instantiateViewController(withIdentifier: "XZAddFriendViewController") as! XZAddFriendViewController
+                addfriendvc.hidesBottomBarWhenPushed = true
+                addfriendvc.fUserModel = self.dataList[indexPath.section-1][indexPath.row]
+                self.navigationController?.pushViewController(addfriendvc, animated: true)
+                
+            }
+            eAction.backgroundColor = ddColorFromHex("#a5a5a5")
+            
             //删除
             let dAction = UITableViewRowAction(style: .default, title: "删除") { (rowAction, indexPath) in
                 let model = self.dataList[indexPath.section-1][indexPath.row]
@@ -220,7 +244,7 @@ extension XZAddressBookVC:UITableViewDataSource,UITableViewDelegate{
             }
             
             dAction.backgroundColor = UIColor.red
-            return [dAction]
+            return [eAction,dAction]
         }
         return nil
     }
