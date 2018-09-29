@@ -11,6 +11,7 @@ import UIKit
 class XZPayFriendVC: XZBaseVC {
 
     @IBOutlet weak var myTableView: UITableView!
+    @IBOutlet weak var searchTextField: UITextField!
     
     var dataList : [XZChatModel] = {
         
@@ -35,6 +36,16 @@ class XZPayFriendVC: XZBaseVC {
         super.viewDidLoad()
 
         setupNavigationUI()//设置导航栏 相关方法
+        let leftView = UIView.init(frame: CGRect(x: 0, y: 0, width: 28, height: 25))
+        let searchImageView = UIImageView()
+        searchImageView.image = UIImage(named: "icon_sousuo")
+        leftView.addSubview(searchImageView)
+        searchImageView.snp.makeConstraints { (make ) in
+            make.centerY.equalTo(leftView.snp.centerY)
+            make.left.equalTo(leftView.snp.left).offset(11)
+        }
+        searchTextField.leftView = leftView
+        searchTextField.leftViewMode = .always
     }
 }
 //MARK:-- 有关UI设置的所有方法

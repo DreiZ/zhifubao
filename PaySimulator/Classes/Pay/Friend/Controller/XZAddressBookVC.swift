@@ -12,8 +12,11 @@ class XZAddressBookVC: XZBaseVC {
     
     var selectUserBlock : ((_ user : XZUserModel) -> ())?
     
-
+    @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var myTableView: UITableView!
+    
+    let searchView : XZSearchAddressBookViewController = XZSearchAddressBookViewController()
+    
     //MARK:--数据资源
     let iconResource = ["新的朋友","群聊","生活号","生活圈"]
     //MARK:--懒加载数据源(假数据)
@@ -46,7 +49,28 @@ class XZAddressBookVC: XZBaseVC {
         setupNavBar()//导航栏
         self.myTableView.separatorStyle = .none
         
+        let leftView = UIView.init(frame: CGRect(x: 0, y: 0, width: 28, height: 25))
+        let searchImageView = UIImageView()
+        searchImageView.image = UIImage(named: "icon_sousuo")
+        leftView.addSubview(searchImageView)
+        searchImageView.snp.makeConstraints { (make ) in
+            make.centerY.equalTo(leftView.snp.centerY)
+            make.left.equalTo(leftView.snp.left).offset(11)
+        }
+        searchTextField.leftView = leftView
+        searchTextField.leftViewMode = .always
+        
+        self.addChildViewController(self.searchView)
     }
+    
+    @IBAction func SearchOnClick(_ sender: Any) {
+//        let searchVC = XZSearchAddressBookViewController()
+//
+//        self.navigationController?.pushViewController(searchVC, animated: true)
+        self.searchView.view.frame = CGRect(x: 0, y: (DDSafeAreaTopHeight - 44), width: kWindowW, height: kWindowH)
+        self.view.addSubview(self.searchView.view)
+    }
+    
 }
 
 //MARK:--UI相关
