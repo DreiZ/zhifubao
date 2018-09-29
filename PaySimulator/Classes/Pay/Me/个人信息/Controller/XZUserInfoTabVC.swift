@@ -17,7 +17,7 @@ class XZUserInfoTabVC: XZBaseViewController {
     
     //MARK:--数据源Array
     private lazy var dataList : [String] = {
-       return ["头像", "真实姓名", "昵称", "电话号码", "支付宝账号", "会员等级"]
+       return ["头像", "真实姓名", "昵称", "电话号码", "支付宝账号", "会员等级", "隐藏真实姓名"]
     }()
  
     //用户名
@@ -34,6 +34,10 @@ class XZUserInfoTabVC: XZBaseViewController {
     private var iconImageStr : String?
    //头像
     private var iconImage : UIImageView?
+    //隐藏真实名称
+    private var isHiddenSwitch : UISwitch?
+    
+    
     //懒加载pickerView
     private lazy var myPickerView : XZMyPickerView = {[weak self] in
         
@@ -105,7 +109,7 @@ extension XZUserInfoTabVC{
             userModel.level = self?.userModel?.level ?? 0
             userModel.aliCount = self?.userModel?.aliCount
             userModel.tel = self?.telLB?.text
-            userModel.isHiddenTureName = false
+            userModel.isHiddenTureName = self?.isHiddenSwitch?.isOn ?? false
             
             XZFriendListModel.shareSingleton.addSelfUserModel(userModel)
             let saveStatus = XZFriendListModel.shareSingleton.saveSelfToDB()
@@ -173,6 +177,12 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
             let level = ["无", "钻石会员", "铂金会员", "黄金会员", "大众会员"]
             
             self.starsLevel?.text = level[(userModel?.level) ?? 0]
+        }else if indexPath.row == 6{//会员等级
+            let mSwitch = UISwitch()
+            cell.accessoryView = mSwitch
+            isHiddenSwitch = mSwitch
+            mSwitch.isOn = self.userModel?.isHiddenTureName ?? false
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
         }
        
         cell.titleLabel.text = dataList[indexPath.row];
@@ -203,13 +213,9 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true);
         
-        if indexPath.row == 0 {//修改头像
-            
+        if indexPath.row == 0 {//修改头像 
             let myPhotoManage  = XZMyPhotoManage.sharedPhotoManage
-            
             myPhotoManage.showActionSheetInVC(factherVC: self, aDelegate: self as XZMyPhotoManageDelegate)
-            
-            
         }else if indexPath.row == 1{//修改truename
             
             let editVC = XZEditUserInfoVC()
@@ -252,7 +258,7 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
             
             self.navigationController?.pushViewController(editVC, animated: true)
             
-        }else if indexPath.row == 5{//修改账号
+        }else if indexPath.row == 4{//修改账号
             
             let editVC = XZEditUserInfoVC()
             editVC.textField.text = self.telLB?.text
