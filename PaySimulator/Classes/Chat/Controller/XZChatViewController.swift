@@ -49,7 +49,6 @@ class XZChatViewController: XZBaseViewController {
         super.viewDidLoad()
 
 
-        XZFriendListModel.shareSingleton.getDataFromSql()
         let arr = XZFriendListModel.shareSingleton.friendList
         
         if arr != nil && (arr?.count)! > 0 {
@@ -420,7 +419,7 @@ extension XZChatViewController : XZMyPhotoManageDelegate {
 
 extension XZChatViewController {
     func setHistroy() {
-        XZChatListModel.shareSingleton.getDataFromSql()
+         
         let arr = XZChatListModel.shareSingleton.chatList
 
         let chatId = to?.userId ?? 1001 //String(format: "%d%d", from?.userId ?? "1000", to?.userId ?? "1001")

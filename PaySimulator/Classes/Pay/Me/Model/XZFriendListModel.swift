@@ -34,9 +34,14 @@ import UIKit
         print("zzz --- init ")
     }
     
+    init(tag : Int) {
+        super.init()
+        self.getDataFromSql()
+    }
+    
     class var shareSingleton : XZFriendListModel {
         struct userHelper {
-            static let friendListModel = XZFriendListModel()
+            static let friendListModel = XZFriendListModel.init(tag: 0)
         }
         return userHelper.friendListModel;
     }

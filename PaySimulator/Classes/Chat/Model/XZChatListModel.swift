@@ -23,12 +23,16 @@ import UIKit
 
     private override init(){
         super.init()
-        print("zzz --- init ")
+    }
+    
+    init(tag : Int) {
+        super.init()
+        self.getDataFromSql()
     }
     
     class var shareSingleton : XZChatListModel {
         struct chatHelper {
-            static let chatListModel = XZChatListModel()
+            static let chatListModel = XZChatListModel.init(tag: 0)
         }
         return chatHelper.chatListModel;
     }
@@ -37,8 +41,8 @@ import UIKit
 
 extension XZChatListModel {
     func getDataFromSql() {
-        let searchResultArray = XZChatListModel.search(withWhere: nil, orderBy: nil, offset: 0, count: 0)
         
+        let searchResultArray = XZChatListModel.search(withWhere: nil, orderBy: nil, offset: 0, count: 0)
         if searchResultArray != nil && (searchResultArray?.count)! > 0 {
             let listModel = searchResultArray![0] as? XZChatListModel
             chatList = listModel?.chatList

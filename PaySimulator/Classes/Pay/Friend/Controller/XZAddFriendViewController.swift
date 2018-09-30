@@ -52,9 +52,7 @@ class XZAddFriendViewController: XZBaseViewController {
             return
         }
         
-        XZFriendListModel.shareSingleton.getDataFromSql()
-       
-        
+ 
         let userModel : XZUserModel = XZUserModel()
         userModel.userId = 1000
         userModel.headImage = headImage

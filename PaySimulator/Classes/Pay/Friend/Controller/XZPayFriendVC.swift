@@ -19,7 +19,6 @@ class XZPayFriendVC: XZBaseVC {
     
     var dataList : [XZChatModel] = {
         
-        XZChatListModel.shareSingleton.getDataFromSql()
         let friendList = XZChatListModel.shareSingleton.chatList
         
         return friendList ?? []
@@ -27,7 +26,7 @@ class XZPayFriendVC: XZBaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         if !isEditMessage {
-            XZChatListModel.shareSingleton.getDataFromSql()
+            
             let friendList = XZChatListModel.shareSingleton.chatList
             
             dataList = friendList ?? []

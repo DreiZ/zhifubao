@@ -44,7 +44,6 @@ class XZSearchAddressBookViewController: XZBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        XZFriendListModel.shareSingleton.getDataFromSql()
         self.userDataList = XZFriendListModel.shareSingleton.friendList
         
         self.navBar.title = "联系人"

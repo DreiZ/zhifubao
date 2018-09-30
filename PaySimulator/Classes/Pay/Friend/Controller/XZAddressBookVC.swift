@@ -23,7 +23,6 @@ class XZAddressBookVC: XZBaseViewController {
     //MARK:--懒加载数据源(假数据)
     var dataList : [[XZUserModel]] = {
  
-        XZFriendListModel.shareSingleton.getDataFromSql()
         var friendList = XZFriendListModel.shareSingleton.friendList
         friendList?.removeLast()
  
@@ -34,7 +33,6 @@ class XZAddressBookVC: XZBaseViewController {
     }()
     
     override func viewWillAppear(_ animated: Bool) {
-        XZFriendListModel.shareSingleton.getDataFromSql()
         var friendList = XZFriendListModel.shareSingleton.friendList
         friendList?.removeLast()
         let resultArray = XZAddressBookManager.sortObjectsAccordingToInitial(with: friendList);
@@ -257,7 +255,6 @@ extension XZAddressBookVC:UITableViewDataSource,UITableViewDelegate{
                     self.dataList.remove(at: indexPath.section-1)
                 }
                 
-                XZFriendListModel.shareSingleton.getDataFromSql()
                 var friendList = XZFriendListModel.shareSingleton.friendList
                 var index = 0
                 for item in friendList ?? [] {
