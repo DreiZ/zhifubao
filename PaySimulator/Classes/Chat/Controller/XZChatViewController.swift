@@ -71,7 +71,24 @@ class XZChatViewController: XZBaseViewController {
         self.setHistroy()
         
         self.setHistoryDataShow()
- 
+        self.navBar.title = self.to?.nickName
+    }
+    
+    override func rightBtnOnClick() {
+        let editVC = XZChatEditViewController()
+        editVC.toUserModel = self.to
+        editVC.editBlock = {(noRead : Bool, clearMessage : Bool) in
+            self.chatModel?.isNoRead = noRead
+            self.navBar.title = self.to?.nickName
+            if clearMessage {
+                self.dataSource.removeAll()
+                
+                self.chatModel?.messageList.removeAll()
+                self.saveHistoryData()
+                self.iTableView.reloadData()
+            }
+        }
+        self.navigationController?.pushViewController(editVC, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -116,7 +133,6 @@ extension XZChatViewController {
     
     
     private func setNavigation () {
-        self.navBar.title = "某某某"
         self.navBar.titleLabelColor = UIColor.white
         self.navBar.barBackgroundColor = ddBlueColor()
         self.navBar.wr_setLeftButton(normalImage: UIImage(named: "icon_fanhui")!, highlightedImage: UIImage(named: "icon_fanhui")!, title: "朋友", titleColor: UIColor.white)

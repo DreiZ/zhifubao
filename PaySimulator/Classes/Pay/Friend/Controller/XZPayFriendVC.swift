@@ -108,7 +108,8 @@ extension XZPayFriendVC:UITableViewDelegate,UITableViewDataSource{
         
         let chatModel = dataList[indexPath.row]
         cell.iconImg.image = chatModel.toModel?.headImage
-        cell.titleLabel.text = chatModel.toModel?.trueName
+        cell.titleLabel.text = chatModel.toModel?.nickName
+        
         var subTitle = "新的朋友"
         var time = Date().shortTimeTextOfDate()
         if chatModel.messageList.count > 0 {
