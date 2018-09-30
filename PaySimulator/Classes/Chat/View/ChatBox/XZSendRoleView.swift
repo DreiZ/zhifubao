@@ -47,7 +47,7 @@ class XZSendRoleView: UIView {
         btn.setImage(UIImage(named: "gouwu-weixuan"), for: .normal)
         btn.setImage(UIImage(named: "gouxuan"), for: .selected)
         btn.tag = 0
-        btn.addTarget(self, action: #selector(selectRole(sender:)), for: .touchUpInside)
+        
         return btn
     }()
     
@@ -56,7 +56,7 @@ class XZSendRoleView: UIView {
         btn.setImage(UIImage(named: "gouwu-weixuan"), for: .normal)
         btn.setImage(UIImage(named: "gouxuan"), for: .selected)
         btn.tag = 1
-        btn.addTarget(self, action: #selector(selectRole(sender:)), for: .touchUpInside)
+        
         return btn
     }()
     
@@ -180,11 +180,14 @@ extension XZSendRoleView {
             make.right.equalTo(contView.snp.right).offset(-10)
         }
         
+        selfUserBtn.addTarget(self, action: #selector(selectRole(sender:)), for: .touchUpInside)
+        toUserBtn.addTarget(self, action: #selector(selectRole(sender:)), for: .touchUpInside)
+        
     }
     
     func setData(selfUser : XZUserModel, toUser : XZUserModel, isSelectSelf : Bool) {
-        selfUserImage.image = selfUser.headImage
-        toUserImage.image = toUser.headImage
+        selfUserImage.image = selfUser.headImage != nil ?  selfUser.headImage : UIImage(named: "headIcon")
+        toUserImage.image = toUser.headImage != nil ?  toUser.headImage : UIImage(named: "headIcon")
         
         selfUserLabel.text = selfUser.trueName
         toUserLabel.text = toUser.trueName
