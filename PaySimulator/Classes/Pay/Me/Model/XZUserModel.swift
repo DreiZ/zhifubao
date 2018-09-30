@@ -27,6 +27,7 @@ import UIKit
      var level : Int = 0
     
     var balance : Double = 0.00
+    var todayTransaction : String = "今天10023.23已自动转入余额宝"
     //电话号码
     
     //首字母

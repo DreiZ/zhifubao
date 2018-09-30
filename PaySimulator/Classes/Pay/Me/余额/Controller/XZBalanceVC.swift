@@ -22,6 +22,7 @@ class XZBalanceVC: XZBaseViewController {
         // Do any additional setup after loading the view.
         setupNavBar()
     }
+    
 }
 //MARK:--UI相关
 extension XZBalanceVC{

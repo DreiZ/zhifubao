@@ -971,6 +971,9 @@
                                     <state key="normal" title="去查看">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="todayOnClick:" destination="A35-Sw-n4g" eventType="touchUpInside" id="EdS-Yc-Btt"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.10980392156862745" green="0.50980392156862742" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>

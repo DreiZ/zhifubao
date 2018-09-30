@@ -21,8 +21,26 @@ class XZBalanceTabVC: UITableViewController {
         super.viewWillAppear(animated)
         userModel = XZFriendListModel.shareSingleton.getUserModel()
         balanceLabel.text = String(format: "%.2f", (userModel?.balance) ?? 0)
-        
+        self.yuebaoLabel.text = self.userModel?.todayTransaction
         self.tableView.separatorStyle = .none
+        
+        let format = NumberFormatter()
+        format.numberStyle = .decimal
+        
+        let str = format.string(from: NSNumber(value: (userModel?.balance) ?? 0.00))
+        let spos = str?.index(of: ".")
+
+        let strings : NSString = str! as NSString
+        let deRange = strings.range(of: ".")
+        if deRange.location == (str?.count)! - 2 {
+            balanceLabel.text = (str ?? "0") + "0"
+        }else {
+            if spos == nil {
+                balanceLabel.text = (str ?? "0") + ".00"
+            }else{
+                balanceLabel.text = str ?? "0"
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -36,6 +54,23 @@ class XZBalanceTabVC: UITableViewController {
         
     }
 
+    @IBAction func todayOnClick(_ sender: Any) {
+        let editVC = XZEditUserInfoVC()
+        editVC.textField.text = self.userModel?.todayTransaction
+        editVC.postValueBlock = {  [weak  self] (value : String) in
+            
+            self?.userModel?.todayTransaction = value
+            self?.yuebaoLabel.text = value
+            let userModel = XZFriendListModel.shareSingleton.getUserModel()
+            userModel?.todayTransaction = value
+            XZFriendListModel.shareSingleton.addSelfUserModel(userModel!)
+            let _ = XZFriendListModel.shareSingleton.saveSelfToDB()
+        }
+        editVC.navigationItem.title = "修改交易提示"
+        
+        self.navigationController?.pushViewController(editVC, animated: true)
+    }
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 1 {
@@ -48,12 +83,5 @@ class XZBalanceTabVC: UITableViewController {
 
 //MARK:--UI相关
 extension XZBalanceTabVC{
-    
-//    private func setupNavBar(){
-//        self.navigationController?.navigationBar.barTintColor = ddBlueColor()
-//
-//        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white,NSAttributedStringKey.font:UIFont.systemFont(ofSize:18)];
-//        self.navigationController?.navigationBar.isTranslucent = false;//不透明
-//    }
     
 }
