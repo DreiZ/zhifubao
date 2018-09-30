@@ -12,6 +12,9 @@ import UIKit
     // 会话列表
     var chatListId : String = "会话列表"
     var chatList : [XZChatModel]?
+    var hadNoRead : Bool = false
+    var noReadNum : String?
+    
     
     override static func getPrimaryKey() -> String {
         return "chatListId"
@@ -46,6 +49,8 @@ extension XZChatListModel {
         if searchResultArray != nil && (searchResultArray?.count)! > 0 {
             let listModel = searchResultArray![0] as? XZChatListModel
             chatList = listModel?.chatList
+            hadNoRead = listModel?.hadNoRead ?? false
+            noReadNum = listModel?.noReadNum
         }
     }
     

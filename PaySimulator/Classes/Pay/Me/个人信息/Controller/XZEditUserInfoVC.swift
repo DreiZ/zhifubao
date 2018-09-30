@@ -119,10 +119,5 @@ extension XZEditUserInfoVC{
         }else{
             rightBtn?.isEnabled = true
         }
-        
     }
-    
-    
 }
-
-

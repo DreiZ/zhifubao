@@ -37,6 +37,13 @@ class XZPayFriendVC: XZBaseVC {
         if self.myTableView != nil  {
             self.myTableView.reloadData()
         }
+        
+        let isNoRead = XZChatListModel.shareSingleton.hadNoRead
+        if XZChatListModel.shareSingleton.hadNoRead ,XZChatListModel.shareSingleton.noReadNum?.count != nil  {
+            self.navigationController?.tabBarItem.badgeValue = XZChatListModel.shareSingleton.noReadNum
+        }else {
+            self.navigationController?.tabBarItem.badgeValue = nil
+        }
     }
     
     override func viewDidLoad() {
@@ -91,6 +98,16 @@ extension XZPayFriendVC{
     //导航栏右侧按钮
     @objc private func clickAddBtn(){
          DDLog("添加好友")
+        let editvc = XZMessageMainEdit()
+        editvc.hidesBottomBarWhenPushed = true
+        editvc.editBlock = {(isNoRead : Bool, noReadNum : String) in
+            if isNoRead ,noReadNum.count > 0  {
+                self.navigationController?.tabBarItem.badgeValue = noReadNum
+            }else {
+                self.navigationController?.tabBarItem.badgeValue = nil
+            }
+        }
+        self.navigationController?.pushViewController(editvc, animated: true)
     }
     
     @objc private func clickFriendBtn(){
