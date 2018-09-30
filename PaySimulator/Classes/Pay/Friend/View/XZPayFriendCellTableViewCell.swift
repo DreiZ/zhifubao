@@ -18,12 +18,19 @@ class XZPayFriendCellTableViewCell: UITableViewCell {
     
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var noReadView: UIView!
+    @IBOutlet weak var noDisturbImageView: UIImageView!
     
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        iconImg.layer.masksToBounds = true
+        iconImg.layer.cornerRadius = 4.5
+        
+        noReadView.layer.masksToBounds = true
+        noReadView.layer.cornerRadius = 4.5
     }
 
   

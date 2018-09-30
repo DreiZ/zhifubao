@@ -10,7 +10,8 @@ import UIKit
 
 class XZChaListEditMessageVC: XZBaseViewController {
 
-    
+    var chatModel : XZChatModel?
+    var editBlock : (()->())?
     var noRead : UISwitch = UISwitch()
     var noDisturb : UISwitch = UISwitch()
     
@@ -33,6 +34,19 @@ class XZChaListEditMessageVC: XZBaseViewController {
 extension XZChaListEditMessageVC {
     
     override func rightBtnOnClick() {
+        self.chatModel?.isNoRead = noRead.isOn
+        self.chatModel?.isNoDisturb = noDisturb.isOn
+        
+        XZChatListModel.shareSingleton.addChatModel(self.chatModel!)
+        let queue = DispatchQueue(label: "saveSelfToDB",qos: .utility)
+        queue.async {
+            let _  = XZChatListModel.shareSingleton.saveSelfToDB()
+        }
+        
+        
+        if self.editBlock != nil {
+            self.editBlock!()
+        }
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -48,6 +62,11 @@ extension XZChaListEditMessageVC {
             make.top.equalTo(self.view.snp.top).offset(DDSafeAreaTopHeight)
         }
         self.iTableView.reloadData()
+        
+        if self.chatModel != nil {
+            noRead.isOn = chatModel?.isNoRead ?? false
+            noDisturb.isOn = chatModel?.isNoDisturb ?? false
+        }
     }
 }
 

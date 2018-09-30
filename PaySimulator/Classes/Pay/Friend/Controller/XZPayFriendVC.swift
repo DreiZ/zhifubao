@@ -10,6 +10,10 @@ import UIKit
 
 class XZPayFriendVC: XZBaseVC {
 
+    
+    var isEditMessage : Bool = false
+    
+    @IBOutlet weak var topCinstraint: NSLayoutConstraint!
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
     
@@ -22,10 +26,14 @@ class XZPayFriendVC: XZBaseVC {
     }()
     
     override func viewWillAppear(_ animated: Bool) {
-        XZChatListModel.shareSingleton.getDataFromSql()
-        let friendList = XZChatListModel.shareSingleton.chatList
+        if !isEditMessage {
+            XZChatListModel.shareSingleton.getDataFromSql()
+            let friendList = XZChatListModel.shareSingleton.chatList
+            
+            dataList = friendList ?? []
+        }
         
-        dataList = friendList ?? []
+        self.isEditMessage = false
         
         if self.myTableView != nil  {
             self.myTableView.reloadData()
@@ -36,20 +44,7 @@ class XZPayFriendVC: XZBaseVC {
         super.viewDidLoad()
 
         setupNavigationUI()//设置导航栏 相关方法
-        
-        
-        let leftView = UIView.init(frame: CGRect(x: 0, y: 0, width: 28, height: 25))
-        let searchImageView = UIImageView()
-        searchImageView.image = UIImage(named: "icon_sousuo")
-        leftView.addSubview(searchImageView)
-        searchImageView.snp.makeConstraints { (make ) in
-            make.centerY.equalTo(leftView.snp.centerY)
-            make.left.equalTo(leftView.snp.left).offset(11)
-        }
-        searchTextField.leftView = leftView
-        searchTextField.leftViewMode = .always
-        
-        self.myTableView.backgroundColor = UIColor(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, alpha: 1)
+        setupUI()
     }
 }
 //MARK:-- 有关UI设置的所有方法
@@ -74,10 +69,25 @@ extension XZPayFriendVC{
         
         
         self.myTableView.separatorStyle = .none
-    };
+    }
     
-    
-    
+    func setupUI () {
+        
+        topCinstraint.constant = 0
+        
+        let leftView = UIView.init(frame: CGRect(x: 0, y: 0, width: 28, height: 25))
+        let searchImageView = UIImageView()
+        searchImageView.image = UIImage(named: "icon_sousuo")
+        leftView.addSubview(searchImageView)
+        searchImageView.snp.makeConstraints { (make ) in
+            make.centerY.equalTo(leftView.snp.centerY)
+            make.left.equalTo(leftView.snp.left).offset(11)
+        }
+        searchTextField.leftView = leftView
+        searchTextField.leftViewMode = .always
+        
+        self.myTableView.backgroundColor = UIColor(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, alpha: 1)
+    }
     
     //导航栏右侧按钮
     @objc private func clickAddBtn(){
@@ -117,6 +127,8 @@ extension XZPayFriendVC:UITableViewDelegate,UITableViewDataSource{
             }
         }
         
+        cell.noReadView.isHidden = !chatModel.isNoRead
+        cell.noDisturbImageView.isHidden = !chatModel.isNoDisturb
         cell.detailLabel.text = subTitle
         cell.timeLabel.text = time
         return cell
@@ -129,7 +141,7 @@ extension XZPayFriendVC:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 55
+        return 60
     }
  
     //左滑删除
@@ -139,6 +151,10 @@ extension XZPayFriendVC:UITableViewDelegate,UITableViewDataSource{
         let eAction = UITableViewRowAction(style: .default, title: "编辑") { (rowAction, indexPath) in
             let messagevc = XZChaListEditMessageVC()
             messagevc.hidesBottomBarWhenPushed = true
+            messagevc.chatModel = self.dataList[indexPath.row]
+            messagevc.editBlock = { () in
+                self.isEditMessage = true
+            }
             self.navigationController?.pushViewController(messagevc, animated: true)
         }
         

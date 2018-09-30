@@ -13,6 +13,8 @@ import UIKit
     var toModel : XZUserModel?
     var fromModel : XZUserModel?
     var chatId : Int = 10001001
+    var isNoRead : Bool = false
+    var isNoDisturb : Bool = false
     
     
     override static func getPrimaryKey() -> String {
