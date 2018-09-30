@@ -31,7 +31,6 @@ import UIKit
     
     private override init(){
         super.init()
-        print("zzz --- init ")
     }
     
     init(tag : Int) {

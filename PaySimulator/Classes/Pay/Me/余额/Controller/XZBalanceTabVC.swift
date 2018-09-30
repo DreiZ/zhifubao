@@ -51,7 +51,7 @@ class XZBalanceTabVC: UITableViewController {
         goYuebaoBtn.layer.borderColor = UIColor(red: 144.0/255.0, green: 186.0/255.0, blue: 216.0/255.0, alpha: 1).cgColor
         //导航设置
 //        setupNavBar()
-        
+        balanceLabel.adjustsFontSizeToFitWidth = true
     }
 
     @IBAction func todayOnClick(_ sender: Any) {
