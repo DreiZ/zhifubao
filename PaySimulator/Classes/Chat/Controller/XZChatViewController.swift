@@ -19,6 +19,8 @@ class XZChatViewController: XZBaseViewController {
     var to : XZUserModel?
     var from : XZUserModel?
     
+    var selectIndexPath : IndexPath?
+    
     var dataSource : Array<XZMessageFrame> = []
     var isKeyBoardAppear : Bool = false
     
@@ -163,6 +165,14 @@ extension XZChatViewController : UITableViewDataSource, UITableViewDelegate ,UIS
         return obj.cellHight ?? 44
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         let _ =  self.chatBoxViewController.resignFirstResponder()
     }
@@ -176,18 +186,40 @@ extension XZChatViewController : BaseCellDelegate {
             for item in (self.chatModel?.messageList)! {
                 if item.date == message?.model?.message?.date{
                     item.status = XZMessageStatus.read
+                    self.saveHistoryData()
                 }
             }
         }
     }
     
     func longPress(longRecognizer: UILongPressGestureRecognizer) {
+        let location = longRecognizer.location(in: self.iTableView)
+        let indexPath = self.iTableView.indexPathForRow(at: location)
+        
+        if indexPath != nil, let cell = self.iTableView.cellForRow(at: indexPath!) {
+            self.selectIndexPath = indexPath
+            let qqItem = UIMenuItem(title: "删除", action: #selector(deleteMessage))
+            let menuController = UIMenuController.shared
+            menuController.menuItems = [qqItem]
+            menuController.setTargetRect(CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y + MessageHeadToView, width: cell.frame.size.width, height: cell.frame.size.height), in: cell.superview!)
+            menuController.setMenuVisible(true, animated: true)
+        }
         
     }
     
     
     func headImageClick(eId: String) {
         
+    }
+    
+    @objc func deleteMessage() {
+        if let indexPath = selectIndexPath {
+            self.dataSource.remove(at: indexPath.row)
+            self.chatModel?.messageList.remove(at: indexPath.row)
+            
+            self.saveHistoryData()
+            self.iTableView.reloadData()
+        }
     }
 }
 

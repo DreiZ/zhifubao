@@ -90,6 +90,12 @@ extension XZBaseMessageCell {
         if longPressDelegate != nil {
             longPressDelegate?.longPress(longRecognizer: recognizer)
         }
+        
+//        let menu = UIMenuController.shared
+//        let customItem = UIMenuItem(title: "Custom item", action: #selector(headClicked))
+//        menu.menuItems = [customItem]
+//        menu.setTargetRect(self.bubbleView.frame, in: self.contentView)
+//        menu.setMenuVisible(true, animated: true)
     }
     
     @objc func headClicked()  {
@@ -97,6 +103,20 @@ extension XZBaseMessageCell {
             longPressDelegate?.headImageClick(eId: self.modelFrame?.model?.message?.fromUser ?? "")
         }
     }
+    
+    // Return true so that menu controller can display
+    override var canBecomeFirstResponder: Bool { return true }
+
+    // Return true to show menu for given action
+    // Action is in UIResponderStandardEditActions
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return action == #selector(copy(_:))
+    }
+
+    override func copy(_ sender: Any?) {
+        print(#function)
+    }
+
 }
 
 extension XZBaseMessageCell {
