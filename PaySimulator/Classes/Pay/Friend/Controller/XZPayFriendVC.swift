@@ -38,7 +38,7 @@ class XZPayFriendVC: XZBaseVC {
             self.myTableView.reloadData()
         }
         
-        let isNoRead = XZChatListModel.shareSingleton.hadNoRead
+
         if XZChatListModel.shareSingleton.hadNoRead ,XZChatListModel.shareSingleton.noReadNum?.count != nil  {
             self.navigationController?.tabBarItem.badgeValue = XZChatListModel.shareSingleton.noReadNum
         }else {
@@ -53,6 +53,7 @@ class XZPayFriendVC: XZBaseVC {
         setupUI()
     }
 }
+
 //MARK:-- 有关UI设置的所有方法
 extension XZPayFriendVC{
     
@@ -65,10 +66,8 @@ extension XZPayFriendVC{
         navBarTitleColor = UIColor.white
         let addBtn = XZBaseNavItemBtn(frame: CGRect(x: 0, y: 0, width: 20, height: 20), imgName: "icon_tianjiaw", titleName: "")
         addBtn.addTarget(self, action: #selector(clickAddBtn), for: .touchUpInside)
-//       addBtn.backgroundColor = ddRandomColor()
         let firendBtn = XZBaseNavItemBtn(frame: CGRect.zero, imgName: "icon_tongxunlu", titleName: "")
         firendBtn.addTarget(self, action: #selector(clickFriendBtn), for: .touchUpInside)
-//        firendBtn.backgroundColor = ddRandomColor()
         let firstBar = UIBarButtonItem(customView: addBtn)
         let secondBar = UIBarButtonItem(customView: firendBtn)
         navigationItem.rightBarButtonItems = [firstBar,secondBar]
@@ -97,7 +96,7 @@ extension XZPayFriendVC{
     
     //导航栏右侧按钮
     @objc private func clickAddBtn(){
-         DDLog("添加好友")
+        //是否有未读消息
         let editvc = XZMessageMainEdit()
         editvc.hidesBottomBarWhenPushed = true
         editvc.editBlock = {(isNoRead : Bool, noReadNum : String) in
@@ -110,14 +109,15 @@ extension XZPayFriendVC{
         self.navigationController?.pushViewController(editvc, animated: true)
     }
     
+    
+    //添加好友
     @objc private func clickFriendBtn(){
-        DDLog("通讯录")
-       
         let addressBookVC = UIStoryboard(name: "PayFriend", bundle: nil).instantiateViewController(withIdentifier: "XZAddressBookVC") as? XZAddressBookVC
         self.navigationController?.pushViewController(addressBookVC!, animated: true)
         
     }
 }
+
 extension XZPayFriendVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = XZPayFriendCellTableViewCell.cellWithTableView(tableView)
@@ -218,7 +218,3 @@ extension XZPayFriendVC:UITableViewDelegate,UITableViewDataSource{
         return UIView()
     }
 }
-
-
-
-

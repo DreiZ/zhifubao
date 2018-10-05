@@ -33,6 +33,8 @@ class XZMessageMainEdit: XZBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        isNoRead = XZChatListModel.shareSingleton.hadNoRead
+        noReadNum = XZChatListModel.shareSingleton.noReadNum ?? "0"
         self.navBar.title = "编辑总信息"
         self.navBar.wr_setRightButton(title: "确定", titleColor: ddBlueColor())
         self.setupUI()
@@ -96,6 +98,7 @@ extension XZMessageMainEdit : UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = "消息未读数量"
             cell.accessoryType = .disclosureIndicator
             self.numLabel = cell.detailTextLabel!
+            cell.detailTextLabel?.text = noReadNum
         }
         
         return cell
