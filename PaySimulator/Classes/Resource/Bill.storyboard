@@ -604,6 +604,7 @@
                         <outlet property="createTimeLabel" destination="UwD-P2-yeF" id="Zy8-c2-78H"/>
                         <outlet property="markTextField" destination="1Ev-ip-pum" id="LcN-uF-nkr"/>
                         <outlet property="nameLabel" destination="jzB-9V-GBy" id="3RX-IC-7qA"/>
+                        <outlet property="receiveTitleLabel" destination="wry-E0-GrE" id="3nP-Tj-Heg"/>
                         <outlet property="receiveTypeLabel" destination="aNg-X8-Y8f" id="ItM-tz-W5d"/>
                         <outlet property="toAliAcountTextField" destination="ovs-SS-Qyb" id="LdD-W2-3eH"/>
                         <outlet property="toImageView" destination="a2f-HL-Cdl" id="3Io-eW-5Lo"/>

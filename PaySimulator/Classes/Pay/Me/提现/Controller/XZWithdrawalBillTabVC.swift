@@ -40,12 +40,13 @@ class XZWithdrawalBillTabVC: UITableViewController {
         super.viewDidLoad()
 
         self.tableView.separatorStyle = .none
-        DDLog("传值 = \(String(describing: withDrawaleModel))")
+//        DDLog("传值 = \(String(describing: withDrawaleModel))")
+        self.withDrawalDesLabel.text = "快速提现"
         
         self.bankImageView.image = self.withDrawaleModel?.bankImage
         self.bankNameLabel.text = self.withDrawaleModel?.bankName
         self.amountLabel.text = self.withDrawaleModel?.money
-        self.withDrawalDesLabel.text = "快速提现"
+        
         self.creatTimeLabel.text = self.withDrawaleModel?.creatTime?.stringOfDate(formatter: "MM-dd HH:mm")
         self.middleTimeLabel.text = self.withDrawaleModel?.creatTime?.stringOfDate(formatter: "MM-dd HH:mm")
         self.endTimeLabel.text = self.withDrawaleModel?.endTime?.stringOfDate(formatter: "MM-dd HH:mm")

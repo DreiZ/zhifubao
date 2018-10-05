@@ -48,6 +48,7 @@ class XZEditRedPacketTableViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         marketTextFeild.resignFirstResponder()
         amountTextFeild.resignFirstResponder()
+        self.tableView.endEditing(true)
     }
     
     override func viewDidLoad() {
@@ -63,6 +64,8 @@ class XZEditRedPacketTableViewController: UITableViewController {
         self.receiveBtn.isSelected = true
         self.sendBtn.isSelected = false
         self.redPacket?.isReceive = true
+        self.redPacket?.mark = "恭喜发财 大吉大利"
+        
         
         guard let redBacketModel = self.redPacket else {
             self.sendImageView.image = to?.headImage
@@ -190,7 +193,7 @@ extension XZEditRedPacketTableViewController  {
         sendBtn.isSelected = true
         
         self.tableView.tableFooterView = self.footerView()
-        
+        self.tableView.keyboardDismissMode = .onDrag
        
     }
     
@@ -260,7 +263,7 @@ extension XZEditRedPacketTableViewController {
         if (self.redPacket?.isReceive)! {
             let seeRedPacketTabVC = UIStoryboard(name: "RedPacket", bundle: nil).instantiateViewController(withIdentifier: "XZSeeRedPacketReceiveTabVC") as? XZSeeRedPacketReceiveTabVC
 //            self.redPacket?.amount = self.amountTextFeild.text
-//            self.redPacket?.mark = self.marketTextFeild.text
+//            self.redPacket?.mark = self.marketTextFeild.text ?? self.marketTextFeild.placeholder
             seeRedPacketTabVC?.redPacket = self.redPacket
             self.navigationController?.pushViewController(seeRedPacketTabVC!, animated: true)
         
@@ -269,7 +272,13 @@ extension XZEditRedPacketTableViewController {
     
         let seeRedPacketTabVC = UIStoryboard(name: "RedPacket", bundle: nil).instantiateViewController(withIdentifier: "XZSeeRedPacketTabVC") as? XZSeeRedPacketTabVC
         self.redPacket?.amount = self.amountTextFeild.text
+    
         self.redPacket?.mark = self.marketTextFeild.text
+        if self.redPacket?.mark == nil {
+            self.redPacket?.mark = "恭喜发财 大吉大利"
+        }else if let temp = self.redPacket?.mark, temp.count == 0 {
+            self.redPacket?.mark = "恭喜发财 大吉大利"
+        }
         seeRedPacketTabVC?.redPacket = self.redPacket
         self.navigationController?.pushViewController(seeRedPacketTabVC!, animated: true)
     }
@@ -277,5 +286,4 @@ extension XZEditRedPacketTableViewController {
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
     }
-    
 }

@@ -14,6 +14,7 @@ class XZBillTableViewController: UITableViewController {
     var tranferModel : XZTranferModel?
     
     
+    @IBOutlet weak var firstTitleLabel: UILabel!
     @IBOutlet weak var secondtitleLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userLevelImageView: UIImageView!
@@ -45,16 +46,25 @@ class XZBillTableViewController: UITableViewController {
         billstateLabel.text = self.tranferModel?.state
         userLevelImageView.image = UIImage(named: level[(self.tranferModel?.toUser?.level) ?? 0])
         
-        amountLabel.text = self.tranferModel?.amount
+        
         receiveTypeLabel.text = self.tranferModel?.paymentMethod
         receiveReasonLabel.text = "收款"
         toUserAliCountLabel.text = self.tranferModel?.toUser?.aliCount
         billTypeLabel.text = self.tranferModel?.billClass
         createTimeLabel.text = self.tranferModel?.createTime?.stringOfDate(formatter: "YYYY-MM-dd HH:mm")
         orderNoLabel.text = self.tranferModel?.billNo
+        firstTitleLabel.text = "收款方式"
         
+        amountLabel.text = self.tranferModel?.amount
         if self.billType! == .Transfer  {
             self.secondtitleLabel.text = "转账备注"
+            if self.tranferModel?.isTransferIn ?? true {
+                firstTitleLabel.text = "收款方式"
+            }else{
+                amountLabel.text = "-" + (self.tranferModel?.amount  ?? "")
+                firstTitleLabel.text = "付款方式"
+            }
+            receiveReasonLabel.text = "转账"
         }else {
             self.secondtitleLabel.text = "收款理由" 
         }

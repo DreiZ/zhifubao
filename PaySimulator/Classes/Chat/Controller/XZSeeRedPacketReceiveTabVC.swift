@@ -16,12 +16,16 @@ class XZSeeRedPacketReceiveTabVC: UITableViewController {
     @IBOutlet weak var tableHeadView: UIView!
     @IBOutlet weak var tableFooterView: UIView!
     
-    
+    @IBOutlet weak var userAddImageView: UIImageView!
     @IBOutlet weak var fromHeadImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var markLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var numLabel: UILabel!
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tableView.endEditing(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +40,16 @@ class XZSeeRedPacketReceiveTabVC: UITableViewController {
         
         fromHeadImageView.layer.cornerRadius = 34
         fromHeadImageView.layer.masksToBounds = true
+        userAddImageView.backgroundColor = UIColor.white
+        userAddImageView.layer.cornerRadius = 8
+        userAddImageView.layer.masksToBounds = true
+        userAddImageView.isHidden = !(self.redPacket?.isHeadHadAdd ?? false)
         
+        self.tableView.keyboardDismissMode = .onDrag
         self.getOrderNo()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
 
     // MARK: - Table view data source
 

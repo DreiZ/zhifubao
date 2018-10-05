@@ -30,6 +30,7 @@ class XZReceivablesTableViewController: UITableViewController {
     @IBOutlet weak var transferStatus: UILabel!
     @IBOutlet weak var billOrderNO: UITextField!
     @IBOutlet weak var typeCell: UITableViewCell!
+    @IBOutlet weak var receiveTitleLabel: UILabel!
     
     let receiveTypeArr : [String] = ["余额", "余额宝", "银行卡"]
     let transactionStateArr : [String] = ["交易成功", "待付款"]
@@ -41,6 +42,11 @@ class XZReceivablesTableViewController: UITableViewController {
         return dataAlert
     }()
     
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tableView.endEditing(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +60,7 @@ class XZReceivablesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("index \(indexPath.row)")
-        
+        self.tableView.endEditing(true)
         if indexPath.section == 1 {
             if indexPath.row == 0 {
                 self.dataAlert.title = "选择会员等级"
@@ -65,7 +71,12 @@ class XZReceivablesTableViewController: UITableViewController {
                 }
                 self.dataAlert.showInView(showView: self.view)
             }else if indexPath.row == 1 {
-                self.dataAlert.title = "收款方式"
+                if self.tranferModel?.isTransferIn ?? true {
+                    self.dataAlert.title = "收款方式"
+                }else{
+                    self.dataAlert.title = "付款方式"
+                }
+                
                 self.dataAlert.setDataArr(dataArr: receiveTypeArr)
                 dataAlert.selectBlock = {(_ selectedIndex : Int) in
                     self.tranferModel?.paymentMethod = self.receiveTypeArr[selectedIndex]
@@ -120,13 +131,16 @@ class XZReceivablesTableViewController: UITableViewController {
     @IBAction func transferInOnClick(_ sender: Any) {
         self.tranferModel?.isTransferIn = true
         
+        
         if self.tranferModel?.isTransferIn ?? true {
+            self.receiveTitleLabel.text = "收款方式"
             self.transferTypeLeftBtn.setTitleColor(UIColor.white, for: .normal)
             self.transferTypeLeftBtn.backgroundColor = kChatMainColor
             
             self.transferTypeRightBtn.setTitleColor(kChatMainColor, for: .normal)
             self.transferTypeRightBtn.backgroundColor = UIColor.white
         }else{
+            self.receiveTitleLabel.text = "付款方式"
             self.transferTypeRightBtn.setTitleColor(UIColor.white, for: .normal)
             self.transferTypeRightBtn.backgroundColor = kChatMainColor
             
@@ -141,12 +155,14 @@ class XZReceivablesTableViewController: UITableViewController {
         self.tranferModel?.isTransferIn = false
         
         if self.tranferModel?.isTransferIn ?? true {
+            self.receiveTitleLabel.text = "收款方式"
             self.transferTypeLeftBtn.setTitleColor(UIColor.white, for: .normal)
             self.transferTypeLeftBtn.backgroundColor = kChatMainColor
             
             self.transferTypeRightBtn.setTitleColor(kChatMainColor, for: .normal)
             self.transferTypeRightBtn.backgroundColor = UIColor.white
         }else{
+            self.receiveTitleLabel.text = "付款方式"
             self.transferTypeRightBtn.setTitleColor(UIColor.white, for: .normal)
             self.transferTypeRightBtn.backgroundColor = kChatMainColor
             

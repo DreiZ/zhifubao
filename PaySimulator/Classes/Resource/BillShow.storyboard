@@ -483,6 +483,7 @@
                         <outlet property="billstateLabel" destination="hit-4f-Ucy" id="A6z-H8-zCo"/>
                         <outlet property="createTimeLabel" destination="5aL-ok-Ids" id="WFl-fm-ofX"/>
                         <outlet property="electronicReturnCell" destination="vgr-Y8-gso" id="Top-eN-Jmw"/>
+                        <outlet property="firstTitleLabel" destination="Peb-sx-o9B" id="XgT-vX-6VL"/>
                         <outlet property="orderNoLabel" destination="ZXX-zh-Vp5" id="l2S-LU-rKG"/>
                         <outlet property="receiveReasonLabel" destination="ehJ-06-QjO" id="sFe-De-Btz"/>
                         <outlet property="receiveTypeLabel" destination="7X8-qn-oEG" id="6WP-xY-6pW"/>
