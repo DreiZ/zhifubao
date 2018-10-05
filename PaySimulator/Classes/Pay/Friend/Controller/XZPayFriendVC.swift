@@ -17,6 +17,15 @@ class XZPayFriendVC: XZBaseVC {
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
     
+    @IBOutlet weak var lifeDesLabel: UILabel!
+    @IBOutlet weak var smallProjectDesLabel: UILabel!
+    @IBOutlet weak var lifeCLabel: UILabel!
+    
+    @IBOutlet weak var lifeNoReadView: UIView!
+    @IBOutlet weak var smallProjectNoReadView: UIView!
+    @IBOutlet weak var lifeCNoReadView: UIView!
+    
+    
     var dataList : [XZChatModel] = {
         
         let friendList = XZChatListModel.shareSingleton.chatList
@@ -44,6 +53,14 @@ class XZPayFriendVC: XZBaseVC {
         }else {
             self.navigationController?.tabBarItem.badgeValue = nil
         }
+        
+        self.lifeNoReadView.isHidden = !XZChatListModel.shareSingleton.lifeNoRead
+        self.smallProjectNoReadView.isHidden = !XZChatListModel.shareSingleton.smallProjectNoRead
+        self.lifeCNoReadView.isHidden = !XZChatListModel.shareSingleton.lifeCircleNoRead
+        
+        self.lifeDesLabel.text = XZChatListModel.shareSingleton.lifeDes ?? "简单生活更多优惠"
+        self.smallProjectDesLabel.text = XZChatListModel.shareSingleton.smallProjectDes ?? "发现更多服务"
+        self.lifeCLabel.text = XZChatListModel.shareSingleton.lifeCircleDes ?? "你有朋友更新动态"
     }
     
     override func viewDidLoad() {
@@ -79,6 +96,14 @@ extension XZPayFriendVC{
     func setupUI () {
         
         topCinstraint.constant = 0
+        self.lifeNoReadView.layer.masksToBounds = true
+        self.lifeNoReadView.layer.cornerRadius = 4.5
+        
+        self.smallProjectNoReadView.layer.masksToBounds = true
+        self.smallProjectNoReadView.layer.cornerRadius = 4.5
+        
+        self.lifeCNoReadView.layer.masksToBounds = true
+        self.lifeCNoReadView.layer.cornerRadius = 4.5
         
         let leftView = UIView.init(frame: CGRect(x: 0, y: 0, width: 28, height: 25))
         let searchImageView = UIImageView()

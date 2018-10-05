@@ -12,8 +12,26 @@ import UIKit
     // 会话列表
     var chatListId : String = "会话列表"
     var chatList : [XZChatModel]?
+    
+    //会话列表维度消息设置
     var hadNoRead : Bool = false
     var noReadNum : String?
+    
+    //生活号
+    var lifeNoRead : Bool = false
+//    var lifeImage : UIImage?
+    var lifeDes : String?
+    
+    //小程序
+    var smallProjectNoRead : Bool = false
+//    var smallProjectImage : UIImage?
+    var smallProjectDes : String?
+    
+    //生活圈
+    var lifeCircleNoRead : Bool = false
+//    var lifeCircleImage : UIImage?
+    var lifeCircleDes : String?
+    
     
     
     override static func getPrimaryKey() -> String {
@@ -49,8 +67,18 @@ extension XZChatListModel {
         if searchResultArray != nil && (searchResultArray?.count)! > 0 {
             let listModel = searchResultArray![0] as? XZChatListModel
             chatList = listModel?.chatList
+            
             hadNoRead = listModel?.hadNoRead ?? false
             noReadNum = listModel?.noReadNum
+            
+            lifeNoRead = listModel?.lifeNoRead ?? false
+            lifeDes = listModel?.lifeDes
+            
+            smallProjectNoRead = listModel?.smallProjectNoRead ?? false
+            smallProjectDes = listModel?.smallProjectDes
+            
+            lifeCircleNoRead = listModel?.lifeCircleNoRead ?? false
+            lifeCircleDes = listModel?.lifeCircleDes
         }
     }
     
