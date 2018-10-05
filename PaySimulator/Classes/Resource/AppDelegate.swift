@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import IQKeyboardManagerSwift
+import IQKeyboardManagerSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,13 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        setupKeyBoardConfig()//键盘第三方
+        setupKeyBoardConfig()//键盘第三方
         return true
     }
 
     
     func setupKeyBoardConfig(){
-//        IQKeyboardManager.sharedManager().enable = false
+        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.sharedManager().enableAutoToolbar = false
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
