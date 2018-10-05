@@ -30,6 +30,6 @@ class XZWithdrawalVC: XZBaseViewController {
 extension XZWithdrawalVC{
     
     func setupNavBar(){
-        self.navBar.title = "转账账单"
+        self.navBar.title = "提现账单"
     }
 }

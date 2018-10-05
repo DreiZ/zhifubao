@@ -46,9 +46,9 @@ class XZWithdrawalBillTabVC: UITableViewController {
         self.bankNameLabel.text = self.withDrawaleModel?.bankName
         self.amountLabel.text = self.withDrawaleModel?.money
         self.withDrawalDesLabel.text = "快速提现"
-        self.creatTimeLabel.text = self.withDrawaleModel?.creatTime?.stringOfDate(formatter: "MM:dd HH:mm")
-        self.middleTimeLabel.text = self.withDrawaleModel?.creatTime?.stringOfDate(formatter: "MM:dd HH:mm")
-        self.endTimeLabel.text = self.withDrawaleModel?.endTime?.stringOfDate(formatter: "MM:dd HH:mm")
+        self.creatTimeLabel.text = self.withDrawaleModel?.creatTime?.stringOfDate(formatter: "MM-dd HH:mm")
+        self.middleTimeLabel.text = self.withDrawaleModel?.creatTime?.stringOfDate(formatter: "MM-dd HH:mm")
+        self.endTimeLabel.text = self.withDrawaleModel?.endTime?.stringOfDate(formatter: "MM-dd HH:mm")
         self.toBankLabel.text = (self.withDrawaleModel?.bankName ?? "") + "(\(self.withDrawaleModel?.bankName ?? ""))" + (self.withDrawaleModel?.cardUserName ?? "")
         
         self.billClassLabel.text = "其他"

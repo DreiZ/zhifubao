@@ -80,7 +80,7 @@ class XZReceivablesTableViewController: UITableViewController {
                 }
                 myPickerView.showInView(showView: self.view)
             }else if indexPath.row == 3 {
-                let spicker = HcdDateTimePickerView(datePickerMode: DatePickerTimeMode, defaultDateTime: Date())
+                let spicker = HcdDateTimePickerView(datePickerMode: DatePickerDateTimeMode, defaultDateTime: Date())
                 spicker?.topViewColor = kChatMainColor
                 
                 spicker?.clickedOkBtn = {(dateTimeStr : String?) in

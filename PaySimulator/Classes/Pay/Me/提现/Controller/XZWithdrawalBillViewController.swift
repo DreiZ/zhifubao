@@ -18,7 +18,7 @@ class XZWithdrawalBillViewController: XZBaseViewController {
         super.viewDidLoad()
 
         topConstraint.constant = DDSafeAreaTopHeight - (DDSafeAreaTopHeight - 44)
-        self.navBar.title = "转账账单"
+        self.navBar.title = "账单详情"
     }
     
     
