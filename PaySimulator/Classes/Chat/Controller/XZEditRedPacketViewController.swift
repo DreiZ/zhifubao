@@ -49,6 +49,7 @@ extension XZEditRedPacketViewController {
             iTabelViewController.to = self.to
             iTabelViewController.from = self.from
             iTabelViewController.redPacket = self.redPacket
+            iTabelViewController.setMessageData = self.setMessageData
         }
     }
 }

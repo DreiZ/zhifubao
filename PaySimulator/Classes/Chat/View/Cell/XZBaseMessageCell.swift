@@ -34,6 +34,12 @@ class XZBaseMessageCell: UITableViewCell {
         
         return imageView
     }()
+    
+    lazy var bubbleBtn : UIButton = {
+        let bubbleBtn = UIButton()
+        bubbleBtn.addTarget(self, action: #selector(bubbleBtnOnClick), for: .touchUpInside)
+        return bubbleBtn
+    }()
 
     lazy var activityView : UIActivityIndicatorView = {
         let activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
@@ -84,6 +90,13 @@ extension XZBaseMessageCell {
         self.contentView.addSubview(self.bubbleView)
         self.contentView.addSubview(self.headImageView)
         self.contentView.addSubview(self.activityView)
+        
+        self.addSubview(self.bubbleBtn)
+        
+        self.bubbleBtn.snp.makeConstraints { (make) in
+            make.left.top.bottom.equalTo(self.bubbleView)
+            make.right.equalTo(self.bubbleView.snp.right).offset(-MessageSystemArrowWidth)
+        }
     }
 
     @objc func longPressRecognizer(_ recognizer : UILongPressGestureRecognizer) {
@@ -101,6 +114,12 @@ extension XZBaseMessageCell {
     @objc func headClicked()  {
         if longPressDelegate != nil {
             longPressDelegate?.headImageClick(eId: self.modelFrame?.model?.message?.fromUser ?? "")
+        }
+    }
+    
+    @objc func bubbleBtnOnClick() {
+        if self.longPressDelegate != nil {
+            self.longPressDelegate?.contentPress(self.modelFrame)
         }
     }
     

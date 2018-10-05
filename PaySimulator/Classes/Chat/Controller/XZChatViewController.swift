@@ -179,16 +179,103 @@ extension XZChatViewController : UITableViewDataSource, UITableViewDelegate ,UIS
 
 extension XZChatViewController : BaseCellDelegate {
     func contentPress(_ message: XZMessageFrame?) {
-        
+        print("---")
+//        XZSeeRedPacketTabVC
+//        XZSeeRedPacketReceiveTabVC
         if message != nil {
-            message?.model?.message?.status = XZMessageStatus.read
-            for item in (self.chatModel?.messageList)! {
-                if item.date == message?.model?.message?.date{
-                    item.status = XZMessageStatus.read
-                    self.saveHistoryData()
+            if message?.model?.message?.type == TypeVoice {
+                message?.model?.message?.status = XZMessageStatus.read
+                for item in (self.chatModel?.messageList)! {
+                    if item.date == message?.model?.message?.date{
+                        item.status = XZMessageStatus.read
+                        self.saveHistoryData()
+                    }
+                }
+            }else if message?.model?.message?.type == TypeRedPacket || message?.model?.message?.type == TypeRedPacketOpen {
+                if message?.model?.message?.type == TypeRedPacket {
+                    if message?.model?.message?.type == TypeRedPacket {
+                        for item in (self.chatModel?.messageList)! {
+                            if item.date == message?.model?.message?.date{
+                                item.type = TypeRedPacketOpen
+                                self.saveHistoryData()
+                                self.iTableView.reloadData()
+                            }
+                        }
+                    }
+                }else {
+                    if message?.model?.message?.isSelfSender ?? true {
+                        let redPacket = XZRedPacketModel()
+                        redPacket.amount = message?.model?.message?.content
+                        redPacket.toUser = self.to
+                        redPacket.fromUser = self.from
+                        redPacket.mark = message?.model?.message?.mark
+                        redPacket.time = message?.model?.message?.date
+                        redPacket.isReceive = true
+                        
+                        let seeRedPacketTabVC = UIStoryboard(name: "RedPacket", bundle: nil).instantiateViewController(withIdentifier: "XZSeeRedPacketTabVC") as? XZSeeRedPacketTabVC
+                        
+                        if redPacket.mark == nil {
+                            redPacket.mark = "恭喜发财 大吉大利"
+                        }else if let temp = redPacket.mark, temp.count == 0 {
+                            redPacket.mark = "恭喜发财 大吉大利"
+                        }
+                        seeRedPacketTabVC?.redPacket = redPacket
+                        self.navigationController?.pushViewController(seeRedPacketTabVC!, animated: true)
+                    }else {
+                        let redPacket = XZRedPacketModel()
+                        redPacket.amount = message?.model?.message?.content
+                        redPacket.toUser = self.from
+                        redPacket.fromUser = self.to
+                        redPacket.mark = message?.model?.message?.mark
+                        redPacket.time = message?.model?.message?.date
+                        redPacket.isReceive = false
+                        
+                        if redPacket.mark == nil {
+                            redPacket.mark = "恭喜发财 大吉大利"
+                        }else if let temp = redPacket.mark, temp.count == 0 {
+                            redPacket.mark = "恭喜发财 大吉大利"
+                        }
+                        
+                        
+                        let seeRedPacketTabVC = UIStoryboard(name: "RedPacket", bundle: nil).instantiateViewController(withIdentifier: "XZSeeRedPacketReceiveTabVC") as? XZSeeRedPacketReceiveTabVC
+                        seeRedPacketTabVC?.redPacket = redPacket
+                        self.navigationController?.pushViewController(seeRedPacketTabVC!, animated: true)
+                    }
+                    
+                } 
+                
+            }else if message?.model?.message?.type == TypeTransfer {
+                let transferModel = XZTranferModel()
+                
+                if message?.model?.message?.isSelfSender ?? true {
+                    transferModel.toUser = self.to
+                    transferModel.isTransferIn = false
+                }else {
+                    transferModel.toUser = self.from
+                    transferModel.isTransferIn = true
+                }
+                
+                transferModel.billNo = self.getOrderNo(date: message?.model?.message?.date ?? Date())
+                transferModel.amount = message?.model?.message?.content ?? "0"
+                transferModel.mark = message?.model?.message?.mark
+                transferModel.createTime = message?.model?.message?.date
+                
+                if let show = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "XZBillShowViewController") as? XZBillShowViewController{
+                    show.tranferModel = transferModel
+                    show.type = .Transfer
+                    self.navigationController?.pushViewController(show, animated: true)
                 }
             }
         }
+    }
+    
+    func getOrderNo(date : Date) -> String {
+        var orderNo = (date.stringOfDate(formatter:"yyyyMMdd"))
+        orderNo = orderNo + "200040011100"
+        for _ in ["1","0", "0", "0", "6", "5", "0", "3", "3", "6", "7", "7"] {
+            orderNo = orderNo + String(format: "%ld", arc4random() % 10)
+        }
+        return orderNo
     }
     
     func longPress(longRecognizer: UILongPressGestureRecognizer) {
@@ -395,8 +482,14 @@ extension XZChatViewController : XZChatBoxMoreViewDelegate {
         else if selectType == XZChatBoxMoreType.redPacket {
             
             let redpacketvc = UIStoryboard(name: "RedPacket", bundle: nil).instantiateViewController(withIdentifier: "XZEditRedPacketViewController") as? XZEditRedPacketViewController
-            redpacketvc?.to = self.to
-            redpacketvc?.from = self.from
+            if self.isSelfSend {
+                redpacketvc?.to = self.to
+                redpacketvc?.from = self.from
+            }else {
+                redpacketvc?.from = self.to
+                redpacketvc?.to = self.from
+            }
+            
             redpacketvc?.setMessageData = { (message : XZMessage) in
                 self.senMessage(message: message)
 //                self.sendRedMessage(content: message.transferMark!)
