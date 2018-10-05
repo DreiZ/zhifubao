@@ -179,9 +179,7 @@ extension XZChatViewController : UITableViewDataSource, UITableViewDelegate ,UIS
 
 extension XZChatViewController : BaseCellDelegate {
     func contentPress(_ message: XZMessageFrame?) {
-        print("---")
-//        XZSeeRedPacketTabVC
-//        XZSeeRedPacketReceiveTabVC
+
         if message != nil {
             if message?.model?.message?.type == TypeVoice {
                 message?.model?.message?.status = XZMessageStatus.read

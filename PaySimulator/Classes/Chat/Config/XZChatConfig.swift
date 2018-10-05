@@ -441,10 +441,10 @@ enum MessageDeliveryState : Int {
 }
 
 // 消息状态
-enum XZMessageStatus : String {
-    case unRead = "消息未读"
-    case read = "消息已读"
-    case back = "消息撤回"
+enum XZMessageStatus : Int {
+    case unRead = 0    // "消息未读"
+    case read = 1      //"消息已读"
+    case back = 2      //"消息撤回"
 }
 
 enum XZChatBoxMoreType : Int {
