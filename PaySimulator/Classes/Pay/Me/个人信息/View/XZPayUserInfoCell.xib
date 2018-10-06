@@ -24,7 +24,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fenleia" translatesAutoresizingMaskIntoConstraints="NO" id="2DC-HN-Sie">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2DC-HN-Sie">
                         <rect key="frame" x="231" y="7.5" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="Eg8-7w-q5o"/>
@@ -68,7 +68,4 @@
             <point key="canvasLocation" x="-25" y="57.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="fenleia" width="25" height="25"/>
-    </resources>
 </document>

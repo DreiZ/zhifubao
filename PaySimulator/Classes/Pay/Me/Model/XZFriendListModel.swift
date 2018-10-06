@@ -11,7 +11,7 @@ import UIKit
 @objcMembers class XZFriendListModel: NSObject {
     //好友列表
     var friendList : [XZUserModel]?
-    var friendId : String = "好友列表"
+    var friendId : String = "friendList"
     
     override static func getPrimaryKey() -> String {
         return "friendId"

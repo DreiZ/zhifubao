@@ -10,7 +10,7 @@ import UIKit
 
 @objcMembers class XZChatListModel: NSObject {
     // 会话列表
-    var chatListId : String = "会话列表"
+    var chatListId : String = "chatList"
     var chatList : [XZChatModel]?
     
     //会话列表维度消息设置
