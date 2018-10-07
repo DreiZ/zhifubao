@@ -37,7 +37,7 @@ class XZEditUserInfoVC: XZBaseVC {
         backView.backgroundColor = UIColor.white
         backView.snp.makeConstraints { (make ) in
             make.left.right.equalTo(self.view)
-            make.top.equalTo(10)
+            make.top.equalTo(DDSafeAreaTopHeight)
             make.height.equalTo(40)
         }
         
@@ -50,7 +50,7 @@ class XZEditUserInfoVC: XZBaseVC {
         textField.snp.makeConstraints { (make) in
             make.left.equalTo(10)
             make.right.equalTo(-10)
-            make.top.equalTo(10)
+            make.top.equalTo(DDSafeAreaTopHeight)
             make.height.equalTo(40)
         }
         
