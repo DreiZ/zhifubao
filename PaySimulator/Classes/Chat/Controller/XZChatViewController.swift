@@ -355,6 +355,8 @@ extension XZChatViewController {
         
         messageF.model?.message?.toImage = self.to?.headImage
         messageF.model?.message?.fromImage = self.from?.headImage
+        messageF.model?.message?.toUser = String(format: "%@", self.to?.nickName ?? "")
+        messageF.model?.message?.fromUser = String(format: "%@",self.from?.nickName ?? "")
         
         //添加历史数据
         self.chatModel?.messageList.append(message)
@@ -454,7 +456,11 @@ extension XZChatViewController : XZChatBoxMoreViewDelegate {
         }
         else if selectType == XZChatBoxMoreType.transfer {
             let transfervc = UIStoryboard(name: "chat", bundle: nil).instantiateViewController(withIdentifier: "XZChatTranferViewController") as? XZChatTranferViewController
-            transfervc?.to = to
+            if isSelfSend {
+                transfervc?.to = to
+            }else {
+                transfervc?.to = from
+            }
             transfervc?.setMessageData = {(message : XZMessage) in
                     self.senMessage(message: message)
 //                self.sendTransferMessage(money: message.content!, mark: message.mark ?? "")

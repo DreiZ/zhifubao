@@ -98,16 +98,16 @@ extension XZMyPhotoManage : UIImagePickerControllerDelegate,UINavigationControll
         // UIImagePickerControllerEditedImage 编辑后图片
         // UIImagePickerControllerOriginalImage
         //获取照片
-        let img : UIImage = info[UIImagePickerControllerEditedImage] as! UIImage
-        if picker.sourceType == .camera {//是拍照
-            //保存到相册
-            UIImageWriteToSavedPhotosAlbum(img, self, #selector(image(image:didFinishSavingWithError:contextInfo:)), nil)
+        let img : UIImage? = info[UIImagePickerControllerOriginalImage] as? UIImage
+        if let img = img {
+            if picker.sourceType == .camera {//是拍照
+                //保存到相册
+                UIImageWriteToSavedPhotosAlbum(img, self, #selector(image(image:didFinishSavingWithError:contextInfo:)), nil)
+            }
+            
+            //把图片传回控制器
+            self.delegate?.uploadImage(myImage: img);
         }
-        
-        //把图片传回控制器
-        self.delegate?.uploadImage(myImage: img);
-        
-        
         picker.dismiss(animated: true, completion: nil)
         
     }
