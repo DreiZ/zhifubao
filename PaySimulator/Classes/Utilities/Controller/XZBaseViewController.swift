@@ -69,6 +69,10 @@ class XZBaseViewController: UIViewController {
         navBar.onClickRightButton = {() in
             self.rightBtnOnClick()
         }
+        
+        navBar.onClickLeftButton = {() in
+            self.leftBtnOnClick()
+        }
     }
     
     @objc fileprivate func back()
@@ -84,6 +88,6 @@ extension XZBaseViewController {
     }
     
     @objc func leftBtnOnClick() {
-        
+        self.navigationController?.popViewController(animated: true)
     }
 }

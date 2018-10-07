@@ -92,6 +92,15 @@ class XZChatViewController: XZBaseViewController {
         self.navigationController?.pushViewController(editVC, animated: true)
     }
     
+    override func leftBtnOnClick() {
+        XZPublicTools.shareSingleton.showLoading(title: "保存聊天数据中。。。")
+        XZChatListModel.shareSingleton.addChatModel(self.chatModel!)
+        let _  = XZChatListModel.shareSingleton.saveSelfToDB()
+        XZPublicTools.shareSingleton.hideLoad()
+        
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 //         IQKeyboardManager.sharedManager().enable = false
@@ -353,8 +362,8 @@ extension XZChatViewController {
         
         let messageF : XZMessageFrame = XZMessageHelper.createMessageFrame(message: message, isSender: isSelfSend)
         
-        messageF.model?.message?.toImage = self.to?.headImage
-        messageF.model?.message?.fromImage = self.from?.headImage
+        messageF.model?.message?.toImage = self.to?.headImage?.copy() as? UIImage
+        messageF.model?.message?.fromImage = self.from?.headImage?.copy() as? UIImage
         messageF.model?.message?.toUser = String(format: "%@", self.to?.nickName ?? "")
         messageF.model?.message?.fromUser = String(format: "%@",self.from?.nickName ?? "")
         
@@ -552,7 +561,7 @@ extension XZChatViewController {
         XZChatListModel.shareSingleton.addChatModel(self.chatModel!)
         let queue = DispatchQueue(label: "saveSelfToDB",qos: .utility)
         queue.async {
-            let _  = XZChatListModel.shareSingleton.saveSelfToDB()
+//            let _  = XZChatListModel.shareSingleton.saveSelfToDB()
         }
     }
 }
