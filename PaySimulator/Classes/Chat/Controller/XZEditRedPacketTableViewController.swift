@@ -252,6 +252,11 @@ extension XZEditRedPacketTableViewController {
             message.content = self.amountTextFeild.text
             message.mark = self.marketTextFeild.text
             message.type = TypeRedPacket
+            if message.mark == nil {
+                message.mark = "恭喜发财 大吉大利"
+            }else if let temp = message.mark, temp.count == 0 {
+                message.mark = "恭喜发财 大吉大利"
+            }
             self.setMessageData!(message)
             
             self.navigationController?.popViewController(animated: true)

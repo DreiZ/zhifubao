@@ -91,7 +91,7 @@ extension XZChatMessageRedPacketCell {
         self.iconImageView.frame = modelFrame.iconImageViewF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
         
         
-        self.titleLabel.text = (modelFrame.model?.message?.content) ?? ""
+        self.titleLabel.text = (modelFrame.model?.message?.mark) ?? ""
         
         self.desLabel.text = "查看红包"
     }

@@ -43,7 +43,7 @@ extension XZChatMessageRedPacketOpenCell {
         self.iconImageView.frame = modelFrame.iconImageViewF ?? CGRect(x: 0, y: 0, width: 0, height: 0)
         
         
-        self.titleLabel.text = (modelFrame.model?.message?.content) ?? ""
+        self.titleLabel.text = (modelFrame.model?.message?.mark) ?? ""
         
         if modelFrame.model?.isSender == true {
             self.desLabel.text = "红包已被领完"
