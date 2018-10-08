@@ -170,7 +170,12 @@ extension XZChatEditViewController : UITableViewDelegate, UITableViewDataSource 
 
 extension XZChatEditViewController : XZMyPhotoManageDelegate {
     func uploadImage(myImage: UIImage) {
-        headImage = myImage
+        let data = UIImageJPEGRepresentation(myImage, 0.3)
+        guard let sdata = data else {
+            return
+        }
+        let resultImage = UIImage(data: sdata)
+        headImage = resultImage
         
         self.iTableView.reloadData()
     }  

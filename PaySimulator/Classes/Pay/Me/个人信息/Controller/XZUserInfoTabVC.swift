@@ -284,7 +284,12 @@ extension XZUserInfoTabVC : UITableViewDelegate,UITableViewDataSource{
 extension XZUserInfoTabVC : XZMyPhotoManageDelegate {
     
     func uploadImage(myImage: UIImage) {
-        iconImage?.image = myImage
+        let data = UIImageJPEGRepresentation(myImage, 0.3)
+        guard let sdata = data else {
+            return
+        }
+        let resultImage = UIImage(data: sdata)
+        iconImage?.image = resultImage
         //取到数据存储
 //        let userInfo = XZUserHelper.sharedUserHelper;
         let imgData = UIImagePNGRepresentation(myImage)

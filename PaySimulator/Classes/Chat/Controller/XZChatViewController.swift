@@ -515,9 +515,15 @@ extension XZChatViewController : XZChatBoxMoreViewDelegate {
 extension XZChatViewController : XZMyPhotoManageDelegate {
     
     func uploadImage(myImage: UIImage) {
+        let data = UIImageJPEGRepresentation(myImage, 0.3)
+        guard let sdata = data else {
+            return
+        }
+        let resultImage = UIImage(data: sdata)
+
         let message : XZMessage = XZMessage()
         message.type = TypePic
-        message.image = myImage
+        message.image = resultImage
         self.senMessage(message: message)
 //        self.sendImageMessage(image: myImage)
     }
