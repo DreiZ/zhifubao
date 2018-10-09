@@ -37,6 +37,7 @@ class XZSeeRedPacketReceiveTabVC: UITableViewController {
         nameLabel.text = self.redPacket?.fromUser?.trueName
         markLabel.text = self.redPacket?.mark
         amountLabel.text = (self.redPacket?.amount ?? "0")
+        amountLabel.font = UIFont(name: "Helvetica Neue", size: 64)
         
         fromHeadImageView.layer.cornerRadius = 34
         fromHeadImageView.layer.masksToBounds = true

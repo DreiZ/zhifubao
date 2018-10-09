@@ -52,6 +52,7 @@ class XZBalanceTabVC: UITableViewController {
         //导航设置
 //        setupNavBar()
         balanceLabel.adjustsFontSizeToFitWidth = true
+        balanceLabel.font = UIFont(name: "Helvetica Neue", size: 64)
     }
 
     @IBAction func todayOnClick(_ sender: Any) {

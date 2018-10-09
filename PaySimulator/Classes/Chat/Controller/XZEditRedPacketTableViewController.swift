@@ -267,8 +267,8 @@ extension XZEditRedPacketTableViewController {
         self.redPacket?.isHeadHadAdd = self.ImageAddSwith.isOn
         if (self.redPacket?.isReceive)! {
             let seeRedPacketTabVC = UIStoryboard(name: "RedPacket", bundle: nil).instantiateViewController(withIdentifier: "XZSeeRedPacketReceiveTabVC") as? XZSeeRedPacketReceiveTabVC
-//            self.redPacket?.amount = self.amountTextFeild.text
-//            self.redPacket?.mark = self.marketTextFeild.text ?? self.marketTextFeild.placeholder
+            self.redPacket?.amount = self.amountTextFeild.text
+            self.redPacket?.mark = self.marketTextFeild.text ?? self.marketTextFeild.placeholder
             seeRedPacketTabVC?.redPacket = self.redPacket
             self.navigationController?.pushViewController(seeRedPacketTabVC!, animated: true)
         
