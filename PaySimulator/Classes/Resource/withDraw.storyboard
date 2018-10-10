@@ -734,7 +734,7 @@
                                         <rect key="frame" x="0.0" y="610" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gsr-vD-VNe" id="0Ec-Xu-d66">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="对此单有疑问" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM9-8R-Xg2">
@@ -747,7 +747,7 @@
                                                     <rect key="frame" x="355" y="20.5" width="6" height="11"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zJN-zr-fw3">
-                                                    <rect key="frame" x="15" y="50.5" width="360" height="0.5"/>
+                                                    <rect key="frame" x="15" y="51" width="360" height="0.5"/>
                                                     <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.5" id="Cwo-LU-pIB"/>
@@ -810,6 +810,7 @@
                         <outlet property="endTimeLabel" destination="IsD-8R-zWb" id="jJW-By-aX7"/>
                         <outlet property="middleTimeLabel" destination="jKL-Vv-alk" id="qeL-OY-r3y"/>
                         <outlet property="orderNoLabel" destination="ApQ-oT-QxT" id="4a1-zH-UKR"/>
+                        <outlet property="processCenterContraint" destination="UWg-JF-CPM" id="ncD-MY-h2s"/>
                         <outlet property="statusLabel" destination="vam-cR-juC" id="hSU-ls-3mD"/>
                         <outlet property="toBankLabel" destination="sS2-xR-WVY" id="LsI-ny-RhB"/>
                         <outlet property="withDrawalDesLabel" destination="KXL-sg-bxs" id="Xck-Sh-fF3"/>

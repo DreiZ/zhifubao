@@ -218,7 +218,7 @@ extension XZEditRedPacketTableViewController  {
     }
     
     func footerView () -> UIView {
-        let footer = UIView(frame: CGRect(x: 0, y: 0, width: kWindowW, height: 70+43))
+        let footer = UIView(frame: CGRect(x: 0, y: 0, width: kWindowW, height: 70+43+100))
         footer.backgroundColor = kChatBackColor
         let showBtn = UIButton()
         showBtn.backgroundColor = kChatMainColor
@@ -234,7 +234,7 @@ extension XZEditRedPacketTableViewController  {
             make.left.equalTo(footer.snp.left).offset(38)
             make.right.equalTo(footer.snp.right).offset(-38)
             make.height.equalTo(43)
-            make.bottom.equalTo(footer.snp.bottom)
+            make.bottom.equalTo(footer.snp.bottom).offset(-150)
         }
         
         return footer

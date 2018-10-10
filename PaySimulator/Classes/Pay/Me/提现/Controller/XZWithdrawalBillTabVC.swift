@@ -11,6 +11,7 @@ import UIKit
 class XZWithdrawalBillTabVC: UITableViewController {
 
     
+    @IBOutlet weak var processCenterContraint: NSLayoutConstraint!
     //MARK:--storyBoard属性
     @IBOutlet weak var bankImageView: UIImageView!
     @IBOutlet weak var bankNameLabel: UILabel!
@@ -57,6 +58,9 @@ class XZWithdrawalBillTabVC: UITableViewController {
         self.orderNoLabel.text = self.withDrawaleModel?.orderNum
         self.statusLabel.text = "交易成功"
 
+        if kWindowW == 320 {
+            processCenterContraint.constant = -35
+        }
 //        @IBOutlet weak var arriveTimeBtn: UIButton!
 //        @IBOutlet weak var arriveTimeLabel: UILabel!
     }

@@ -67,6 +67,11 @@ class XZWithdrawalTabVC: UITableViewController {
            
             //传值
             vc.withDrawaleModel = self.withDrawaleModel
+            
+            let userModel = XZFriendListModel.shareSingleton.getUserModel()
+            userModel?.balance -= Double(self.withDrawaleModel?.money ?? "0") ?? 0.0
+            XZFriendListModel.shareSingleton.addSelfUserModel(userModel!)
+            let _ = XZFriendListModel.shareSingleton.saveSelfToDB()
         }
         
     }
