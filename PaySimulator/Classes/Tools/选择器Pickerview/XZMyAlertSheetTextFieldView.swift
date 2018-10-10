@@ -106,7 +106,8 @@ extension XZMyAlertSheetTextFieldView {
         
         self.addSubview(self.contView)
         self.contView.snp.makeConstraints { (make) in
-            make.center.equalTo(self)
+            make.centerX.equalTo(self.snp.centerX)
+            make.centerY.equalTo(self.snp.centerY).offset(-110)
             make.height.equalTo(200)
             make.width.equalTo(280)
         }
