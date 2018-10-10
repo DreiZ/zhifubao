@@ -256,6 +256,10 @@ extension XZAddressBookVC:UITableViewDataSource,UITableViewDelegate{
             //删除
             let dAction = UITableViewRowAction(style: .default, title: "删除") { (rowAction, indexPath) in
                 let model = self.dataList[indexPath.section-1][indexPath.row]
+                if model.userId == 9999 {
+                    XZPublicTools.shareSingleton.showError(subTitle: "本人账号无法删除")
+                    return
+                }
                 self.dataList[indexPath.section-1].remove(at: indexPath.row)
                 if self.dataList[indexPath.section-1].count == 0 {
                     self.dataList.remove(at: indexPath.section-1)

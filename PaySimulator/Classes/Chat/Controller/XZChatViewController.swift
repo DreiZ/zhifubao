@@ -151,7 +151,6 @@ extension XZChatViewController {
     
 }
 
-
 //MARK : tableview 数据源 & 协议代理
 extension XZChatViewController : UITableViewDataSource, UITableViewDelegate ,UIScrollViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
