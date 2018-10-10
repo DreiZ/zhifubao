@@ -220,11 +220,11 @@ extension XZWithdrawalTabVC {
         self.endTimeBtn.setTitle(self.withDrawaleModel?.endTime?.stringOfDate(formatter: "YYYY-MM-dd HH:mm:ss"), for: .normal)
         
 
-        self.chooseBankBtn.setTitle(self.withDrawaleModel?.bankName, for: .normal)
+        self.chooseBankBtn.setTitle(self.withDrawaleModel?.bankName.count == 0 ? "银行名称" : self.withDrawaleModel?.bankName, for: .normal)
         self.bankNumTF.text = self.withDrawaleModel?.tailNum
         self.cardNameTF.text = self.withDrawaleModel?.cardUserName
         self.drawalMoneyTF.text = self.withDrawaleModel?.money
-        self.bankImageView.image = self.withDrawaleModel?.bankImage
+        self.bankImageView.image = self.withDrawaleModel?.bankImage  == nil ?  UIImage(named: "z_touxiang") : self.withDrawaleModel?.bankImage
         self.orderNumTF.text = self.withDrawaleModel?.orderNum
         
         self.keyboardDissmiss()

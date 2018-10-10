@@ -209,11 +209,11 @@ extension XZEditRedPacketTableViewController  {
             return
         }
         
-        self.sendImageView.image = redBacketModel.fromUser?.headImage
-        self.sendNameLabel.text = redBacketModel.fromUser?.trueName
+        self.sendImageView.image = redBacketModel.fromUser?.headImage == nil ?  UIImage(named: "z_touxiang") : redBacketModel.fromUser?.headImage
+        self.sendNameLabel.text = redBacketModel.fromUser?.trueName == nil ?  "姓名" :  redBacketModel.fromUser?.trueName
         
-        self.receiveImageView.image = redBacketModel.toUser?.headImage
-        self.receiveNameLabel.text = redBacketModel.toUser?.trueName
+        self.receiveImageView.image = redBacketModel.toUser?.headImage == nil ?  UIImage(named: "z_touxiang") : redBacketModel.toUser?.headImage
+        self.receiveNameLabel.text = redBacketModel.toUser?.trueName == nil ?  "姓名" : redBacketModel.toUser?.trueName
         self.sendTimeLabel.text = redBacketModel.time?.shortTimeTextOfDate()
     }
     

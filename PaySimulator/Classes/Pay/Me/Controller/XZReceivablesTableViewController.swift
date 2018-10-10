@@ -245,8 +245,10 @@ extension XZReceivablesTableViewController {
             self.transferTypeLeftBtn.backgroundColor = UIColor.white
         }
         
-        self.nameLabel.text = self.tranferModel?.toUser?.trueName
-        self.toImageView.image = self.tranferModel?.toUser?.headImage
+        self.toImageView.layer.masksToBounds = true
+        
+        self.nameLabel.text = self.tranferModel?.toUser?.trueName == nil ? "姓名" : self.tranferModel?.toUser?.trueName
+            self.toImageView.image = self.tranferModel?.toUser?.headImage == nil ?  UIImage(named: "z_touxiang") : self.tranferModel?.toUser?.headImage
         self.toAliAcountTextField.text = self.tranferModel?.toUser?.aliCount
         self.AmountTextField.text = self.tranferModel?.amount
         self.markTextField.text = self.tranferModel?.mark
