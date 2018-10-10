@@ -24,7 +24,8 @@ class XZAddressBookVC: XZBaseViewController {
     var dataList : [[XZUserModel]] = {
  
         var friendList = XZFriendListModel.shareSingleton.friendList
-        friendList?.removeLast()
+//        移除列表中本人数据
+//        friendList?.removeLast()
  
         let resultArray = XZAddressBookManager.sortObjectsAccordingToInitial(with: friendList);
       
@@ -33,8 +34,9 @@ class XZAddressBookVC: XZBaseViewController {
     }()
     
     override func viewWillAppear(_ animated: Bool) {
-        var friendList = XZFriendListModel.shareSingleton.friendList
-        friendList?.removeLast()
+        let friendList = XZFriendListModel.shareSingleton.friendList
+//        移除列表中本人数
+//        friendList?.removeLast()
         let resultArray = XZAddressBookManager.sortObjectsAccordingToInitial(with: friendList);
         dataList = resultArray as! [[XZUserModel]]
         
@@ -158,7 +160,11 @@ extension XZAddressBookVC:UITableViewDataSource,UITableViewDelegate{
             }
             
             
-            cell?.iconImage.image = model.headImage
+            if model.headImage == nil {
+                cell?.iconImage.image = UIImage(named: "APC_defaultheadicon_1")
+            }else {
+                cell?.iconImage.image = model.headImage
+            }
             
             return cell!
         }
