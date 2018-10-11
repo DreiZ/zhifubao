@@ -22,6 +22,10 @@ class XZMainHomeVC: XZBaseVC {
     }
 
    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     
     //MARK:--storyboard按钮点击事件，按钮tag值已经在xib中添加 顺序 0～5
     @IBAction func clickMainButton(_ sender: XZMainButton) {

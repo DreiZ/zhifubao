@@ -53,17 +53,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="4kT-fy-yc4">
+                        <view key="tableFooterView" contentMode="scaleToFill" id="4kT-fy-yc4">
                             <rect key="frame" x="0.0" y="439" width="375" height="161"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9c-y4-15c">
-                                    <rect key="frame" x="20" y="70" width="335" height="50"/>
+                                    <rect key="frame" x="37.5" y="20" width="300" height="43"/>
                                     <color key="backgroundColor" red="0.0" green="0.70196078431372544" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="214-ih-WWS"/>
+                                        <constraint firstAttribute="height" constant="43" id="214-ih-WWS"/>
+                                        <constraint firstAttribute="width" constant="300" id="svG-5S-oIH"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <state key="normal" title="预览效果">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -74,10 +75,8 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="z9c-y4-15c" secondAttribute="trailing" constant="20" id="mxR-I9-uhm"/>
                                 <constraint firstItem="z9c-y4-15c" firstAttribute="centerX" secondItem="4kT-fy-yc4" secondAttribute="centerX" id="rBo-iU-fKD"/>
-                                <constraint firstItem="z9c-y4-15c" firstAttribute="leading" secondItem="4kT-fy-yc4" secondAttribute="leading" constant="20" id="u2j-fJ-Uca"/>
-                                <constraint firstItem="z9c-y4-15c" firstAttribute="top" secondItem="4kT-fy-yc4" secondAttribute="top" constant="70" id="xjo-nZ-Vja"/>
+                                <constraint firstItem="z9c-y4-15c" firstAttribute="top" secondItem="4kT-fy-yc4" secondAttribute="top" constant="20" id="xjo-nZ-Vja"/>
                             </constraints>
                         </view>
                         <sections>

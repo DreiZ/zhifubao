@@ -73,6 +73,10 @@ class XZBaseViewController: UIViewController {
         navBar.onClickLeftButton = {() in
             self.leftBtnOnClick()
         }
+        
+        navBar.onClickRightTwoButton = {() in
+            self.rightBtnTwoOnClick()
+        }
     }
     
     @objc fileprivate func back()
@@ -84,6 +88,10 @@ class XZBaseViewController: UIViewController {
 
 extension XZBaseViewController {
     @objc func rightBtnOnClick() {
+        
+    }
+    
+    @objc func rightBtnTwoOnClick() {
         
     }
     

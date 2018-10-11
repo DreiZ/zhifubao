@@ -93,11 +93,11 @@ class XZEditRedPacketTableViewController: UITableViewController {
         self.redPacket?.isReceive = false
         
         guard let redBacketModel = self.redPacket else {
-            self.sendImageView.image = from?.headImage
-            self.sendNameLabel.text = from?.trueName
+            self.sendImageView.image = from?.headImage == nil ?  UIImage(named: "z_touxiang") : from?.headImage
+            self.sendNameLabel.text = from?.trueName == nil ?  "姓名" : from?.trueName
             
-            self.receiveImageView.image = to?.headImage
-            self.receiveNameLabel.text = to?.trueName
+            self.receiveImageView.image = to?.headImage  == nil ?  UIImage(named: "z_touxiang") : to?.headImage
+            self.receiveNameLabel.text = to?.trueName == nil ?  "姓名" : to?.trueName
             return
         }
         self.sendImageView.image = redBacketModel.toUser?.headImage
@@ -231,10 +231,10 @@ extension XZEditRedPacketTableViewController  {
         footer.addSubview(showBtn)
         
         showBtn.snp.makeConstraints { (make ) in
-            make.left.equalTo(footer.snp.left).offset(38)
-            make.right.equalTo(footer.snp.right).offset(-38)
+            make.centerX.equalTo(footer.snp.centerX)
+            make.width.equalTo(300)
             make.height.equalTo(43)
-            make.bottom.equalTo(footer.snp.bottom).offset(-150)
+            make.top.equalTo(footer.snp.top).offset(10)
         }
         
         return footer

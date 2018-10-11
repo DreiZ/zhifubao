@@ -35,7 +35,7 @@ class XZWithdrawalTabVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        previewBtn.layer.cornerRadius = 2;
+        previewBtn.layer.cornerRadius = 4;
         previewBtn.layer.masksToBounds = true
         
         self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.onDrag

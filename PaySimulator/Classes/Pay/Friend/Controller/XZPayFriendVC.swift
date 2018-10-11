@@ -73,6 +73,16 @@ class XZPayFriendVC: XZBaseViewController {
         return .lightContent
     }
     
+    
+    override func rightBtnOnClick() {
+        self.clickAddBtn()
+    }
+    
+    override func rightBtnTwoOnClick() {
+        self.clickFriendBtn()
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
