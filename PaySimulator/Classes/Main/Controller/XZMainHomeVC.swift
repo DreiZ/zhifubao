@@ -13,6 +13,8 @@ class XZMainHomeVC: XZBaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        self.navBar.title = "首页"
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.view.backgroundColor = UIColor.init(red: 242.0/255.0, green: 242.0/255.0, blue: 242.0/255.0, alpha: 1)
         
         let isFirst = UserDefaults.standard.bool(forKey: "kIsFirstLoad")
@@ -27,6 +29,11 @@ class XZMainHomeVC: XZBaseVC {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     //MARK:--storyboard按钮点击事件，按钮tag值已经在xib中添加 顺序 0～5
     @IBAction func clickMainButton(_ sender: XZMainButton) {
        
@@ -34,10 +41,10 @@ class XZMainHomeVC: XZBaseVC {
         case 0://支付宝模拟器
             
             let tabBarVC = XZPayMainTabBarVC();
-            let  keyWindow = UIApplication.shared.keyWindow;
-            keyWindow?.rootViewController = tabBarVC;
-            
-//            self.navigationController?.pushViewController(tabBarVC, animated: false);
+//            let  keyWindow = UIApplication.shared.keyWindow;
+//            keyWindow?.rootViewController = tabBarVC;
+            tabBarVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(tabBarVC, animated: false);
             break
         case 1://转账
             let transfervc = UIStoryboard(name: "Bill", bundle: nil).instantiateViewController(withIdentifier: "XZReceivablesViewController") as? XZReceivablesViewController

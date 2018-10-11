@@ -120,7 +120,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Jp-md-Uib">
-                                            <rect key="frame" x="191" y="47.5" width="9" height="9"/>
+                                            <rect key="frame" x="200" y="47.5" width="9" height="9"/>
                                             <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="9" id="my6-om-FIx"/>
@@ -143,7 +143,7 @@
                                         <constraint firstItem="b43-L5-vhg" firstAttribute="width" secondItem="ed5-94-nBd" secondAttribute="width" id="7oV-w1-hmj"/>
                                         <constraint firstItem="Eul-49-ihg" firstAttribute="top" secondItem="vya-mU-8Uy" secondAttribute="top" id="AmW-GT-clI"/>
                                         <constraint firstItem="w5l-zn-dZ7" firstAttribute="top" secondItem="ARz-48-60X" secondAttribute="top" constant="-4.5" id="CTU-Ko-Up5"/>
-                                        <constraint firstItem="2Jp-md-Uib" firstAttribute="trailing" secondItem="1lT-JI-sUo" secondAttribute="trailing" constant="-4.5" id="DRn-yk-0hd"/>
+                                        <constraint firstItem="2Jp-md-Uib" firstAttribute="trailing" secondItem="1lT-JI-sUo" secondAttribute="trailing" constant="4.5" id="DRn-yk-0hd"/>
                                         <constraint firstItem="WLZ-SE-G7V" firstAttribute="top" secondItem="Ufi-iB-L4L" secondAttribute="top" constant="8" id="FmE-3n-mJv"/>
                                         <constraint firstItem="tIb-5C-Pir" firstAttribute="top" secondItem="WLZ-SE-G7V" secondAttribute="bottom" constant="18" id="GsK-Oi-8aC"/>
                                         <constraint firstItem="tIb-5C-Pir" firstAttribute="trailing" secondItem="A4d-dc-ehN" secondAttribute="trailing" constant="-4.5" id="LBa-XD-aMB"/>

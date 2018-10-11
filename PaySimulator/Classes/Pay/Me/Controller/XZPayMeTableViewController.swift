@@ -16,11 +16,14 @@ class XZPayMeTableViewController: UITableViewController {
     //MARK:--定义闭包（按钮点击事件，传到控制器中）
     var clickHeaderRightBlock : ((_ sender:UIButton) ->())?
     //Xib属性
+    @IBOutlet weak var acountbackView: UIView!
     @IBOutlet weak var iconImage: UIImageView!//头像
     @IBOutlet weak var starsImage: UIImageView!//会员等级
     @IBOutlet weak var nameLabel: UILabel!//用户名
     @IBOutlet weak var accountLabel: UILabel!//账号
+    @IBOutlet weak var redHint: UIView!
     
+    @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var headerView: UIView!
     @IBAction func clickRightButton(_ sender: UIButton) {//点击个人信息查看详情
         
@@ -40,12 +43,31 @@ class XZPayMeTableViewController: UITableViewController {
         //设置table下拉蓝色背景
         addBluebackGroundView()
         self.headerView.backgroundColor = ddBlueColor()
+        
  
+        redHint.layer.masksToBounds = true
+        redHint.layer.cornerRadius = 4
+        
         iconImage.layer.masksToBounds = true
         iconImage.layer.cornerRadius = 3
-        iconImage.layer.borderColor = UIColor(red: 102.0/255.0, green: 167.0/255.0, blue: 223.0/255.0, alpha: 1).cgColor
+//        iconImage.layer.borderColor = UIColor(red: 102.0/255.0, green: 167.0/255.0, blue: 223.0/255.0, alpha: 1).cgColor
         iconImage.layer.borderWidth = 1
+        
+        acountbackView.layer.masksToBounds = true
+        acountbackView.layer.cornerRadius = 10
+        acountbackView.layer.borderWidth = 1
+        acountbackView.backgroundColor = UIColor(red: 44.0/255.0, green: 135.0/255.0, blue: 214.0/255.0, alpha: 1)
+        acountbackView.layer.borderColor = UIColor(red: 70.0/255.0, green: 159.0/255.0, blue: 231.0/255.0, alpha: 1).cgColor
+        
+        acountbackView.snp.makeConstraints { (make ) in
+            make.center.equalTo(self.accountLabel)
+            make.left.equalTo(self.accountLabel.snp.left).offset(-7)
+            make.right.equalTo(self.accountLabel.snp.right).offset(7)
+            make.height.equalTo(20)
+        }
     }
+    
+
  
     override func viewWillAppear(_ animated: Bool) {
         
@@ -79,6 +101,7 @@ extension XZPayMeTableViewController{
             self.nameLabel.text = "";
         }
         
+        amountLabel.text = String(format: "%.2f元", self.userModel?.balance ?? 0.00)
         //账号
         if let payAccount = userModel?.aliCount {
             if isPhoneNumber(phoneNumber: payAccount){//手机号
@@ -134,7 +157,10 @@ extension XZPayMeTableViewController{
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return nil
+        if section == 0 {
+            return nil
+        }
+        return UIView()
     }
 
     

@@ -67,6 +67,17 @@ class XZPayFriendVC: XZBaseViewController {
         self.lifeDesLabel.text = XZChatListModel.shareSingleton.lifeDes ?? "简单生活更多优惠"
         self.smallProjectDesLabel.text = XZChatListModel.shareSingleton.smallProjectDes ?? "发现更多服务"
         self.lifeCLabel.text = XZChatListModel.shareSingleton.lifeCircleDes ?? "你有朋友更新动态"
+        if XZChatListModel.shareSingleton.lifeDes?.count == 0 {
+            self.lifeDesLabel.text = "简单生活更多优惠"
+        }
+        
+        if XZChatListModel.shareSingleton.smallProjectDes?.count == 0 {
+            self.smallProjectDesLabel.text = "发现更多服务"
+        }
+        
+        if XZChatListModel.shareSingleton.lifeCircleDes?.count == 0 {
+            self.lifeCLabel.text = "你有朋友更新动态"
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{

@@ -12,7 +12,9 @@ class XZPayMainTabBarVC: UITabBarController,UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tabBar.backgroundColor = UIColor.white
+        self.tabBar.alpha = 1
+        self.tabBar.isTranslucent = false
         self.delegate = self;
         // Do any additional setup after loading the view.
         addChileVc(storyName: "PayHome", "主页", "icon_shouye", "icon_shouye1")
@@ -22,6 +24,7 @@ class XZPayMainTabBarVC: UITabBarController,UITabBarControllerDelegate {
         addChileVc(storyName: "PayMe", "我的", "pay_icon_wode", "pay_icon_wode1")
         //默认点击我的控制器
         selectedIndex = 4;
+        
     }
 
     
@@ -33,6 +36,7 @@ class XZPayMainTabBarVC: UITabBarController,UITabBarControllerDelegate {
         childVC.tabBarItem.title = title
         childVC.tabBarItem.image = UIImage(named: imgName)
         childVC.tabBarItem.selectedImage = UIImage(named: selectImgName)
+        childVC.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -4)
         //将VC添加进来
         addChildViewController(childVC);
         

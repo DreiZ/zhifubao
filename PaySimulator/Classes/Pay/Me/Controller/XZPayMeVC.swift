@@ -25,8 +25,10 @@ class XZPayMeVC: XZBaseViewController {
 //        let navView = XZPayMeNavView.loadNavView()
 //        navView.frame = CGRect(x: 0, y: 0, width: kWindowW, height: DDSafeAreaTopHeight)
 //        self.view.addSubview(navView)
+      
     }
-
+    
+  
    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
