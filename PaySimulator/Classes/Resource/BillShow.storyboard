@@ -304,23 +304,27 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lrw-zR-bzf">
-                                                    <rect key="frame" x="15" y="8.5" width="43" height="17"/>
+                                                    <rect key="frame" x="15" y="8.5" width="45" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="mv9-Ze-kbp"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.59607843140000005" green="0.59607843140000005" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="201809012324234234523523242" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXX-zh-Vp5">
-                                                    <rect key="frame" x="133.5" y="8.5" width="226.5" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="201809012324234234523523242" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXX-zh-Vp5">
+                                                    <rect key="frame" x="80" y="8.5" width="280" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="ZXX-zh-Vp5" firstAttribute="leading" secondItem="Lrw-zR-bzf" secondAttribute="trailing" constant="20" id="1Q7-om-i5X"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZXX-zh-Vp5" secondAttribute="trailing" constant="15" id="61J-hl-CWR"/>
                                                 <constraint firstItem="Lrw-zR-bzf" firstAttribute="leading" secondItem="2RD-cB-ncA" secondAttribute="leading" constant="15" id="H2M-SZ-gRG"/>
-                                                <constraint firstItem="Lrw-zR-bzf" firstAttribute="centerY" secondItem="2RD-cB-ncA" secondAttribute="centerY" id="Rj8-k4-uBA"/>
-                                                <constraint firstItem="ZXX-zh-Vp5" firstAttribute="centerY" secondItem="2RD-cB-ncA" secondAttribute="centerY" id="VWI-7p-uKE"/>
+                                                <constraint firstItem="Lrw-zR-bzf" firstAttribute="top" secondItem="2RD-cB-ncA" secondAttribute="top" constant="8.5" id="S4n-cJ-4MP"/>
+                                                <constraint firstItem="ZXX-zh-Vp5" firstAttribute="top" secondItem="2RD-cB-ncA" secondAttribute="top" constant="8.5" id="bLT-ds-MtC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -484,6 +488,7 @@
                         <outlet property="createTimeLabel" destination="5aL-ok-Ids" id="WFl-fm-ofX"/>
                         <outlet property="electronicReturnCell" destination="vgr-Y8-gso" id="Top-eN-Jmw"/>
                         <outlet property="firstTitleLabel" destination="Peb-sx-o9B" id="XgT-vX-6VL"/>
+                        <outlet property="noCell" destination="aqB-TC-eDz" id="bFo-m7-4vh"/>
                         <outlet property="orderNoLabel" destination="ZXX-zh-Vp5" id="l2S-LU-rKG"/>
                         <outlet property="receiveReasonLabel" destination="ehJ-06-QjO" id="sFe-De-Btz"/>
                         <outlet property="receiveTypeLabel" destination="7X8-qn-oEG" id="6WP-xY-6pW"/>

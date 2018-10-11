@@ -33,6 +33,8 @@ class XZBillTableViewController: UITableViewController {
     @IBOutlet weak var electronicReturnCell: UITableViewCell!
     @IBOutlet weak var billHistoryCell: UITableViewCell!
     
+    @IBOutlet weak var noCell: UITableViewCell!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -76,6 +78,12 @@ class XZBillTableViewController: UITableViewController {
                 return 125
             }else if indexPath.row == 5 || indexPath.row == 8 {
                 return 13
+            }else if indexPath.row == 7 {
+                let size = self.size(message: self.tranferModel?.billNo ?? "", maxWidth: kWindowW - 98, font: UIFont.systemFont(ofSize: 14))
+                if size.height <= 14 {
+                    return 34
+                }
+                return size.height + 18
             }
             return 34
         }else if indexPath.section == 1 {
@@ -96,5 +104,20 @@ class XZBillTableViewController: UITableViewController {
 extension XZBillTableViewController {
     func resetData () {
         self.tableView.reloadData()
+    }
+    
+    func size(message : String,  maxWidth : CGFloat, font : UIFont) -> CGSize {
+        let maxSize : CGSize = CGSize(width: maxWidth, height: CGFloat(MAXFLOAT))
+        
+        let paragraphStyle : NSMutableParagraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = MessageLineSpacing
+        
+        //        attributeStr.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributeStr.length))
+        
+        let dict : Dictionary = [NSAttributedStringKey.font : font, NSAttributedStringKey.paragraphStyle : paragraphStyle]
+        let option = NSStringDrawingOptions.usesLineFragmentOrigin
+        let rect = message.boundingRect(with: maxSize, options: option, attributes: dict, context: nil)
+        
+        return CGSize(width: rect.size.width, height: rect.size.height)
     }
 }
