@@ -68,18 +68,18 @@ class XZEditRedPacketTableViewController: UITableViewController {
         
         
         guard let redBacketModel = self.redPacket else {
-            self.sendImageView.image = to?.headImage
-            self.sendNameLabel.text = to?.trueName
+            self.sendImageView.image = to?.headImage == nil ?  UIImage(named: "z_touxiang") : to?.headImage
+            self.sendNameLabel.text = to?.trueName == nil ?  "姓名" : to?.trueName
             
-            self.receiveImageView.image = from?.headImage
-            self.receiveNameLabel.text = from?.trueName
+            self.receiveImageView.image = from?.headImage == nil ?  UIImage(named: "z_touxiang") : from?.headImage
+            self.receiveNameLabel.text = from?.trueName == nil ?  "姓名" : from?.trueName
             return
         }
-        self.sendImageView.image = redBacketModel.toUser?.headImage
-        self.sendNameLabel.text = redBacketModel.toUser?.trueName
+        self.sendImageView.image = redBacketModel.toUser?.headImage == nil ?  UIImage(named: "z_touxiang") : redBacketModel.toUser?.headImage
+        self.sendNameLabel.text = redBacketModel.toUser?.trueName == nil ?  "姓名" : redBacketModel.toUser?.trueName
         
-        self.receiveImageView.image = redBacketModel.fromUser?.headImage
-        self.receiveNameLabel.text = redBacketModel.fromUser?.trueName
+        self.receiveImageView.image = redBacketModel.fromUser?.headImage == nil ?  UIImage(named: "z_touxiang") : redBacketModel.fromUser?.headImage
+        self.receiveNameLabel.text = redBacketModel.fromUser?.trueName == nil ?  "姓名" : redBacketModel.fromUser?.trueName
         
         let tempUser = redBacketModel.toUser
         redBacketModel.toUser = redBacketModel.fromUser
@@ -100,12 +100,14 @@ class XZEditRedPacketTableViewController: UITableViewController {
             self.receiveNameLabel.text = to?.trueName == nil ?  "姓名" : to?.trueName
             return
         }
-        self.sendImageView.image = redBacketModel.toUser?.headImage
-        self.sendNameLabel.text = redBacketModel.toUser?.trueName
+        self.sendImageView.image = redBacketModel.toUser?.headImage  == nil ?  UIImage(named: "z_touxiang") : redBacketModel.toUser?.headImage
+        self.sendNameLabel.text = redBacketModel.toUser?.trueName == nil ?  "姓名" : redBacketModel.toUser?.trueName
         
-        self.receiveImageView.image = redBacketModel.fromUser?.headImage
-        self.receiveNameLabel.text = redBacketModel.fromUser?.trueName
+        self.receiveImageView.image = redBacketModel.fromUser?.headImage  == nil ?  UIImage(named: "z_touxiang") : redBacketModel.fromUser?.headImage
+        self.receiveNameLabel.text = redBacketModel.fromUser?.trueName == nil ?  "姓名" : redBacketModel.fromUser?.trueName
+        
         let tempUser = redBacketModel.toUser
+        
         redBacketModel.toUser = redBacketModel.fromUser
         redBacketModel.fromUser = tempUser
     }
