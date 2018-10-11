@@ -63,6 +63,10 @@ class XZReceivablesTableViewController: UITableViewController {
         self.tableView.endEditing(true)
         if indexPath.section == 1 {
             if indexPath.row == 0 {
+                if self.tranferModel?.toUser == nil {
+                    XZPublicTools.shareSingleton.showError(subTitle: "请先选择交易对象，再选择交易对象的会员等级")
+                    return
+                }
                 self.dataAlert.title = "选择会员等级"
                 self.dataAlert.setDataArr(dataArr: gradeArr)
                 dataAlert.selectBlock = {(_ selectedIndex : Int) in
