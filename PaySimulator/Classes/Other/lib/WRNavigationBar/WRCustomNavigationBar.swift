@@ -71,6 +71,8 @@ class WRCustomNavigationBar: UIView
 {
     var onClickLeftButton:(()->())?
     var onClickRightButton:(()->())?
+    var onClickRightTwoButton:(()->())?
+    
     var title:String? {
         willSet {
             titleLabel.isHidden = false
@@ -130,6 +132,15 @@ class WRCustomNavigationBar: UIView
         return button
     }()
     
+    fileprivate lazy var rightTwoButton:UIButton = {
+        let button = UIButton()
+        button.imageView?.contentMode = .center
+        button.isHidden = true
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        button.addTarget(self, action: #selector(clickRight), for: .touchUpInside)
+        return button
+    }()
+    
     fileprivate lazy var bottomLine:UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.clear
@@ -180,6 +191,7 @@ class WRCustomNavigationBar: UIView
         addSubview(leftButton)
         addSubview(titleLabel)
         addSubview(rightButton)
+        addSubview(rightTwoButton)
         addSubview(bottomLine)
         updateFrame()
         backgroundColor = UIColor.clear
@@ -197,7 +209,8 @@ class WRCustomNavigationBar: UIView
         backgroundView.frame = self.bounds
         backgroundImageView.frame = self.bounds
         leftButton.frame = CGRect(x: margin, y: top, width: buttonWidth, height: buttonHeight)
-        rightButton.frame = CGRect(x: WRScreenWidth-buttonWidth-5, y: top, width: buttonWidth, height: buttonHeight)
+        rightButton.frame = CGRect(x: WRScreenWidth-buttonWidth, y: top, width: buttonWidth, height: buttonHeight)
+        rightTwoButton.frame = CGRect(x: WRScreenWidth-45*2-6, y: top, width: 50, height: buttonHeight)
         titleLabel.frame = CGRect(x: (WRScreenWidth-titleLabelWidth)/2.0, y: top, width: titleLabelWidth, height: titleLabelHeight)
         bottomLine.frame = CGRect(x: 0, y: bounds.height-0.5, width: WRScreenWidth, height: 0.5)
     }
@@ -244,6 +257,16 @@ extension WRCustomNavigationBar
         wr_setRightButton(normal: nil, highlighted: nil, title: title, titleColor: titleColor)
     }
     
+    func wr_setRightTwoButton(normal:UIImage, highlighted:UIImage) {
+        wr_setRightTwoButton(normal: normal, highlighted: highlighted, title: nil, titleColor: nil)
+    }
+    func wr_setRightTwoButton(image:UIImage) {
+        wr_setRightTwoButton(normal: image, highlighted: image, title: nil, titleColor: nil)
+    }
+    func wr_setRightTwoButton(title:String, titleColor:UIColor) {
+        wr_setRightTwoButton(normal: nil, highlighted: nil, title: title, titleColor: titleColor)
+    }
+    
     
     
     // 左右按钮私有方法
@@ -269,6 +292,13 @@ extension WRCustomNavigationBar
         rightButton.setTitle(title, for: .normal)
         rightButton.setTitleColor(titleColor, for: .normal)
     }
+    private func wr_setRightTwoButton(normal:UIImage?, highlighted:UIImage?, title:String?, titleColor:UIColor?) {
+        rightTwoButton.isHidden = false
+        rightTwoButton.setImage(normal, for: .normal)
+        rightTwoButton.setImage(highlighted, for: .highlighted)
+        rightTwoButton.setTitle(title, for: .normal)
+        rightTwoButton.setTitleColor(titleColor, for: .normal)
+    }
 }
 
 
@@ -285,6 +315,11 @@ extension WRCustomNavigationBar
     }
     @objc func clickRight() {
         if let onClickRight = onClickRightButton {
+            onClickRight()
+        }
+    }
+    @objc func clickTwoRight() {
+        if let onClickRight = onClickRightTwoButton {
             onClickRight()
         }
     }

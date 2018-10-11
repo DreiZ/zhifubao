@@ -38,6 +38,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ABQ-5Z-aq3"/>
+                    <connections>
+                        <outlet property="topConstraint" destination="BaD-R3-oLO" id="ydh-OO-2rE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WrW-te-Bnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

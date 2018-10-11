@@ -13,7 +13,14 @@ class XZBalanceVC: XZBaseViewController {
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        super.viewWillAppear(animated)
+        //         IQKeyboardManager.sharedManager().enable = false
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
     override func viewDidLoad() {

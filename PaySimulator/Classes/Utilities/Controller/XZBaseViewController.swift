@@ -18,7 +18,7 @@ class XZBaseViewController: UIViewController {
         // 下面两种方法其实有点区别的，有空可以琢磨一下
         if animated {
             // 隐藏导航栏有动画
-            self.navigationController?.setNavigationBarHidden(true, animated: true)
+            self.navigationController?.setNavigationBarHidden(true, animated: animated)
         } else {
             // 隐藏导航栏没有动画
             self.navigationController?.isNavigationBarHidden = true
@@ -26,19 +26,19 @@ class XZBaseViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        if animated {
-            // 隐藏导航栏有动画
-            self.navigationController?.setNavigationBarHidden(false, animated: true)
-        } else {
-            // 隐藏导航栏没有动画
-            self.navigationController?.isNavigationBarHidden = false
-        }
+//        if animated {
+//            // 隐藏导航栏有动画
+//            self.navigationController?.setNavigationBarHidden(false, animated: animated)
+//        } else {
+//            // 隐藏导航栏没有动画
+//            self.navigationController?.isNavigationBarHidden = false
+//        }
     }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = true
+//        navigationController?.navigationBar.isHidden = true
         automaticallyAdjustsScrollViewInsets = false
         setupNavBar()
         
@@ -48,7 +48,7 @@ class XZBaseViewController: UIViewController {
     {
 //        navBar.dd_y = -DDSafeAreaTopHeight
         view.addSubview(navBar)
-        
+        view.clipsToBounds = true
         // 设置自定义导航栏背景图片
 //        navBar.barBackgroundImage = UIImage(named: "millcolorGrad")
         

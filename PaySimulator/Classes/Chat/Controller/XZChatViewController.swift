@@ -104,12 +104,12 @@ class XZChatViewController: XZBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 //         IQKeyboardManager.sharedManager().enable = false
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.saveHistoryData()
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+//        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

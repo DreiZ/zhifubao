@@ -8,7 +8,7 @@
 
 import UIKit
 
-class XZPayFriendVC: XZBaseVC {
+class XZPayFriendVC: XZBaseViewController {
 
     
     var isEditMessage : Bool = false
@@ -25,6 +25,8 @@ class XZPayFriendVC: XZBaseVC {
     @IBOutlet weak var smallProjectNoReadView: UIView!
     @IBOutlet weak var lifeCNoReadView: UIView!
     
+    var navController : UINavigationController?
+    
     
     var dataList : [XZChatModel] = {
         
@@ -34,6 +36,10 @@ class XZPayFriendVC: XZBaseVC {
     }()
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        
         if !isEditMessage {
             
             let friendList = XZChatListModel.shareSingleton.chatList
@@ -63,9 +69,14 @@ class XZPayFriendVC: XZBaseVC {
         self.lifeCLabel.text = XZChatListModel.shareSingleton.lifeCircleDes ?? "你有朋友更新动态"
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+         self.navigationController?.setNavigationBarHidden(true, animated: false)
         setupNavigationUI()//设置导航栏 相关方法
         setupUI()
     }
@@ -74,20 +85,29 @@ class XZPayFriendVC: XZBaseVC {
 //MARK:-- 有关UI设置的所有方法
 extension XZPayFriendVC{
     
+    
     //导航栏 设置
     private func setupNavigationUI(){
+        self.view.backgroundColor = kChatBackColor
         
-        navigationItem.title = "朋友"
-        navBarTintColor = UIColor.white
-        navBarBarTintColor = ddBlueColor()
-        navBarTitleColor = UIColor.white
-        let addBtn = XZBaseNavItemBtn(frame: CGRect(x: 0, y: 0, width: 20, height: 20), imgName: "icon_tianjiaw", titleName: "")
-        addBtn.addTarget(self, action: #selector(clickAddBtn), for: .touchUpInside)
-        let firendBtn = XZBaseNavItemBtn(frame: CGRect.zero, imgName: "icon_tongxunlu", titleName: "")
-        firendBtn.addTarget(self, action: #selector(clickFriendBtn), for: .touchUpInside)
-        let firstBar = UIBarButtonItem(customView: addBtn)
-        let secondBar = UIBarButtonItem(customView: firendBtn)
-        navigationItem.rightBarButtonItems = [firstBar,secondBar]
+        self.navBar.title = "朋友"
+        self.navBar.titleLabelColor = UIColor.white
+        self.navBar.titleLabelFont = UIFont.boldSystemFont(ofSize: 18)
+        self.navBar.barBackgroundColor = ddBlueColor()
+        
+        self.navBar.wr_setRightButton(image: UIImage(named: "icon_tianjiaw")!)
+        self.navBar.wr_setRightTwoButton(image: UIImage(named: "icon_tongxunlu")!)
+//        navigationItem.title = "朋友"
+//        navBarTintColor = UIColor.white
+//        navBarBarTintColor = ddBlueColor()
+//        navBarTitleColor = UIColor.white
+//        let addBtn = XZBaseNavItemBtn(frame: CGRect(x: 0, y: 0, width: 20, height: 20), imgName: "icon_tianjiaw", titleName: "")
+//        addBtn.addTarget(self, action: #selector(clickAddBtn), for: .touchUpInside)
+//        let firendBtn = XZBaseNavItemBtn(frame: CGRect.zero, imgName: "icon_tongxunlu", titleName: "")
+//        firendBtn.addTarget(self, action: #selector(clickFriendBtn), for: .touchUpInside)
+//        let firstBar = UIBarButtonItem(customView: addBtn)
+//        let secondBar = UIBarButtonItem(customView: firendBtn)
+//        navigationItem.rightBarButtonItems = [firstBar,secondBar]
         
         
         self.myTableView.separatorStyle = .none
@@ -95,7 +115,7 @@ extension XZPayFriendVC{
     
     func setupUI () {
         
-        topCinstraint.constant = 0
+        topCinstraint.constant = DDSafeAreaTopHeight - (DDSafeAreaTopHeight-44)
         self.lifeNoReadView.layer.masksToBounds = true
         self.lifeNoReadView.layer.cornerRadius = 4.5
         
