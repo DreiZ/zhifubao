@@ -151,7 +151,7 @@ extension XZChatBoxMoreView {
     func getLabel (title : String) -> UILabel {
         let label = UILabel()
         label.text = title
-        label.textColor = UIColor.black
+        label.textColor = UIColor(red: 133.0/255.0, green: 133.0/255.0, blue: 133.0/255.0, alpha: 1)
         label.font = UIFont.systemFont(ofSize: 12)
         label.textAlignment = .center
         
