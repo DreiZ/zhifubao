@@ -88,7 +88,7 @@ func ddRandomColor() -> UIColor {
 /**支付宝蓝色主题*/
 func ddBlueColor () -> UIColor{
     
-    return ddColor( 29.0, 151.0, 235.0);
+    return ddColor( 27.0, 130.0, 209.0);
  
 }
 

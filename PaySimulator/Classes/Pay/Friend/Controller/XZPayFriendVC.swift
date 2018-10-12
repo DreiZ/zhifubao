@@ -118,6 +118,52 @@ extension XZPayFriendVC{
         
         self.navBar.wr_setRightButton(image: UIImage(named: "icon_tianjiaw")!)
         self.navBar.wr_setRightTwoButton(image: UIImage(named: "icon_tongxunlu")!)
+        
+        if kWindowW == 320 {
+            self.navBar.isHidden = true
+            let navView = UIView(frame: CGRect(x: 0, y: 0, width: kWindowW, height: 54))
+            navView.backgroundColor = ddBlueColor()
+            self.view.addSubview(navView)
+            
+            let label = UILabel()
+             label.textColor = UIColor.white
+            label.font = UIFont.systemFont(ofSize: 15)
+            label.textAlignment = .center
+            navView.addSubview(label)
+            label.text = "朋友"
+            
+            let button = UIButton()
+            button.imageView?.contentMode = .center
+            button.isHidden = false
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+            button.addTarget(self, action: #selector(rightBtnOnClick), for: .touchUpInside)
+            navView.addSubview(button)
+            button.setImage(UIImage(named: "icon_tianjiaw")!, for: .normal)
+            
+            let button1 = UIButton()
+            button1.imageView?.contentMode = .center
+            button1.isHidden = false
+            button1.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+            button1.addTarget(self, action: #selector(rightBtnTwoOnClick), for: .touchUpInside)
+            navView.addSubview(button1)
+            button1.setImage(UIImage(named: "icon_tongxunlu")!, for: .normal)
+            
+            let top:CGFloat =  14
+            let buttonHeight:CGFloat = 44
+            let buttonWidth:CGFloat = 50
+            let titleLabelHeight:CGFloat = 44
+            let titleLabelWidth:CGFloat = 180
+            
+
+           
+            button.frame = CGRect(x: kWindowW-buttonWidth, y: top, width: buttonWidth, height: buttonHeight)
+            button1.frame = CGRect(x: kWindowW-45*2+4, y: top, width: 50, height: buttonHeight)
+            label.frame = CGRect(x: (kWindowW-titleLabelWidth)/2.0, y: top, width: titleLabelWidth, height: titleLabelHeight)
+            
+            topCinstraint.constant = 34
+        }
+        
+        
 //        navigationItem.title = "朋友"
 //        navBarTintColor = UIColor.white
 //        navBarBarTintColor = ddBlueColor()
@@ -136,7 +182,12 @@ extension XZPayFriendVC{
     
     func setupUI () {
         
-        topCinstraint.constant = DDSafeAreaTopHeight - (DDSafeAreaTopHeight-44)
+        if kWindowW == 320 {
+            topCinstraint.constant = 34
+        }else {
+            topCinstraint.constant = DDSafeAreaTopHeight - (DDSafeAreaTopHeight-44)
+        }
+        
         self.lifeNoReadView.layer.masksToBounds = true
         self.lifeNoReadView.layer.cornerRadius = 4.5
         
@@ -191,6 +242,9 @@ extension XZPayFriendVC:UITableViewDelegate,UITableViewDataSource{
         let chatModel = dataList[indexPath.row]
         cell.iconImg.image = chatModel.toModel?.headImage
         cell.titleLabel.text = chatModel.toModel?.nickName
+        if kWindowW == 320 {
+            cell.titleLabel.font = UIFont.systemFont(ofSize: 15)
+        }
         
         var subTitle = "新的朋友"
         var time = Date().shortTimeTextOfDate()

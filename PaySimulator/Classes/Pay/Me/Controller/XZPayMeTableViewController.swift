@@ -13,6 +13,7 @@ class XZPayMeTableViewController: UITableViewController {
     
     var userModel : XZUserModel?
 
+    @IBOutlet weak var headView: UIView!
     //MARK:--定义闭包（按钮点击事件，传到控制器中）
     var clickHeaderRightBlock : ((_ sender:UIButton) ->())?
     //Xib属性
@@ -25,6 +26,25 @@ class XZPayMeTableViewController: UITableViewController {
     
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var headerView: UIView!
+    
+    @IBOutlet weak var titleLabel1: UILabel!
+    @IBOutlet weak var titleLabel2: UILabel!
+    @IBOutlet weak var titleLabel3: UILabel!
+    @IBOutlet weak var titleLabel4: UILabel!
+    @IBOutlet weak var titleLabel5: UILabel!
+    @IBOutlet weak var titleLabel6: UILabel!
+    @IBOutlet weak var titleLabel7: UILabel!
+    @IBOutlet weak var titleLabel8: UILabel!
+    @IBOutlet weak var titleLabel9: UILabel!
+    @IBOutlet weak var titleLabel10: UILabel!
+    @IBOutlet weak var titleLabel11: UILabel!
+    @IBOutlet weak var titleLabel12: UILabel!
+    @IBOutlet weak var titleLabel13: UILabel!
+    @IBOutlet weak var titleLabel14: UILabel!
+    @IBOutlet weak var rightHintLabel1: UILabel!
+    @IBOutlet weak var rightHintLabel2: UILabel!
+    
+    
     @IBAction func clickRightButton(_ sender: UIButton) {//点击个人信息查看详情
         
         let  meUserInfoVC = XZUserInfoTabVC()
@@ -46,24 +66,49 @@ class XZPayMeTableViewController: UITableViewController {
         
  
         redHint.layer.masksToBounds = true
-        redHint.layer.cornerRadius = 4
+        redHint.layer.cornerRadius = 5
         
         iconImage.layer.masksToBounds = true
         iconImage.layer.cornerRadius = 3
-//        iconImage.layer.borderColor = UIColor(red: 102.0/255.0, green: 167.0/255.0, blue: 223.0/255.0, alpha: 1).cgColor
+        iconImage.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.75).cgColor
         iconImage.layer.borderWidth = 1
         
         acountbackView.layer.masksToBounds = true
         acountbackView.layer.cornerRadius = 10
         acountbackView.layer.borderWidth = 1
-        acountbackView.backgroundColor = UIColor(red: 44.0/255.0, green: 135.0/255.0, blue: 214.0/255.0, alpha: 1)
-        acountbackView.layer.borderColor = UIColor(red: 70.0/255.0, green: 159.0/255.0, blue: 231.0/255.0, alpha: 1).cgColor
+        acountbackView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
+        acountbackView.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.85).cgColor
         
         acountbackView.snp.makeConstraints { (make ) in
             make.center.equalTo(self.accountLabel)
             make.left.equalTo(self.accountLabel.snp.left).offset(-7)
             make.right.equalTo(self.accountLabel.snp.right).offset(7)
             make.height.equalTo(20)
+        }
+    }
+    
+    func setFront () {
+        if kWindowW == 320 {
+            headView.frame = CGRect(x: 0, y: 0, width: kWindowW, height: 78)
+            
+            nameLabel.font = UIFont.systemFont(ofSize: 17)
+            titleLabel1.font = UIFont.systemFont(ofSize: 17)
+            titleLabel2.font = UIFont.systemFont(ofSize: 17)
+            titleLabel3.font = UIFont.systemFont(ofSize: 17)
+            titleLabel4.font = UIFont.systemFont(ofSize: 17)
+            titleLabel5.font = UIFont.systemFont(ofSize: 17)
+            titleLabel6.font = UIFont.systemFont(ofSize: 17)
+            titleLabel7.font = UIFont.systemFont(ofSize: 17)
+            titleLabel8.font = UIFont.systemFont(ofSize: 17)
+            titleLabel9.font = UIFont.systemFont(ofSize: 17)
+            titleLabel10.font = UIFont.systemFont(ofSize: 17)
+            titleLabel11.font = UIFont.systemFont(ofSize: 17)
+            titleLabel12.font = UIFont.systemFont(ofSize: 17)
+            titleLabel13.font = UIFont.systemFont(ofSize: 17)
+            titleLabel14.font = UIFont.systemFont(ofSize: 17)
+            amountLabel.font = UIFont.systemFont(ofSize: 14)
+            rightHintLabel1.font = UIFont.systemFont(ofSize: 14)
+            rightHintLabel2.font = UIFont.systemFont(ofSize: 14)
         }
     }
     
@@ -149,6 +194,9 @@ extension XZPayMeTableViewController{
     
     //分区高度
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0
+        }
         return 10
     }
     
@@ -163,6 +211,12 @@ extension XZPayMeTableViewController{
         return UIView()
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if kWindowW == 320 {
+            return 47
+        }
+        return 40
+    }
     
     //scrollerView滚动方法
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
