@@ -22,6 +22,9 @@ class XZWithdrawalVC: XZBaseViewController {
         setupNavBar()
         
         topConstraint.constant = DDSafeAreaTopHeight - (DDSafeAreaTopHeight - 44)
+        if kWindowW == 320 {
+            topConstraint.constant = 34
+        }
     }
 
 }

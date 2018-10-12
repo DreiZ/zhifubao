@@ -59,6 +59,9 @@ extension XZPayMeVC{
     //设置 导航栏
     private func setupNavigationUI(){
         topConstraint.constant = DDSafeAreaTopHeight - (DDSafeAreaTopHeight-44)
+        if kWindowW == 320 {
+            topConstraint.constant = 34
+        }
 //        navigationItem.title = "我的"
 //        navBarTintColor = UIColor.white
 //        navBarBarTintColor = ddBlueColor()

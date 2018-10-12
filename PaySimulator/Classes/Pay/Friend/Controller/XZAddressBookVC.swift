@@ -51,6 +51,9 @@ class XZAddressBookVC: XZBaseViewController {
         super.viewDidLoad()
         
         self.topConstraint.constant = DDSafeAreaTopHeight - (DDSafeAreaTopHeight - 44)
+        if kWindowW == 320 {
+            topConstraint.constant = 34
+        }
         
         setupNavBar()//导航栏
         self.myTableView.separatorStyle = .none

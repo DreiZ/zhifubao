@@ -26,6 +26,9 @@ class XZBalanceVC: XZBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         topConstraint.constant = DDSafeAreaTopHeight - (DDSafeAreaTopHeight - 44)
+        if kWindowW == 320 {
+            topConstraint.constant = 34
+        }
         // Do any additional setup after loading the view.
         setupNavBar()
     }
@@ -38,7 +41,7 @@ extension XZBalanceVC{
  
             self.navBar.title = "余额"
             self.navBar.titleLabelColor = UIColor.white
-            self.navBar.titleLabelFont = UIFont.boldSystemFont(ofSize: 18)
+//            self.navBar.titleLabelFont = UIFont.boldSystemFont(ofSize: 18)
             self.navBar.barBackgroundColor = ddBlueColor()
             self.navBar.wr_setLeftButton(normalImage: UIImage(named: "icon_fanhui")!, highlightedImage:UIImage(named: "icon_fanhui")!, title: "我的", titleColor: UIColor.white)
             self.navBar.wr_setRightButton(title: "明细", titleColor: UIColor.white)

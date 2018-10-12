@@ -52,6 +52,7 @@ class XZPayMeTableViewController: UITableViewController {
         
     }
     
+    @IBOutlet weak var headViewConstraint: NSLayoutConstraint!
     
     //MARK:--  //设置table下拉蓝色背景
     var bjBlueImgView : UIImageView?
@@ -85,11 +86,12 @@ class XZPayMeTableViewController: UITableViewController {
             make.right.equalTo(self.accountLabel.snp.right).offset(7)
             make.height.equalTo(20)
         }
+        self.setFront()
     }
     
     func setFront () {
         if kWindowW == 320 {
-            headView.frame = CGRect(x: 0, y: 0, width: kWindowW, height: 78)
+//            headViewConstraint.constant = 188
             
             nameLabel.font = UIFont.systemFont(ofSize: 17)
             titleLabel1.font = UIFont.systemFont(ofSize: 17)

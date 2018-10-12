@@ -101,6 +101,9 @@ extension XZAddFriendViewController {
         self.view.backgroundColor = kChatBoxBackColor
         
         topConstraint.constant = 44
+        if kWindowW == 320 {
+            topConstraint.constant = 34
+        }
         
         self.navBar.title = "添加联系人"
         self.navBar.wr_setRightButton(title: "确定", titleColor: ddBlueColor())

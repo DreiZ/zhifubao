@@ -20,7 +20,7 @@ let kWindowW :  CGFloat  = UIScreen.main.bounds.size.width
 //屏幕高度
 let kWindowH :  CGFloat  = UIScreen.main.bounds.size.height
 /**顶部位置*/
-let DDSafeAreaTopHeight : CGFloat = (kWindowH == 812.0 ? 88 :64 )
+let DDSafeAreaTopHeight : CGFloat = (kWindowW == 320 ? 54 : kWindowH == 812.0 ? 88 :64 )
 
 /**底部位置*/
 let DDSafeAreaBottomHeight : CGFloat = (kWindowH == 812.0 ? 34 : 0 )

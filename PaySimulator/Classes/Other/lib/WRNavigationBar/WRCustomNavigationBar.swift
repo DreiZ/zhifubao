@@ -108,7 +108,7 @@ class WRCustomNavigationBar: UIView
     fileprivate lazy var titleLabel:UILabel = {
         let label = UILabel()
         label.textColor = WRDefaultTitleColor
-        label.font = UIFont.systemFont(ofSize: WRDefaultTitleSize)
+        label.font = UIFont.systemFont(ofSize: kWindowW == 320 ? WRDefaultTitleSize-2:WRDefaultTitleSize)
         label.textAlignment = .center
         label.isHidden = true
         return label
@@ -166,7 +166,7 @@ class WRCustomNavigationBar: UIView
     }
     fileprivate static var navBarBottom:Int {
         get {
-            return isIphoneX ? 88 : 64
+            return kWindowW == 320 ? 54 : (isIphoneX ? 88 : 64)
         }
     }
     
@@ -199,12 +199,20 @@ class WRCustomNavigationBar: UIView
     }
     func updateFrame()
     {
-        let top:CGFloat = WRCustomNavigationBar.isIphoneX ? 44 : 20
+        var top:CGFloat = WRCustomNavigationBar.isIphoneX ? 44 : 20
         let margin:CGFloat = 16
-        let buttonHeight:CGFloat = 44
-        let buttonWidth:CGFloat = 60
-        let titleLabelHeight:CGFloat = 44
-        let titleLabelWidth:CGFloat = 180
+        var buttonHeight:CGFloat = 44
+        var buttonWidth:CGFloat = 60
+        var titleLabelHeight:CGFloat = 44
+        var titleLabelWidth:CGFloat = 180
+        
+        if kWindowW == 320 {
+            top =  14
+            buttonHeight = 44
+            buttonWidth = 50
+            titleLabelHeight = 44
+            titleLabelWidth = 180
+        }
         
         backgroundView.frame = self.bounds
         backgroundImageView.frame = self.bounds

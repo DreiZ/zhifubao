@@ -13,6 +13,7 @@ class XZBalanceTabVC: UITableViewController {
     //storyBoard属性
     var userModel : XZUserModel?
     
+    @IBOutlet weak var headView: UIView!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var yuebaoLabel: UILabel!
     @IBOutlet weak var goYuebaoBtn: UIButton!
@@ -45,6 +46,7 @@ class XZBalanceTabVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        headView.backgroundColor = ddBlueColor()
         goYuebaoBtn.layer.masksToBounds = true
         goYuebaoBtn.layer.cornerRadius = 2
         goYuebaoBtn.layer.borderWidth = 1
