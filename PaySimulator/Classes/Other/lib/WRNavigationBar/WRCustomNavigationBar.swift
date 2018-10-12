@@ -108,7 +108,7 @@ class WRCustomNavigationBar: UIView
     fileprivate lazy var titleLabel:UILabel = {
         let label = UILabel()
         label.textColor = WRDefaultTitleColor
-        label.font = UIFont.systemFont(ofSize: kWindowW == 320 ? WRDefaultTitleSize-2:WRDefaultTitleSize)
+        label.font = UIFont.systemFont(ofSize: kWindowW == 320 ? WRDefaultTitleSize-1:WRDefaultTitleSize)
         label.textAlignment = .center
         label.isHidden = true
         return label

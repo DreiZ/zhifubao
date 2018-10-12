@@ -10,7 +10,7 @@ import UIKit
 //定义确定block闭包传值
 typealias backBlock = ((_ value : String) ->())
 
-class XZEditUserInfoVC: XZBaseVC {
+class XZEditUserInfoVC: XZBaseViewController {
 
  
     var textField = UITextField()
@@ -63,27 +63,40 @@ class XZEditUserInfoVC: XZBaseVC {
     func setupNav(){
         
         
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font:UIFont.systemFont(ofSize:18)];
-        
-       
-
-        let leftBtn = XZBaseNavItemBtn(frame: CGRect(x: 0, y: 0, width: 40, height: 40), titleName: "取消")
-        leftBtn.setTitleColor(ddBlueColor(), for: .normal)
-        leftBtn.addTarget(self, action: #selector(clickLeftItem), for: .touchUpInside)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
-        
-//        self.navBar
-        
-        //右侧按钮
-        let rightBtn = XZBaseNavItemBtn(frame: CGRect(x: 0, y: 0, width: 40, height: 40), titleName: "确定")
-        rightBtn.setTitleColor(ddBlueColor(), for: .normal)
-        rightBtn.setTitleColor(ddColorFromHex("#FFFFF"), for: .disabled)
-        rightBtn.addTarget(self, action: #selector(clickRightItem), for: .touchUpInside)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
-        self.rightBtn = rightBtn
-        rightBtn.isEnabled = true
+//        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font:UIFont.systemFont(ofSize:18)];
+//
+//
+//
+//        let leftBtn = XZBaseNavItemBtn(frame: CGRect(x: 0, y: 0, width: 40, height: 40), titleName: "取消")
+//        leftBtn.setTitleColor(ddBlueColor(), for: .normal)
+//        leftBtn.addTarget(self, action: #selector(clickLeftItem), for: .touchUpInside)
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
+//
+////        self.navBar
+//
+//        //右侧按钮
+//        let rightBtn = XZBaseNavItemBtn(frame: CGRect(x: 0, y: 0, width: 40, height: 40), titleName: "确定")
+//        rightBtn.setTitleColor(ddBlueColor(), for: .normal)
+//        rightBtn.setTitleColor(ddColorFromHex("#FFFFF"), for: .disabled)
+//        rightBtn.addTarget(self, action: #selector(clickRightItem), for: .touchUpInside)
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
+//        self.rightBtn = rightBtn
+//        rightBtn.isEnabled = true
+        self.navBar.wr_setRightButton(title: "确定", titleColor: UIColor.white)
+        self.navBar.wr_setLeftButton(title: "取消", titleColor: UIColor.white)
+        self.navBar.barBackgroundColor = ddBlueColor()
     }
-     
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    override func rightBtnOnClick() {
+        self.clickRightItem()
+    }
+    
+    override func leftBtnOnClick() {
+        self.clickLeftItem()
+    }
 }
 
 //MARK:--事件监听

@@ -79,10 +79,28 @@ extension XZChatBoxMoreView {
         self.addSubview(self.timeBtn)
         self.addSubview(self.redPacketBtn)
         
+        
+        let label = self.getLabel(title: "图片")
+        let label1 = self.getLabel(title: "转账")
+        let label2 = self.getLabel(title: "语音")
+        let label3 = self.getLabel(title: "时间")
+        let label4 = self.getLabel(title: "红包")
+        
+        self.addSubview(label)
+        self.addSubview(label1)
+        self.addSubview(label2)
+        self.addSubview(label3)
+        self.addSubview(label4)
+        
         self.picBtn.snp.makeConstraints { (make) in
             make.top.equalTo(self.snp.top).offset(12)
             make.width.height.equalTo(ddSpacing(104))
             make.left.equalTo(self.snp.left).offset(ddSpacing(66))
+        }
+        
+        label.snp.makeConstraints { (make ) in
+            make.top.equalTo(self.picBtn.snp.bottom)
+            make.centerX.equalTo(self.picBtn.snp.centerX)
         }
         
         self.zhuanBtn.snp.makeConstraints { (make) in
@@ -91,10 +109,20 @@ extension XZChatBoxMoreView {
             make.left.equalTo(self.picBtn.snp.right).offset(ddSpacing(66))
         }
         
+        label1.snp.makeConstraints { (make ) in
+            make.top.equalTo(self.zhuanBtn.snp.bottom)
+            make.centerX.equalTo(self.zhuanBtn.snp.centerX)
+        }
+        
         self.voiceBtn.snp.makeConstraints { (make) in
             make.top.equalTo(self.picBtn.snp.top)
             make.width.height.equalTo(ddSpacing(104))
             make.left.equalTo(self.zhuanBtn.snp.right).offset(ddSpacing(66))
+        }
+        
+        label2.snp.makeConstraints { (make ) in
+            make.top.equalTo(self.voiceBtn.snp.bottom)
+            make.centerX.equalTo(self.voiceBtn.snp.centerX)
         }
         
         self.timeBtn.snp.makeConstraints { (make) in
@@ -103,11 +131,32 @@ extension XZChatBoxMoreView {
             make.left.equalTo(self.voiceBtn.snp.right).offset(ddSpacing(66))
         }
         
+        label3.snp.makeConstraints { (make ) in
+            make.top.equalTo(self.timeBtn.snp.bottom)
+            make.centerX.equalTo(self.timeBtn.snp.centerX)
+        }
+        
         self.redPacketBtn.snp.makeConstraints { (make) in
-            make.top.equalTo(self.picBtn.snp.bottom).offset(12)
+            make.top.equalTo(self.picBtn.snp.bottom).offset(22)
             make.width.height.equalTo(ddSpacing(104))
             make.left.equalTo(self.picBtn.snp.left)
         }
+        
+        label4.snp.makeConstraints { (make ) in
+            make.top.equalTo(self.redPacketBtn.snp.bottom)
+            make.centerX.equalTo(self.redPacketBtn.snp.centerX)
+        }
+    }
+    
+    func getLabel (title : String) -> UILabel {
+        let label = UILabel()
+        label.text = title
+        label.textColor = UIColor.black
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.textAlignment = .center
+        
+        
+        return label
     }
 }
 

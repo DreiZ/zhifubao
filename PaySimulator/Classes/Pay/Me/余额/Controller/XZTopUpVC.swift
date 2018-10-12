@@ -13,6 +13,7 @@ class XZTopUpVC: XZBaseViewController {
     
     //MARK:--storyBoard属性
     
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var moneyTextField: UITextField!
     
     @IBAction func nexBtn(_ sender: UIButton) {
@@ -38,6 +39,7 @@ class XZTopUpVC: XZBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         moneyTextField.keyboardType = UIKeyboardType.decimalPad
+        topConstraint.constant = DDSafeAreaTopHeight - (DDSafeAreaTopHeight - 44)
     }
 
     func setupNavBar() {

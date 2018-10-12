@@ -1252,6 +1252,7 @@
                     </view>
                     <connections>
                         <outlet property="moneyTextField" destination="zBg-Dt-gXt" id="ocf-iq-dMG"/>
+                        <outlet property="topConstraint" destination="VCZ-SZ-E4B" id="d08-JJ-vdL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJE-lQ-hhp" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -17,7 +17,7 @@ class XZPayMainTabBarVC: UITabBarController,UITabBarControllerDelegate {
         self.tabBar.isTranslucent = false
         self.delegate = self;
         // Do any additional setup after loading the view.
-        addChileVc(storyName: "PayHome", "主页", "icon_shouye", "icon_shouye1")
+        addChileVc(storyName: "PayHome", "首页", "icon_shouye", "icon_shouye1")
         addChileVc(storyName: "PayMoney","财富", "icon_caifu", "icon_caifu1")
         addChileVc(storyName: "PayPraise","口碑", "icon_koubei", "icon_koubei1")
         addChileVc(storyName: "PayFriend","朋友", "icon_pengyou", "icon_pengyou1")
